@@ -280,3 +280,54 @@ footer {
     color: #D81B60;
 }
 
+/* Messages Section */
+.messaging {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.messaging .message {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.messaging .profile-pic img {
+    width: 2cm;
+    height: 2cm;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.messaging .message-content {
+    max-width: 90%;
+}
+
+/* Calendar Section */
+.calendar {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Online Games Section */
+.online-games {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.online-games ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.online-games li {
+    margin-bottom: 10px;
+}
+
+.online-games .game-controller {
+    margin-right: 10px;
+}
