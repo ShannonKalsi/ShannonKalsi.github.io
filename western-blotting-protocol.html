@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Western Blotting Protocol - LabSphere</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
+                <h1>LabSphere</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="collaboration.html">Collaboration</a></li>
+                <li><a href="wellbeing.html">Wellbeing</a></li>
+                <li><a href="socials.html">Socials</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">My Profile</a>
+                        <a href="account.html">My Account</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="logout.html">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content section -->
+    <main>
+        <div class="protocol-container">
+            <h2>Western Blotting Protocol</h2>
+
+            <!-- Step 1: Protein Extraction -->
+            <section class="protocol">
+                <h3>Step 1: Protein Extraction</h3>
+                <h4>Lysis Buffer Composition:</h4>
+                <ul>
+                    <li>1X PBS: 495ml</li>
+                    <li>0.1% Igepal: 5ml</li>
+                    <li>0.5% Deoxycholic acid: 2.5g</li>
+                    <li>0.1% SDS: 0.5g</li>
+                </ul>
+                <p>Store the lysis buffer at -20°C in 1ml aliquots. Prepare the following:</p>
+                <ul>
+                    <li>Add 1ml of lysis buffer and 10μl of protease inhibitor (keep on ice).</li>
+                    <li>Re-suspend each cell pellet in ~80μl of the mixture. Place on ice for 3 x 10 minutes with 10-second vortexing in between.</li>
+                    <li>Spin down at 13,000rpm for 20 minutes at 4°C in Eppendorf tubes.</li>
+                    <li>Remove the supernatant (protein fraction) and place it in a fresh Eppendorf tube on ice. Discard the pellet.</li>
+                </ul>
+            </section>
+
+            <!-- Step 2: Protein Quantification using BCA Assay -->
+            <section class="protocol">
+                <h3>Step 2: Protein Quantification using BCA Assay</h3>
+                <p>Make up the standard as below:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Stock (μl)</th>
+                            <th>dH2O (μl)</th>
+                            <th>Concentration (μg/ml)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>100</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>90</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>80</td>
+                            <td>400</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>70</td>
+                            <td>600</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>60</td>
+                            <td>800</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>40</td>
+                            <td>1200</td>
+                        </tr>
+                        <tr>
+                            <td>70</td>
+                            <td>30</td>
+                            <td>1400</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Steps for Protein Quantification:</p>
+                <ul>
+                    <li>Make up standards in 1.5ml Eppendorf tubes and mix well.</li>
+                    <li>Make a 1:10 dilution of each protein lysate from step 1 with dH2O (e.g., 6μl sample + 54μl dH2O).</li>
+                    <li>Pipette 25μl of each standard and sample in duplicate into wells of a 96-well plate.</li>
+                    <li>Prepare the BCA reagent: mix 1 part reagent B (blue) to 49 parts reagent A (clear), mix well, and conserve reagents.</li>
+                    <li>Add 200μl of the reagent mixture (A + B) to each well of standards and samples.</li>
+                    <li>Incubate at 37°C for 30 minutes (solution will turn purple if protein is present).</li>
+                    <li>Cool for 2 minutes at RT and read absorbance at 560nm.</li>
+                    <li>Calculate the protein concentration using the standard curve obtained in Excel.</li>
+                </ul>
+            </section>
+
+            <!-- Step 3: Preparation of Samples -->
+            <section class="protocol">
+                <h3>Step 3: Preparation of Samples</h3>
+                <ul>
+                    <li>Pipette the calculated amount of sample into the Eppendorf tube.</li>
+                    <li>Add 2X or 6X Laemmli buffer and mix well.</li>
+                    <li>Boil the samples at 95°C in a heating block.</li>
+                    <li>Flick spin samples in a tabletop centrifuge.</li>
+                </ul>
+            </section>
+
+            <!-- Step 4: Protein Electrophoresis -->
+            <section class="protocol">
+                <h3>Step 4: Protein Electrophoresis</h3>
+                <h4>Running and Transfer Buffers:</h4>
+                <ul>
+                    <li><strong>Running Buffer (10X) pH 8.3:</strong>
+                        <ul>
+                            <li>Glycine: 144.13g</li>
+                            <li>Tris Base: 30.28g</li>
+                            <li>SDS: 10g</li>
+                            <li>dH2O: 1L</li>
+                        </ul>
+                    </li>
+                    <li><strong>Transfer Buffer for Semi-Dry Rig (10X) pH 7.5:</strong>
+                        <ul>
+                            <li>Glycine: 29g</li>
+                            <li>Tris base: 58g</li>
+                            <li>SDS: 3.7g</li>
+                            <li>dH2O: 1L</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p>Steps for Gel Preparation and Running:</p>
+                <ul>
+                    <li>Clean the glass plates thoroughly with 70% IMS and assemble them with gaskets.</li>
+                    <li>Prepare the resolving gel solution and pour into the gel plates up to the mark.</li>
+                    <li>Cover the running gel with isopropanol during polymerization to ensure leveling.</li>
+                    <li>Prepare the stacking gel and pour it once the resolving gel has set.</li>
+                    <li>Fill the gel system with running buffer and load samples.</li>
+                    <li>Run at 110V until the dye front reaches the bottom of the gel.</li>
+                </ul>
+            </section>
+
+            <!-- Step 5: Transfer of Protein from Gel to Nitrocellulose (Semi-Dry & Wet Transfer) -->
+            <section class="protocol">
+                <h3>Step 5: Transfer of Protein from Gel to Nitrocellulose</h3>
+                <p><strong>Semi-Dry Transfer:</strong></p>
+                <ul>
+                    <li>Prepare nitrocellulose sheets and filter paper by soaking them in transfer buffer.</li>
+                    <li>After the gel run, place it in transfer buffer and mark a corner of the gel.</li>
+                    <li>Place filter paper and the gel in the semi-dry apparatus and ensure no air bubbles are present.</li>
+                    <li>Run the transfer at 250 mA for 1 hour and stain with Ponceau S.</li>
+                    <li>Block the blot with 5% milk protein TBST for 1 hour at room temperature.</li>
+                    <li>Incubate with primary antibody overnight at 4°C.</li>
+                    <li>Wash 3 times with TBST for 10 minutes and incubate with secondary antibody.</li>
+                    <li>Prepare ECL and wash 3 times with TBST for 10 minutes.</li>
+                </ul>
+                <p><strong>Wet Transfer:</strong></p>
+                <ul>
+                    <li>Prepare as for semi-dry, but ensure the nitrocellulose sheet is placed opposite the gel.</li>
+                    <li>Run the wet transfer at 60V for 1.5 hours.</li>
+                    <li>Follow the same subsequent steps as semi-dry transfer.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Let's Chat
