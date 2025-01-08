@@ -11,9 +11,7 @@
     <header>
         <nav class="navbar">
             <div class="logo-container">
-                <!-- Logo Image -->
                 <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
-                <!-- Website Title -->
                 <h1>LabSphere</h1>
             </div>
             <ul class="nav-links">
@@ -34,87 +32,121 @@
             </ul>
         </nav>
     </header>
-    <!-- Main Content for Homepage (Newsfeed) -->
-    <main class="newsfeed">
-        <div class="post-box">
-            <h2>Create a Post</h2>
-            <textarea id="new-post" placeholder="Share your latest achievement..."></textarea>
-            <button onclick="createPost()">Post</button>
-        </div>
 
-        <div class="posts">
-            <!-- Example Posts -->
-            <div class="post">
-                <div class="profile-icon">
-                    <img src="alice.jpg" alt="Alice Newman">
-                </div>
-                <div class="post-content">
-                    <p><strong>Alice Newman:</strong> Just submitted my paper to Nature! Feeling great about it!</p>
-                </div>
+    <!-- Main content section -->
+    <main>
+        <section class="newsfeed">
+            <!-- New Post Section -->
+            <div class="new-post">
+                <textarea id="new-post-input" placeholder="Write your post..."></textarea>
+                <button onclick="postContent()">Post</button>
             </div>
+
+            <!-- Example posts -->
             <div class="post">
-                <div class="profile-icon">
-                    <img src="joey.jpg" alt="Joey Bloggs">
+                <div class="post-header">
+                    <img src="alice.jpg" alt="Alice's Profile" class="profile-pic">
+                    <div class="post-info">
+                        <strong>Alice Newman</strong>
+                        <p><em>Submitted a paper to <i>Nature</i></em></p>
+                    </div>
                 </div>
-                <div class="post-content">
-                    <p><strong>Joey Bloggs:</strong> Attended the EACR conference and had a wonderful time networking!</p>
-                </div>
+                <p>Alice is very excited about her latest paper submission!</p>
+                <button class="like-button">Like</button>
             </div>
+
             <div class="post">
-                <div class="profile-icon">
-                    <img src="lisa.jpg" alt="Lisa Ray">
+                <div class="post-header">
+                    <img src="joey.jpg" alt="Joey's Profile" class="profile-pic">
+                    <div class="post-info">
+                        <strong>Joey Bloggs</strong>
+                        <p><em>Attending the <i>EACR conference</i> and having a wonderful time!</em></p>
+                    </div>
                 </div>
-                <div class="post-content">
-                    <p><strong>Lisa Ray:</strong> Got accepted for an oral presentation at the upcoming EACR conference! 🎉</p>
-                </div>
+                <p>Having a great time at the conference! Met a lot of amazing researchers!</p>
+                <button class="like-button">Like</button>
             </div>
+
             <div class="post">
-                <div class="profile-icon">
-                    <img src="mike.jpg" alt="Mike Johnson">
+                <div class="post-header">
+                    <img src="lisa.jpg" alt="Lisa's Profile" class="profile-pic">
+                    <div class="post-info">
+                        <strong>Lisa Brown</strong>
+                        <p><em>Gave an oral presentation at the <i>EMBL-EBI Annual Conference</i></em></p>
+                    </div>
                 </div>
-                <div class="post-content">
-                    <p><strong>Mike Johnson:</strong> Just finished reviewing an important paper for Cancer Research Journal. Proud to contribute!</p>
-                </div>
+                <p>It was an honor to give an oral presentation at the EMBL-EBI conference!</p>
+                <button class="like-button">Like</button>
             </div>
+
             <div class="post">
-                <div class="profile-icon">
-                    <img src="jane.jpg" alt="Jane Smith">
+                <div class="post-header">
+                    <img src="mike.jpg" alt="Mike's Profile" class="profile-pic">
+                    <div class="post-info">
+                        <strong>Mike Adams</strong>
+                        <p><em>Preparing for an upcoming <i>Nature Communications</i> submission</em></p>
+                    </div>
                 </div>
-                <div class="post-content">
-                    <p><strong>Jane Smith:</strong> Excited to be a part of the new research project on immunotherapy! Can't wait to get started!</p>
-                </div>
+                <p>Just finished the final draft for my next paper! Feeling optimistic.</p>
+                <button class="like-button">Like</button>
             </div>
-        </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <img src="jane.jpg" alt="Jane's Profile" class="profile-pic">
+                    <div class="post-info">
+                        <strong>Jane Doe</strong>
+                        <p><em>Attending the <i>European Cancer Congress</i> next month</em></p>
+                    </div>
+                </div>
+                <p>Excited to attend the European Cancer Congress next month. Hope to meet many experts in the field!</p>
+                <button class="like-button">Like</button>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer with 'Let's Chat' Box -->
+    <!-- Footer with Let's Chat -->
     <footer>
-        <div class="footer-content">
-            <button onclick="window.location.href='socials.html'">Let's Chat</button>
-        </div>
+        <p>Let's Chat</p>
+        <a href="socials.html">Go to Socials</a>
     </footer>
 
-    <!-- JavaScript for Posting Functionality -->
+    <!-- JavaScript for New Post -->
     <script>
-        function createPost() {
-            var newPostText = document.getElementById('new-post').value;
-            if (newPostText.trim() != "") {
-                var postContainer = document.createElement('div');
-                postContainer.classList.add('post');
+        function postContent() {
+            const newPostInput = document.getElementById("new-post-input");
+            const postContent = newPostInput.value;
+            if (postContent.trim() !== "") {
+                const newPost = document.createElement("div");
+                newPost.classList.add("post");
 
-                var profileIcon = document.createElement('div');
-                profileIcon.classList.add('profile-icon');
-                profileIcon.innerHTML = '<img src="user-placeholder.jpg" alt="Your Profile">';
+                const newPostHeader = document.createElement("div");
+                newPostHeader.classList.add("post-header");
 
-                var postContent = document.createElement('div');
-                postContent.classList.add('post-content');
-                postContent.innerHTML = '<p><strong>Your Name:</strong> ' + newPostText + '</p>';
+                const newPostImage = document.createElement("img");
+                newPostImage.src = "profile.jpg";  // Default image for the user
+                newPostImage.classList.add("profile-pic");
 
-                postContainer.appendChild(profileIcon);
-                postContainer.appendChild(postContent);
+                const newPostInfo = document.createElement("div");
+                newPostInfo.classList.add("post-info");
+                newPostInfo.innerHTML = `<strong>Your Name</strong> <p>${postContent}</p>`;
 
-                document.querySelector('.posts').appendChild(postContainer);
-                document.getElementById('new-post').value = ''; // Clear textarea after post
+                newPostHeader.appendChild(newPostImage);
+                newPostHeader.appendChild(newPostInfo);
+
+                const newPostText = document.createElement("p");
+                newPostText.innerText = postContent;
+
+                const newPostLikeButton = document.createElement("button");
+                newPostLikeButton.classList.add("like-button");
+                newPostLikeButton.innerText = "Like";
+
+                newPost.appendChild(newPostHeader);
+                newPost.appendChild(newPostText);
+                newPost.appendChild(newPostLikeButton);
+
+                document.querySelector(".newsfeed").appendChild(newPost);
+                newPostInput.value = "";  // Clear input after posting
             }
         }
     </script>
