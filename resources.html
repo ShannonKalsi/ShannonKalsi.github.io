@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Resources</title>
+    <title>Resources - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <!-- Header with Navigation -->
     <header>
         <nav class="navbar">
-            <div class="logo">
+            <div class="logo-container">
                 <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
                 <h1>LabSphere</h1>
             </div>
@@ -34,82 +33,86 @@
         </nav>
     </header>
 
-    <!-- Main Content for Resources -->
-    <main class="resources">
+    <!-- Main content section -->
+    <main>
+        <div class="resources-container">
+            <!-- Holiday Tracker and Timesheet -->
+            <section class="holiday-timesheet">
+                <h2>Holiday and Timesheet Resources</h2>
+                <p>Plan your holidays and track your time efficiently with the following resources:</p>
+                <ul>
+                    <li><a href="https://absentia.io/staff-holiday-planner-excel" target="_blank">Holiday Tracker (Staff Holiday Planner)</a></li>
+                    <li><a href="https://www.float.com/resources/timesheet-templates" target="_blank">Timesheet Template</a></li>
+                </ul>
+            </section>
 
-        <!-- Protocols Section -->
-        <section class="protocols">
-            <h2>Protocols</h2>
-            <p>Explore detailed research protocols for various experimental techniques used in cancer research.</p>
-            <ul>
-                <li><a href="cell-culture-protocol.html" target="_blank">Cell Culture Protocol</a></li>
-                <li><a href="western-blotting-protocol.html" target="_blank">Western Blotting Protocol</a></li>
-                <li><a href="sirna-transfection-protocol.html" target="_blank">siRNA Transfection Protocol</a></li>
-                <li><a href="pcr-protocol.html" target="_blank">PCR Protocol</a></li>
-            </ul>
-        </section>
+            <!-- Protocol Section -->
+            <section class="protocol">
+                <h2>Protocol</h2>
+                <p>Find protocols for common experiments in immunology and molecular biology below:</p>
+                <ul>
+                    <li><a href="cell-culture-protocol.html">Cell Culture Protocol</a></li>
+                    <li><a href="western-blotting-protocol.html">Western Blotting Protocol</a></li>
+                    <li><a href="sirna-transfection-protocol.html">siRNA Transfection Protocol</a></li>
+                    <li><a href="pcr-protocol.html">PCR Protocol</a></li>
+                </ul>
+            </section>
 
-        <!-- Available Equipment Section -->
-        <section class="equipment">
-            <h2>Available Equipment</h2>
-            <p>This section provides links to equipment available at various institutions. Each institution shares the tools available for researchers.</p>
-            <ul>
-                <li><a href="royal-college-of-surgeons-equipment.html" target="_blank">Royal College of Surgeons in Ireland Equipment List</a></li>
-                <li><a href="trinity-college-dublin-equipment.html" target="_blank">Trinity College Dublin Equipment List</a></li>
-            </ul>
-            <button onclick="window.location.href='submit-equipment.html'">Submit Your Institution's Equipment</button>
-        </section>
+            <!-- Available Equipment Section -->
+            <section class="available-equipment">
+                <h2>Available Equipment</h2>
+                <p>Equipment lists from various institutions are available below:</p>
+                <ul>
+                    <li><a href="royal-college-of-surgeons.html">Royal College of Surgeons in Ireland</a></li>
+                    <li><a href="trinity-college-dublin.html">Trinity College Dublin</a></li>
+                </ul>
+                <button onclick="window.location.href='submit-equipment.html'">Submit Your Institution's Equipment</button>
+            </section>
 
-        <!-- Grants Section -->
-        <section class="grants">
-            <h2>Grants</h2>
-            <p>Find information on grants available for travel, research resources, and academic support.</p>
+            <!-- Grants Section -->
+            <section class="grants">
+                <h2>Grants</h2>
+                <p>Explore available grants for travel, research, and bursaries for PhD and post-doc researchers:</p>
+                <div class="grant-categories">
+                    <div class="grant-category">
+                        <h3>Travel Grants</h3>
+                        <ul>
+                            <li><a href="https://www.eacr.org/grants/travel-bursaries/" target="_blank">EACR Travel Bursaries</a></li>
+                        </ul>
+                    </div>
+                    <div class="grant-category">
+                        <h3>Resource Grants & Bursaries</h3>
+                        <ul>
+                            <li><a href="https://www.example-link.com" target="_blank">PhD/Post-Doc Research Grants</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-            <!-- Travel Grants Subsection -->
-            <h3>Travel Grants</h3>
-            <p>Apply for travel grants to attend conferences or international events. Here are some available travel bursaries:</p>
-            <ul>
-                <li><a href="eacr-travel-bursary.html" target="_blank">EACR Travel Bursary</a></li>
-                <li><a href="conference-travel-grant.html" target="_blank">International Cancer Conference Travel Grant</a></li>
-            </ul>
+            <!-- Visa and Immigration Section -->
+            <section class="visa-immigration">
+                <h2>Visa & Immigration</h2>
+                <p>If you're planning to immigrate to Ireland, here's some useful information:</p>
+                <ul>
+                    <li><a href="https://www.irishimmigration.ie" target="_blank">Ireland Immigration Office</a></li>
+                </ul>
+            </section>
 
-            <!-- Resource Grants and Bursaries Subsection -->
-            <h3>Resource Grants and Bursaries</h3>
-            <p>There are several grants available for resources and for PhD/Post-Doc researchers:</p>
-            <ul>
-                <li><a href="phd-grant.html" target="_blank">PhD Research Grant</a></li>
-                <li><a href="postdoc-bursary.html" target="_blank">Post-Doctoral Bursary for Cancer Research</a></li>
-                <li><a href="research-resource-grant.html" target="_blank">Research Resource Grant</a></li>
-            </ul>
-        </section>
-
-        <!-- Visa/Immigration Section -->
-        <section class="visa">
-            <h2>Visa & Immigration</h2>
-            <p>Information for researchers and students immigrating to Ireland, including how to apply for a visa and the immigration process.</p>
-            <ul>
-                <li><a href="visa-application.html" target="_blank">Visa Application Process</a></li>
-                <li><a href="immigration-office.html" target="_blank">Ireland Immigration Office</a></li>
-            </ul>
-        </section>
-
-        <!-- Housing Section -->
-        <section class="housing">
-            <h2>Housing in Ireland</h2>
-            <p>Find information on finding housing in Ireland, including rental websites and resources for international researchers.</p>
-            <ul>
-                <li><a href="https://www.daft.ie" target="_blank">Daft.ie - Housing Listings in Ireland</a></li>
-            </ul>
-        </section>
-
+            <!-- Housing Information Section -->
+            <section class="housing">
+                <h2>Finding Housing in Ireland</h2>
+                <p>Looking for housing in Ireland? Here are some useful resources:</p>
+                <ul>
+                    <li><a href="https://www.daft.ie" target="_blank">Daft.ie - Ireland's Property Website</a></li>
+                </ul>
+            </section>
+        </div>
     </main>
 
-    <!-- Footer with 'Let's Chat' Box -->
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <button onclick="window.location.href='socials.html'">Let's Chat</button>
-        </div>
+        <p>Let's Chat</p>
+        <a href="socials.html">Go to Socials</a>
     </footer>
-
 </body>
 </html>
