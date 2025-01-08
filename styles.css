@@ -165,3 +165,84 @@ footer {
     font-size: 0.9em;
 }
 
+/* Submit Project Form */
+.submit-project form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.submit-project .form-group {
+    margin-bottom: 15px;
+}
+
+.submit-project .form-group label {
+    font-weight: bold;
+}
+
+.submit-project .form-group input, 
+.submit-project .form-group textarea {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.submit-project button {
+    background-color: #1E88E5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submit-project button:hover {
+    background-color: #D81B60;
+}
+
+/* Available Projects */
+.available-projects .project {
+    margin-bottom: 20px;
+}
+
+.available-projects h3 {
+    margin-bottom: 10px;
+}
+
+.available-projects .apply-button {
+    background-color: #1E88E5;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.available-projects .apply-button:hover {
+    background-color: #D81B60;
+}
+
+/* Industry Collaboration */
+.industry-collaboration ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.industry-collaboration li {
+    margin-bottom: 10px;
+}
+
+.industry-collaboration a {
+    color: #1E88E5;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.industry-collaboration a:hover {
+    color: #D81B60;
+}
