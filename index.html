@@ -3,89 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Cancer Research Collaboration</title>
+    <title>LabSphere - Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Header with Navigation -->
     <header>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
-            <h1>LabSphere</h1>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
+                <h1>LabSphere</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="collaboration.html">Collaboration</a></li>
+                <li><a href="wellbeing.html">Wellbeing</a></li>
+                <li><a href="socials.html">Socials</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Menu</button>
+                    <div class="dropdown-content">
+                        <a href="profile.html">My Profile</a>
+                        <a href="account.html">My Account</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="logout.html">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content for Homepage (Newsfeed) -->
+    <main class="newsfeed">
+        <div class="post-box">
+            <h2>Create a Post</h2>
+            <textarea id="new-post" placeholder="Share your latest achievement..."></textarea>
+            <button onclick="createPost()">Post</button>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="collaboration.html">Collaboration</a></li>
-            <li><a href="wellbeing.html">Wellbeing</a></li>
-            <li><a href="socials.html">Socials</a></li>
-            <li class="dropdown">
-                <button class="dropbtn">Menu</button>
-                <div class="dropdown-content">
-                    <a href="profile.html">My Profile</a>
-                    <a href="account.html">My Account</a>
-                    <a href="settings.html">Settings</a>
-                    <a href="logout.html">Log Out</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
-</header>
 
-    <main class="home">
-        <div class="feed">
-            <h2>Newsfeed</h2>
-            <textarea placeholder="What's happening in your research today?" rows="4"></textarea>
-            <button class="post-btn">Post</button>
-
-             <!-- Existing Posts -->
+        <div class="posts">
+            <!-- Example Posts -->
             <div class="post">
                 <div class="profile-icon">
-                    <img src="alice.jpg" alt="Alice Newman" />
+                    <img src="alice.jpg" alt="Alice Newman">
                 </div>
                 <div class="post-content">
-                    <p><strong>Alice Newman</strong> just had her paper published in <em>Nature</em>! 🎉 Check it out!</p>
+                    <p><strong>Alice Newman:</strong> Just submitted my paper to Nature! Feeling great about it!</p>
                 </div>
             </div>
             <div class="post">
                 <div class="profile-icon">
-                    <img src="joey.jpg" alt="Joey Bloggs" />
+                    <img src="joey.jpg" alt="Joey Bloggs">
                 </div>
                 <div class="post-content">
-                    <p><strong>Joey Bloggs</strong> is attending the <em>EACR Conference</em> and having a wonderful time learning about cutting-edge cancer research!</p>
+                    <p><strong>Joey Bloggs:</strong> Attended the EACR conference and had a wonderful time networking!</p>
                 </div>
             </div>
             <div class="post">
                 <div class="profile-icon">
-                    <img src="lisa.jpg" alt="Lisa Ray" />
+                    <img src="lisa.jpg" alt="Lisa Ray">
                 </div>
                 <div class="post-content">
-                    <p><strong>Lisa Ray</strong> was selected for an oral presentation at the upcoming <em>International Cancer Symposium</em>! So excited to share her latest research.</p>
+                    <p><strong>Lisa Ray:</strong> Got accepted for an oral presentation at the upcoming EACR conference! 🎉</p>
                 </div>
             </div>
             <div class="post">
                 <div class="profile-icon">
-                    <img src="mike.jpg" alt="Mike Thompson" />
+                    <img src="mike.jpg" alt="Mike Johnson">
                 </div>
                 <div class="post-content">
-                    <p><strong>Mike Thompson</strong> will be presenting a poster at the <em>American Association for Cancer Research</em> conference next month. Check out his research on gene therapies!</p>
+                    <p><strong>Mike Johnson:</strong> Just finished reviewing an important paper for Cancer Research Journal. Proud to contribute!</p>
                 </div>
             </div>
             <div class="post">
                 <div class="profile-icon">
-                    <img src="jane.jpg" alt="Jane Doe" />
+                    <img src="jane.jpg" alt="Jane Smith">
                 </div>
                 <div class="post-content">
-                    <p><strong>Jane Doe</strong> just received funding for her research on early detection of cancer biomarkers. Looking forward to what’s next!</p>
+                    <p><strong>Jane Smith:</strong> Excited to be a part of the new research project on immunotherapy! Can't wait to get started!</p>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
+    <!-- Footer with 'Let's Chat' Box -->
     <footer>
-        <p>&copy; 2025 LabSphere - Cancer Research Collaboration</p>
+        <div class="footer-content">
+            <button onclick="window.location.href='socials.html'">Let's Chat</button>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript for Posting Functionality -->
+    <script>
+        function createPost() {
+            var newPostText = document.getElementById('new-post').value;
+            if (newPostText.trim() != "") {
+                var postContainer = document.createElement('div');
+                postContainer.classList.add('post');
+
+                var profileIcon = document.createElement('div');
+                profileIcon.classList.add('profile-icon');
+                profileIcon.innerHTML = '<img src="user-placeholder.jpg" alt="Your Profile">';
+
+                var postContent = document.createElement('div');
+                postContent.classList.add('post-content');
+                postContent.innerHTML = '<p><strong>Your Name:</strong> ' + newPostText + '</p>';
+
+                postContainer.appendChild(profileIcon);
+                postContainer.appendChild(postContent);
+
+                document.querySelector('.posts').appendChild(postContainer);
+                document.getElementById('new-post').value = ''; // Clear textarea after post
+            }
+        }
+    </script>
 </body>
 </html>
