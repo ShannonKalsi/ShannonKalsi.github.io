@@ -9,13 +9,14 @@ body {
 /* Header Section */
 header {
     background-color: #1E88E5; /* Blue background */
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .navbar .logo h1 {
@@ -33,6 +34,7 @@ header {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .nav-links li {
@@ -43,6 +45,7 @@ header {
     color: white;
     text-decoration: none;
     padding: 10px;
+    display: block;
 }
 
 .nav-links a:hover {
