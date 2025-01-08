@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Equipment - LabSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // JavaScript function to dynamically add new equipment fields
+        function addEquipmentField() {
+            const equipmentContainer = document.getElementById('equipment-container');
+
+            // Create a new div for the equipment
+            const newEquipmentDiv = document.createElement('div');
+            newEquipmentDiv.classList.add('equipment-entry');
+
+            // Create new fields for equipment name and description
+            newEquipmentDiv.innerHTML = `
+                <label for="equipment-name">Equipment Name:</label>
+                <input type="text" name="equipment-name[]" required>
+
+                <label for="equipment-description">Equipment Description:</label>
+                <textarea name="equipment-description[]" rows="4" required></textarea>
+            `;
+
+            // Append the new equipment div to the container
+            equipmentContainer.appendChild(newEquipmentDiv);
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
+                <h1>LabSphere</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="collaboration.html">Collaboration</a></li>
+                <li><a href="wellbeing.html">Wellbeing</a></li>
+                <li><a href="socials.html">Socials</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">My Profile</a>
+                        <a href="account.html">My Account</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="logout.html">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content for Submit Equipment -->
+    <main class="submit-equipment">
+        <h2>Submit Your Institution's Equipment</h2>
+        <p>Fill out the form below to submit the equipment available at your institution. You can add multiple pieces of equipment before submitting the form.</p>
+
+        <!-- Equipment Submission Form -->
+        <form action="submit-equipment-handler.php" method="POST">
+
+            <div id="equipment-container">
+                <!-- Dynamic equipment fields will be added here -->
+                <div class="equipment-entry">
+                    <label for="equipment-name">Equipment Name:</label>
+                    <input type="text" name="equipment-name[]" required>
+
+                    <label for="equipment-description">Equipment Description:</label>
+                    <textarea name="equipment-description[]" rows="4" required></textarea>
+                </div>
+            </div>
+
+            <button type="button" class="add-equipment-btn" onclick="addEquipmentField()">Add More Equipment</button>
+            <br><br>
+
+            <label for="institution-name">Institution Name:</label>
+            <input type="text" id="institution-name" name="institution-name" required>
+
+            <label for="contact-email">Your Contact Email:</label>
+            <input type="email" id="contact-email" name="contact-email" required>
+
+            <button type="submit" class="submit-btn">Submit Equipment</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <button onclick="window.location.href='socials.html'">Let's Chat</button>
+        </div>
+    </footer>
+
+</body>
+</html>
