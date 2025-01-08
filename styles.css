@@ -539,3 +539,123 @@ footer {
 .games-list a:hover {
     color: #D81B60;
 }
+
+/* General Page Layout */
+.socials-main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Messages Section */
+.messages-box {
+    width: 60%;
+    padding-right: 20px;
+}
+
+.chat-area {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Added border around chat area */
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.chat-message {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: flex-start;
+}
+
+.chat-message .profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-message .message p {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.private-msg-btn {
+    background-color: #1E88E5;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.private-msg-btn:hover {
+    background-color: #D81B60;
+}
+
+/* Message Input Box */
+.message-input {
+    display: flex;
+    align-items: center;
+}
+
+.message-input textarea {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.message-input button {
+    padding: 10px 20px;
+    background-color: #1E88E5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.message-input button:hover {
+    background-color: #D81B60;
+}
+
+/* Calendar Section */
+.calendar-section {
+    width: 30%;
+    height: 50vh; /* Half of the page height */
+}
+
+.calendar {
+    width: 100%;
+    height: 100%;
+}
+
+/* Games Section */
+.games-section {
+    margin-top: 20px;
+}
+
+.games-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.games-list li {
+    margin-bottom: 10px;
+}
+
+.games-list a {
+    text-decoration: none;
+    color: #1E88E5;
+}
+
+.games-list a:hover {
+    color: #D81B60;
+}
+
