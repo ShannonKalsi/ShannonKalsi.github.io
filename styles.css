@@ -49,14 +49,40 @@ header {
     background-color: #D81B60; /* Magenta on hover */
 }
 
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #1E88E5; /* Blue background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color: #D81B60; /* Magenta on hover */
+}
+
 .dropdown-content {
+    display: none;
+    position: absolute;
     background-color: #1E88E5; /* Blue background for the dropdown */
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .dropdown-content a {
     color: white;
     padding: 10px;
     display: block;
+    text-decoration: none;
 }
 
 .dropdown-content a:hover {
