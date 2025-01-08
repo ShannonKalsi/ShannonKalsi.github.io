@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Socials</title>
+    <title>Socials - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header with Navigation -->
     <header>
         <nav class="navbar">
-            <div class="logo">
+            <div class="logo-container">
                 <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
                 <h1>LabSphere</h1>
             </div>
@@ -20,7 +21,7 @@
                 <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li class="dropdown">
-                    <button class="dropbtn">Menu</button>
+                    <a href="javascript:void(0)" class="dropbtn">Menu</a>
                     <div class="dropdown-content">
                         <a href="profile.html">My Profile</a>
                         <a href="account.html">My Account</a>
@@ -32,122 +33,92 @@
         </nav>
     </header>
 
-    <main class="socials-main">
-        <!-- Messages Section -->
-        <section class="messages-box">
-            <h2>Messages</h2>
-            
-            <!-- Chat Area with Border -->
-            <div class="chat-area" id="chat-area">
-                <!-- Example Chat Messages -->
-                <div class="chat-message">
-                    <div class="profile-icon">
-                        <img src="alice.jpg" alt="Alice Newman" />
+    <!-- Main content section -->
+    <main>
+        <div class="socials-container">
+            <!-- Messaging Section -->
+            <section class="messaging" style="width: 50%; float: left; background-color: #f1f1f1; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                <h2>Messages</h2>
+                <div class="messages-box">
+                    <div class="message">
+                        <div class="profile-pic">
+                            <img src="profile1.jpg" alt="Alice Newman" />
+                        </div>
+                        <div class="message-content">
+                            <strong>Alice Newman:</strong> I'm excited to submit my paper to *Nature* next week!
+                        </div>
                     </div>
                     <div class="message">
-                        <p><strong>Alice Newman:</strong> Just signed up for the Wellbeing Seminar on mindfulness next week. Anyone else going?</p>
+                        <div class="profile-pic">
+                            <img src="profile2.jpg" alt="Joey Bloggs" />
+                        </div>
+                        <div class="message-content">
+                            <strong>Joey Bloggs:</strong> Had an amazing time at the *EACR conference*. So many great discussions!
+                        </div>
                     </div>
-                    <button class="private-msg-btn">Private Message</button>
+                    <!-- Add more messages here as needed -->
                 </div>
-                <div class="chat-message">
-                    <div class="profile-icon">
-                        <img src="joey.jpg" alt="Joey Bloggs" />
-                    </div>
-                    <div class="message">
-                        <p><strong>Joey Bloggs:</strong> I’m in! It sounds like a great chance to take a break from the lab and focus on mental health.</p>
-                    </div>
-                    <button class="private-msg-btn">Private Message</button>
-                </div>
-                <div class="chat-message">
-                    <div class="profile-icon">
-                        <img src="lisa.jpg" alt="Lisa Ray" />
-                    </div>
-                    <div class="message">
-                        <p><strong>Lisa Ray:</strong> I’ve been attending wellness workshops for a few months. They’re amazing for reducing stress!</p>
-                    </div>
-                    <button class="private-msg-btn">Private Message</button>
-                </div>
-                <div class="chat-message">
-                    <div class="profile-icon">
-                        <img src="john.jpg" alt="John Doe" />
-                    </div>
-                    <div class="message">
-                        <p><strong>John Doe:</strong> Just submitted my paper to Nature! Feeling optimistic. 🙌</p>
-                    </div>
-                    <button class="private-msg-btn">Private Message</button>
-                </div>
-                <div class="chat-message">
-                    <div class="profile-icon">
-                        <img src="emily.jpg" alt="Emily White" />
-                    </div>
-                    <div class="message">
-                        <p><strong>Emily White:</strong> I got selected for a poster presentation at the upcoming EACR conference! So excited. 😄</p>
-                    </div>
-                    <button class="private-msg-btn">Private Message</button>
-                </div>
-            </div>
 
-            <!-- Input Box for New Messages -->
-            <div class="message-input">
-                <textarea id="message-input" placeholder="Send a message..."></textarea>
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </section>
+                <!-- Submit Message Form -->
+                <textarea id="message-input" placeholder="Write a message..." rows="4" cols="50"></textarea><br>
+                <button onclick="submitMessage()">Send</button>
+            </section>
 
-        <!-- Calendar Section (Right Side, 50% Width, 50% Vertical Space) -->
-        <section class="calendar-section">
-            <h2>Upcoming Events</h2>
-            <!-- Calendar (with fake seminar event) -->
-            <div class="calendar" id="calendar">
-                <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=America%2FNew_York" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
-            </div>
-        </section>
+            <!-- Calendar Section -->
+            <section class="calendar" style="width: 50%; float: right; background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                <h2>Upcoming Events</h2>
+                <div class="calendar-container">
+                    <iframe src="https://calendar.google.com/calendar/embed?src=yourcalendarid&ctz=Europe%2FDublin" style="border: 0; width: 100%; height: 100%; border-radius: 8px;"></iframe>
+                </div>
+                <div class="events-list">
+                    <ul>
+                        <li><strong>Wellness Seminar</strong> - Monday, 10 AM</li>
+                        <li><strong>Thesis Writing Seminar</strong> - Wednesday, 2 PM</li>
+                        <li><strong>Grant Writing Deadline</strong> - Thursday, 5 PM</li>
+                        <li><strong>Abstract Submission Deadline</strong> - Friday, 4 PM</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
 
-        <section class="games-section">
-            <h2>Games for 21+ Participants</h2>
-            <ul class="games-list">
-                <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
-                <li><a href="https://www.krunker.io" target="_blank">Krunker.io (Online FPS)</a></li>
-                <li><a href="https://skribbl.io/" target="_blank">Skribbl.io (Online Drawing Game)</a></li>
-                <li><a href="https://pogo.com" target="_blank">Pogo (Casual Online Games)</a></li>
-                <li><a href="https://jackboxgames.com" target="_blank">Jackbox Games (Party Games)</a></li>
+        <!-- Online Games Section -->
+        <section class="online-games" style="clear: both; margin-top: 40px; padding: 20px; background-color: #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+            <h2>Online Games</h2>
+            <ul>
+                <li><span class="game-controller">&#x1F3AE;</span> <a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
+                <li><span class="game-controller">&#x1F3AE;</span> <a href="https://www.play.battle.net/en-us/" target="_blank">Hearthstone</a></li>
+                <li><span class="game-controller">&#x1F3AE;</span> <a href="https://skribbl.io" target="_blank">Skribbl.io</a></li>
+                <li><span class="game-controller">&#x1F3AE;</span> <a href="https://www.agame.com/game/tetris" target="_blank">Tetris</a></li>
             </ul>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 LabSphere - Cancer Research Collaboration</p>
+        <p>Let's Chat</p>
+        <a href="socials.html">Go to Socials</a>
     </footer>
 
-    <script src="script.js"></script>
     <script>
-        // Simulate sending a message to the chat
-        function sendMessage() {
-            const messageInput = document.getElementById("message-input");
-            const chatArea = document.getElementById("chat-area");
-            
-            // Create new message element
-            const newMessage = document.createElement("div");
-            newMessage.classList.add("chat-message");
-
-            const profileIcon = document.createElement("div");
-            profileIcon.classList.add("profile-icon");
-            profileIcon.innerHTML = `<img src="user-placeholder.jpg" alt="Your Profile" />`;
-
-            const messageContent = document.createElement("div");
-            messageContent.classList.add("message");
-            messageContent.innerHTML = `<p><strong>Your Name:</strong> ${messageInput.value}</p>`;
-
-            newMessage.appendChild(profileIcon);
-            newMessage.appendChild(messageContent);
-
-            // Append the new message to the chat area
-            chatArea.appendChild(newMessage);
-
-            // Clear the input box
-            messageInput.value = "";
+        // Function to submit a message
+        function submitMessage() {
+            const messageInput = document.getElementById("message-input").value;
+            if (messageInput) {
+                const messageBox = document.querySelector(".messages-box");
+                const newMessage = document.createElement("div");
+                newMessage.classList.add("message");
+                newMessage.innerHTML = `
+                    <div class="profile-pic">
+                        <img src="profile3.jpg" alt="New User" />
+                    </div>
+                    <div class="message-content">
+                        <strong>New User:</strong> ${messageInput}
+                    </div>
+                `;
+                messageBox.appendChild(newMessage);
+                document.getElementById("message-input").value = ''; // Clear the input
+            }
         }
     </script>
 </body>
 </html>
-
