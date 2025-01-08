@@ -331,3 +331,51 @@ footer {
 .online-games .game-controller {
     margin-right: 10px;
 }
+
+/* Profile Page Styling */
+.profile-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info, .research-interests, .publications, .skills {
+    margin-bottom: 30px;
+}
+
+.profile-info h2 {
+    font-size: 2em;
+    color: #1E88E5;
+}
+
+h3 {
+    color: #D81B60;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #1E88E5;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #D81B60;
+}
