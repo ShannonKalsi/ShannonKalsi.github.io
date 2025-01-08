@@ -10,6 +10,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
+                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
                 <h1>LabSphere</h1>
             </div>
             <ul class="nav-links">
@@ -31,38 +32,64 @@
         </nav>
     </header>
 
-    <main class="socials">
-        <section class="calendar">
-            <h2>Upcoming Events</h2>
-            <div class="calendar-container">
-                <!-- Embed a simple calendar or an event schedule here -->
-                <iframe src="https://www.google.com/calendar/embed?src=your-calendar-id%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-            </div>
-        </section>
-
-        <section class="messaging">
-            <h2>Messaging</h2>
-            <div class="messaging-app">
-                <p><strong>LabSphere Chat</strong></p>
-                <div class="message-box">
-                    <div class="message"><strong>Alice Newman:</strong> Just submitted my paper to Nature! 🎉</div>
-                    <div class="message"><strong>Joey Bloggs:</strong> Attending the EACR conference! Such great talks today!</div>
+    <main class="socials-main">
+        <section class="chat-box">
+            <h2>Collaborative Conversations</h2>
+            
+            <!-- Chat Area -->
+            <div class="chat-area" id="chat-area">
+                <!-- Example Chat Messages -->
+                <div class="chat-message">
+                    <div class="profile-icon">
+                        <img src="alice.jpg" alt="Alice Newman" />
+                    </div>
+                    <div class="message">
+                        <p><strong>Alice Newman:</strong> Just signed up for the Wellbeing Seminar on mindfulness next week. Anyone else going?</p>
+                    </div>
                 </div>
-                <textarea placeholder="Send a message..." rows="3"></textarea>
-                <button class="send-btn">Send</button>
+                <div class="chat-message">
+                    <div class="profile-icon">
+                        <img src="joey.jpg" alt="Joey Bloggs" />
+                    </div>
+                    <div class="message">
+                        <p><strong>Joey Bloggs:</strong> I’m in! It sounds like a great chance to take a break from the lab and focus on mental health.</p>
+                    </div>
+                </div>
+                <div class="chat-message">
+                    <div class="profile-icon">
+                        <img src="lisa.jpg" alt="Lisa Ray" />
+                    </div>
+                    <div class="message">
+                        <p><strong>Lisa Ray:</strong> I’ve been attending wellness workshops for a few months. They’re amazing for reducing stress!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Box for New Messages -->
+            <div class="message-input">
+                <textarea id="message-input" placeholder="Send a message..."></textarea>
+                <button onclick="sendMessage()">Send</button>
             </div>
         </section>
 
-        <section class="games">
-            <h2>Games</h2>
-            <div class="games-section">
-                <p>Take a break and play some games with your colleagues!</p>
-                <ul>
-                    <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanities</a></li>
-                    <li><a href="https://www.poki.com/en/g/krunker-io" target="_blank">Krunker.io - Online FPS Game</a></li>
-                    <li><a href="https://www.coolmathgames.com/" target="_blank">Cool Math Games</a></li>
-                </ul>
+        <!-- Calendar Section (Right Side) -->
+        <section class="calendar-section">
+            <h2>Upcoming Events</h2>
+            <!-- Calendar (Resized by a third) -->
+            <div class="calendar" id="calendar">
+                <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=America%2FNew_York" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
             </div>
+        </section>
+
+        <section class="games-section">
+            <h2>Games for 21+ Participants</h2>
+            <ul class="games-list">
+                <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
+                <li><a href="https://www.krunker.io" target="_blank">Krunker.io (Online FPS)</a></li>
+                <li><a href="https://skribbl.io/" target="_blank">Skribbl.io (Online Drawing Game)</a></li>
+                <li><a href="https://pogo.com" target="_blank">Pogo (Casual Online Games)</a></li>
+                <li><a href="https://jackboxgames.com" target="_blank">Jackbox Games (Party Games)</a></li>
+            </ul>
         </section>
     </main>
 
@@ -71,6 +98,33 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Simulate sending a message to the chat
+        function sendMessage() {
+            const messageInput = document.getElementById("message-input");
+            const chatArea = document.getElementById("chat-area");
+            
+            // Create new message element
+            const newMessage = document.createElement("div");
+            newMessage.classList.add("chat-message");
+
+            const profileIcon = document.createElement("div");
+            profileIcon.classList.add("profile-icon");
+            profileIcon.innerHTML = `<img src="user-placeholder.jpg" alt="Your Profile" />`;
+
+            const messageContent = document.createElement("div");
+            messageContent.classList.add("message");
+            messageContent.innerHTML = `<p><strong>Your Name:</strong> ${messageInput.value}</p>`;
+
+            newMessage.appendChild(profileIcon);
+            newMessage.appendChild(messageContent);
+
+            // Append the new message to the chat area
+            chatArea.appendChild(newMessage);
+
+            // Clear the input box
+            messageInput.value = "";
+        }
+    </script>
 </body>
 </html>
-
