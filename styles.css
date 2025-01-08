@@ -246,3 +246,37 @@ footer {
 .industry-collaboration a:hover {
     color: #D81B60;
 }
+
+/* Wellbeing Sections */
+.five-ways, .health-wellness, .mental-health-resources, .additional-tips {
+    margin-bottom: 30px;
+}
+
+.five-ways ul, .health-wellness ul, .mental-health-resources ul, .additional-tips ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.five-ways li, .health-wellness li, .mental-health-resources li, .additional-tips li {
+    margin-bottom: 10px;
+}
+
+.five-ways a, .health-wellness a, .mental-health-resources a, .additional-tips a {
+    color: #1E88E5;
+    text-decoration: none;
+}
+
+.five-ways a:hover, .health-wellness a:hover, .mental-health-resources a:hover, .additional-tips a:hover {
+    color: #D81B60;
+}
+
+/* Wellbeing Resources PDF links */
+.health-wellness a {
+    font-weight: bold;
+    color: #1E88E5;
+}
+
+.health-wellness a:hover {
+    color: #D81B60;
+}
+
