@@ -33,8 +33,9 @@
     </header>
 
     <main class="socials-main">
-        <section class="chat-box">
-            <h2>Collaborative Conversations</h2>
+        <!-- Messages Section -->
+        <section class="messages-box">
+            <h2>Messages</h2>
             
             <!-- Chat Area -->
             <div class="chat-area" id="chat-area">
@@ -46,6 +47,7 @@
                     <div class="message">
                         <p><strong>Alice Newman:</strong> Just signed up for the Wellbeing Seminar on mindfulness next week. Anyone else going?</p>
                     </div>
+                    <button class="private-msg-btn">Private Message</button>
                 </div>
                 <div class="chat-message">
                     <div class="profile-icon">
@@ -54,6 +56,7 @@
                     <div class="message">
                         <p><strong>Joey Bloggs:</strong> I’m in! It sounds like a great chance to take a break from the lab and focus on mental health.</p>
                     </div>
+                    <button class="private-msg-btn">Private Message</button>
                 </div>
                 <div class="chat-message">
                     <div class="profile-icon">
@@ -62,6 +65,25 @@
                     <div class="message">
                         <p><strong>Lisa Ray:</strong> I’ve been attending wellness workshops for a few months. They’re amazing for reducing stress!</p>
                     </div>
+                    <button class="private-msg-btn">Private Message</button>
+                </div>
+                <div class="chat-message">
+                    <div class="profile-icon">
+                        <img src="john.jpg" alt="John Doe" />
+                    </div>
+                    <div class="message">
+                        <p><strong>John Doe:</strong> Just submitted my paper to Nature! Feeling optimistic. 🙌</p>
+                    </div>
+                    <button class="private-msg-btn">Private Message</button>
+                </div>
+                <div class="chat-message">
+                    <div class="profile-icon">
+                        <img src="emily.jpg" alt="Emily White" />
+                    </div>
+                    <div class="message">
+                        <p><strong>Emily White:</strong> I got selected for a poster presentation at the upcoming EACR conference! So excited. 😄</p>
+                    </div>
+                    <button class="private-msg-btn">Private Message</button>
                 </div>
             </div>
 
@@ -72,10 +94,10 @@
             </div>
         </section>
 
-        <!-- Calendar Section (Right Side) -->
+        <!-- Calendar Section (Right Side, 50% Vertical Space) -->
         <section class="calendar-section">
             <h2>Upcoming Events</h2>
-            <!-- Calendar (Resized by a third) -->
+            <!-- Calendar (takes up half of vertical space) -->
             <div class="calendar" id="calendar">
                 <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=America%2FNew_York" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
             </div>
