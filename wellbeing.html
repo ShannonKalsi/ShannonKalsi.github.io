@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Wellbeing</title>
+    <title>Wellbeing - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header with Navigation -->
     <header>
         <nav class="navbar">
-            <div class="logo">
+            <div class="logo-container">
+                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
                 <h1>LabSphere</h1>
             </div>
             <ul class="nav-links">
@@ -19,7 +21,7 @@
                 <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li class="dropdown">
-                    <button class="dropbtn">Menu</button>
+                    <a href="javascript:void(0)" class="dropbtn">Menu</a>
                     <div class="dropdown-content">
                         <a href="profile.html">My Profile</a>
                         <a href="account.html">My Account</a>
@@ -31,32 +33,64 @@
         </nav>
     </header>
 
-    <main class="wellbeing">
-        <section class="health-resources">
-            <h2>Health and Wellness Resources</h2>
-            <p>Explore resources for maintaining a healthy work-life balance.</p>
+    <!-- Main content section -->
+    <main>
+        <!-- Five Ways to Wellbeing -->
+        <section class="five-ways">
+            <h2>Five Ways to Wellbeing</h2>
+            <p>Improving your wellbeing can make a big difference to your mental health. These are the five evidence-based steps to improve your mental wellbeing:</p>
             <ul>
-                <li><a href="#">Holiday Time Sheet</a></li>
-                <li><a href="#">Lab Timesheet Template</a></li>
-                <li><a href="#">Healthy Eating Guides for Busy Scientists</a></li>
+                <li><strong>Connect:</strong> Build connections with the people around you. Social relationships are crucial for mental wellbeing.</li>
+                <li><strong>Be Active:</strong> Physical activity can boost your mood and improve your energy levels. Regular exercise helps relieve stress.</li>
+                <li><strong>Take Notice:</strong> Be mindful of the world around you. Practicing mindfulness helps to relieve stress and improve concentration.</li>
+                <li><strong>Keep Learning:</strong> Learning something new, whether it’s a skill or a hobby, can boost your self-esteem and provide purpose.</li>
+                <li><strong>Give:</strong> Helping others and giving back to your community can increase feelings of happiness and satisfaction.</li>
+            </ul>
+            <p>For more details, visit <a href="https://www.mentalhealthireland.ie/five-ways-to-wellbeing/" target="_blank">Mental Health Ireland's Five Ways to Wellbeing</a> page.</p>
+        </section>
+
+        <!-- Health and Wellness Resources -->
+        <section class="health-wellness">
+            <h2>Health and Wellness Resources</h2>
+            <p>As a post-doc or PhD student, managing your physical and mental health is crucial to your success. Here are some tailored resources:</p>
+            <ul>
+                <li><a href="path/to/short-guide-recovery.pdf" target="_blank">A Short Co-produced Guide to Recovery in Mental Health</a></li>
+                <li><a href="path/to/anxiety-booklet.pdf" target="_blank">Anxiety Booklet</a></li>
+                <li><a href="path/to/stress-booklet.pdf" target="_blank">Stress Booklet</a></li>
             </ul>
         </section>
 
-        <section class="mental-health">
-            <h2>Mental Health Resources</h2>
-            <p>Access support and strategies for mental well-being during your research journey.</p>
+        <!-- Mental Health Resources -->
+        <section class="mental-health-resources">
+            <h2>Mental Health Resources for Post-Docs and PhD Students</h2>
+            <p>Being a researcher can come with a unique set of challenges. It’s important to recognize and take care of your mental health. Here are some resources specifically aimed at supporting researchers and academics:</p>
             <ul>
-                <li><a href="#">Mindfulness Techniques for Stress Reduction</a></li>
-                <li><a href="#">Free Mental Health Support Services</a></li>
-                <li><a href="#">Building Resilience in High-Pressure Environments</a></li>
+                <li><a href="https://www.samaritans.org/ireland/" target="_blank">Samaritans Ireland</a> - Providing emotional support for those who are experiencing distress.</li>
+                <li><a href="https://www.mentalhealthireland.ie/" target="_blank">Mental Health Ireland</a> - National mental health charity providing information, support, and services for those in need.</li>
+                <li><a href="https://www.nuigalway.ie/studentservices/counselling/mentalhealthresources/" target="_blank">NUI Galway Mental Health Resources</a> - Specialized mental health services for students and researchers.</li>
+                <li><a href="https://www.psychologicalsociety.ie/" target="_blank">Psychological Society of Ireland</a> - Supporting mental health professionals, including services for researchers and academics.</li>
             </ul>
         </section>
+
+        <!-- Additional Wellbeing Tips for Researchers -->
+        <section class="additional-tips">
+            <h2>Additional Wellbeing Tips for Researchers</h2>
+            <p>As a researcher, you may often be working under pressure with deadlines, experiments, and academic goals. Here are some additional tips to ensure you stay well:</p>
+            <ul>
+                <li>Set boundaries between work and personal life to avoid burnout.</li>
+                <li>Take regular breaks throughout your workday.</li>
+                <li>Develop a support system, including fellow researchers or mentors.</li>
+                <li>Make time for social activities to maintain a work-life balance.</li>
+                <li>Engage in mindfulness practices to relieve stress.</li>
+            </ul>
+        </section>
+
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 LabSphere - Cancer Research Collaboration</p>
+        <p>Let's Chat</p>
+        <a href="socials.html">Go to Socials</a>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
