@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Header with Navigation -->
     <header>
         <nav class="navbar">
             <div class="logo">
+                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
                 <h1>LabSphere</h1>
             </div>
             <ul class="nav-links">
@@ -19,7 +22,7 @@
                 <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li class="dropdown">
-                    <button class="dropbtn">Menu</button>
+                    <a href="javascript:void(0)" class="dropbtn">Menu</a>
                     <div class="dropdown-content">
                         <a href="profile.html">My Profile</a>
                         <a href="account.html">My Account</a>
@@ -31,42 +34,82 @@
         </nav>
     </header>
 
+    <!-- Main Content for Resources -->
     <main class="resources">
+
+        <!-- Protocols Section -->
         <section class="protocols">
-            <h2>Research Protocols</h2>
-            <p>Explore a wide range of protocols for different experiments.</p>
+            <h2>Protocols</h2>
+            <p>Explore detailed research protocols for various experimental techniques used in cancer research.</p>
             <ul>
-                <li><a href="#">Cancer Cell Culturing Protocol</a></li>
-                <li><a href="#">Western Blotting Protocol</a></li>
-                <li><a href="#">PCR Protocols for Gene Expression Analysis</a></li>
+                <li><a href="cell-culture-protocol.html" target="_blank">Cell Culture Protocol</a></li>
+                <li><a href="western-blotting-protocol.html" target="_blank">Western Blotting Protocol</a></li>
+                <li><a href="sirna-transfection-protocol.html" target="_blank">siRNA Transfection Protocol</a></li>
+                <li><a href="pcr-protocol.html" target="_blank">PCR Protocol</a></li>
             </ul>
         </section>
 
+        <!-- Available Equipment Section -->
         <section class="equipment">
             <h2>Available Equipment</h2>
-            <p>Find a list of equipment available at universities and research centers.</p>
+            <p>This section provides links to equipment available at various institutions. Each institution shares the tools available for researchers.</p>
             <ul>
-                <li><a href="#">Mass Spectrometer at University of ABC</a></li>
-                <li><a href="#">Fluorescence Microscope at University XYZ</a></li>
-                <li><a href="#">Automated Liquid Handler at University DEF</a></li>
+                <li><a href="royal-college-of-surgeons-equipment.html" target="_blank">Royal College of Surgeons in Ireland Equipment List</a></li>
+                <li><a href="trinity-college-dublin-equipment.html" target="_blank">Trinity College Dublin Equipment List</a></li>
+            </ul>
+            <button onclick="window.location.href='submit-equipment.html'">Submit Your Institution's Equipment</button>
+        </section>
+
+        <!-- Grants Section -->
+        <section class="grants">
+            <h2>Grants</h2>
+            <p>Find information on grants available for travel, research resources, and academic support.</p>
+
+            <!-- Travel Grants Subsection -->
+            <h3>Travel Grants</h3>
+            <p>Apply for travel grants to attend conferences or international events. Here are some available travel bursaries:</p>
+            <ul>
+                <li><a href="eacr-travel-bursary.html" target="_blank">EACR Travel Bursary</a></li>
+                <li><a href="conference-travel-grant.html" target="_blank">International Cancer Conference Travel Grant</a></li>
+            </ul>
+
+            <!-- Resource Grants and Bursaries Subsection -->
+            <h3>Resource Grants and Bursaries</h3>
+            <p>There are several grants available for resources and for PhD/Post-Doc researchers:</p>
+            <ul>
+                <li><a href="phd-grant.html" target="_blank">PhD Research Grant</a></li>
+                <li><a href="postdoc-bursary.html" target="_blank">Post-Doctoral Bursary for Cancer Research</a></li>
+                <li><a href="research-resource-grant.html" target="_blank">Research Resource Grant</a></li>
             </ul>
         </section>
 
-        <section class="grants">
-            <h2>Travel and Conference Grants</h2>
-            <p>Explore grants available for travel, conferences, and research resources.</p>
+        <!-- Visa/Immigration Section -->
+        <section class="visa">
+            <h2>Visa & Immigration</h2>
+            <p>Information for researchers and students immigrating to Ireland, including how to apply for a visa and the immigration process.</p>
             <ul>
-                <li><a href="#">National Cancer Research Fund - Travel Grant</a></li>
-                <li><a href="#">EACR Conference Travel Bursaries</a></li>
-                <li><a href="#">Global Cancer Research Grants</a></li>
+                <li><a href="visa-application.html" target="_blank">Visa Application Process</a></li>
+                <li><a href="immigration-office.html" target="_blank">Ireland Immigration Office</a></li>
             </ul>
         </section>
+
+        <!-- Housing Section -->
+        <section class="housing">
+            <h2>Housing in Ireland</h2>
+            <p>Find information on finding housing in Ireland, including rental websites and resources for international researchers.</p>
+            <ul>
+                <li><a href="https://www.daft.ie" target="_blank">Daft.ie - Housing Listings in Ireland</a></li>
+            </ul>
+        </section>
+
     </main>
 
+    <!-- Footer with 'Let's Chat' Box -->
     <footer>
-        <p>&copy; 2025 LabSphere - Cancer Research Collaboration</p>
+        <div class="footer-content">
+            <button onclick="window.location.href='socials.html'">Let's Chat</button>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
