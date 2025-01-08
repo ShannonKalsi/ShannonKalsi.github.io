@@ -16,50 +16,53 @@ header {
     padding: 20px;
     text-align: center;
 }
-/* Navigation dropdown menu styles */
-.navbar .dropdown {
-    position: relative;
-    display: inline-block;
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navbar .dropbtn {
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a:hover {
+    background-color: #D81B60;
+    border-radius: 5px;
+}
+
+.dropbtn {
     background-color: #1E88E5;
     color: white;
-    padding: 10px 20px;
     border: none;
+    padding: 10px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-.navbar .dropdown-content {
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
-    background-color: #1E88E5;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
-.navbar .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
+.dropdown:hover .dropdown-content {
     display: block;
 }
-
-.navbar .dropdown-content a:hover {
-    background-color: #D81B60; /* Magenta hover */
-}
-
-/* Show the dropdown menu when hovering over the dropbtn */
-.navbar .dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.navbar .dropdown:hover .dropbtn {
-    background-color: #D81B60; /* Magenta background for the button on hover */
-}
-
 
 .dropdown-content a {
     color: #1E88E5;
@@ -112,252 +115,4 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-}
-
-.socials {
-    padding: 20px;
-}
-
-.calendar,
-.messaging,
-.games {
-    margin-bottom: 40px;
-}
-
-h2 {
-    color: #1E88E5;
-    margin-bottom: 10px;
-}
-
-.calendar-container iframe {
-    width: 100%;
-    max-width: 800px;
-    border: none;
-}
-
-.messaging-app {
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #f9f9f9;
-    margin-bottom: 20px;
-}
-
-.message-box {
-    height: 200px;
-    overflow-y: auto;
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-
-.message {
-    margin-bottom: 10px;
-}
-
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-
-.send-btn {
-    background-color: #1E88E5;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-.send-btn:hover {
-    background-color: #D81B60;
-}
-
-.games-section ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.games-section li {
-    margin: 10px 0;
-}
-
-.games-section a {
-    color: #1E88E5;
-    text-decoration: none;
-}
-
-.games-section a:hover {
-    color: #D81B60;
-}
-
-/* Post Write Box Styles */
-.post-write-box {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #F1F1F1;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.post-write-box .profile-icon img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.post-write-box .write-content {
-    flex: 1;
-}
-
-.post-write-box textarea {
-    width: 100%;
-    height: 80px;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: none;
-}
-
-.post-write-box .post-button {
-    background-color: #1E88E5;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 8px;
-}
-
-.post-write-box .post-button:hover {
-    background-color: #D81B60; /* Magenta hover */
-}
-
-/* Newsfeed Post Styles */
-.newsfeed .post {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.newsfeed .post .profile-icon img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.newsfeed .post .post-content {
-    flex: 1;
-}
-
-.newsfeed .post .post-content p {
-    margin: 0;
-    font-size: 14px;
-}
-
-/* General Header and Navbar Styling */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FFFFFF;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.navbar .logo {
-    display: flex;
-    align-items: center;
-}
-
-.navbar .logo-img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-
-.navbar h1 {
-    font-size: 24px;
-    color: #1E88E5;
-    margin: 0;
-}
-
-/* Navigation Links Styling */
-.nav-links {
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-links li {
-    margin-right: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    font-size: 16px;
-    color: #1E88E5;
-    padding: 10px;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #D81B60;
-}
-
-/* Dropdown Menu Styles */
-.navbar .dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.navbar .dropbtn {
-    background-color: #1E88E5;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.navbar .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #1E88E5;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.navbar .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.navbar .dropdown-content a:hover {
-    background-color: #D81B60; /* Magenta hover */
-}
-
-/* Show the dropdown menu when hovering over the dropbtn */
-.navbar .dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.navbar .dropdown:hover .dropbtn {
-    background-color: #D81B60; /* Magenta background for the button on hover */
 }
