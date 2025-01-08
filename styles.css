@@ -659,3 +659,9 @@ footer {
     color: #D81B60;
 }
 
+/* Profile Image in Chat and Posts */
+.profile-icon img {
+    height: 1cm; /* Set the height to 1cm */
+    width: auto; /* Maintain the aspect ratio */
+    border-radius: 50%; /* Keep circular appearance */
+}
