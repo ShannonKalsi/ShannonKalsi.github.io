@@ -9,7 +9,7 @@ body {
 /* Header Section */
 header {
     background-color: #1E88E5; /* Blue background */
-    padding: 5px 20px;
+    padding: 10px 20px;
 }
 
 .navbar {
@@ -34,6 +34,7 @@ header {
     padding: 0;
     margin: 0;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -63,6 +64,7 @@ header {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .dropbtn:hover {
