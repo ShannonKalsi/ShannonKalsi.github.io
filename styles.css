@@ -191,3 +191,78 @@ textarea {
 .games-section a:hover {
     color: #D81B60;
 }
+
+/* Post Write Box Styles */
+.post-write-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #F1F1F1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-write-box .profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-write-box .write-content {
+    flex: 1;
+}
+
+.post-write-box textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+.post-write-box .post-button {
+    background-color: #1E88E5;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.post-write-box .post-button:hover {
+    background-color: #D81B60; /* Magenta hover */
+}
+
+/* Newsfeed Post Styles */
+.newsfeed .post {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.newsfeed .post .profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.newsfeed .post .post-content {
+    flex: 1;
+}
+
+.newsfeed .post .post-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
