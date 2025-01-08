@@ -116,3 +116,81 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
+.socials {
+    padding: 20px;
+}
+
+.calendar,
+.messaging,
+.games {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #1E88E5;
+    margin-bottom: 10px;
+}
+
+.calendar-container iframe {
+    width: 100%;
+    max-width: 800px;
+    border: none;
+}
+
+.messaging-app {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+.message-box {
+    height: 200px;
+    overflow-y: auto;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.send-btn {
+    background-color: #1E88E5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background-color: #D81B60;
+}
+
+.games-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.games-section li {
+    margin: 10px 0;
+}
+
+.games-section a {
+    color: #1E88E5;
+    text-decoration: none;
+}
+
+.games-section a:hover {
+    color: #D81B60;
+}
