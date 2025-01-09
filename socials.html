@@ -6,28 +6,93 @@
     <title>LabSphere - Socials</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Calendar styles */
-        .calendar-container {
+        /* Layout and styling for the page */
+        body {
+            font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            width: 50%;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #1E88E5;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
             padding: 20px;
         }
+
+        /* Chat Container */
+        .chat-container {
+            width: 45%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .message {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .message img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .message-info {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            padding: 10px;
+            max-width: 80%;
+        }
+
+        .message-info p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Calendar Container */
+        .calendar-container {
+            width: 45%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         .calendar {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 5px;
             text-align: center;
         }
+
         .calendar-day {
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
             position: relative;
         }
+
         .calendar-day span {
             font-weight: bold;
         }
+
+        /* Event Styles */
         .event, .team-check-in, .wellbeing-seminar {
             margin-top: 5px;
             font-size: 12px;
@@ -35,26 +100,76 @@
             padding: 5px;
             border-radius: 3px;
         }
+
         .event {
-            background-color: #004D40;
+            background-color: #D81B60; /* Magenta for deadlines */
         }
+
         .team-check-in {
-            background-color: #FFC107;
+            background-color: #FFC107; /* Yellow for team check-ins */
         }
+
         .wellbeing-seminar {
-            background-color: #D81B60;
+            background-color: #4CAF50; /* Green for wellbeing seminars */
         }
+
         .calendar-header {
             display: flex;
             justify-content: space-between;
             margin-bottom: 10px;
         }
+
         .calendar-header button {
             background-color: #1E88E5;
             color: white;
             padding: 5px 15px;
             border: none;
             cursor: pointer;
+        }
+
+        /* New Post Section */
+        .new-post {
+            margin-bottom: 20px;
+        }
+
+        .new-post textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .new-post button {
+            background-color: #1E88E5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Online Games Section */
+        section h2 {
+            color: #333;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        section ul li {
+            padding: 8px 0;
+        }
+
+        footer {
+            background-color: #1E88E5;
+            color: white;
+            text-align: center;
+            padding: 10px;
         }
     </style>
 </head>
@@ -85,40 +200,9 @@
         </nav>
     </header>
 
-    <!-- Main content section -->
     <main>
-        <section class="newsfeed">
-            <!-- New Post Section -->
-            <div class="new-post">
-                <textarea id="new-post-input" placeholder="What's happening in your research today?"></textarea>
-                <button onclick="postContent()">Post</button>
-            </div>
-
-            <!-- Example posts -->
-            <div class="post">
-                <div class="post-header">
-                    <img src="alice.jpg" alt="Alice's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>Alice</strong>
-                        <p>Just had my paper published in <i>Nature</i> Check it out!</p>
-                    </div>
-                </div>
-                <button class="like-button">Like</button>
-            </div>
-            <!-- New post from John Smith -->
-            <div class="post">
-                <div class="post-header">
-                    <img src="john.jpg" alt="John's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>John</strong>
-                        <p>Just wrapped up a great research project on <i>workplace mental health</i>. It's always rewarding to see your work making a difference!</p>
-                    </div>
-                </div>
-                <button class="like-button">Like</button>
-            </div>
-        </section>
-
         <div class="container">
+            <!-- Chat Section -->
             <div class="chat-container">
                 <!-- Messaging Chat -->
                 <div class="chat">
@@ -146,7 +230,7 @@
                 </div>
             </div>
 
-            <!-- Calendar -->
+            <!-- Calendar Section -->
             <div class="calendar-container">
                 <div class="calendar-header">
                     <button onclick="changeMonth(-1)">Previous</button>
@@ -157,15 +241,21 @@
             </div>
         </div>
 
+        <!-- New Post Section -->
+        <div class="new-post">
+            <textarea id="new-post-input" placeholder="What's happening in your research today?"></textarea>
+            <button onclick="postContent()">Post</button>
+        </div>
+
         <!-- Online Games Section -->
         <section>
             <h2>Online Games</h2>
             <p>Join your colleagues online for fun!</p>
             <ul>
-                <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
-                <li><a href="https://boardgamearena.com/" target="_blank">Board Game Arena</a></li>
-                <li><a href="https://www.pictionary.com/play" target="_blank">Pictionary Online</a></li>
-                <li><a href="https://chess.com/play" target="_blank">Chess Online</a></li>
+                <li>🎮 <a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
+                <li>🎮 <a href="https://boardgamearena.com/" target="_blank">Board Game Arena</a></li>
+                <li>🎮 <a href="https://www.pictionary.com/play" target="_blank">Pictionary Online</a></li>
+                <li>🎮 <a href="https://chess.com/play" target="_blank">Chess Online</a></li>
             </ul>
         </section>
     </main>
@@ -183,7 +273,7 @@
             31: 'Wellbeing Seminar'
         };
 
-        let currentMonth = new Date().getMonth(); // 0-11
+        let currentMonth = new Date().getMonth();
         let currentYear = new Date().getFullYear();
 
         function renderCalendar() {
@@ -211,21 +301,30 @@
                 calendar.appendChild(emptyDay);
             }
 
-            // Days of the month
+            // Days of the month (Monday to Friday only)
             for (let day = 1; day <= lastDay.getDate(); day++) {
                 const dayElement = document.createElement('div');
-                dayElement.classList.add('calendar-day');
-                dayElement.innerHTML = `<span>${day}</span>`;
-                
-                // Add event if there is one
-                if (events[day]) {
-                    const eventElement = document.createElement('div');
-                    eventElement.classList.add('event');
-                    eventElement.textContent = events[day];
-                    dayElement.appendChild(eventElement);
-                }
+                const dayOfWeek = new Date(currentYear, currentMonth, day).getDay();
 
-                calendar.appendChild(dayElement);
+                // Only display events from Monday to Friday
+                if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+                    dayElement.classList.add('calendar-day');
+                    dayElement.innerHTML = `<span>${day}</span>`;
+
+                    if (events[day]) {
+                        const eventElement = document.createElement('div');
+                        if (events[day].includes("Deadline")) {
+                            eventElement.classList.add('event');
+                        } else if (events[day].includes("Seminar")) {
+                            eventElement.classList.add('wellbeing-seminar');
+                        } else if (events[day].includes("Team Check-In")) {
+                            eventElement.classList.add('team-check-in');
+                        }
+                        eventElement.textContent = events[day];
+                        dayElement.appendChild(eventElement);
+                    }
+                    calendar.appendChild(dayElement);
+                }
             }
         }
 
@@ -243,9 +342,5 @@
 
         renderCalendar();
     </script>
-    <!-- Footer with Let's Chat -->
-    <footer>
-        <a href="socials.html">Let's Chat</a>
-    </footer>
 </body>
 </html>
