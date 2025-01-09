@@ -16,7 +16,6 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <!-- Moved User Menu to follow Home -->
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">User Menu</a>
                     <div class="dropdown-content">
@@ -49,11 +48,10 @@
                     <img src="alice.jpg" alt="Alice's Profile" class="profile-pic">
                     <div class="post-info">
                         <strong>Alice Newman</strong>
-                        <p>Just had my paper published in <i>Nature</i> Check it out!</p>
+                        <p>Just had my paper published in <i>Nature</i>! Check it out! 🎉</p>
                     </div>
                 </div>
-                <!-- Added id="like-button-1" to track the like button -->
-                <button id="like-button-1" class="like-button">Like</button>
+                <button class="like-button">👍 Like</button>
             </div>
 
             <div class="post">
@@ -61,10 +59,10 @@
                     <img src="joey.jpg" alt="Joey's Profile" class="profile-pic">
                     <div class="post-info">
                         <strong>Joey Bloggs</strong>
-                        <p>Attending the <i>EACR conference.</i> Having a great time at the conference! Met a lot of amazing researchers!</p>
+                        <p>Attending the <i>EACR conference</i> 📅. Having a great time! Met amazing researchers! 👨‍🔬</p>
                     </div>
                 </div>
-                <button class="like-button">Like</button>
+                <button class="like-button">👍 Like</button>
             </div>
 
             <div class="post">
@@ -72,10 +70,10 @@
                     <img src="lisa.jpg" alt="Lisa's Profile" class="profile-pic">
                     <div class="post-info">
                         <strong>Lisa Brown</strong>
-                        <p>I was selected to give an oral presentation at the <i>EMBL-EBI Annual Conference</i> Can not wait!</p>
+                        <p>I was selected to give an oral presentation at the <i>EMBL-EBI Annual Conference</i> 🗣️ Can not wait!</p>
                     </div>
                 </div>
-                <button class="like-button">Like</button>
+                <button class="like-button">👍 Like</button>
             </div>
 
             <div class="post">
@@ -83,10 +81,10 @@
                     <img src="mike.jpg" alt="Mike's Profile" class="profile-pic">
                     <div class="post-info">
                         <strong>Mike Adams</strong>
-                        <p>Just finished the final draft for my next paper! Feeling optimistic.</p>
+                        <p>Just finished the final draft for my next paper! 📚 Feeling optimistic. ✨</p>
                     </div>
                 </div>
-                <button class="like-button">Like</button>
+                <button class="like-button">👍 Like</button>
             </div>
 
             <div class="post">
@@ -94,27 +92,26 @@
                     <img src="jane.jpg" alt="Jane's Profile" class="profile-pic">
                     <div class="post-info">
                         <strong>Jane Doe</strong>
-                        <p>Had a wonderful time at the <i>Wellbeing Seminar.</i> It is so important to ensure researchers are getting the proper support they need.</p>
+                        <p>Had a wonderful time at the <i>Wellbeing Seminar</i> 🧘. It’s so important for researchers to get the support they need. ❤️</p>
                     </div>
                 </div>
-                <button class="like-button">Like</button>
+                <button class="like-button">👍 Like</button>
             </div>
 
-            <!-- New post from John Smith -->
             <div class="post">
                 <div class="post-header">
                     <img src="john.jpg" alt="John's Profile" class="profile-pic">
                     <div class="post-info">
                         <strong>John Smith</strong>
-                        <p>Just wrapped up a great research project on <i>workplace mental health</i>. It's always rewarding to see your work making a difference!</p>
+                        <p>Just wrapped up a great research project on <i>workplace mental health</i> 🌱. It’s rewarding to see your work make a difference! 🙌</p>
                     </div>
                 </div>
-                <button class="like-button">Like</button>
+                <button class="like-button">👍 Like</button>
             </div>
         </section>
     </main>
 
-      <!-- Footer with Let's Chat -->
+    <!-- Footer with Let's Chat -->
     <footer>
         <a href="socials.html">Let's Chat</a>
     </footer>
@@ -147,7 +144,7 @@
 
                 const newPostLikeButton = document.createElement("button");
                 newPostLikeButton.classList.add("like-button");
-                newPostLikeButton.innerText = "Like";
+                newPostLikeButton.innerText = "👍 Like";
 
                 newPost.appendChild(newPostHeader);
                 newPost.appendChild(newPostText);
@@ -165,7 +162,7 @@
                 if (this.classList.contains('liked')) {
                     this.textContent = 'Liked';
                 } else {
-                    this.textContent = 'Like';
+                    this.textContent = '👍 Like';
                 }
             });
         });
