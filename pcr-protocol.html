@@ -38,9 +38,60 @@
         <div class="protocol-container">
             <h2>PCR Protocol</h2>
 
-            <!-- PCR Protocol -->
+            <!-- PCR Introduction -->
+            <section class="protocol-introduction">
+                <h3>Introduction to PCR</h3>
+                <p>The polymerase chain reaction (PCR) is a sensitive and efficient method for amplifying a target DNA sequence into millions of copies. PCR is used in a wide variety of applications, including RT-PCR, sequencing, genotyping, cloning, and more.</p>
+            </section>
+
+            <!-- Types of PCR -->
+            <section class="pcr-types">
+                <h3>End Point PCR vs Real-Time PCR</h3>
+                <p>There are two main types of PCR: End Point PCR and Real-Time PCR (qPCR).</p>
+                <p><strong>End Point PCR:</strong> Measures the PCR product at the end of the cycles, typically visualized using gel electrophoresis. It is often used in applications like RT-PCR, sequencing, and cloning.</p>
+                <p><strong>Real-Time PCR:</strong> Measures PCR product during the exponential phase. The quantity of product correlates directly to the initial amount of template. This type is widely used for quantifying gene expression, assay validation, and various other applications.</p>
+            </section>
+
+            <!-- Real-Time PCR Detailed Information -->
+            <section class="real-time-pcr">
+                <h3>Real-Time PCR (qPCR)</h3>
+                <p>Real-Time PCR is a more accurate and precise technique as it collects data during the exponential phase of amplification. The cycle threshold (CT) value is used to quantify the amount of target DNA.</p>
+                <p>Real-Time PCR can be performed using two types of chemistries: SYBR Green and TaqMan.</p>
+            </section>
+
+            <!-- SYBR Green vs TaqMan -->
+            <section class="sybr-vs-taqman">
+                <h3>SYBR Green vs TaqMan Chemistry</h3>
+                <p>There are two types of chemistry for real-time PCR:</p>
+                <ul>
+                    <li><strong>SYBR Green:</strong> A DNA-binding dye that fluoresces upon binding to double-stranded DNA. It requires the manual design and validation of primers and may require melt curve analysis to confirm specificity.</li>
+                    <li><strong>TaqMan:</strong> Uses a fluorogenic probe specific to the target gene, providing higher specificity. TaqMan assays are pre-designed and validated, but they are more expensive than SYBR Green.</li>
+                </ul>
+            </section>
+
+            <!-- PCR Quantification Methods -->
+            <section class="quantification-methods">
+                <h3>Quantification Methods</h3>
+                <p><strong>Relative Standard Curve (SYBR method):</strong> This method involves creating a standard curve using known quantities of the target to determine the relative expression in unknown samples.</p>
+                <p><strong>Comparative Ct (ΔΔCt) Method (TaqMan method):</strong> This method compares the CT values of a target gene with an endogenous control (housekeeping gene) to determine relative gene expression between different samples.</p>
+            </section>
+
+            <!-- Experimental Components -->
+            <section class="experiment-components">
+                <h3>Components of a Real-Time PCR Experiment</h3>
+                <ul>
+                    <li><strong>Sample:</strong> The gene of interest with an unknown quantity.</li>
+                    <li><strong>Reference Sample:</strong> Used as the basis for comparison (e.g., an untreated control).</li>
+                    <li><strong>Standard:</strong> A sample with known quantities of the target gene used to create a standard curve.</li>
+                    <li><strong>Endogenous Control:</strong> A gene that is expected to be expressed at constant levels across all samples (e.g., housekeeping gene).</li>
+                    <li><strong>Replicates:</strong> Identical reactions containing identical samples and components. Triplicates are typically used for reliable results.</li>
+                    <li><strong>Negative Controls:</strong> Samples that contain no template DNA to check for contamination.</li>
+                </ul>
+            </section>
+
+            <!-- PCR Steps -->
             <section class="protocol">
-                <h3>Steps for PCR</h3>
+                <h3>PCR Experimental Steps</h3>
                 <p>Follow these steps for PCR:</p>
                 <ol>
                     <li>Prepare the PCR reaction mix by combining the following components in a PCR tube:
