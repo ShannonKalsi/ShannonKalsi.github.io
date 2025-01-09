@@ -17,6 +17,9 @@
             color: #333;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
         }
 
         header {
@@ -24,6 +27,7 @@
             color: white;
             padding: 15px 0;
             text-align: center;
+            width: 100%;
         }
 
         header h1 {
@@ -48,36 +52,54 @@
             font-weight: bold;
         }
 
-        .calendar-container {
-            width: 60%;
-            margin: 30px auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+            padding: 0 20px;
         }
 
+        /* Left Side - Chat */
         .chat-container {
-            width: 60%;
-            margin: 30px auto;
-            padding: 30px;
+            width: 45%;
             background-color: white;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .chat-box {
             width: 100%;
-            height: 300px;
+            height: 350px;
             overflow-y: scroll;
             background-color: #fafafa;
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
         }
 
-        .chat-box p {
-            margin: 0 0 10px;
+        .chat-box .message {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-box img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .chat-box .text {
+            max-width: 70%;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 1em;
         }
 
         .chat-input {
@@ -88,11 +110,36 @@
             margin-bottom: 10px;
         }
 
-        .games-container {
-            width: 60%;
-            margin: 30px auto;
-            padding: 30px;
+        /* Right Side - Calendar */
+        .calendar-container {
+            width: 45%;
             background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #1e88e5;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .games-container {
+            width: 100%;
+            margin-top: 30px;
+            background-color: white;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
@@ -115,22 +162,6 @@
             top: 5px;
             width: 20px;
             height: 20px;
-        }
-
-        footer {
-            background-color: #1e88e5;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
         }
 
         /* Calendar Event Color Styles */
@@ -177,34 +208,50 @@
     </header>
 
     <!-- Main Content Section -->
-    <main>
-        <!-- Calendar Section -->
-        <div class="calendar-container">
-            <h2>LabSphere Calendar</h2>
-            <div id="calendar"></div>
-        </div>
-
-        <!-- Chat Section -->
+    <div class="main-content">
+        <!-- Left Side - Chat System -->
         <div class="chat-container">
-            <h2>Chat with Your Colleagues</h2>
+            <h2>LabSphere Chat</h2>
             <div class="chat-box" id="chat-box">
-                <p><strong>Wellbeing Chatbot:</strong> Don't forget, attending the wellbeing seminar will help boost your productivity and mental health!</p>
-                <p><strong>Colleague 1:</strong> I’m looking forward to the next seminar! It's been really helpful to me last time.</p>
-                <p><strong>Colleague 2:</strong> Same here! I really enjoyed the last session on stress management.</p>
+                <!-- Example messages -->
+                <div class="message">
+                    <img src="alice.jpg" alt="Alice" />
+                    <div class="text"><strong>Alice:</strong> I'm feeling a bit stressed about the upcoming abstract submission deadline, but I'm looking forward to the wellbeing seminar next week!</div>
+                </div>
+                <div class="message">
+                    <img src="joey.jpg" alt="Joey" />
+                    <div class="text"><strong>Joey:</strong> Same! I've been working late nights on the cancer research project, but I'm excited to attend the seminar.</div>
+                </div>
+                <div class="message">
+                    <img src="jane.jpg" alt="Jane" />
+                    <div class="text"><strong>Jane:</strong> The last seminar helped me so much with stress management. Can't wait for the next one!</div>
+                </div>
+                <div class="message">
+                    <img src="mike.jpg" alt="Mike" />
+                    <div class="text"><strong>Mike:</strong> Our team meeting tomorrow will be a great opportunity to discuss progress on the cancer project. Who's leading the discussion?</div>
+                </div>
+                <div class="message">
+                    <img src="john.jpg" alt="John" />
+                    <div class="text"><strong>John:</strong> I think Lisa will be presenting on the latest results from the trials. We're making great progress!</div>
+                </div>
+                <div class="message">
+                    <img src="emily.jpg" alt="Emily" />
+                    <div class="text"><strong>Emily:</strong> I’ve been feeling a bit overwhelmed with the grant submission. Any advice?</div>
+                </div>
+                <div class="message">
+                    <img src="lisa.jpg" alt="Lisa" />
+                    <div class="text"><strong>Lisa:</strong> Don't worry, Emily! Let's review it together after the meeting. Also, have you signed up for the wellbeing seminar?</div>
+                </div>
             </div>
             <textarea id="chat-input" class="chat-input" placeholder="Type a message..."></textarea>
         </div>
 
-        <!-- Online Games Section -->
-        <div class="games-container">
-            <h2>Online Games</h2>
-            <ul>
-                <li><a href="https://www.cardsagainsthumanity.com" target="_blank">Cards Against Humanity</a></li>
-                <li><a href="https://www.boardgamearena.com" target="_blank">Board Game Arena</a></li>
-                <li><a href="https://www.pogo.com" target="_blank">Pogo Games</a></li>
-            </ul>
+        <!-- Right Side - Calendar -->
+        <div class="calendar-container">
+            <h2>LabSphere Calendar</h2>
+            <div id="calendar"></div>
         </div>
-    </main>
+    </div>
 
     <!-- Footer with Let's Chat -->
     <footer>
