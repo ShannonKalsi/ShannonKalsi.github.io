@@ -147,6 +147,19 @@
             text-align: center;
             padding: 10px;
         }
+
+        /* Chat Button */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #1E88E5;
+            color: white;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -205,17 +218,17 @@
                     </div>
                     <!-- More chats -->
                     <div class="message">
-                        <img src="luke.jpg" alt="Luke's Profile" class="profile-pic">
+                        <img src="joey.jpg" alt="Joey's Profile" class="profile-pic">
                         <div class="message-info">
-                            <strong>Luke:</strong>
+                            <strong>Joey:</strong>
                             <p>Absolutely! That’s why I try to integrate a bit of meditation in my schedule, helps keep my mind sharp!</p>
                         </div>
                     </div>
                     <div class="message">
-                        <img src="sarah.jpg" alt="Sarah's Profile" class="profile-pic">
+                        <img src="lisa.jpg" alt="Lisa's Profile" class="profile-pic">
                         <div class="message-info">
-                            <strong>Sarah:</strong>
-                            <p>Same here, Luke. I’ve also been experimenting with a new workout routine—feeling great!</p>
+                            <strong>Lisa:</strong>
+                            <p>Same here, Joey. I’ve also been experimenting with a new workout routine—feeling great!</p>
                         </div>
                     </div>
                 </div>
@@ -249,6 +262,9 @@
     <footer>
         <a href="socials.html">Let's Chat</a>
     </footer>
+
+    <!-- Chat Button -->
+    <button class="chat-button" onclick="scrollToChat()">Chat</button>
 
     <script>
         const events = {
@@ -323,6 +339,10 @@
                 currentYear++;
             }
             renderCalendar();
+        }
+
+        function scrollToChat() {
+            document.querySelector('.chat-container').scrollIntoView({ behavior: 'smooth' });
         }
 
         renderCalendar();
