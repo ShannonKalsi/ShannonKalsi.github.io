@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabSphere - Messaging</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #1E88E5;
+            color: white;
+            padding: 10px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .main-container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: #ffffff;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background-color: #f1f1f1;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .chat-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .chat-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .chat-item:hover {
+            background-color: #f1f1f1;
+        }
+
+        .chat-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .chat-item span {
+            font-weight: bold;
+        }
+
+        .chat-window {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background-color: #f1f1f1;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 15px;
+        }
+
+        .message.incoming {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.outgoing {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+        }
+
+        .message img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .message.outgoing .message-content {
+            background-color: #1E88E5;
+            color: white;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            background-color: #f1f1f1;
+        }
+
+        .chat-input textarea {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+
+        .chat-input button {
+            background-color: #1E88E5;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .chat-input button:hover {
+            background-color: #D81B60;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
+                <h1>LabSphere</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">User Menu</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">My Profile</a>
+                        <a href="account.html">My Account</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="logout.html">Log Out</a>
+                    </div>
+                </li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="collaboration.html">Collaboration</a></li>
+                <li><a href="wellbeing.html">Wellbeing</a></li>
+                <li><a href="socials.html">Socials</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">Chats</div>
+            <ul class="chat-list">
+                <li class="chat-item" onclick="openChat('group1')">
+                    <img src="group1.jpg" alt="Group 1">
+                    <span>Research Wellbeing Group</span>
+                </li>
+                <li class="chat-item" onclick="openChat('alice')">
+                    <img src="alice.jpg" alt="Alice">
+                    <span>Alice</span>
+                </li>
+                <li class="chat-item" onclick="openChat('emily')">
+                    <img src="emily.jpg" alt="Emily">
+                    <span>Emily</span>
+                </li>
+                <li class="chat-item" onclick="openChat('john')">
+                    <img src="john.jpg" alt="John">
+                    <span>John</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <div class="chat-header">Research Wellbeing Group</div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message incoming">
+                    <img src="alice.jpg" alt="Alice">
+                    <div class="message-content">I heard the wellbeing seminar is happening this Friday. Are you attending?</div>
+                </div>
+                <div class="message incoming">
+                    <img src="emily.jpg" alt="Emily">
+                    <div class="message-content">Yes, I think it's so important for researchers to take care of their mental health.</div>
+                </div>
+                <div class="message outgoing">
+                    <div class="message-content">Absolutely agree! I'll be there too. It's a great initiative.</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <textarea id="chat-input" placeholder="Type your message..."></textarea>
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openChat(chatName) {
+            const chatHeader = document.querySelector('.chat-header');
+            const chatMessages = document.querySelector('#chat-messages');
+
+            if (chatName === 'group1') {
+                chatHeader.textContent = 'Research Wellbeing Group';
+                chatMessages.innerHTML = `
+                    <div class="message incoming">
+                        <img src="alice.jpg" alt="Alice">
+                        <div class="message-content">I heard the wellbeing seminar is happening this Friday. Are you attending?</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="emily.jpg" alt="Emily">
+                        <div class="message-content">Yes, I think it's so important for researchers to take care of their mental health.</div>
+                    </div>
+                    <div class="message outgoing">
+                        <div class="message-content">Absolutely agree! I'll be there too. It's a great initiative.</div>
+                    </div>
+                `;
+            } else if (chatName === 'alice') {
+                chatHeader.textContent = 'Alice';
+                chatMessages.innerHTML = `
+                    <div class="message incoming">
+                        <img src="alice.jpg" alt="Alice">
+                        <div class="message-content">Hi! Are you coming to the seminar?</div>
+                    </div>
+                `;
+            } else if (chatName === 'emily') {
+                chatHeader.textContent = 'Emily';
+                chatMessages.innerHTML = `
+                    <div class="message incoming">
+                        <img src="emily.jpg" alt="Emily">
+                        <div class="message-content">Hi there! The seminar is a great chance to discuss wellbeing.</div>
+                    </div>
+                `;
+            } else if (chatName === 'john') {
+                chatHeader.textContent = 'John';
+                chatMessages.innerHTML = `
+                    <div class="message incoming">
+                        <img src="john.jpg" alt="John">
+                        <div class="message-content">Do you have details about the seminar?</div>
+                    </div>
+                `;
+            }
+        }
+
+        function sendMessage() {
+            const chatInput = document.getElementById('chat-input');
+            const message = chatInput.value;
+            if (message.trim() !== '') {
+                const chatMessages = document.getElementById('chat-messages');
+                const newMessage = document.createElement('div');
+                newMessage.classList.add('message', 'outgoing');
+                newMessage.innerHTML = `<div class="message-content">${message}</div>`;
+                chatMessages.appendChild(newMessage);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                chatInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
