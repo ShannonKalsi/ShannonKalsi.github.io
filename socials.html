@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Socials</title>
+    <title>LabSphere - Messaging</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Common Layout and Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -21,290 +20,195 @@
             text-align: center;
         }
 
-        .navbar {
+        .container {
             display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #1E88E5;
+            color: white;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: center;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
+        .sidebar .menu {
+            padding: 20px;
         }
 
-        .logo-img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
+        .sidebar .menu ul {
+            list-style: none;
+            padding: 0;
         }
 
-        .nav-links {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
+        .sidebar .menu ul li {
+            margin-bottom: 20px;
         }
 
-        .nav-links a {
+        .sidebar .menu ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            font-size: 16px;
         }
 
-        /* Container for Layout */
-        .container {
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+        }
+
+        .chat-header {
+            background-color: #1E88E5;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
             display: flex;
             justify-content: space-between;
-            padding: 20px;
-        }
-
-        /* Chatbox Layout */
-        .chatbox-container, .discussion-forums {
-            margin: 20px;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            width: 48%;
-        }
-
-        .chatbox-header {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #1E88E5;
-            font-weight: bold;
-        }
-
-        .chat-message {
-            margin: 10px 0;
-            display: flex;
             align-items: center;
         }
 
-        .chat-message img {
-            width: 30px;
-            height: 30px;
+        .chat-body {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .message {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .message img {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             margin-right: 10px;
         }
 
-        .chat-message p {
-            margin: 0;
-            padding: 8px 12px;
-            border-radius: 8px;
-            background-color: #f0f0f0;
-        }
-
-        .chat-message.pink p {
-            background-color: #FAD0D0; /* Soft Pink */
-        }
-
-        .chat-message.blue p {
-            background-color: #A7C9FF; /* Soft Blue */
-        }
-
-        .chatbox-input {
-            width: 100%;
+        .message .text {
             padding: 10px;
-            margin-top: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+        }
+
+        .message.sent .text {
+            background-color: #D81B60;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .message.received .text {
+            background-color: #1E88E5;
+            color: white;
+        }
+
+        .chat-footer {
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
+            margin-right: 10px;
         }
 
-        .chatbox-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
+        .chat-footer button {
+            background-color: #1E88E5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
-        .chatbox-menu {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
+        .chat-footer button:hover {
+            background-color: #D81B60;
         }
 
-        .game-list ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .game-list li {
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-
-        .game-list li a {
-            color: #1E88E5;
-            text-decoration: none;
-        }
-
-        /* Hover effect for games */
-        .game-list li a:hover {
-            text-decoration: underline;
-        }
-
-        /* Section Styling */
-        .section-header {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-            color: #1E88E5;
-        }
-
-        .networking, .events {
-            background-color: #FFFFFF;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-            padding: 20px;
-        }
-
-        .networking ul, .discussion-forums ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .networking li, .discussion-forums li {
-            margin-bottom: 10px;
-        }
-
-        .networking a, .discussion-forums a {
-            color: #1E88E5;
-            text-decoration: none;
-        }
-
-        .networking a:hover, .discussion-forums a:hover {
-            color: #D81B60;
-            font-weight: bold;
-        }
-
-        /* Events Section */
-        .events ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .events li {
-            margin-bottom: 10px;
-        }
-
-        /* Online Games Section */
-        .games-section {
-            margin-top: 20px;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .calendar-widget {
-            display: none;
+        .sidebar-footer {
+            padding: 10px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-  <!-- Header with Navigation -->
     <header>
-        <nav class="navbar">
-            <div class="logo-container">
-                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
-                <h1>LabSphere</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">User Menu</a>
-                    <div class="dropdown-content">
-                        <a href="profile.html">My Profile</a>
-                        <a href="account.html">My Account</a>
-                        <a href="settings.html">Settings</a>
-                        <a href="logout.html">Log Out</a>
-                    </div>
-                </li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="collaboration.html">Collaboration</a></li>
-                <li><a href="wellbeing.html">Wellbeing</a></li>
-                <li><a href="socials.html">Socials</a></li>
-            </ul>
-        </nav>
+        <h1>LabSphere Messaging</h1>
     </header>
-
-    <!-- Main content section -->
-    <main>
-        <div class="container">
-            <!-- Chat Section -->
-            <section class="chatbox-container">
-                <div class="chatbox-header">
-                    Group Chat
-                    <button>Menu</button> <!-- Message menu button -->
-                </div>
-                <div class="chat-message pink">
-                    <img src="alice.jpg" alt="Alice">
-                    <p><strong>Alice:</strong> Anyone else attending the Wellbeing seminar this week? 🌸</p>
-                </div>
-                <div class="chat-message blue">
-                    <img src="joey.jpg" alt="Joey">
-                    <p><strong>Joey:</strong> Yes! I’m really looking forward to it. It's a much-needed break 💙</p>
-                </div>
-                <div class="chat-message pink">
-                    <img src="lisa.jpg" alt="Lisa">
-                    <p><strong>Lisa:</strong> Me too! We need more of these events to support our mental health 🧠💗</p>
-                </div>
-                <div class="chat-message blue">
-                    <img src="mike.jpg" alt="Mike">
-                    <p><strong>Mike:</strong> Absolutely! Let’s plan a meet-up afterwards to discuss our takeaways. 😊💬</p>
-                </div>
-                <input type="text" class="chatbox-input" placeholder="Type a message...">
-                <div class="chatbox-buttons">
-                    <button>Submit</button>
-                    <button>Private Message</button>
-                </div>
-            </section>
-
-            <!-- Discussion Forums Section -->
-            <section class="discussion-forums">
-                <h2 class="section-header">Discussion Forums 💬</h2>
-                <div class="forum">
-                    <h3>Cancer Research 🧬</h3>
-                    <ul>
-                        <li><a href="#">How can we improve early detection of cancer? - John Smith</a></li>
-                        <li><a href="#">Challenges in cancer clinical trials - Alice Newman</a></li>
-                        <li><a href="#">New breakthrough in immunotherapy - Joey Bloggs</a></li>
-                    </ul>
-                </div>
-
-                <div class="forum">
-                    <h3>Wellbeing in Research 🧘‍♀️</h3>
-                    <ul>
-                        <li><a href="#">Balancing work and mental health during research - Lisa Brown</a></li>
-                        <li><a href="#">Strategies for reducing stress in research - Mike Adams</a></li>
-                        <li><a href="#">Wellbeing resources for researchers - Jane Smith</a></li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-
-        <!-- Events Section -->
-        <section class="events">
-            <h2 class="section-header">Events and Meetups 🗓️</h2>
-            <ul>
-                <li><strong>Wellbeing Seminar:</strong> 20th January 2025 - Online 🌱</li>
-                <li><strong>Cancer Research Conference:</strong> 25th February 2025 - In-person at the National Cancer Research Center 🧬</li>
-                <li><strong>Research Skills Workshop:</strong> 10th March 2025 - Online 📚</li>
-                <li><strong>Networking Meet-up for Researchers:</strong> 18th April 2025 - In-person at LabSphere HQ 🔗</li>
-            </ul>
-        </section>
-
-        <!-- Online Games Section (below Events) -->
-        <section class="games-section">
-            <div class="section-header">🎮 Online Games for Researchers 🎮</div>
-            <div class="game-list">
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="menu">
                 <ul>
-                    <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
-                    <li><a href="https://agar.io" target="_blank">Agar.io - Simple, but Addictive!</a></li>
-                    <li><a href="https://slither.io" target="_blank">Slither.io - Snake Game with a Twist!</a></li>
-                    <li><a href="https://krunker.io" target="_blank">Krunker.io - FPS Game</a></li>
+                    <li><a href="#">All Chats</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Friends</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Archive</a></li>
                 </ul>
             </div>
-        </section>
-    </main>
+            <div class="sidebar-footer">
+                <button>Log Out</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <span>Design Chat</span>
+                <button>Menu</button>
+            </div>
+
+            <!-- Chat Body -->
+            <div class="chat-body">
+                <div class="message received">
+                    <img src="avatar1.png" alt="Avatar">
+                    <div class="text">Hey team! Check out the new updates I made to the design system!</div>
+                </div>
+                <div class="message sent">
+                    <img src="avatar2.png" alt="Avatar">
+                    <div class="text">Great work! Can you share the prototype link?</div>
+                </div>
+            </div>
+
+            <!-- Chat Footer -->
+            <div class="chat-footer">
+                <input type="text" placeholder="Type a message...">
+                <button>Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const inputField = document.querySelector('.chat-footer input');
+        const sendButton = document.querySelector('.chat-footer button');
+        const chatBody = document.querySelector('.chat-body');
+
+        sendButton.addEventListener('click', () => {
+            const messageText = inputField.value.trim();
+
+            if (messageText) {
+                const newMessage = document.createElement('div');
+                newMessage.classList.add('message', 'sent');
+                newMessage.innerHTML = `<img src='avatar2.png' alt='Avatar'><div class='text'>${messageText}</div>`;
+
+                chatBody.appendChild(newMessage);
+                chatBody.scrollTop = chatBody.scrollHeight;
+
+                inputField.value = '';
+            }
+        });
+    </script>
 </body>
 </html>
