@@ -3,122 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socials - LabSphere</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Social Interaction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        .left-pane {
+            width: 50%;
+            background-color: #fff;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+        }
+        .right-pane {
+            width: 50%;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-header, .calendar-header, .games-header {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .chat-box, .calendar-box, .games-box {
+            flex: 1;
+            overflow-y: auto;
+        }
+        .chat-box {
+            margin-bottom: 20px;
+        }
+        .calendar-box {
+            height: 50%;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .calendar-box .calendar-event {
+            background-color: #ddd;
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .online-games-text {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .calendar-event.fake {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header with Navigation -->
-    <header>
-        <nav class="navbar">
-            <div class="logo-container">
-                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
-                <h1>LabSphere</h1>
+
+    <div class="container">
+        <!-- Left Pane: Messaging -->
+        <div class="left-pane">
+            <div class="chat-header">Messaging</div>
+            <div class="chat-box">
+                <p><strong>User1:</strong> Hey, how are you?</p>
+                <p><strong>User2:</strong> I'm good, how about you?</p>
+                <p><strong>User1:</strong> Doing great! Just working on some projects.</p>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="collaboration.html">Collaboration</a></li>
-                <li><a href="wellbeing.html">Wellbeing</a></li>
-                <li><a href="socials.html">Socials</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Menu</a>
-                    <div class="dropdown-content">
-                        <a href="profile.html">My Profile</a>
-                        <a href="account.html">My Account</a>
-                        <a href="settings.html">Settings</a>
-                        <a href="logout.html">Log Out</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main content section -->
-    <main>
-        <div class="socials-container">
-            <!-- Messaging Section -->
-            <section class="messaging" style="width: 50%; float: left; background-color: #f1f1f1; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-                <h2>Messages</h2>
-                <div class="messages-box">
-                    <div class="message">
-                        <div class="profile-pic">
-                            <img src="profile1.jpg" alt="Alice Newman" />
-                        </div>
-                        <div class="message-content">
-                            <strong>Alice Newman:</strong> I'm excited to submit my paper to *Nature* next week!
-                        </div>
-                    </div>
-                    <div class="message">
-                        <div class="profile-pic">
-                            <img src="profile2.jpg" alt="Joey Bloggs" />
-                        </div>
-                        <div class="message-content">
-                            <strong>Joey Bloggs:</strong> Had an amazing time at the *EACR conference*. So many great discussions!
-                        </div>
-                    </div>
-                    <!-- Add more messages here as needed -->
-                </div>
-
-                <!-- Submit Message Form -->
-                <textarea id="message-input" placeholder="Write a message..." rows="4" cols="50"></textarea><br>
-                <button onclick="submitMessage()">Send</button>
-            </section>
-
-            <!-- Calendar Section -->
-            <section class="calendar" style="width: 50%; float: right; background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-                <h2>Upcoming Events</h2>
-                <div class="calendar-container">
-                    <iframe src="https://calendar.google.com/calendar/embed?src=yourcalendarid&ctz=Europe%2FDublin" style="border: 0; width: 100%; height: 100%; border-radius: 8px;"></iframe>
-                </div>
-                <div class="events-list">
-                    <ul>
-                        <li><strong>Wellness Seminar</strong> - Monday, 10 AM</li>
-                        <li><strong>Thesis Writing Seminar</strong> - Wednesday, 2 PM</li>
-                        <li><strong>Grant Writing Deadline</strong> - Thursday, 5 PM</li>
-                        <li><strong>Abstract Submission Deadline</strong> - Friday, 4 PM</li>
-                    </ul>
-                </div>
-            </section>
+            <input type="text" placeholder="Type your message..." style="width: 100%; padding: 10px;">
         </div>
 
-        <!-- Online Games Section -->
-        <section class="online-games" style="clear: both; margin-top: 40px; padding: 20px; background-color: #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-            <h2>Online Games</h2>
-            <ul>
-                <li><span class="game-controller">&#x1F3AE;</span> <a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
-                <li><span class="game-controller">&#x1F3AE;</span> <a href="https://www.play.battle.net/en-us/" target="_blank">Hearthstone</a></li>
-                <li><span class="game-controller">&#x1F3AE;</span> <a href="https://skribbl.io" target="_blank">Skribbl.io</a></li>
-                <li><span class="game-controller">&#x1F3AE;</span> <a href="https://www.agame.com/game/tetris" target="_blank">Tetris</a></li>
-            </ul>
-        </section>
-    </main>
+        <!-- Right Pane: Calendar and Online Games -->
+        <div class="right-pane">
+            <!-- Calendar Section -->
+            <div class="calendar-header">Calendar</div>
+            <div class="calendar-box">
+                <div class="calendar-event fake">Team Meeting - 10:00 AM</div>
+                <div class="calendar-event fake">Project Deadline - 3:00 PM</div>
+                <div class="calendar-event fake">Team Building Activity - 4:00 PM</div>
+            </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>Let's Chat</p>
-        <a href="socials.html">Go to Socials</a>
-    </footer>
+            <!-- Online Games Section -->
+            <div class="games-header">Online Games</div>
+            <div class="games-box">
+                <p>Join your colleagues for some fun online games!</p>
+            </div>
+        </div>
+    </div>
 
-    <script>
-        // Function to submit a message
-        function submitMessage() {
-            const messageInput = document.getElementById("message-input").value;
-            if (messageInput) {
-                const messageBox = document.querySelector(".messages-box");
-                const newMessage = document.createElement("div");
-                newMessage.classList.add("message");
-                newMessage.innerHTML = `
-                    <div class="profile-pic">
-                        <img src="profile3.jpg" alt="New User" />
-                    </div>
-                    <div class="message-content">
-                        <strong>New User:</strong> ${messageInput}
-                    </div>
-                `;
-                messageBox.appendChild(newMessage);
-                document.getElementById("message-input").value = ''; // Clear the input
-            }
-        }
-    </script>
 </body>
 </html>
