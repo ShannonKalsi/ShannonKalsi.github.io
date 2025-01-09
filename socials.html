@@ -3,169 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Interaction</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Social - LabSphere</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #FFFFFF;
+            color: #1E88E5;
             margin: 0;
             padding: 0;
-            display: flex;
-            height: 100vh;
-            background-color: #fff;
         }
-        .container {
-            display: flex;
-            flex: 1;
-            padding: 20px;
-            background-color: #f4f4f9;
-        }
-        .left-pane, .right-pane {
-            flex: 1;
-            padding: 20px;
-        }
-        .left-pane {
-            background-color: #ffffff;
-            border-right: 1px solid #ddd;
-        }
-        .right-pane {
-            background-color: #ffffff;
-        }
-        .header {
+
+        header {
             background-color: #1E88E5;
             color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: 500;
+            padding: 20px;
         }
-        .chat-header, .calendar-header, .games-header {
-            font-weight: 500;
-            color: #1E88E5;
-            margin-bottom: 10px;
-        }
-        .chat-box, .calendar-box, .games-box {
-            margin-bottom: 20px;
-        }
-        .chat-box, .calendar-box {
-            flex: 1;
-            height: 50%;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            padding: 10px;
-        }
-        .chat-box p, .calendar-box p {
-            margin: 10px 0;
-        }
-        .calendar-event.fake {
-            background-color: #4CAF50;
-            color: white;
-            font-weight: bold;
-            padding: 5px;
-            margin: 5px 0;
-            border-radius: 5px;
-        }
-        .profile-pic {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        .chat-item {
+
+        .navbar {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
         }
-        .chat-item .username {
-            font-weight: 500;
-            color: #1E88E5;
+
+        .logo-container h1 {
+            margin-left: 10px;
         }
-        .online-games-text {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #666;
-        }
-        .online-games-list {
-            list-style: none;
+
+        .nav-links {
+            list-style-type: none;
             padding: 0;
         }
-        .online-games-list li {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
+
+        .nav-links li {
+            display: inline;
+            margin-right: 15px;
         }
-        .online-games-list li::before {
-            content: "🎮";
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #1E88E5;
+            text-align: center;
+            padding: 15px;
+            color: white;
+        }
+
+        footer a {
+            color: #D81B60;
+            text-decoration: none;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        /* Left-side messaging chat */
+        .chat-box {
+            width: 45%;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+            height: 500px;
+            overflow-y: scroll;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-message {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .chat-message img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
             margin-right: 10px;
         }
-        .btn {
+
+        .chat-message .message {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .chat-message .message p {
+            margin: 0;
+        }
+
+        .chat-message .user-name {
+            font-weight: bold;
+            color: #1E88E5;
+        }
+
+        .chat-input {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .chat-input textarea {
+            width: 80%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            resize: none;
+            min-height: 50px;
+        }
+
+        .chat-input button {
+            padding: 10px;
+            margin-left: 10px;
             background-color: #D81B60;
             color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            text-align: center;
-            display: inline-block;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
         }
+
+        .chat-input button:hover {
+            background-color: #c2185b;
+        }
+
+        /* Right-side calendar */
+        .calendar {
+            width: 45%;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-header {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1E88E5;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 10px;
+        }
+
+        .calendar-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-day span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1E88E5;
+        }
+
+        .event {
+            background-color: #D81B60;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        /* Online Games section */
+        .games-section {
+            margin-top: 30px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .games-section h2 {
+            font-size: 24px;
+            color: #1E88E5;
+            margin-bottom: 10px;
+        }
+
+        .games-section p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .games-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .games-list li {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .games-list a {
+            display: block;
+            background-color: #1E88E5;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .games-list a:hover {
+            background-color: #D81B60;
+        }
+
     </style>
 </head>
 <body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
+                <h1>LabSphere</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="collaboration.html">Collaboration</a></li>
+                <li><a href="wellbeing.html">Wellbeing</a></li>
+                <li><a href="socials.html">Socials</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">My Profile</a>
+                        <a href="account.html">My Account</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="logout.html">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="header">Social Interaction</div>
-
-    <div class="container">
-        <!-- Left Pane: Messaging -->
-        <div class="left-pane">
-            <div class="chat-header">Messaging</div>
-            <div class="chat-box">
-                <!-- Chat messages -->
-                <div class="chat-item">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Emily" class="profile-pic">
-                    <p class="username">Emily:</p>
-                    <p>Hey John, have you signed up for the Wellbeing Seminar?</p>
-                </div>
-                <div class="chat-item">
-                    <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="John" class="profile-pic">
-                    <p class="username">John:</p>
-                    <p>Yes, I did! It looks really interesting. I think it will help a lot with managing stress while juggling projects.</p>
-                </div>
-                <div class="chat-item">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Emily" class="profile-pic">
-                    <p class="username">Emily:</p>
-                    <p>Exactly! I'm hoping to learn some strategies for work-life balance. How's your project going?</p>
-                </div>
-                <div class="chat-item">
-                    <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="John" class="profile-pic">
-                    <p class="username">John:</p>
-                    <p>It's going well, but it's a bit overwhelming. I'm definitely looking forward to some advice from the seminar.</p>
+    <!-- Main content section -->
+    <main class="content">
+        <!-- Left-side messaging chat -->
+        <div class="chat-box">
+            <div class="chat-message">
+                <img src="alice.jpg" alt="Alice's Profile" class="profile-pic">
+                <div class="message">
+                    <p class="user-name">Alice</p>
+                    <p>Hey guys, anyone attending the upcoming seminar on researcher wellbeing? It seems like it'll be super useful!</p>
                 </div>
             </div>
-            <input type="text" placeholder="Type your message..." style="width: 100%; padding: 10px;">
+            <div class="chat-message">
+                <img src="john.jpg" alt="John's Profile" class="profile-pic">
+                <div class="message">
+                    <p class="user-name">John</p>
+                    <p>Yes! I think it's essential that we have more focus on mental health in our field. I'm looking forward to it!</p>
+                </div>
+            </div>
+            <div class="chat-message">
+                <img src="emily.jpg" alt="Emily's Profile" class="profile-pic">
+                <div class="message">
+                    <p class="user-name">Emily</p>
+                    <p>Same here! It's been a tough couple of months with deadlines and all. A wellbeing seminar sounds like a great idea.</p>
+                </div>
+            </div>
+            <div class="chat-message">
+                <img src="lisa.jpg" alt="Lisa's Profile" class="profile-pic">
+                <div class="message">
+                    <p class="user-name">Lisa</p>
+                    <p>Absolutely! I'm trying to maintain a balance between my projects and personal life, but it's challenging. The seminar could help.</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <textarea placeholder="Type your message..."></textarea>
+                <button>Send</button>
+            </div>
         </div>
 
-        <!-- Right Pane: Calendar and Online Games -->
-        <div class="right-pane">
-            <!-- Calendar Section -->
-            <div class="calendar-header">Calendar</div>
-            <div class="calendar-box">
-                <div class="calendar-event fake">Wellbeing Seminar - 10:00 AM</div>
-                <div class="calendar-event fake">Project Deadline - 3:00 PM</div>
-                <div class="calendar-event fake">Team Check-in - 4:00 PM</div>
-            </div>
-
-            <!-- Online Games Section -->
-            <div class="games-header">Online Games</div>
-            <div class="games-box">
-                <p class="online-games-text">Join your colleagues online for fun!</p>
-                <ul class="online-games-list">
-                    <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank" class="btn">Cards Against Humanity</a></li>
-                    <li><a href="https://agar.io/" target="_blank" class="btn">Agar.io</a></li>
-                    <li><a href="https://www.brawlhalla.com/" target="_blank" class="btn">Brawlhalla</a></li>
-                    <li><a href="https://www.skyrim-game.com/" target="_blank" class="btn">Skyrim</a></li>
-                </ul>
+        <!-- Right-side calendar -->
+        <div class="calendar">
+            <div class="calendar-header">January 2025</div>
+            <div class="calendar-grid">
+                <!-- Days with events -->
+                <div class="calendar-day">
+                    <span>5</span>
+                    <div class="event">Wellbeing Seminar</div>
+                </div>
+                <div class="calendar-day">
+                    <span>12</span>
+                    <div class="event">Grant Deadline</div>
+                </div>
+                <div class="calendar-day">
+                    <span>14</span>
+                    <div class="event">Team Check-In</div>
+                </div>
+                <div class="calendar-day">
+                    <span>19</span>
+                    <div class="event">Abstract Submission Deadline</div>
+                </div>
+                <div class="calendar-day">
+                    <span>23</span>
+                    <div class="event">Grant Deadline</div>
+                </div>
             </div>
         </div>
+    </main>
+
+    <!-- Online Games Section -->
+    <div class="games-section">
+        <h2>Online Games</h2>
+        <p>Join your colleagues online for fun!</p>
+        <ul class="games-list">
+            <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
+            <li><a href="https://boardgamearena.com/" target="_blank">Board Game Arena</a></li>
+            <li><a href="https://www.agar.io/" target="_blank">Agar.io</a></li>
+            <li><a href="https://www.codenames.game/" target="_blank">Codenames</a></li>
+        </ul>
     </div>
 
+    <!-- Footer with Let's Chat -->
+    <footer>
+        <a href="socials.html">Let's Chat</a>
+    </footer>
+
+    <!-- JavaScript for chat -->
+    <script>
+        document.querySelector('button').addEventListener('click', function() {
+            const textarea = document.querySelector('textarea');
+            if (textarea.value.trim() !== '') {
+                const newMessage = document.createElement('div');
+                newMessage.classList.add('chat-message');
+                newMessage.innerHTML = `
+                    <img src="profile.jpg" alt="User's Profile" class="profile-pic">
+                    <div class="message">
+                        <p class="user-name">You</p>
+                        <p>${textarea.value}</p>
+                    </div>
+                `;
+                document.querySelector('.chat-box').appendChild(newMessage);
+                textarea.value = ''; // Clear textarea
+            }
+        });
+    </script>
 </body>
 </html>
