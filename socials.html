@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Messaging</title>
+    <title>LabSphere - Activity Feed</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -20,6 +20,34 @@
             text-align: center;
         }
 
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container h1 {
+            margin: 0;
+            margin-left: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
         .container {
             display: flex;
             height: 100vh;
@@ -31,37 +59,41 @@
             width: 250px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .sidebar .menu {
             padding: 20px;
         }
 
-        .sidebar .menu ul {
+        .sidebar ul {
             list-style: none;
             padding: 0;
         }
 
-        .sidebar .menu ul li {
+        .sidebar ul li {
             margin-bottom: 20px;
         }
 
-        .sidebar .menu ul li a {
+        .sidebar ul li a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
             font-size: 16px;
+            font-weight: bold;
+        }
+
+        .sidebar button {
+            background-color: #D81B60;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         .main-content {
             flex: 1;
             display: flex;
             flex-direction: column;
-            background-color: #ffffff;
         }
 
-        .chat-header {
+        .activity-header {
             background-color: #1E88E5;
             color: white;
             padding: 10px;
@@ -71,58 +103,33 @@
             align-items: center;
         }
 
-        .chat-body {
+        .activity-feed {
             flex: 1;
             padding: 20px;
             overflow-y: auto;
+            background-color: #f9f9f9;
         }
 
-        .message {
+        .post-box {
             display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .message img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .message .text {
-            padding: 10px;
-            border-radius: 10px;
-            max-width: 70%;
-        }
-
-        .message.sent .text {
-            background-color: #D81B60;
-            color: white;
-            align-self: flex-end;
-        }
-
-        .message.received .text {
-            background-color: #1E88E5;
-            color: white;
-        }
-
-        .chat-footer {
-            padding: 10px;
-            border-top: 1px solid #ccc;
-            display: flex;
-            align-items: center;
-        }
-
-        .chat-footer input {
-            flex: 1;
-            padding: 10px;
+            flex-direction: column;
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
             border-radius: 5px;
-            border: 1px solid #ccc;
-            margin-right: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .chat-footer button {
+        .post-box input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .post-box button {
+            align-self: flex-end;
             background-color: #1E88E5;
             color: white;
             border: none;
@@ -131,82 +138,143 @@
             cursor: pointer;
         }
 
-        .chat-footer button:hover {
+        .post-box button:hover {
             background-color: #D81B60;
         }
 
-        .sidebar-footer {
-            padding: 10px;
-            text-align: center;
+        .feed-item {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .recommended-courses {
+            width: 300px;
+            background-color: #f9f9f9;
+            border-left: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .recommended-courses h3 {
+            margin-bottom: 15px;
+        }
+
+        .course-item {
+            margin-bottom: 15px;
+        }
+
+        .course-item h4 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .course-item p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .course-item button {
+            background-color: #1E88E5;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .course-item button:hover {
+            background-color: #D81B60;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>LabSphere Messaging</h1>
+        <nav class="navbar">
+            <div class="logo-container">
+                <h1>LabSphere</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Socials</a></li>
+            </ul>
+        </nav>
     </header>
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
-            <div class="menu">
-                <ul>
-                    <li><a href="#">All Chats</a></li>
-                    <li><a href="#">Work</a></li>
-                    <li><a href="#">Friends</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Archive</a></li>
-                </ul>
-            </div>
-            <div class="sidebar-footer">
-                <button>Log Out</button>
-            </div>
+            <ul>
+                <li><a href="#">Activity Feed</a></li>
+                <li><a href="#">My Courses</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Schools</a></li>
+                <li><a href="#">My Profile</a></li>
+            </ul>
+            <button>Log Out</button>
         </div>
 
         <!-- Main Content -->
         <div class="main-content">
-            <!-- Chat Header -->
-            <div class="chat-header">
-                <span>Design Chat</span>
-                <button>Menu</button>
+            <!-- Activity Header -->
+            <div class="activity-header">
+                <span>Activity Feed</span>
             </div>
 
-            <!-- Chat Body -->
-            <div class="chat-body">
-                <div class="message received">
-                    <img src="avatar1.png" alt="Avatar">
-                    <div class="text">Hey team! Check out the new updates I made to the design system!</div>
+            <!-- Activity Feed -->
+            <div class="activity-feed">
+                <div class="post-box">
+                    <input type="text" placeholder="What's happening?" id="post-title">
+                    <button id="post-button">Post</button>
                 </div>
-                <div class="message sent">
-                    <img src="avatar2.png" alt="Avatar">
-                    <div class="text">Great work! Can you share the prototype link?</div>
+
+                <div class="feed-item">
+                    <h3>Congratulations to Hamoye Data Science Internship Stage C Winners!</h3>
+                    <p>After a thorough review of all deliverables, we are excited to announce the winners...</p>
+                </div>
+
+                <div class="feed-item">
+                    <h3>A new course titled STEM+ CHALLENGE 20-04: Science is created</h3>
+                    <p>Enroll now to expand your knowledge in STEM-related topics.</p>
                 </div>
             </div>
+        </div>
 
-            <!-- Chat Footer -->
-            <div class="chat-footer">
-                <input type="text" placeholder="Type a message...">
-                <button>Send</button>
+        <!-- Recommended Courses -->
+        <div class="recommended-courses">
+            <h3>Recommended Courses</h3>
+            <div class="course-item">
+                <h4>University Entrance Exam Q&A: Energy</h4>
+                <p>Test your knowledge of Energy (Potential, Kinetic, and Mechanical).</p>
+                <button>Enroll</button>
+            </div>
+
+            <div class="course-item">
+                <h4>University Entrance Exam Q&A: Magnetic Field</h4>
+                <p>Test your knowledge of magnetic influences of electric charges.</p>
+                <button>Enroll</button>
             </div>
         </div>
     </div>
 
     <script>
-        const inputField = document.querySelector('.chat-footer input');
-        const sendButton = document.querySelector('.chat-footer button');
-        const chatBody = document.querySelector('.chat-body');
+        const postButton = document.getElementById('post-button');
+        const postTitle = document.getElementById('post-title');
+        const activityFeed = document.querySelector('.activity-feed');
 
-        sendButton.addEventListener('click', () => {
-            const messageText = inputField.value.trim();
+        postButton.addEventListener('click', () => {
+            const title = postTitle.value.trim();
 
-            if (messageText) {
-                const newMessage = document.createElement('div');
-                newMessage.classList.add('message', 'sent');
-                newMessage.innerHTML = `<img src='avatar2.png' alt='Avatar'><div class='text'>${messageText}</div>`;
+            if (title) {
+                const newPost = document.createElement('div');
+                newPost.classList.add('feed-item');
+                newPost.innerHTML = `<h3>${title}</h3><p>Your new post has been added.</p>`;
 
-                chatBody.appendChild(newMessage);
-                chatBody.scrollTop = chatBody.scrollHeight;
-
-                inputField.value = '';
+                activityFeed.insertBefore(newPost, activityFeed.children[1]);
+                postTitle.value = '';
             }
         });
     </script>
