@@ -6,240 +6,56 @@
     <title>LabSphere - Socials</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #FFFFFF;
-            color: #1E88E5;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Header and Navigation */
-        header {
-            background-color: #1E88E5;
-            color: white;
-            padding: 20px;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-container h1 {
-            margin-left: 10px;
-        }
-
-        .nav-links {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .nav-links li {
-            display: inline;
-            margin-right: 15px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-        }
-
-        footer {
-            background-color: #1E88E5;
-            text-align: center;
-            padding: 15px;
-            color: white;
-        }
-
-        footer a {
-            color: #D81B60;
-            text-decoration: none;
-        }
-
-        /* Layout for the content section */
-        .content {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px;
-        }
-
-        /* Left-side messaging chat */
-        .chat-box {
-            width: 45%;
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 8px;
-            height: 500px;
-            overflow-y: scroll;
-        }
-
-        .chat-message {
-            display: flex;
-            margin-bottom: 15px;
-        }
-
-        .chat-message img {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        .chat-message .message {
-            background-color: white;
-            padding: 10px;
-            border-radius: 10px;
-            max-width: 80%;
-        }
-
-        .chat-message .message p {
-            margin: 0;
-        }
-
-        .chat-message .user-name {
-            font-weight: bold;
-            color: #1E88E5;
-        }
-
-        .chat-input {
-            display: flex;
-            margin-top: 15px;
-        }
-
-        .chat-input textarea {
-            width: 80%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            resize: none;
-            min-height: 50px;
-        }
-
-        .chat-input button {
-            padding: 10px;
-            margin-left: 10px;
-            background-color: #D81B60;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .chat-input button:hover {
-            background-color: #c2185b;
-        }
-
-        /* Right-side calendar */
-        .calendar {
-            width: 50%;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 8px;
-        }
-
-        .calendar-header {
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #1E88E5;
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            grid-gap: 10px;
-        }
-
-        .calendar-day {
+        /* Calendar styles */
+        .calendar-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 8px;
-            box-sizing: border-box;
-            height: 90px;
+            width: 50%;
+            padding: 20px;
         }
-
-        .calendar-day span {
-            font-size: 18px;
-            font-weight: bold;
-            color: #1E88E5;
-        }
-
-        .event {
-            background-color: #004D40; /* Deadlines in this accent color */
-            color: white;
-            padding: 5px;
-            border-radius: 5px;
-            margin-top: 5px;
-            font-size: 12px;
-        }
-
-        .team-check-in {
-            background-color: #FFC107; /* Team check-in in yellow */
-            color: white;
-            padding: 5px;
-            border-radius: 5px;
-            margin-top: 5px;
-            font-size: 12px;
-        }
-
-        .wellbeing-seminar {
-            background-color: #D81B60; /* Wellbeing seminar in magenta */
-            color: white;
-            padding: 5px;
-            border-radius: 5px;
-            margin-top: 5px;
-            font-size: 12px;
-        }
-
-        /* Online Games section */
-        .games-section {
-            margin-top: 30px;
-            width: 100%;
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
             text-align: center;
         }
-
-        .games-section h2 {
-            font-size: 24px;
-            color: #1E88E5;
-            margin-bottom: 10px;
+        .calendar-day {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            position: relative;
         }
-
-        .games-section p {
-            font-size: 16px;
-            color: #666;
+        .calendar-day span {
+            font-weight: bold;
         }
-
-        .games-list {
-            list-style-type: none;
-            padding: 0;
-            margin-top: 20px;
+        .event, .team-check-in, .wellbeing-seminar {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #ffffff;
+            padding: 5px;
+            border-radius: 3px;
         }
-
-        .games-list li {
-            display: inline-block;
-            margin: 10px;
+        .event {
+            background-color: #004D40;
         }
-
-        .games-list a {
-            display: block;
-            background-color: #1E88E5;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 16px;
+        .team-check-in {
+            background-color: #FFC107;
         }
-
-        .games-list a:hover {
+        .wellbeing-seminar {
             background-color: #D81B60;
         }
-
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .calendar-header button {
+            background-color: #1E88E5;
+            color: white;
+            padding: 5px 15px;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -270,80 +86,162 @@
     </header>
 
     <!-- Main content section -->
-    <main class="content">
-        <!-- Left-side messaging chat -->
-        <div class="chat-box">
-            <div class="chat-message">
-                <img src="alice.jpg" alt="Alice's Profile" class="profile-pic">
-                <div class="message">
-                    <p class="user-name">Alice</p>
-                    <p>Hey guys, anyone attending the upcoming seminar on researcher wellbeing? It seems like it'll be super useful!</p>
+    <main>
+        <section class="newsfeed">
+            <!-- New Post Section -->
+            <div class="new-post">
+                <textarea id="new-post-input" placeholder="What's happening in your research today?"></textarea>
+                <button onclick="postContent()">Post</button>
+            </div>
+
+            <!-- Example posts -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="alice.jpg" alt="Alice's Profile" class="profile-pic">
+                    <div class="post-info">
+                        <strong>Alice</strong>
+                        <p>Just had my paper published in <i>Nature</i> Check it out!</p>
+                    </div>
+                </div>
+                <button class="like-button">Like</button>
+            </div>
+            <!-- New post from John Smith -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="john.jpg" alt="John's Profile" class="profile-pic">
+                    <div class="post-info">
+                        <strong>John</strong>
+                        <p>Just wrapped up a great research project on <i>workplace mental health</i>. It's always rewarding to see your work making a difference!</p>
+                    </div>
+                </div>
+                <button class="like-button">Like</button>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="chat-container">
+                <!-- Messaging Chat -->
+                <div class="chat">
+                    <div class="message">
+                        <img src="alice.jpg" alt="Alice's Profile" class="profile-pic">
+                        <div class="message-info">
+                            <strong>Alice:</strong>
+                            <p>Hey! I’m really looking forward to the Wellbeing Seminar at the end of this month! It's so important for us researchers to have a good work-life balance.</p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <img src="john.jpg" alt="John's Profile" class="profile-pic">
+                        <div class="message-info">
+                            <strong>John:</strong>
+                            <p>Definitely, Alice! I was just talking about this with Emily. It’s so easy to neglect mental health when you're deep into research.</p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <img src="emily.jpg" alt="Emily's Profile" class="profile-pic">
+                        <div class="message-info">
+                            <strong>Emily:</strong>
+                            <p>Agreed, John! And I’ve been feeling pretty burned out recently. It’s nice to have a space where we can talk about this openly.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="chat-message">
-                <img src="john.jpg" alt="John's Profile" class="profile-pic">
-                <div class="message">
-                    <p class="user-name">John</p>
-                    <p>Yes! I think it's essential that we have more focus on mental health in our field. I'm looking forward to it!</p>
+
+            <!-- Calendar -->
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button onclick="changeMonth(-1)">Previous</button>
+                    <h2 id="calendar-month"></h2>
+                    <button onclick="changeMonth(1)">Next</button>
                 </div>
-            </div>
-            <div class="chat-message">
-                <img src="emily.jpg" alt="Emily's Profile" class="profile-pic">
-                <div class="message">
-                    <p class="user-name">Emily</p>
-                    <p>Same here! It's been a tough couple of months with deadlines and all. A wellbeing seminar sounds like a great idea.</p>
-                </div>
-            </div>
-            <div class="chat-message">
-                <img src="lisa.jpg" alt="Lisa's Profile" class="profile-pic">
-                <div class="message">
-                    <p class="user-name">Lisa</p>
-                    <p>Absolutely! I'm trying to maintain a balance between my projects and personal life, but it's challenging. The seminar could help.</p>
-                </div>
-            </div>
-            <div class="chat-input">
-                <textarea placeholder="Type your message..."></textarea>
-                <button>Send</button>
+                <div class="calendar" id="calendar"></div>
             </div>
         </div>
 
-        <!-- Right-side calendar -->
-        <div class="calendar">
-            <div class="calendar-header">January 2025</div>
-            <div class="calendar-grid">
-                <!-- Days of the week -->
-                <div class="calendar-day"><span>Mon</span></div>
-                <div class="calendar-day"><span>Tue</span></div>
-                <div class="calendar-day"><span>Wed</span></div>
-                <div class="calendar-day"><span>Thu</span></div>
-                <div class="calendar-day"><span>Fri</span></div>
-                <div class="calendar-day"><span>Sat</span></div>
-                <div class="calendar-day"><span>Sun</span></div>
-                
-                <!-- Days with events -->
-                <div class="calendar-day">
-                    <span>5</span>
-                    <div class="event">Grant Deadline</div>
-                </div>
-                <div class="calendar-day">
-                    <span>12</span>
-                    <div class="event">Paper Submission Deadline</div>
-                </div>
-                <div class="calendar-day">
-                    <span>19</span>
-                    <div class="team-check-in">Team Check-In</div>
-                </div>
-                <div class="calendar-day">
-                    <span>31</span>
-                    <div class="wellbeing-seminar">Wellbeing Seminar</div>
-                </div>
-            </div>
-        </div>
+        <!-- Online Games Section -->
+        <section>
+            <h2>Online Games</h2>
+            <p>Join your colleagues online for fun!</p>
+            <ul>
+                <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
+                <li><a href="https://boardgamearena.com/" target="_blank">Board Game Arena</a></li>
+                <li><a href="https://www.pictionary.com/play" target="_blank">Pictionary Online</a></li>
+                <li><a href="https://chess.com/play" target="_blank">Chess Online</a></li>
+            </ul>
+        </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer with Let's Chat -->
     <footer>
         <a href="socials.html">Let's Chat</a>
     </footer>
+
+    <script>
+        const events = {
+            5: 'Grant Deadline',
+            12: 'Paper Submission Deadline',
+            19: 'Team Check-In',
+            31: 'Wellbeing Seminar'
+        };
+
+        let currentMonth = new Date().getMonth(); // 0-11
+        let currentYear = new Date().getFullYear();
+
+        function renderCalendar() {
+            const firstDay = new Date(currentYear, currentMonth, 1);
+            const lastDay = new Date(currentYear, currentMonth + 1, 0);
+            const calendar = document.getElementById('calendar');
+            const monthLabel = document.getElementById('calendar-month');
+            
+            monthLabel.textContent = `${firstDay.toLocaleString('default', { month: 'long' })} ${currentYear}`;
+            calendar.innerHTML = '';
+
+            // Days of the week header
+            const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            daysOfWeek.forEach(day => {
+                const dayElement = document.createElement('div');
+                dayElement.classList.add('calendar-day');
+                dayElement.textContent = day;
+                calendar.appendChild(dayElement);
+            });
+
+            // Empty days before the first of the month
+            for (let i = 0; i < firstDay.getDay(); i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.classList.add('calendar-day');
+                calendar.appendChild(emptyDay);
+            }
+
+            // Days of the month
+            for (let day = 1; day <= lastDay.getDate(); day++) {
+                const dayElement = document.createElement('div');
+                dayElement.classList.add('calendar-day');
+                dayElement.innerHTML = `<span>${day}</span>`;
+                
+                // Add event if there is one
+                if (events[day]) {
+                    const eventElement = document.createElement('div');
+                    eventElement.classList.add('event');
+                    eventElement.textContent = events[day];
+                    dayElement.appendChild(eventElement);
+                }
+
+                calendar.appendChild(dayElement);
+            }
+        }
+
+        function changeMonth(direction) {
+            currentMonth += direction;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            } else if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            renderCalendar();
+        }
+
+        renderCalendar();
+    </script>
 </body>
 </html>
