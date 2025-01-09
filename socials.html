@@ -5,6 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LabSphere - Socials</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Common Layout and Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: #1E88E5;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #1E88E5;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Chatbox Layout */
+        .chatbox-container, .games-section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .chatbox-header {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .chat-message {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-message img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .chat-message p {
+            margin: 0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+
+        .chatbox-input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .game-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .game-list li {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .game-list li a {
+            color: #1E88E5;
+            text-decoration: none;
+        }
+
+        /* Hover effect for games */
+        .game-list li a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <!-- Header with Navigation -->
@@ -16,6 +136,10 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">My Profile</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="logout.html">Log Out</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="collaboration.html">Collaboration</a></li>
                 <li><a href="wellbeing.html">Wellbeing</a></li>
@@ -26,126 +150,51 @@
 
     <!-- Main content section -->
     <main>
-        <!-- Live Chat Section -->
-        <section class="live-chat">
-            <h2>Live Chat</h2>
-            <div class="chatbox">
-                <div class="chat-messages">
-                    <div class="message user"><strong>Alice Newman:</strong> Hi, is anyone going to the Wellbeing Seminar next week? 😊</div>
-                    <div class="message support"><strong>LabSphere Support:</strong> Yes, we'll be there! It's going to be a great event focused on research wellbeing. Are you attending? 💬</div>
-                    <div class="message user"><strong>Joey Bloggs:</strong> I’ll be there! Can’t wait for the networking sessions. Anyone else interested in cancer research? 🤔</div>
+        <div class="container">
+            <!-- Live Chat Section -->
+            <section class="chatbox-container">
+                <div class="chatbox-header">
+                    Live Chat
                 </div>
-                <input type="text" placeholder="Type your message..." id="chat-input" />
-                <button onclick="sendChatMessage()">Send</button>
-            </div>
-        </section>
-
-        <!-- Discussion Forums Section -->
-        <section class="discussion-forums">
-            <h2>Discussion Forums</h2>
-            <div class="forum">
-                <h3>Cancer Research</h3>
-                <ul>
-                    <li><a href="#">How can we improve early detection of cancer? - John Smith</a></li>
-                    <li><a href="#">Challenges in cancer clinical trials - Alice Newman</a></li>
-                    <li><a href="#">New breakthrough in immunotherapy - Joey Bloggs</a></li>
-                </ul>
-            </div>
-
-            <div class="forum">
-                <h3>Wellbeing in Research</h3>
-                <ul>
-                    <li><a href="#">Balancing work and mental health during research - Lisa Brown</a></li>
-                    <li><a href="#">Strategies for reducing stress in research - Mike Adams</a></li>
-                    <li><a href="#">Wellbeing resources for researchers - Jane Smith</a></li>
-                </ul>
-            </div>
-
-            <div class="forum">
-                <h3>Wellbeing Support</h3>
-                <ul>
-                    <li><a href="#">Where can I find wellbeing support for researchers? - Joey Bloggs</a></li>
-                    <li><a href="#">Peer support in academia - Alice Newman</a></li>
-                    <li><a href="#">Mental health workshops for PhD students - Lisa Brown</a></li>
-                </ul>
-            </div>
-
-            <div class="forum">
-                <h3>Collaboration Opportunities</h3>
-                <ul>
-                    <li><a href="#">Seeking collaboration on cancer research project - John Smith</a></li>
-                    <li><a href="#">Looking for PhD researchers to co-author paper - Mike Adams</a></li>
-                    <li><a href="#">Research project on mental health in academia - Lisa Brown</a></li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Events and Meetups Section -->
-        <section class="events">
-            <h2>Events and Meetups</h2>
-            <div class="calendar">
-                <h3>Upcoming Events</h3>
-                <ul>
-                    <li><strong>Wellbeing Seminar:</strong> 20th January 2025 - Online. Join us for a seminar focused on mental health in research.</li>
-                    <li><strong>Cancer Research Conference:</strong> 25th February 2025 - In-person at the National Cancer Research Center.</li>
-                    <li><strong>Research Skills Workshop:</strong> 10th March 2025 - Online. Enhancing research methodologies and skills for post-docs and PhDs.</li>
-                    <li><strong>Networking Meet-up for Researchers:</strong> 18th April 2025 - In-person at LabSphere HQ.</li>
-                </ul>
-            </div>
-            <h3>Event Discussions</h3>
-            <div class="event-discussions">
-                <div class="discussion">
-                    <strong>Wellbeing Seminar Discussion:</strong>
-                    <p>Join us here to discuss key takeaways from the seminar. What do you hope to learn about wellbeing in research?</p>
+                <div class="chat-message">
+                    <img src="alice.jpg" alt="Alice">
+                    <p><strong>Alice:</strong> Anyone else attending the Wellbeing seminar this week?</p>
                 </div>
-                <div class="discussion">
-                    <strong>Cancer Research Conference Discussion:</strong>
-                    <p>What are the latest trends and developments in cancer research that you are excited to explore at the conference?</p>
+                <div class="chat-message">
+                    <img src="joey.jpg" alt="Joey">
+                    <p><strong>Joey:</strong> Yes! I’m really looking forward to it. It's a much-needed break.</p>
                 </div>
-            </div>
-        </section>
+                <div class="chat-message">
+                    <img src="lisa.jpg" alt="Lisa">
+                    <p><strong>Lisa:</strong> Me too! We need more of these events to support our mental health.</p>
+                </div>
+                <div class="chat-message">
+                    <img src="mike.jpg" alt="Mike">
+                    <p><strong>Mike:</strong> Absolutely! Let’s plan a meet-up afterwards to discuss our takeaways.</p>
+                </div>
+                <input type="text" class="chatbox-input" placeholder="Type a message...">
+            </section>
 
-        <!-- Mentorship and Networking Section -->
-        <section class="mentorship-networking">
-            <h2>Mentorship and Networking</h2>
-            <h3>Find a Mentor or Mentee</h3>
-            <p>If you're a PhD student looking for guidance, or a Post-Doc who can offer mentorship, connect with someone here:</p>
-            <ul>
-                <li><a href="#">John Smith (PhD Student) is seeking a Post-Doc mentor in cancer research.</a></li>
-                <li><a href="#">Alice Newman (Post-Doc) offers mentorship in research methodologies and wellbeing.</a></li>
-            </ul>
-
-            <h3>Networking Opportunities</h3>
-            <p>Join our networking groups and meet researchers from around the world:</p>
-            <ul>
-                <li><a href="#">Research collaboration opportunities in cancer immunotherapy.</a></li>
-                <li><a href="#">Wellbeing-focused research group: Sharing resources and tips.</a></li>
-                <li><a href="#">PhD/Post-Doc networking for collaborative projects.</a></li>
-            </ul>
-        </section>
-
+            <!-- Online Game Section -->
+            <section class="games-section">
+                <div class="games-header">
+                    🎮 Online Games for Researchers 🎮
+                </div>
+                <div class="game-list">
+                    <ul>
+                        <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
+                        <li><a href="https://agar.io" target="_blank">Agar.io - Simple, but Addictive!</a></li>
+                        <li><a href="https://slither.io" target="_blank">Slither.io - Snake Game with a Twist!</a></li>
+                        <li><a href="https://krunker.io" target="_blank">Krunker.io - FPS Game (Work Safe)</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Footer -->
     <footer>
         <a href="socials.html">Let's Chat</a>
     </footer>
-
-    <!-- JavaScript for Chat Feature -->
-    <script>
-        function sendChatMessage() {
-            const messageInput = document.getElementById("chat-input");
-            const message = messageInput.value.trim();
-            if (message !== "") {
-                const chatMessages = document.querySelector(".chat-messages");
-                const newMessage = document.createElement("div");
-                newMessage.classList.add("message", "user");
-                newMessage.innerHTML = `<strong>You:</strong> ${message}`;
-                chatMessages.appendChild(newMessage);
-                messageInput.value = "";  // Clear input field
-                chatMessages.scrollTop = chatMessages.scrollHeight;  // Scroll to the latest message
-            }
-        }
-    </script>
 </body>
 </html>
