@@ -40,18 +40,114 @@
 
             <!-- siRNA Transfection Protocol -->
             <section class="protocol">
-                <h3>Steps for siRNA Transfection</h3>
-                <p>Follow these steps for siRNA transfection:</p>
+                <h3>siRNA Amount Ordered (nmol) and Nuclease Free H2O for Desired Final Concentration</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>siRNA Amount Ordered (nmol)</th>
+                            <th>1x Nuclease Free H2O to be added (µL) for a desired final concentration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>100µM</td>
+                            <td>50 µM</td>
+                            <td>20µM</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>20</td>
+                            <td>40</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>50</td>
+                            <td>100</td>
+                            <td>250</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>100</td>
+                            <td>200</td>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>200</td>
+                            <td>400</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>500</td>
+                            <td>1000</td>
+                            <td>exceed tube volume</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="key-considerations">
+                    <h3>Key Considerations:</h3>
+                    <ul>
+                        <li>Typical time points for detecting target knockdown with lipid-mediated siRNA or microRNA mimic delivery are 24-48 hours for mRNA and 48-96 hours for protein.</li>
+                        <li>Follow manufacturer’s recommended final concentration. Typically, we use a 10 nM final concentration of the siRNA (can be 10-50 nM). Use a matching concentration of negative control siRNA (scramble siRNA). For example, if your stock concentration is 50 µM and you want a 25 nM final concentration, this would require a 1/2000 dilution in your final transfection mixture.</li>
+                        <li>Use low-passage cells (<50 passages). Ensure cells are healthy and greater than 90% viable before transfection.</li>
+                    </ul>
+                </div>
+
+                <h3>Day 0:</h3>
+                <p>One day before transfection, plate cells in a 6-well plate.</p>
+                <ul>
+                    <li>Trypsinize cells and resuspend the pellet in 3 mL of media without antibiotics.</li>
+                    <li>Count the cells using a hemocytometer.</li>
+                    <li>Seed the appropriate number of cells into a 6-well plate (this depends on your cell type and growth rate; ensure you're familiar with these parameters).</li>
+                    <li>Add 2 mL of media without antibiotics and leave the plate overnight in the incubator.</li>
+                    <li>Target cell density should be 30–50% confluent at the time of transfection.</li>
+                    <li>For RNA tests, you may only need 1 or 2 wells per condition. For protein, you may need more wells.</li>
+                </ul>
+                <div class="expected-seeding-densities">
+                    <p><strong>Expected Seeding Densities:</strong></p>
+                    <ul>
+                        <li>JIMT1BR cells: 125,000 cells per 6-well.</li>
+                    </ul>
+                </div>
+
+                <h3>Day 1:</h3>
+                <p>Check that your cells are at the right level of confluence. Prepare your siRNA mastermix.</p>
+                <h4>Reagents needed:</h4>
+                <ul>
+                    <li>Opti-Mem (Low serum transfection media, tissue culture main fridge)</li>
+                    <li>Lipofectamine 2000 (Transfection reagent, tissue culture main fridge)</li>
+                    <li>Scramble siRNA (negative control, stock conc 50 µM)</li>
+                    <li>siRNA (stock conc 50 µM or lower, stored at -20°C in the main lab)</li>
+                </ul>
+                <p>Typically for one transfection, the mastermix is as follows (final volume of siRNA and Opti-MEM depends on your desired final concentration):</p>
+                <ul>
+                    <li>1 µL of siRNA/scramble + 199 µL of Opti-MEM</li>
+                    <li>5 µL of Lipofectamine 2000 + 195 µL of Opti-MEM</li>
+                </ul>
+
+                <p>For 3 wells of NT (negative control) and 3 wells of siRNA, scale up as necessary:</p>
                 <ol>
-                    <li>Prepare a 1 μM solution of siRNA in a transfection buffer according to the manufacturer's recommendations.</li>
-                    <li>Seed cells in a 6-well plate, aiming for 70-80% confluency on the day of transfection.</li>
-                    <li>Prepare transfection complex by adding the appropriate volume of transfection reagent to the siRNA solution.</li>
-                    <li>Incubate the complex at room temperature for 15-20 minutes to allow formation of transfection particles.</li>
-                    <li>Carefully add the transfection complex to the cells and gently mix by swirling the plate.</li>
-                    <li>Incubate the cells for 4-6 hours at 37°C in a CO2 incubator.</li>
-                    <li>After incubation, replace the transfection medium with fresh growth medium and incubate overnight.</li>
-                    <li>Evaluate transfection efficiency 24-48 hours post-transfection using qPCR or Western blotting.</li>
+                    <li>Prepare 3x 1.5 mL Eppendorf tubes. In the first tube: Pipette 3 µL of siNT (negative control) + 597 µL of Opti-MEM.</li>
+                    <li>In the second tube: Pipette 15 µL of Lipofectamine + 585 µL of Opti-MEM.</li>
+                    <li>In the third tube: Pipette 3 µL of siRNA + 597 µL of Opti-MEM.</li>
+                    <li>In the fourth tube: Pipette 15 µL of Lipofectamine + 585 µL of Opti-MEM.</li>
+                    <li>Let this mixture sit for 5 minutes.</li>
                 </ol>
+
+                <p>After 5 minutes, mix the contents of tube 1 and 2 (NT or scramble mix), and the contents of tube 3 and 4 (siRNA mix). Let the mixtures incubate for 10-20 minutes in the hood.</p>
+
+                <p>After the incubation, take your 6-well plate out of the incubator and remove the old media. Add 1.6 mL of Opti-MEM into each well, then pipette 400 µL of the mix to the corresponding wells. Mix well. The final volume is adjusted based on your siRNA concentration requirements.</p>
+
+                <p>Incubate and if possible, change to normal cell line media after 24 hours. Incubate the cells for 24–48 hours at 37°C in a CO2 incubator until you're ready to assay for gene knockdown.</p>
             </section>
         </div>
     </main>
