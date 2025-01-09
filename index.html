@@ -6,28 +6,14 @@
     <title>LabSphere - Activity Feed</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Add styling for the buttons */
-        button, .like-button {
-            background-color: #1E88E5; /* Blue accent */
-            color: white;
-            padding: 8px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none; /* Remove underline from links */
-        }
-
-        /* Hover effect for buttons */
-        button:hover, .like-button:hover {
-            background-color: #D81B60; /* Magenta color on hover */
-        }
-
-        /* Layout and styling for the page */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9; /* Light background for better contrast */
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
@@ -37,40 +23,30 @@
             text-align: center;
         }
 
-        .navbar {
+        main {
+            flex: 1;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        .nav-links {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
         }
 
         .newsfeed {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            flex: 2;
             margin: 20px;
+        }
+
+        .new-post {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .new-post textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            height: 100px;
+            resize: none;
         }
 
         .post {
@@ -78,6 +54,7 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 20px;
+            margin-top: 20px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -106,20 +83,29 @@
             color: #555;
         }
 
-        .new-post {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        .right-sidebar {
+            flex: 1;
+            background-color: #ffffff;
+            border-left: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
         }
 
-        .new-post textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            height: 100px;
-            resize: none;
+        .right-sidebar h3 {
+            color: #1E88E5;
+        }
+
+        .news-item {
+            margin-bottom: 15px;
+        }
+
+        .news-item a {
+            color: #1E88E5;
+            text-decoration: none;
+        }
+
+        .news-item a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -129,7 +115,20 @@
             padding: 10px;
         }
 
-        /* Styling for Like button state */
+        button, .like-button {
+            background-color: #1E88E5;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        button:hover, .like-button:hover {
+            background-color: #D81B60;
+        }
+
         .liked {
             background-color: #D81B60;
         }
@@ -163,9 +162,9 @@
     </header>
 
     <!-- Main content section -->
-    <main>
+       <main>
+        <!-- Newsfeed Section -->
         <section class="newsfeed">
-            <!-- New Post Section -->
             <div class="new-post">
                 <textarea id="new-post-input" placeholder="What's happening in your research today?"></textarea>
                 <button onclick="postContent()">Post</button>
@@ -239,14 +238,39 @@
             </div>
         </section>
     </main>
+   <aside class="right-sidebar">
+            <h3>Cancer Research News</h3>
+
+            <div class="news-item">
+                <a href="https://www.nature.com/articles/s41586-023-00001" target="_blank">
+                    New Breakthrough in Immunotherapy
+                </a>
+                <p>Researchers have identified a novel pathway to enhance immune response...</p>
+            </div>
+
+            <div class="news-item">
+                <a href="https://www.sciencedirect.com/science/article/pii/S000292972300001X" target="_blank">
+                    Genome Editing for Cancer Treatment
+                </a>
+                <p>A new study explores CRISPR's potential to revolutionize oncology...</p>
+            </div>
+
+            <div class="news-item">
+                <a href="https://www.cancer.gov/news-events/cancer-currents-blog" target="_blank">
+                    Updates from the NCI
+                </a>
+                <p>The National Cancer Institute shares its latest advancements in treatment...</p>
+            </div>
+        </aside>
+    </main>
 
     <!-- Footer with Let's Chat -->
     <footer>
         <a href="socials.html">Let's Chat</a>
+     <p>&copy; 2025 LabSphere. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for New Post -->
-    <script>
+  <script>
         function postContent() {
             const newPostInput = document.getElementById("new-post-input");
             const postContent = newPostInput.value;
@@ -280,7 +304,6 @@
             }
         }
 
-        // Add like button functionality
         document.querySelectorAll('.like-button').forEach(button => {
             button.addEventListener('click', function() {
                 this.classList.toggle('liked');
