@@ -224,7 +224,15 @@
             <ul class="chat-list">
                 <li class="chat-item" onclick="openChat('group1')">
                     <img src="group1.jpg" alt="Group 1">
-                    <span>Research Wellbeing Group</span>
+                    <span>🧬 Research Wellbeing Group</span>
+                </li>
+                <li class="chat-item" onclick="openChat('group2')">
+                    <img src="group2.jpg" alt="Group 2">
+                    <span>🔬 Cancer Researchers</span>
+                </li>
+                <li class="chat-item" onclick="openChat('group3')">
+                    <img src="group3.jpg" alt="Group 3">
+                    <span>🧪 Collaboration Hub</span>
                 </li>
                 <li class="chat-item" onclick="openChat('alice')">
                     <img src="alice.jpg" alt="Alice">
@@ -243,18 +251,18 @@
 
         <!-- Chat Window -->
         <div class="chat-window">
-            <div class="chat-header">Research Wellbeing Group</div>
+            <div class="chat-header">🧬 Research Wellbeing Group</div>
             <div class="chat-messages" id="chat-messages">
                 <div class="message incoming">
                     <img src="alice.jpg" alt="Alice">
-                    <div class="message-content">I heard the wellbeing seminar is happening this Friday. Are you attending?</div>
+                    <div class="message-content">Hey team! Don’t forget to join the wellbeing workshop tomorrow – it's all about managing stress 🧘‍♀️.</div>
                 </div>
                 <div class="message incoming">
                     <img src="emily.jpg" alt="Emily">
-                    <div class="message-content">Yes, I think it's so important for researchers to take care of their mental health.</div>
+                    <div class="message-content">I'm excited for it! Research life is intense, and we could all use some tips 😅.</div>
                 </div>
                 <div class="message outgoing">
-                    <div class="message-content">Absolutely agree! I'll be there too. It's a great initiative.</div>
+                    <div class="message-content">True! Plus, free coffee and snacks are a bonus! ☕🍪</div>
                 </div>
             </div>
             <div class="chat-input">
@@ -270,42 +278,48 @@
             const chatMessages = document.querySelector('#chat-messages');
 
             if (chatName === 'group1') {
-                chatHeader.textContent = 'Research Wellbeing Group';
+                chatHeader.textContent = '🧬 Research Wellbeing Group';
                 chatMessages.innerHTML = `
                     <div class="message incoming">
                         <img src="alice.jpg" alt="Alice">
-                        <div class="message-content">I heard the wellbeing seminar is happening this Friday. Are you attending?</div>
+                        <div class="message-content">Hey team! Don’t forget to join the wellbeing workshop tomorrow – it's all about managing stress 🧘‍♀️.</div>
                     </div>
                     <div class="message incoming">
                         <img src="emily.jpg" alt="Emily">
-                        <div class="message-content">Yes, I think it's so important for researchers to take care of their mental health.</div>
+                        <div class="message-content">I'm excited for it! Research life is intense, and we could all use some tips 😅.</div>
                     </div>
                     <div class="message outgoing">
-                        <div class="message-content">Absolutely agree! I'll be there too. It's a great initiative.</div>
+                        <div class="message-content">True! Plus, free coffee and snacks are a bonus! ☕🍪</div>
                     </div>
                 `;
-            } else if (chatName === 'alice') {
-                chatHeader.textContent = 'Alice';
-                chatMessages.innerHTML = `
-                    <div class="message incoming">
-                        <img src="alice.jpg" alt="Alice">
-                        <div class="message-content">Hi! Are you coming to the seminar?</div>
-                    </div>
-                `;
-            } else if (chatName === 'emily') {
-                chatHeader.textContent = 'Emily';
-                chatMessages.innerHTML = `
-                    <div class="message incoming">
-                        <img src="emily.jpg" alt="Emily">
-                        <div class="message-content">Hi there! The seminar is a great chance to discuss wellbeing.</div>
-                    </div>
-                `;
-            } else if (chatName === 'john') {
-                chatHeader.textContent = 'John';
+            } else if (chatName === 'group2') {
+                chatHeader.textContent = '🔬 Cancer Researchers';
                 chatMessages.innerHTML = `
                     <div class="message incoming">
                         <img src="john.jpg" alt="John">
-                        <div class="message-content">Do you have details about the seminar?</div>
+                        <div class="message-content">Just finished running some exciting new experiments on the immune response mechanisms! 🧪</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="emily.jpg" alt="Emily">
+                        <div class="message-content">Awesome! Are the results looking promising? 🤔</div>
+                    </div>
+                    <div class="message outgoing">
+                        <div class="message-content">Yes! Can't wait to share them during next week's lab meeting! 🔥</div>
+                    </div>
+                `;
+            } else if (chatName === 'group3') {
+                chatHeader.textContent = '🧪 Collaboration Hub';
+                chatMessages.innerHTML = `
+                    <div class="message incoming">
+                        <img src="alice.jpg" alt="Alice">
+                        <div class="message-content">Hey all! Anyone interested in joining a new grant proposal for interdisciplinary cancer research? 💡</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="john.jpg" alt="John">
+                        <div class="message-content">I'm in! Let me know how I can help. 🚀</div>
+                    </div>
+                    <div class="message outgoing">
+                        <div class="message-content">Count me in too! Let's brainstorm over coffee tomorrow? ☕</div>
                     </div>
                 `;
             }
