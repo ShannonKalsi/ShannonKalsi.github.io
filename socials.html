@@ -127,4 +127,137 @@
             cursor: pointer;
         }
 
- 
+        /* Online Games Section */
+        section h2 {
+            color: #333;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        section ul li {
+            padding: 8px 0;
+        }
+
+        footer {
+            background-color: #1E88E5;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Chat Button */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #1E88E5;
+            color: white;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+   <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
+                <h1>LabSphere</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">User Menu</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">My Profile</a>
+                        <a href="account.html">My Account</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="logout.html">Log Out</a>
+                    </div>
+                </li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="collaboration.html">Collaboration</a></li>
+                <li><a href="wellbeing.html">Wellbeing</a></li>
+                <li><a href="socials.html">Socials</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            <!-- Chat Section -->
+            <div class="chat-container">
+                <!-- Messaging Chat -->
+                <div class="chat">
+                    <!-- Messages -->
+                </div>
+            </div>
+
+            <!-- Calendar Section -->
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button onclick="changeMonth(-1)">Previous</button>
+                    <h2 id="calendar-month"></h2>
+                    <button onclick="changeMonth(1)">Next</button>
+                </div>
+                <div class="calendar" id="calendar"></div>
+            </div>
+        </div>
+
+        <!-- Online Games Section -->
+        <section>
+            <h2>Online Games</h2>
+            <p>Join your colleagues online for fun!</p>
+            <ul>
+                <li>🎮 <a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
+                <li>🎮 <a href="https://boardgamearena.com/" target="_blank">Board Game Arena</a></li>
+                <li>🎮 <a href="https://www.pictionary.com/play" target="_blank">Pictionary Online</a></li>
+                <li>🎮 <a href="https://chess.com/play" target="_blank">Chess Online</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer with Let's Chat -->
+    <footer>
+        <a href="socials.html">Let's Chat</a>
+    </footer>
+
+    <!-- Chat Button -->
+    <button class="chat-button" onclick="scrollToChat()">Chat</button>
+
+    <script>
+        const events = {
+            5: 'Grant Deadline',
+            12: 'Paper Submission Deadline',
+            19: 'Team Check-In',
+            31: 'Wellbeing Seminar'
+        };
+
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+
+        function renderCalendar() {
+            const firstDay = new Date(currentYear, currentMonth, 1);
+            const lastDay = new Date(currentYear, currentMonth + 1, 0);
+            const calendar = document.getElementById('calendar');
+            const monthLabel = document.getElementById('calendar-month');
+            
+            monthLabel.textContent = `${firstDay.toLocaleString('default', { month: 'long' })} ${currentYear}`;
+            calendar.innerHTML = '';
+
+            // Days of the week header
+            const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            daysOfWeek.forEach(day => {
+               
+ <!-- Footer with Let's Chat -->
+    <footer>
+        <a href="socials.html">Let's Chat</a>
+    </footer>
+                </body>
+                </html>
