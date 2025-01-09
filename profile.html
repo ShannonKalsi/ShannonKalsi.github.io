@@ -5,11 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jane Smith - Profile - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add fun layout styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background-color: #1e88e5;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 30px;
+        }
+
+        .profile-info, .research-interests, .publications, .skills {
+            background-color: white;
+            padding: 20px;
+            margin-right: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 45%;
+        }
+
+        .profile-info img {
+            width: 150px;
+            border-radius: 75px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #1e88e5;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #2f3c4f;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #1e88e5;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <!-- Header with Navigation -->
     <header>
-        <nav class="navbar">
+        <div class="navbar">
             <div class="logo-container">
                 <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
                 <h1>LabSphere</h1>
@@ -30,7 +131,7 @@
                 <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li><a href="socials.html">Socials</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
     <!-- Main content section -->
@@ -38,8 +139,9 @@
         <div class="profile-container">
             <!-- Profile Information -->
             <section class="profile-info">
+                <img src="jane.jpg" alt="Jane Smith" />
                 <h2>Jane Smith</h2>
-                <p><strong>Role:</strong> Post-doctoral Researcher in Immunology</p>
+                <p><strong>Role:</strong> Post-doctoral Researcher in Immunology (Cancer Research)</p>
                 <p><strong>Gender:</strong> Female</p>
                 <p><strong>Age:</strong> 30</p>
                 <p><strong>Birthday:</strong> May 5, 1994</p>
@@ -50,7 +152,7 @@
             <!-- Research Interests -->
             <section class="research-interests">
                 <h3>Research Interests</h3>
-                <p>Jane's research primarily focuses on immunological responses, including T-cell activation and the role of the immune system in cancer progression. She is also interested in the mechanisms of autoimmunity and exploring novel immunotherapies for autoimmune diseases.</p>
+                <p>Jane's research primarily focuses on immunological responses, including T-cell activation and the role of the immune system in cancer progression. She is also interested in the mechanisms of autoimmunity and exploring novel immunotherapies for autoimmune diseases. Her work is driven by a passion to improve cancer treatments through targeted immunotherapies.</p>
             </section>
 
             <!-- Publications -->
@@ -79,7 +181,7 @@
         </div>
     </main>
 
-       <!-- Footer with Let's Chat -->
+    <!-- Footer with Let's Chat -->
     <footer>
         <a href="socials.html">Let's Chat</a>
     </footer>
