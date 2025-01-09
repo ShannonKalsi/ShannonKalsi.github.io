@@ -18,8 +18,8 @@
             padding: 0;
             margin: 0;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
         }
 
         header {
@@ -62,7 +62,7 @@
 
         /* Left Side - Chat */
         .chat-container {
-            width: 45%;
+            width: 48%;
             background-color: white;
             padding: 20px;
             border-radius: 8px;
@@ -112,7 +112,7 @@
 
         /* Right Side - Calendar */
         .calendar-container {
-            width: 45%;
+            width: 48%;
             background-color: white;
             padding: 20px;
             border-radius: 8px;
@@ -177,6 +177,19 @@
         }
         .fc-event-green {
             background-color: #4CAF50; /* Seminars */
+        }
+
+        /* Ensure responsiveness on smaller screens */
+        @media screen and (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .chat-container, .calendar-container {
+                width: 90%;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -251,6 +264,16 @@
             <h2>LabSphere Calendar</h2>
             <div id="calendar"></div>
         </div>
+    </div>
+
+    <!-- Game Links Section -->
+    <div class="games-container">
+        <h2>Games</h2>
+        <ul>
+            <li><a href="game1.html">Game 1: LabQuest</a></li>
+            <li><a href="game2.html">Game 2: BrainTeasers</a></li>
+            <li><a href="game3.html">Game 3: PuzzleWorld</a></li>
+        </ul>
     </div>
 
     <!-- Footer with Let's Chat -->
