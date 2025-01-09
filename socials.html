@@ -82,6 +82,7 @@
             display: flex;
             justify-content: space-between;
             padding: 20px;
+            gap: 20px;
         }
 
         /* Chatbox Layout */
@@ -92,11 +93,13 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             width: 48%;
+            min-height: 300px;
         }
 
         .chatbox-header {
-            font-size: 1.5em;
+            font-size: 1.8em;
             margin-bottom: 10px;
+            color: #1E88E5;
         }
 
         .chat-message {
@@ -156,12 +159,48 @@
         .section-header {
             font-size: 1.8em;
             margin-bottom: 10px;
+            color: #1E88E5;
+        }
+
+        .games-section {
+            width: 45%;
+        }
+
+        /* More fun layout for sections */
+        .section-header {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #FF6347;
+        }
+
+        .container {
+            flex-wrap: wrap;
+        }
+
+        /* Make chat section fun */
+        .chatbox-container {
+            background-color: #F0F8FF;
+            border: 2px solid #1E88E5;
+        }
+
+        .chat-message p {
+            background-color: #E0FFFF;
+            color: #333;
+        }
+
+        .game-list li {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .game-list li a:hover {
+            color: #FF6347;
         }
 
     </style>
 </head>
 <body>
-    <!-- Header with Navigation -->
+     <!-- Header with Navigation -->
     <header>
         <nav class="navbar">
             <div class="logo-container">
@@ -170,13 +209,6 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="profile.html">My Profile</a></li>
-                <li><a href="account.html">My Account</a></li>
-                <li><a href="settings.html">Settings</a></li>
-                <li><a href="logout.html">Log Out</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="collaboration.html">Collaboration</a></li>
-                <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">User Menu</a>
                     <div class="dropdown-content">
@@ -186,6 +218,9 @@
                         <a href="logout.html">Log Out</a>
                     </div>
                 </li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="collaboration.html">Collaboration</a></li>
+                <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li><a href="socials.html">Socials</a></li>
             </ul>
         </nav>
@@ -194,30 +229,30 @@
     <!-- Main content section -->
     <main>
         <div class="container">
-            <!-- Live Chat Section -->
+            <!-- Chat Section -->
             <section class="chatbox-container">
                 <div class="chatbox-header">
-                    Live Chat
+                    Chat
                 </div>
                 <div class="chat-message">
                     <img src="alice.jpg" alt="Alice">
-                    <p><strong>Alice:</strong> Anyone else attending the Wellbeing seminar this week?</p>
+                    <p><strong>Alice:</strong> Anyone else attending the Wellbeing seminar this week? 😊</p>
                 </div>
                 <div class="chat-message">
                     <img src="joey.jpg" alt="Joey">
-                    <p><strong>Joey:</strong> Yes! I’m really looking forward to it. It's a much-needed break.</p>
+                    <p><strong>Joey:</strong> Yes! I’m really looking forward to it. It's a much-needed break. 💬</p>
                 </div>
                 <div class="chat-message">
                     <img src="lisa.jpg" alt="Lisa">
-                    <p><strong>Lisa:</strong> Me too! We need more of these events to support our mental health.</p>
+                    <p><strong>Lisa:</strong> Me too! We need more of these events to support our mental health. ❤️</p>
                 </div>
                 <div class="chat-message">
                     <img src="mike.jpg" alt="Mike">
-                    <p><strong>Mike:</strong> Absolutely! Let’s plan a meet-up afterwards to discuss our takeaways.</p>
+                    <p><strong>Mike:</strong> Absolutely! Let’s plan a meet-up afterwards to discuss our takeaways. 🤝</p>
                 </div>
-                <input type="text" class="chatbox-input" placeholder="Type a message...">
+                <input type="text" id="chat-input" class="chatbox-input" placeholder="Type a message...">
                 <div class="chatbox-buttons">
-                    <button>Submit</button>
+                    <button onclick="sendChatMessage()">Submit</button>
                     <button>Private Message</button>
                 </div>
             </section>
@@ -230,12 +265,12 @@
                         <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
                         <li><a href="https://agar.io" target="_blank">Agar.io - Simple, but Addictive!</a></li>
                         <li><a href="https://slither.io" target="_blank">Slither.io - Snake Game with a Twist!</a></li>
-                        <li><a href="https://krunker.io" target="_blank">Krunker.io - FPS Game (Work Safe)</a></li>
+                        <li><a href="https://krunker.io" target="_blank">Krunker.io - FPS Game</a></li>
                     </ul>
                 </div>
             </section>
         </div>
-        
+
     <!-- Networking Section -->
         <section class="networking">
             <h3>Networking Opportunities</h3>
@@ -311,8 +346,7 @@
                 </div>
             </div>
         </section>
-        
-        </div>
+
     </main>
     <!-- JavaScript for Chat Feature -->
     <script>
@@ -320,13 +354,12 @@
             const messageInput = document.getElementById("chat-input");
             const message = messageInput.value.trim();
             if (message !== "") {
-                const chatMessages = document.querySelector(".chat-messages");
+                const chatMessages = document.querySelector(".chatbox-container");
                 const newMessage = document.createElement("div");
-                newMessage.classList.add("message", "user");
+                newMessage.classList.add("chat-message");
                 newMessage.innerHTML = `<strong>You:</strong> ${message}`;
                 chatMessages.appendChild(newMessage);
                 messageInput.value = "";  // Clear input field
-                chatMessages.scrollTop = chatMessages.scrollHeight;  // Scroll to the latest message
             }
         }
     </script>
