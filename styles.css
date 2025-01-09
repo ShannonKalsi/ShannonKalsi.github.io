@@ -12,6 +12,23 @@ body {
     padding: 10px 20px;
 }
 
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px; /* Adjust logo size */
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 1.8em;
+    color: white;  /* Title in white */
+    margin: 0;
+}
+
 /* Navigation links */
 .nav-links {
     list-style-type: none;
