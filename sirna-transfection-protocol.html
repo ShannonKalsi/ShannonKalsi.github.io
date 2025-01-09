@@ -3,68 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>siRNA Transfection Protocol</title>
+    <title>siRNA Transfection Protocol - LabSphere</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>siRNA Transfection Protocol</h1>
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
+                <h1>LabSphere</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="collaboration.html">Collaboration</a></li>
+                <li><a href="wellbeing.html">Wellbeing</a></li>
+                <li><a href="socials.html">Socials</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">My Profile</a>
+                        <a href="account.html">My Account</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="logout.html">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <h2>siRNA Amount Ordered</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>siRNA Amount Ordered (nmol)</th>
-                <th>1x Nuclease Free H20 to be added (µL) for a desired final concentration</th>
-                <th>100µM</th>
-                <th>50 µM</th>
-                <th>20µM</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>1</td><td>10</td><td>20</td><td>50</td></tr>
-            <tr><td>2</td><td>20</td><td>40</td><td>100</td></tr>
-            <tr><td>5</td><td>50</td><td>100</td><td>250</td></tr>
-            <tr><td>10</td><td>100</td><td>200</td><td>500</td></tr>
-            <tr><td>20</td><td>200</td><td>400</td><td>1000</td></tr>
-            <tr><td>50</td><td>500</td><td>1000</td><td>Exceed Tube Volume</td></tr>
-        </tbody>
-    </table>
+    <!-- Main content section -->
+    <main>
+        <div class="protocol-container">
+            <h2>siRNA Transfection Protocol</h2>
 
-    <h2>Key Considerations</h2>
-    <ul>
-        <li>Typical time points for detecting target knockdown with lipid-mediated siRNA or microRNA mimic delivery are 24-48 hours for mRNA and 48-96 hours for protein.</li>
-        <li>Follow manufacturer’s recommended final concentration. Typically, we use a 10 nM final concentration of siRNA (can be 10-50nM). Use matching concentration of negative control siRNA (scramble siRNA). For example, if the stock concentration is 50µM and you want a final concentration of 25nM, it’s a 1/2000 dilution in your final transfection.</li>
-        <li>Use low-passage cells (<50 passages); ensure cells are healthy and greater than 90% viable before transfection.</li>
-    </ul>
+            <!-- siRNA Transfection Protocol -->
+            <section class="protocol">
+                <h3>Steps for siRNA Transfection</h3>
+                <p>Follow these steps for siRNA transfection:</p>
+                <ol>
+                    <li>Prepare a 1 μM solution of siRNA in a transfection buffer according to the manufacturer's recommendations.</li>
+                    <li>Seed cells in a 6-well plate, aiming for 70-80% confluency on the day of transfection.</li>
+                    <li>Prepare transfection complex by adding the appropriate volume of transfection reagent to the siRNA solution.</li>
+                    <li>Incubate the complex at room temperature for 15-20 minutes to allow formation of transfection particles.</li>
+                    <li>Carefully add the transfection complex to the cells and gently mix by swirling the plate.</li>
+                    <li>Incubate the cells for 4-6 hours at 37°C in a CO2 incubator.</li>
+                    <li>After incubation, replace the transfection medium with fresh growth medium and incubate overnight.</li>
+                    <li>Evaluate transfection efficiency 24-48 hours post-transfection using qPCR or Western blotting.</li>
+                </ol>
+            </section>
+        </div>
+    </main>
 
-    <h2>Day 0: Preparation</h2>
-    <p>One day before transfection, plate cells in a 6-well plate. Trypsinize cells and resuspend the pellet into 3ml of media without antibiotics. Count cells using a hemocytometer. Seed the appropriate number of cells into a 6-well plate (typically, cells should be 30-50% confluent at the time of transfection). Leave overnight in the incubator. The cell density should be around 30-50% confluent at transfection time.</p>
-
-    <h2>Day 1: Transfection</h2>
-    <p>On the day of transfection, check the cell confluence and prepare the siRNA mastermix:</p>
-    <h3>Reagents Needed</h3>
-    <ul>
-        <li>Opti-MEM (Low serum transfection media)</li>
-        <li>Lipofectamine 2000 (Transfecting agent)</li>
-        <li>Scramble siRNA (Negative control, stock conc 50µM)</li>
-        <li>siRNA (stock conc 50µM or lower)</li>
-    </ul>
-    
-    <h3>Mastermix Preparation</h3>
-    <ul>
-        <li>1 µL of siRNA or scramble + 199 µL of Opti-MEM</li>
-        <li>5 µL of Lipofectamine 2000 + 195 µL of Opti-MEM</li>
-    </ul>
-    <p>Scale up as necessary based on the number of wells needed.</p>
-
-    <h3>Transfection Procedure</h3>
-    <ol>
-        <li>Prepare 3 x 1.5mL Eppendorfs. In the first, pipette 3µL of siNT + 597µL of Opti-MEM. In the second tube, pipette 15µL of Lipofectamine + 585µL of Opti-MEM. In the third tube, pipette 3µL of siRNA + 597µL of Opti-MEM. In the fourth tube, pipette 15µL of Lipofectamine + 585µL of Opti-MEM. Let sit for 5 minutes.</li>
-        <li>After 5 minutes, mix contents of tube 1 and 2 (siNT or scramble mix), and tube 3 and 4 (siRNA mix). Incubate for 10-20 minutes in the hood.</li>
-        <li>Remove the old media from the 6-well plate and add 1.6 mL of Opti-MEM to each well. Add 400 µL of your mix to the corresponding wells. Mix well.</li>
-        <li>Incubate cells for 24-48 hours at 37°C in a CO2 incubator until ready for assay.</li>
-    </ol>
-
-    <p>For RNA assays, 24 hours is usually sufficient. For protein assays, leave cells for 48 hours. Change to normal media after 24 hours if possible.</p>
-
+    <!-- Footer -->
+    <footer>
+        <p>Let's Chat</p>
+        <a href="socials.html">Go to Socials</a>
+    </footer>
 </body>
 </html>
