@@ -73,7 +73,7 @@
 
         h3 {
             font-size: 1.5em;
-            color: #2f3c4f;
+            color: #D81B60; /* Magenta accent for subheadings */
         }
 
         p {
@@ -88,6 +88,17 @@
         li {
             font-size: 1.1em;
             margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        li::before {
+            content: url('test-tube-icon.svg'); /* Add test tube/beaker icon */
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 18px;
+            height: 18px;
         }
 
         footer {
