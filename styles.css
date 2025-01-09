@@ -243,6 +243,17 @@ button:hover {
 
 .dropdown:hover .dropdown-content {
     display: block;
+
+    /* Add the following at the end of the CSS file */
+header h1 {
+    font-weight: normal; /* or another weight if needed */
+    font-size: 2rem; /* or use the same size as in index.html */
+}
+
+.nav-links a {
+    font-weight: normal; /* Remove boldness */
+    font-size: 1rem; /* Ensure it matches the size in index.html */
+}
 }
 
 .dropdown-content a {
