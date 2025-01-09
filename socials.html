@@ -110,6 +110,25 @@
             margin-bottom: 10px;
         }
 
+        .chat-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .chat-buttons button {
+            background-color: #1e88e5;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .chat-buttons button:hover {
+            background-color: #D81B60;
+        }
+
         /* Right Side - Calendar */
         .calendar-container {
             width: 48%;
@@ -156,12 +175,11 @@
         }
 
         .games-container ul li::before {
-            content: url('game-controller-icon.svg'); /* Game controller icon */
+            content: "🎮"; /* Video game controller emoji */
             position: absolute;
             left: -30px;
             top: 5px;
-            width: 20px;
-            height: 20px;
+            font-size: 1.5em;
         }
 
         /* Calendar Event Color Styles */
@@ -231,32 +249,13 @@
                     <img src="alice.jpg" alt="Alice" />
                     <div class="text"><strong>Alice:</strong> I'm feeling a bit stressed about the upcoming abstract submission deadline, but I'm looking forward to the wellbeing seminar next week!</div>
                 </div>
-                <div class="message">
-                    <img src="joey.jpg" alt="Joey" />
-                    <div class="text"><strong>Joey:</strong> Same! I've been working late nights on the cancer research project, but I'm excited to attend the seminar.</div>
-                </div>
-                <div class="message">
-                    <img src="jane.jpg" alt="Jane" />
-                    <div class="text"><strong>Jane:</strong> The last seminar helped me so much with stress management. Can't wait for the next one!</div>
-                </div>
-                <div class="message">
-                    <img src="mike.jpg" alt="Mike" />
-                    <div class="text"><strong>Mike:</strong> Our team meeting tomorrow will be a great opportunity to discuss progress on the cancer project. Who's leading the discussion?</div>
-                </div>
-                <div class="message">
-                    <img src="john.jpg" alt="John" />
-                    <div class="text"><strong>John:</strong> I think Lisa will be presenting on the latest results from the trials. We're making great progress!</div>
-                </div>
-                <div class="message">
-                    <img src="emily.jpg" alt="Emily" />
-                    <div class="text"><strong>Emily:</strong> I’ve been feeling a bit overwhelmed with the grant submission. Any advice?</div>
-                </div>
-                <div class="message">
-                    <img src="lisa.jpg" alt="Lisa" />
-                    <div class="text"><strong>Lisa:</strong> Don't worry, Emily! Let's review it together after the meeting. Also, have you signed up for the wellbeing seminar?</div>
-                </div>
+                <!-- More example messages -->
             </div>
             <textarea id="chat-input" class="chat-input" placeholder="Type a message..."></textarea>
+            <div class="chat-buttons">
+                <button onclick="sendMessage()">Send Message</button>
+                <button onclick="sendPrivateMessage()">Private Message</button>
+            </div>
         </div>
 
         <!-- Right Side - Calendar -->
@@ -270,9 +269,9 @@
     <div class="games-container">
         <h2>Games</h2>
         <ul>
-            <li><a href="game1.html">Game 1: LabQuest</a></li>
-            <li><a href="game2.html">Game 2: BrainTeasers</a></li>
-            <li><a href="game3.html">Game 3: PuzzleWorld</a></li>
+            <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">🎮 Cards Against Humanity (18+)</a></li>
+            <li><a href="https://www.skribbl.io/" target="_blank">🎮 Skribbl.io (PG)</a></li>
+            <li><a href="https://www.betrayal.io/" target="_blank">🎮 Betrayal.io (PG)</a></li>
         </ul>
     </div>
 
@@ -314,6 +313,24 @@
                 ]
             });
         });
+
+        function sendMessage() {
+            const message = document.getElementById("chat-input").value;
+            if (message) {
+                const newMessage = document.createElement("div");
+                newMessage.classList.add("message");
+                newMessage.innerHTML = `<div class="text"><strong>You:</strong> ${message}</div>`;
+                document.getElementById("chat-box").appendChild(newMessage);
+                document.getElementById("chat-input").value = "";
+            }
+        }
+
+        function sendPrivateMessage() {
+            const message = prompt("Enter your private message:");
+            if (message) {
+                alert(`Private message sent: ${message}`);
+            }
+        }
     </script>
 </body>
 </html>
