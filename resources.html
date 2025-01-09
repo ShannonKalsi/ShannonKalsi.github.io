@@ -9,7 +9,7 @@
         /* General styles for the page layout */
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
         }
@@ -56,7 +56,7 @@
 
         /* Section styling */
         section {
-            border: 2px solid #1E88E5;
+            background-color: #ffffff;
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 8px;
@@ -64,7 +64,7 @@
         }
 
         section h2 {
-            color: #333;
+            color: #1E88E5;
         }
 
         section ul {
@@ -77,8 +77,9 @@
         }
 
         section ul li a {
-            color: #1E88E5;
+            color: #D81B60;
             text-decoration: none;
+            font-weight: bold;
         }
 
         section ul li a:hover {
@@ -106,6 +107,15 @@
             padding: 10px;
         }
 
+        footer a {
+            color: #D81B60;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -141,7 +151,6 @@
     <!-- Main content section -->
     <main>
         <div class="resources-container">
-            <!-- Holiday Tracker and Timesheet -->
             <section class="holiday-timesheet">
                 <h2>Holiday and Timesheet Resources</h2>
                 <p>Plan your holidays and track your time efficiently with the following resources:</p>
@@ -151,7 +160,6 @@
                 </ul>
             </section>
 
-            <!-- Protocol Section -->
             <section class="protocol">
                 <h2>Protocol</h2>
                 <p>Find protocols for common experiments in immunology and molecular biology below:</p>
@@ -162,8 +170,7 @@
                     <li><a href="pcr-protocol.html">Introduction to PCR</a></li>
                 </ul>
             </section>
-            
-            <!-- Available Equipment Section -->
+
             <section class="available-equipment">
                 <h2>Available Equipment</h2>
                 <p>Equipment lists from various institutions are available below:</p>
@@ -173,8 +180,7 @@
                 </ul>
                 <button onclick="window.location.href='submit-equipment.html'">Submit Your Institution's Equipment</button>
             </section>
-            
-            <!-- Grants Section -->
+
             <section class="grants">
                 <h2>Grants</h2>
                 <p>Explore available grants for travel, research, and bursaries for PhD and post-doc researchers:</p>
@@ -188,15 +194,14 @@
                     <div class="grant-category">
                         <h3>Resource Grants & Bursaries</h3>
                         <ul>
-                            <li><a href="https://www.embo.org/funding/fellowships-grants-and-career-support/postdoctoral-fellowships/"> <i>EMBO</i> Postdoctoral Fellowships</a></li>
-                            <li><a href="https://www.embo.org/funding/fellowships-grants-and-career-support/scientific-exchange-grants/"> <i>EMBO</i> Scientific Exchange Grants</a></li>
-                            <li><a href="https://research.ie/funding/goipg/"> Government of Ireland Postgraduate Scholarship Programme</a></li>
+                            <li><a href="https://www.embo.org/funding/fellowships-grants-and-career-support/postdoctoral-fellowships/">EMBO Postdoctoral Fellowships</a></li>
+                            <li><a href="https://www.embo.org/funding/fellowships-grants-and-career-support/scientific-exchange-grants/">EMBO Scientific Exchange Grants</a></li>
+                            <li><a href="https://research.ie/funding/goipg/">Government of Ireland Postgraduate Scholarship Programme</a></li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- Visa and Immigration Section -->
             <section class="visa-immigration">
                 <h2>Visa & Immigration</h2>
                 <p>If you're planning to immigrate to Ireland, here's some useful information:</p>
@@ -205,7 +210,6 @@
                 </ul>
             </section>
 
-            <!-- Housing Information Section -->
             <section class="housing">
                 <h2>Finding Housing in Ireland</h2>
                 <p>Looking for housing in Ireland? Here are some useful resources:</p>
