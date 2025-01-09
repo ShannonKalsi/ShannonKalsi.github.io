@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: #f9f9f9;
         }
 
         header {
@@ -58,10 +58,10 @@
         }
 
         /* Chatbox Layout */
-        .chatbox-container, .games-section, .calendar-widget {
+        .chatbox-container, .discussion-forums {
             margin: 20px;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             width: 48%;
@@ -116,6 +116,12 @@
             margin-top: 10px;
         }
 
+        .chatbox-menu {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
         .game-list ul {
             list-style-type: none;
             padding: 0;
@@ -143,7 +149,7 @@
             color: #1E88E5;
         }
 
-        .networking, .discussion-forums, .events {
+        .networking, .events {
             background-color: #FFFFFF;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -170,22 +176,28 @@
             font-weight: bold;
         }
 
-        /* Calendar Widget Styling */
-        .calendar-widget {
-            background-color: #FFFFFF;
+        /* Events Section */
+        .events ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .events li {
+            margin-bottom: 10px;
+        }
+
+        /* Online Games Section */
+        .games-section {
+            margin-top: 20px;
+            background-color: #ffffff;
             padding: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            display: block;
-            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .calendar-widget h3 {
-            color: #1E88E5;
-            font-size: 1.6em;
-            margin-bottom: 15px;
+        .calendar-widget {
+            display: none;
         }
-
     </style>
 </head>
 <body>
@@ -215,7 +227,6 @@
         </nav>
     </header>
 
-
     <!-- Main content section -->
     <main>
         <div class="container">
@@ -223,6 +234,7 @@
             <section class="chatbox-container">
                 <div class="chatbox-header">
                     Group Chat
+                    <button>Menu</button> <!-- Message menu button -->
                 </div>
                 <div class="chat-message pink">
                     <img src="alice.jpg" alt="Alice">
@@ -247,58 +259,28 @@
                 </div>
             </section>
 
-            <!-- Online Games Section (next to chat if space allows) -->
-            <section class="games-section">
-                <div class="section-header">🎮 Online Games for Researchers 🎮</div>
-                <div class="game-list">
+            <!-- Discussion Forums Section -->
+            <section class="discussion-forums">
+                <h2 class="section-header">Discussion Forums 💬</h2>
+                <div class="forum">
+                    <h3>Cancer Research 🧬</h3>
                     <ul>
-                        <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
-                        <li><a href="https://agar.io" target="_blank">Agar.io - Simple, but Addictive!</a></li>
-                        <li><a href="https://slither.io" target="_blank">Slither.io - Snake Game with a Twist!</a></li>
-                        <li><a href="https://krunker.io" target="_blank">Krunker.io - FPS Game</a></li>
+                        <li><a href="#">How can we improve early detection of cancer? - John Smith</a></li>
+                        <li><a href="#">Challenges in cancer clinical trials - Alice Newman</a></li>
+                        <li><a href="#">New breakthrough in immunotherapy - Joey Bloggs</a></li>
+                    </ul>
+                </div>
+
+                <div class="forum">
+                    <h3>Wellbeing in Research 🧘‍♀️</h3>
+                    <ul>
+                        <li><a href="#">Balancing work and mental health during research - Lisa Brown</a></li>
+                        <li><a href="#">Strategies for reducing stress in research - Mike Adams</a></li>
+                        <li><a href="#">Wellbeing resources for researchers - Jane Smith</a></li>
                     </ul>
                 </div>
             </section>
         </div>
-
-        <!-- Calendar Widget (if space allows) -->
-        <div class="calendar-widget">
-            <h3>Upcoming Events</h3>
-            <p>Keep track of your events and activities! 📅</p>
-            <!-- A calendar widget would typically be embedded here -->
-        </div>
-
-        <!-- Networking Section -->
-        <section class="networking">
-            <h2 class="section-header">Networking Opportunities 🔗</h2>
-            <ul>
-                <li><a href="#">Collaborate with others in cancer immunotherapy! 🧬</a></li>
-                <li><a href="#">Join the wellbeing-focused research group 🌱</a></li>
-                <li><a href="#">Post-docs and PhD researchers: Network with peers 📚</a></li>
-            </ul>
-        </section>
-
-        <!-- Discussion Forums Section -->
-        <section class="discussion-forums">
-            <h2 class="section-header">Discussion Forums 💬</h2>
-            <div class="forum">
-                <h3>Cancer Research 🧬</h3>
-                <ul>
-                    <li><a href="#">How can we improve early detection of cancer? - John Smith</a></li>
-                    <li><a href="#">Challenges in cancer clinical trials - Alice Newman</a></li>
-                    <li><a href="#">New breakthrough in immunotherapy - Joey Bloggs</a></li>
-                </ul>
-            </div>
-
-            <div class="forum">
-                <h3>Wellbeing in Research 🧘‍♀️</h3>
-                <ul>
-                    <li><a href="#">Balancing work and mental health during research - Lisa Brown</a></li>
-                    <li><a href="#">Strategies for reducing stress in research - Mike Adams</a></li>
-                    <li><a href="#">Wellbeing resources for researchers - Jane Smith</a></li>
-                </ul>
-            </div>
-        </section>
 
         <!-- Events Section -->
         <section class="events">
@@ -309,6 +291,19 @@
                 <li><strong>Research Skills Workshop:</strong> 10th March 2025 - Online 📚</li>
                 <li><strong>Networking Meet-up for Researchers:</strong> 18th April 2025 - In-person at LabSphere HQ 🔗</li>
             </ul>
+        </section>
+
+        <!-- Online Games Section (below Events) -->
+        <section class="games-section">
+            <div class="section-header">🎮 Online Games for Researchers 🎮</div>
+            <div class="game-list">
+                <ul>
+                    <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
+                    <li><a href="https://agar.io" target="_blank">Agar.io - Simple, but Addictive!</a></li>
+                    <li><a href="https://slither.io" target="_blank">Slither.io - Snake Game with a Twist!</a></li>
+                    <li><a href="https://krunker.io" target="_blank">Krunker.io - FPS Game</a></li>
+                </ul>
+            </div>
         </section>
     </main>
 </body>
