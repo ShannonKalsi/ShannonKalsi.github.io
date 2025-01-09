@@ -50,26 +50,48 @@
             font-weight: bold;
         }
 
+        .nav-links .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-links .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1E88E5;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .nav-links .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
         .container {
             display: flex;
             justify-content: space-between;
             padding: 20px;
         }
 
-        footer {
-            background-color: #1E88E5;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-
         /* Chatbox Layout */
-        .chatbox-container, .games-section {
+        .chatbox-container, .games-section, .forum-section, .events-section, .mentorship-section {
             margin: 20px;
             padding: 20px;
             background-color: #f9f9f9;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 48%;
         }
 
         .chatbox-header {
@@ -105,6 +127,12 @@
             border: 1px solid #ccc;
         }
 
+        .chatbox-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
         .game-list ul {
             list-style-type: none;
             padding: 0;
@@ -124,6 +152,12 @@
         .game-list li a:hover {
             text-decoration: underline;
         }
+
+        .section-header {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -143,6 +177,15 @@
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="collaboration.html">Collaboration</a></li>
                 <li><a href="wellbeing.html">Wellbeing</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">User Menu</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">My Profile</a>
+                        <a href="account.html">My Account</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="logout.html">Log Out</a>
+                    </div>
+                </li>
                 <li><a href="socials.html">Socials</a></li>
             </ul>
         </nav>
@@ -173,13 +216,15 @@
                     <p><strong>Mike:</strong> Absolutely! Let’s plan a meet-up afterwards to discuss our takeaways.</p>
                 </div>
                 <input type="text" class="chatbox-input" placeholder="Type a message...">
+                <div class="chatbox-buttons">
+                    <button>Submit</button>
+                    <button>Private Message</button>
+                </div>
             </section>
 
             <!-- Online Game Section -->
             <section class="games-section">
-                <div class="games-header">
-                    🎮 Online Games for Researchers 🎮
-                </div>
+                <div class="section-header">🎮 Online Games for Researchers 🎮</div>
                 <div class="game-list">
                     <ul>
                         <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
@@ -190,11 +235,107 @@
                 </div>
             </section>
         </div>
-    </main>
 
-    <!-- Footer -->
-    <footer>
-        <a href="socials.html">Let's Chat</a>
-    </footer>
+      <!-- Discussion Forums Section -->
+        <section class="discussion-forums">
+            <h2>Discussion Forums</h2>
+            <div class="forum">
+                <h3>Cancer Research</h3>
+                <ul>
+                    <li><a href="#">How can we improve early detection of cancer? - John Smith</a></li>
+                    <li><a href="#">Challenges in cancer clinical trials - Alice Newman</a></li>
+                    <li><a href="#">New breakthrough in immunotherapy - Joey Bloggs</a></li>
+                </ul>
+            </div>
+
+            <div class="forum">
+                <h3>Wellbeing in Research</h3>
+                <ul>
+                    <li><a href="#">Balancing work and mental health during research - Lisa Brown</a></li>
+                    <li><a href="#">Strategies for reducing stress in research - Mike Adams</a></li>
+                    <li><a href="#">Wellbeing resources for researchers - Jane Smith</a></li>
+                </ul>
+            </div>
+
+            <div class="forum">
+                <h3>Wellbeing Support</h3>
+                <ul>
+                    <li><a href="#">Where can I find wellbeing support for researchers? - Joey Bloggs</a></li>
+                    <li><a href="#">Peer support in academia - Alice Newman</a></li>
+                    <li><a href="#">Mental health workshops for PhD students - Lisa Brown</a></li>
+                </ul>
+            </div>
+
+            <div class="forum">
+                <h3>Collaboration Opportunities</h3>
+                <ul>
+                    <li><a href="#">Seeking collaboration on cancer research project - John Smith</a></li>
+                    <li><a href="#">Looking for PhD researchers to co-author paper - Mike Adams</a></li>
+                    <li><a href="#">Research project on mental health in academia - Lisa Brown</a></li>
+                </ul>
+            </div>
+        </section>
+
+             <!-- Events and Meetups Section -->
+        <section class="events">
+            <h2>Events and Meetups</h2>
+            <div class="calendar">
+                <h3>Upcoming Events</h3>
+                <ul>
+                    <li><strong>Wellbeing Seminar:</strong> 20th January 2025 - Online. Join us for a seminar focused on mental health in research.</li>
+                    <li><strong>Cancer Research Conference:</strong> 25th February 2025 - In-person at the National Cancer Research Center.</li>
+                    <li><strong>Research Skills Workshop:</strong> 10th March 2025 - Online. Enhancing research methodologies and skills for post-docs and PhDs.</li>
+                    <li><strong>Networking Meet-up for Researchers:</strong> 18th April 2025 - In-person at LabSphere HQ.</li>
+                </ul>
+            </div>
+            <h3>Event Discussions</h3>
+            <div class="event-discussions">
+                <div class="discussion">
+                    <strong>Wellbeing Seminar Discussion:</strong>
+                    <p>Join us here to discuss key takeaways from the seminar. What do you hope to learn about wellbeing in research?</p>
+                </div>
+                <div class="discussion">
+                    <strong>Cancer Research Conference Discussion:</strong>
+                    <p>What are the latest trends and developments in cancer research that you are excited to explore at the conference?</p>
+                </div>
+            </div>
+        </section>
+        
+             <!-- Mentorship and Networking Section -->
+        <section class="mentorship-networking">
+            <h2>Mentorship and Networking</h2>
+            <h3>Find a Mentor or Mentee</h3>
+            <p>If you're a PhD student looking for guidance, or a Post-Doc who can offer mentorship, connect with someone here:</p>
+            <ul>
+                <li><a href="#">John Smith (PhD Student) is seeking a Post-Doc mentor in cancer research.</a></li>
+                <li><a href="#">Alice Newman (Post-Doc) offers mentorship in research methodologies and wellbeing.</a></li>
+            </ul>
+
+            <h3>Networking Opportunities</h3>
+            <p>Join our networking groups and meet researchers from around the world:</p>
+            <ul>
+                <li><a href="#">Research collaboration opportunities in cancer immunotherapy.</a></li>
+                <li><a href="#">Wellbeing-focused research group: Sharing resources and tips.</a></li>
+                <li><a href="#">PhD/Post-Doc networking for collaborative projects.</a></li>
+            </ul>
+        </section>
+        </div>
+    </main>
+    <!-- JavaScript for Chat Feature -->
+    <script>
+        function sendChatMessage() {
+            const messageInput = document.getElementById("chat-input");
+            const message = messageInput.value.trim();
+            if (message !== "") {
+                const chatMessages = document.querySelector(".chat-messages");
+                const newMessage = document.createElement("div");
+                newMessage.classList.add("message", "user");
+                newMessage.innerHTML = `<strong>You:</strong> ${message}`;
+                chatMessages.appendChild(newMessage);
+                messageInput.value = "";  // Clear input field
+                chatMessages.scrollTop = chatMessages.scrollHeight;  // Scroll to the latest message
+            }
+        }
+    </script>
 </body>
 </html>
