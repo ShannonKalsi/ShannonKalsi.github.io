@@ -3,31 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Activity Feed</title>
+    <title>LabSphere - Messaging</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Add styling for the buttons */
-        button, .like-button {
-            background-color: #1E88E5; /* Blue accent */
-            color: white;
-            padding: 8px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none; /* Remove underline from links */
-        }
-
-        /* Hover effect for buttons */
-        button:hover, .like-button:hover {
-            background-color: #D81B60; /* Magenta color on hover */
-        }
-
-        /* Layout and styling for the page */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9; /* Light background for better contrast */
+            background-color: #f9f9f9;
         }
 
         header {
@@ -37,259 +20,207 @@
             text-align: center;
         }
 
-        .navbar {
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #1E88E5;
+            color: white;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar .menu {
+            padding: 20px;
+        }
+
+        .sidebar .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar .menu ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar .menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+        }
+
+        .activity-header {
+            background-color: #1E88E5;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        .nav-links {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .newsfeed {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin: 20px;
-        }
-
-        .post {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+        .activity-feed {
+            flex: 1;
             padding: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
         }
 
-        .post-header {
-            display: flex;
-            gap: 10px;
-        }
-
-        .profile-pic {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
-
-        .post-info {
+        .post-box {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            margin-bottom: 20px;
         }
 
-        .post-info strong {
-            font-size: 1.1em;
-        }
-
-        .post-info p {
-            color: #555;
-        }
-
-        .new-post {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .new-post textarea {
-            width: 100%;
+        .post-box input {
             padding: 10px;
-            border-radius: 5px;
             border: 1px solid #ccc;
-            height: 100px;
-            resize: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
         }
 
-        footer {
+        .post-box button {
+            align-self: flex-end;
             background-color: #1E88E5;
             color: white;
-            text-align: center;
-            padding: 10px;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
-        /* Styling for Like button state */
-        .liked {
+        .post-box button:hover {
             background-color: #D81B60;
+        }
+
+        .feed-item {
+            background-color: #f1f1f1;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .recommended-courses {
+            width: 300px;
+            background-color: #f9f9f9;
+            border-left: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .course-item {
+            margin-bottom: 15px;
+        }
+
+        .course-item h4 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .course-item p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .course-item button {
+            background-color: #1E88E5;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <!-- Header with Navigation -->
     <header>
-        <nav class="navbar">
-            <div class="logo-container">
-                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
-                <h1>LabSphere</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">User Menu</a>
-                    <div class="dropdown-content">
-                        <a href="profile.html">My Profile</a>
-                        <a href="account.html">My Account</a>
-                        <a href="settings.html">Settings</a>
-                        <a href="logout.html">Log Out</a>
-                    </div>
-                </li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="collaboration.html">Collaboration</a></li>
-                <li><a href="wellbeing.html">Wellbeing</a></li>
-                <li><a href="socials.html">Socials</a></li>
-            </ul>
-        </nav>
+        <h1>LabSphere - Activity Feed</h1>
     </header>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Activity Feed</a></li>
+                    <li><a href="#">My Courses</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Schools</a></li>
+                    <li><a href="#">My Profile</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <button>Log Out</button>
+            </div>
+        </div>
 
-    <!-- Main content section -->
-    <main>
-        <section class="newsfeed">
-            <!-- New Post Section -->
-            <div class="new-post">
-                <textarea id="new-post-input" placeholder="What's happening in your research today?"></textarea>
-                <button onclick="postContent()">Post</button>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Activity Header -->
+            <div class="activity-header">
+                <span>Activity Feed</span>
             </div>
 
-            <!-- Example posts -->
-            <div class="post">
-                <div class="post-header">
-                    <img src="alice.jpg" alt="Alice's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>Alice Newman</strong>
-                        <p>Just had my paper published in <i>Nature</i>! Check it out! 🎉</p>
-                    </div>
+            <!-- Activity Feed -->
+            <div class="activity-feed">
+                <div class="post-box">
+                    <input type="text" placeholder="Title" id="post-title">
+                    <button id="post-button">Post</button>
                 </div>
-                <button class="like-button">👍 Like</button>
-            </div>
 
-            <div class="post">
-                <div class="post-header">
-                    <img src="joey.jpg" alt="Joey's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>Joey Bloggs</strong>
-                        <p>Attending the <i>EACR conference</i> 📅. Having a great time! Met amazing researchers! 👨‍🔬</p>
-                    </div>
+                <div class="feed-item">
+                    <h3>Congratulations to Hamoye Data Science Internship Stage C Winners!</h3>
+                    <p>After a thorough review of all deliverables, we are excited to announce the winners...</p>
                 </div>
-                <button class="like-button">👍 Like</button>
-            </div>
 
-            <div class="post">
-                <div class="post-header">
-                    <img src="lisa.jpg" alt="Lisa's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>Lisa Brown</strong>
-                        <p>I was selected to give an oral presentation at the <i>EMBL-EBI Annual Conference</i> 🗣️ Can not wait!</p>
-                    </div>
+                <div class="feed-item">
+                    <h3>A new course titled STEM+ CHALLENGE 20-04: Science is created</h3>
+                    <p>Enroll now to expand your knowledge in STEM-related topics.</p>
                 </div>
-                <button class="like-button">👍 Like</button>
+            </div>
+        </div>
+
+        <!-- Recommended Courses -->
+        <div class="recommended-courses">
+            <h3>Recommended Courses</h3>
+            <div class="course-item">
+                <h4>University Entrance Exam Q&A: Energy</h4>
+                <p>Test your knowledge of Energy (Potential, Kinetic, and Mechanical).</p>
+                <button>Enroll</button>
             </div>
 
-            <div class="post">
-                <div class="post-header">
-                    <img src="mike.jpg" alt="Mike's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>Mike Adams</strong>
-                        <p>Just finished the final draft for my next paper! 📚 Feeling optimistic. ✨</p>
-                    </div>
-                </div>
-                <button class="like-button">👍 Like</button>
+            <div class="course-item">
+                <h4>University Entrance Exam Q&A: Magnetic Field</h4>
+                <p>Test your knowledge of magnetic influences of electric charges.</p>
+                <button>Enroll</button>
             </div>
+        </div>
+    </div>
 
-            <div class="post">
-                <div class="post-header">
-                    <img src="jane.jpg" alt="Jane's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>Jane Smith</strong>
-                        <p>Had a wonderful time at the <i>Wellbeing Seminar</i> 🧘. It’s so important for researchers to get the support they need. ❤️</p>
-                    </div>
-                </div>
-                <button class="like-button">👍 Like</button>
-            </div>
-
-            <div class="post">
-                <div class="post-header">
-                    <img src="john.jpg" alt="John's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>John Smith</strong>
-                        <p>Just wrapped up a great research project on <i>workplace mental health</i> 🌱. It’s rewarding to see your work make a difference! 🙌</p>
-                    </div>
-                </div>
-                <button class="like-button">👍 Like</button>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer with Let's Chat -->
-    <footer>
-        <a href="socials.html">Let's Chat</a>
-    </footer>
-
-    <!-- JavaScript for New Post -->
     <script>
-        function postContent() {
-            const newPostInput = document.getElementById("new-post-input");
-            const postContent = newPostInput.value;
-            if (postContent.trim() !== "") {
-                const newPost = document.createElement("div");
-                newPost.classList.add("post");
+        const postButton = document.getElementById('post-button');
+        const postTitle = document.getElementById('post-title');
+        const activityFeed = document.querySelector('.activity-feed');
 
-                const newPostHeader = document.createElement("div");
-                newPostHeader.classList.add("post-header");
+        postButton.addEventListener('click', () => {
+            const title = postTitle.value.trim();
 
-                const newPostImage = document.createElement("img");
-                newPostImage.src = "profile.jpg";  // Default image for the user
-                newPostImage.classList.add("profile-pic");
+            if (title) {
+                const newPost = document.createElement('div');
+                newPost.classList.add('feed-item');
+                newPost.innerHTML = `<h3>${title}</h3><p>Your new post has been added.</p>`;
 
-                const newPostInfo = document.createElement("div");
-                newPostInfo.classList.add("post-info");
-                newPostInfo.innerHTML = `<strong>Your Name</strong> <p>${postContent}</p>`;
-
-                newPostHeader.appendChild(newPostImage);
-                newPostHeader.appendChild(newPostInfo);
-
-                const newPostLikeButton = document.createElement("button");
-                newPostLikeButton.classList.add("like-button");
-                newPostLikeButton.innerText = "👍 Like";
-
-                newPost.appendChild(newPostHeader);
-                newPost.appendChild(newPostLikeButton);
-
-                document.querySelector(".newsfeed").appendChild(newPost);
-                newPostInput.value = "";  // Clear input after posting
+                activityFeed.insertBefore(newPost, activityFeed.children[1]);
+                postTitle.value = '';
             }
-        }
-
-        // Add like button functionality
-        document.querySelectorAll('.like-button').forEach(button => {
-            button.addEventListener('click', function() {
-                this.classList.toggle('liked');
-                if (this.classList.contains('liked')) {
-                    this.textContent = 'Liked';
-                } else {
-                    this.textContent = '👍 Like';
-                }
-            });
         });
     </script>
 </body>
