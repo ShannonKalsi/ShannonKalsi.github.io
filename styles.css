@@ -142,3 +142,18 @@ footer a {
 footer a:hover {
     color: #D81B60;
 }
+
+/* Button styling for Submit Your Institution's Equipment */
+button {
+    background-color: #007bff; /* Blue accent color */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Add padding for better appearance */
+    font-size: 16px; /* Font size for readability */
+    cursor: pointer; /* Cursor to indicate clickable button */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+button:hover {
+    background-color: #e20075; /* Magenta accent color on hover */
