@@ -127,30 +127,6 @@
             cursor: pointer;
         }
 
-        /* New Post Section */
-        .new-post {
-            margin-bottom: 20px;
-        }
-
-        .new-post textarea {
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .new-post button {
-            background-color: #1E88E5;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
         /* Online Games Section */
         section h2 {
             color: #333;
@@ -227,6 +203,21 @@
                             <p>Agreed, John! And I’ve been feeling pretty burned out recently. It’s nice to have a space where we can talk about this openly.</p>
                         </div>
                     </div>
+                    <!-- More chats -->
+                    <div class="message">
+                        <img src="luke.jpg" alt="Luke's Profile" class="profile-pic">
+                        <div class="message-info">
+                            <strong>Luke:</strong>
+                            <p>Absolutely! That’s why I try to integrate a bit of meditation in my schedule, helps keep my mind sharp!</p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <img src="sarah.jpg" alt="Sarah's Profile" class="profile-pic">
+                        <div class="message-info">
+                            <strong>Sarah:</strong>
+                            <p>Same here, Luke. I’ve also been experimenting with a new workout routine—feeling great!</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -239,12 +230,6 @@
                 </div>
                 <div class="calendar" id="calendar"></div>
             </div>
-        </div>
-
-        <!-- New Post Section -->
-        <div class="new-post">
-            <textarea id="new-post-input" placeholder="What's happening in your research today?"></textarea>
-            <button onclick="postContent()">Post</button>
         </div>
 
         <!-- Online Games Section -->
