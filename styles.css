@@ -1,3 +1,8 @@
+/* Global styles */
+body {
+    font-family: Calibri, sans-serif; /* Set Calibri as the default font */
+}
+
 /* Navbar Styling */
 .navbar {
     display: flex;
@@ -5,22 +10,6 @@
     align-items: center;  /* Align items vertically in the center */
     background-color: #1E88E5;
     padding: 10px 20px;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;  /* Center the items (logo and title) vertically */
-}
-
-.logo-img {
-    height: 40px;  /* Limit the height of the logo image */
-    margin-right: 10px;  /* Add space between logo and title */
-}
-
-h1 {
-    color: white;
-    font-size: 1.8em;
-    margin: 0;  /* Remove default margin from <h1> */
 }
 
 /* Navigation links */
@@ -52,6 +41,7 @@ h1 {
     position: absolute;
     background-color: #1E88E5;
     min-width: 160px;
+    margin-top: 5px; /* Ensure the dropdown is slightly offset */
     z-index: 1;
 }
 
@@ -63,6 +53,7 @@ h1 {
     padding: 12px 16px;
 }
 
+/* Dropbtn */
 .dropbtn {
     background-color: #1E88E5;
     color: white;
@@ -76,12 +67,23 @@ h1 {
     background-color: #D81B60;
 }
 
-footer {
+/* Like button styling */
+.like-button {
     background-color: #1E88E5;
     color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9em;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-left: auto;
+    border-radius: 5px;
+}
+
+.like-button.liked {
+    background-color: #D81B60; /* Change color when liked */
+}
+
+.like-button:hover {
+    background-color: #D81B60;
 }
 
 /* Ensure profile pictures are 1.5cm high */
@@ -92,7 +94,7 @@ footer {
     border-radius: 50%;  /* Make profile picture circular */
 }
 
-/* Style for the post section */
+/* Styling for the post section */
 .post {
     display: flex;
     align-items: center;
@@ -115,21 +117,6 @@ footer {
 
 .post-info em {
     font-style: italic;
-}
-
-/* Styling for the like button */
-.like-button {
-    background-color: #1E88E5;
-    color: white;
-    border: none;
-    padding: 5px 15px;
-    cursor: pointer;
-    margin-left: auto;
-    border-radius: 5px;
-}
-
-.like-button:hover {
-    background-color: #D81B60;
 }
 
 .new-post {
@@ -165,212 +152,6 @@ footer {
     font-size: 0.9em;
 }
 
-/* Submit Project Form */
-.submit-project form {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-}
-
-.submit-project .form-group {
-    margin-bottom: 15px;
-}
-
-.submit-project .form-group label {
-    font-weight: bold;
-}
-
-.submit-project .form-group input, 
-.submit-project .form-group textarea {
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-}
-
-.submit-project button {
-    background-color: #1E88E5;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.submit-project button:hover {
-    background-color: #D81B60;
-}
-
-/* Available Projects */
-.available-projects .project {
-    margin-bottom: 20px;
-}
-
-.available-projects h3 {
-    margin-bottom: 10px;
-}
-
-.available-projects .apply-button {
-    background-color: #1E88E5;
-    color: white;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.available-projects .apply-button:hover {
-    background-color: #D81B60;
-}
-
-/* Industry Collaboration */
-.industry-collaboration ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.industry-collaboration li {
-    margin-bottom: 10px;
-}
-
-.industry-collaboration a {
-    color: #1E88E5;
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
-.industry-collaboration a:hover {
-    color: #D81B60;
-}
-
-/* Wellbeing Sections */
-.five-ways, .health-wellness, .mental-health-resources, .additional-tips {
-    margin-bottom: 30px;
-}
-
-.five-ways ul, .health-wellness ul, .mental-health-resources ul, .additional-tips ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-.five-ways li, .health-wellness li, .mental-health-resources li, .additional-tips li {
-    margin-bottom: 10px;
-}
-
-.five-ways a, .health-wellness a, .mental-health-resources a, .additional-tips a {
-    color: #1E88E5;
-    text-decoration: none;
-}
-
-.five-ways a:hover, .health-wellness a:hover, .mental-health-resources a:hover, .additional-tips a:hover {
-    color: #D81B60;
-}
-
-/* Wellbeing Resources PDF links */
-.health-wellness a {
-    font-weight: bold;
-    color: #1E88E5;
-}
-
-.health-wellness a:hover {
-    color: #D81B60;
-}
-
-/* Messages Section */
-.messaging {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.messaging .message {
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.messaging .profile-pic img {
-    width: 2cm;
-    height: 2cm;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.messaging .message-content {
-    max-width: 90%;
-}
-
-/* Calendar Section */
-.calendar {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Online Games Section */
-.online-games {
-    background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.online-games ul {
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-.online-games li {
-    margin-bottom: 10px;
-}
-
-.online-games .game-controller {
-    margin-right: 10px;
-}
-
-/* Profile Page Styling */
-.profile-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.profile-info, .research-interests, .publications, .skills {
-    margin-bottom: 30px;
-}
-
-.profile-info h2 {
-    font-size: 2em;
-    color: #1E88E5;
-}
-
-h3 {
-    color: #D81B60;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-footer {
-    background-color: #1E88E5;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
 footer a {
     color: white;
     text-decoration: none;
@@ -379,42 +160,3 @@ footer a {
 footer a:hover {
     color: #D81B60;
 }
-/* Styling for the Resources page */
-.resources-container {
-    padding: 20px;
-    background-color: #f9f9f9;
-    max-width: 900px;
-    margin: 0 auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    color: #1E88E5;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-footer {
-    background-color: #1E88E5;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #D81B60;
-}
-
