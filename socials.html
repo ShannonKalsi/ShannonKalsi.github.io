@@ -12,74 +12,133 @@
             padding: 0;
             display: flex;
             height: 100vh;
-            background-color: #f4f4f9;
+            background-color: #fff;
         }
         .container {
             display: flex;
             flex: 1;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .left-pane, .right-pane {
+            flex: 1;
+            padding: 20px;
         }
         .left-pane {
-            width: 50%;
-            background-color: #fff;
-            padding: 20px;
+            background-color: #ffffff;
             border-right: 1px solid #ddd;
-            display: flex;
-            flex-direction: column;
         }
         .right-pane {
-            width: 50%;
-            background-color: #fff;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #1E88E5;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 500;
         }
         .chat-header, .calendar-header, .games-header {
             font-weight: 500;
+            color: #1E88E5;
             margin-bottom: 10px;
         }
         .chat-box, .calendar-box, .games-box {
-            flex: 1;
-            overflow-y: auto;
-        }
-        .chat-box {
             margin-bottom: 20px;
         }
-        .calendar-box {
+        .chat-box, .calendar-box {
+            flex: 1;
             height: 50%;
-            background-color: #f0f0f0;
+            overflow-y: auto;
             border: 1px solid #ddd;
             padding: 10px;
-            display: flex;
-            flex-direction: column;
         }
-        .calendar-box .calendar-event {
-            background-color: #ddd;
-            margin: 5px 0;
+        .chat-box p, .calendar-box p {
+            margin: 10px 0;
+        }
+        .calendar-event.fake {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
             padding: 5px;
+            margin: 5px 0;
             border-radius: 5px;
+        }
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .chat-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .chat-item .username {
+            font-weight: 500;
+            color: #1E88E5;
         }
         .online-games-text {
             margin-top: 10px;
             font-size: 14px;
             color: #666;
         }
-        .calendar-event.fake {
-            background-color: #4CAF50;
+        .online-games-list {
+            list-style: none;
+            padding: 0;
+        }
+        .online-games-list li {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .online-games-list li::before {
+            content: "🎮";
+            margin-right: 10px;
+        }
+        .btn {
+            background-color: #D81B60;
             color: white;
-            font-weight: bold;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
+
+    <div class="header">Social Interaction</div>
 
     <div class="container">
         <!-- Left Pane: Messaging -->
         <div class="left-pane">
             <div class="chat-header">Messaging</div>
             <div class="chat-box">
-                <p><strong>User1:</strong> Hey, how are you?</p>
-                <p><strong>User2:</strong> I'm good, how about you?</p>
-                <p><strong>User1:</strong> Doing great! Just working on some projects.</p>
+                <!-- Chat messages -->
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Emily" class="profile-pic">
+                    <p class="username">Emily:</p>
+                    <p>Hey John, have you signed up for the Wellbeing Seminar?</p>
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="John" class="profile-pic">
+                    <p class="username">John:</p>
+                    <p>Yes, I did! It looks really interesting. I think it will help a lot with managing stress while juggling projects.</p>
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Emily" class="profile-pic">
+                    <p class="username">Emily:</p>
+                    <p>Exactly! I'm hoping to learn some strategies for work-life balance. How's your project going?</p>
+                </div>
+                <div class="chat-item">
+                    <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="John" class="profile-pic">
+                    <p class="username">John:</p>
+                    <p>It's going well, but it's a bit overwhelming. I'm definitely looking forward to some advice from the seminar.</p>
+                </div>
             </div>
             <input type="text" placeholder="Type your message..." style="width: 100%; padding: 10px;">
         </div>
@@ -89,15 +148,21 @@
             <!-- Calendar Section -->
             <div class="calendar-header">Calendar</div>
             <div class="calendar-box">
-                <div class="calendar-event fake">Team Meeting - 10:00 AM</div>
+                <div class="calendar-event fake">Wellbeing Seminar - 10:00 AM</div>
                 <div class="calendar-event fake">Project Deadline - 3:00 PM</div>
-                <div class="calendar-event fake">Team Building Activity - 4:00 PM</div>
+                <div class="calendar-event fake">Team Check-in - 4:00 PM</div>
             </div>
 
             <!-- Online Games Section -->
             <div class="games-header">Online Games</div>
             <div class="games-box">
-                <p>Join your colleagues for some fun online games!</p>
+                <p class="online-games-text">Join your colleagues online for fun!</p>
+                <ul class="online-games-list">
+                    <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank" class="btn">Cards Against Humanity</a></li>
+                    <li><a href="https://agar.io/" target="_blank" class="btn">Agar.io</a></li>
+                    <li><a href="https://www.brawlhalla.com/" target="_blank" class="btn">Brawlhalla</a></li>
+                    <li><a href="https://www.skyrim-game.com/" target="_blank" class="btn">Skyrim</a></li>
+                </ul>
             </div>
         </div>
     </div>
