@@ -71,7 +71,6 @@
             border-radius: 8px;
             height: 500px;
             overflow-y: scroll;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .chat-message {
@@ -132,11 +131,10 @@
 
         /* Right-side calendar */
         .calendar {
-            width: 45%;
+            width: 50%;
             padding: 10px;
             background-color: #f0f0f0;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .calendar-header {
@@ -149,7 +147,7 @@
 
         .calendar-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(7, 1fr);
             grid-gap: 10px;
         }
 
@@ -160,7 +158,8 @@
             background-color: #fff;
             padding: 10px;
             border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            height: 90px;
         }
 
         .calendar-day span {
@@ -170,7 +169,25 @@
         }
 
         .event {
-            background-color: #D81B60;
+            background-color: #004D40; /* Deadlines in this accent color */
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        .team-check-in {
+            background-color: #FFC107; /* Team check-in in yellow */
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        .wellbeing-seminar {
+            background-color: #D81B60; /* Wellbeing seminar in magenta */
             color: white;
             padding: 5px;
             border-radius: 5px;
@@ -292,66 +309,39 @@
         <div class="calendar">
             <div class="calendar-header">January 2025</div>
             <div class="calendar-grid">
+                <!-- Days of the week -->
+                <div class="calendar-day"><span>Mon</span></div>
+                <div class="calendar-day"><span>Tue</span></div>
+                <div class="calendar-day"><span>Wed</span></div>
+                <div class="calendar-day"><span>Thu</span></div>
+                <div class="calendar-day"><span>Fri</span></div>
+                <div class="calendar-day"><span>Sat</span></div>
+                <div class="calendar-day"><span>Sun</span></div>
+                
                 <!-- Days with events -->
                 <div class="calendar-day">
                     <span>5</span>
-                    <div class="event">Wellbeing Seminar</div>
+                    <div class="event">Grant Deadline</div>
                 </div>
                 <div class="calendar-day">
                     <span>12</span>
-                    <div class="event">Grant Deadline</div>
-                </div>
-                <div class="calendar-day">
-                    <span>14</span>
-                    <div class="event">Team Check-In</div>
+                    <div class="event">Paper Submission Deadline</div>
                 </div>
                 <div class="calendar-day">
                     <span>19</span>
-                    <div class="event">Abstract Submission Deadline</div>
+                    <div class="team-check-in">Team Check-In</div>
                 </div>
                 <div class="calendar-day">
-                    <span>23</span>
-                    <div class="event">Grant Deadline</div>
+                    <span>31</span>
+                    <div class="wellbeing-seminar">Wellbeing Seminar</div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Online Games Section -->
-    <div class="games-section">
-        <h2>Online Games</h2>
-        <p>Join your colleagues online for fun!</p>
-        <ul class="games-list">
-            <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
-            <li><a href="https://boardgamearena.com/" target="_blank">Board Game Arena</a></li>
-            <li><a href="https://www.agar.io/" target="_blank">Agar.io</a></li>
-            <li><a href="https://www.codenames.game/" target="_blank">Codenames</a></li>
-        </ul>
-    </div>
-
-    <!-- Footer with Let's Chat -->
+    <!-- Footer -->
     <footer>
-        <a href="socials.html">Let's Chat</a>
+        <p>© 2025 LabSphere. All rights reserved.</p>
     </footer>
-
-    <!-- JavaScript for chat -->
-    <script>
-        document.querySelector('button').addEventListener('click', function() {
-            const textarea = document.querySelector('textarea');
-            if (textarea.value.trim() !== '') {
-                const newMessage = document.createElement('div');
-                newMessage.classList.add('chat-message');
-                newMessage.innerHTML = `
-                    <img src="profile.jpg" alt="User's Profile" class="profile-pic">
-                    <div class="message">
-                        <p class="user-name">You</p>
-                        <p>${textarea.value}</p>
-                    </div>
-                `;
-                document.querySelector('.chat-box').appendChild(newMessage);
-                textarea.value = ''; // Clear textarea
-            }
-        });
-    </script>
 </body>
 </html>
