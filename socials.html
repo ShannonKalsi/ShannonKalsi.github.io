@@ -3,280 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Activity Feed</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Socials - LabSphere</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
         }
-
-        header {
-            background-color: #1E88E5;
-            padding: 10px;
-            color: white;
-            text-align: center;
-        }
-
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: #1E88E5;
+            color: white;
+            padding: 10px 20px;
         }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-container h1 {
-            margin: 0;
-            margin-left: 10px;
-        }
-
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
-
+        .nav-links li {
+            position: relative;
+        }
         .nav-links a {
-            color: white;
             text-decoration: none;
-            font-weight: bold;
+            color: white;
         }
-
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: #333;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        footer {
+            background-color: #1E88E5;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
         .container {
-            display: flex;
-            height: 100vh;
-        }
-
-        .sidebar {
-            background-color: #1E88E5;
-            color: white;
-            width: 250px;
-            display: flex;
-            flex-direction: column;
             padding: 20px;
         }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
+        .section {
+            margin-bottom: 40px;
         }
-
-        .sidebar ul li {
+        .section h2 {
+            color: #D81B60;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
             margin-bottom: 20px;
         }
-
-        .sidebar ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
+        .game-list li {
+            margin: 10px 0;
         }
-
-        .sidebar button {
-            background-color: #D81B60;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .main-content {
-            flex: 1;
+        .calendar, .poll {
             display: flex;
-            flex-direction: column;
+            gap: 10px;
+            flex-wrap: wrap;
         }
-
-        .activity-header {
-            background-color: #1E88E5;
-            color: white;
-            padding: 10px;
-            font-size: 18px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .activity-feed {
-            flex: 1;
+        .calendar div, .poll div {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             padding: 20px;
-            overflow-y: auto;
-            background-color: #f9f9f9;
+            flex: 1;
+            min-width: 200px;
         }
-
-        .post-box {
+        .forum, .qa {
             display: flex;
             flex-direction: column;
+        }
+        .forum div, .qa div {
             margin-bottom: 20px;
-            background-color: white;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .post-box input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            width: 100%;
-        }
-
-        .post-box button {
-            align-self: flex-end;
-            background-color: #1E88E5;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .post-box button:hover {
-            background-color: #D81B60;
-        }
-
-        .feed-item {
-            background-color: white;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .recommended-courses {
-            width: 300px;
-            background-color: #f9f9f9;
-            border-left: 1px solid #ccc;
-            padding: 20px;
-        }
-
-        .recommended-courses h3 {
-            margin-bottom: 15px;
-        }
-
-        .course-item {
-            margin-bottom: 15px;
-        }
-
-        .course-item h4 {
-            margin: 0;
-            font-size: 16px;
-        }
-
-        .course-item p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-
-        .course-item button {
-            background-color: #1E88E5;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .course-item button:hover {
-            background-color: #D81B60;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo-container">
-                <h1>LabSphere</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">Socials</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <ul>
-                <li><a href="#">Activity Feed</a></li>
-                <li><a href="#">My Courses</a></li>
-                <li><a href="#">Explore</a></li>
-                <li><a href="#">Schools</a></li>
-                <li><a href="#">My Profile</a></li>
-            </ul>
-            <button>Log Out</button>
+
+<!-- Header -->
+<header>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
+            <h1>LabSphere</h1>
         </div>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Activity Header -->
-            <div class="activity-header">
-                <span>Activity Feed</span>
-            </div>
-
-            <!-- Activity Feed -->
-            <div class="activity-feed">
-                <div class="post-box">
-                    <input type="text" placeholder="What's happening?" id="post-title">
-                    <button id="post-button">Post</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">User Menu</a>
+                <div class="dropdown-content">
+                    <a href="profile.html">My Profile</a>
+                    <a href="account.html">My Account</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="logout.html">Log Out</a>
                 </div>
+            </li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="collaboration.html">Collaboration</a></li>
+            <li><a href="wellbeing.html">Wellbeing</a></li>
+            <li><a href="socials.html">Socials</a></li>
+            <li><a href="messaging.html">
+                <img src="chat.png" alt="Chat" style="width: 24px; height: 24px;" />
+            </a></li>
+        </ul>
+    </nav>
+</header>
 
-                <div class="feed-item">
-                    <h3>Congratulations to Hamoye Data Science Internship Stage C Winners!</h3>
-                    <p>After a thorough review of all deliverables, we are excited to announce the winners...</p>
-                </div>
-
-                <div class="feed-item">
-                    <h3>A new course titled STEM+ CHALLENGE 20-04: Science is created</h3>
-                    <p>Enroll now to expand your knowledge in STEM-related topics.</p>
-                </div>
+<!-- Main Content -->
+<div class="container">
+    <!-- Events Calendar -->
+    <div class="section">
+        <h2>📅 Events Calendar</h2>
+        <div class="calendar">
+            <div>
+                <h3>January 15, 2025</h3>
+                <p>Webinar: Advances in Immunotherapy</p>
             </div>
-        </div>
-
-        <!-- Recommended Courses -->
-        <div class="recommended-courses">
-            <h3>Recommended Courses</h3>
-            <div class="course-item">
-                <h4>University Entrance Exam Q&A: Energy</h4>
-                <p>Test your knowledge of Energy (Potential, Kinetic, and Mechanical).</p>
-                <button>Enroll</button>
+            <div>
+                <h3>January 22, 2025</h3>
+                <p>Workshop: Grant Writing for Cancer Research</p>
             </div>
-
-            <div class="course-item">
-                <h4>University Entrance Exam Q&A: Magnetic Field</h4>
-                <p>Test your knowledge of magnetic influences of electric charges.</p>
-                <button>Enroll</button>
+            <div>
+                <h3>February 10, 2025</h3>
+                <p>Conference: Cancer Research Symposium</p>
             </div>
         </div>
     </div>
 
-    <script>
-        const postButton = document.getElementById('post-button');
-        const postTitle = document.getElementById('post-title');
-        const activityFeed = document.querySelector('.activity-feed');
+    <!-- Research Sharing Area -->
+    <div class="section">
+        <h2>🔬 Research Sharing</h2>
+        <div class="card">
+            <p>Share your latest preprints, datasets, and findings with the community! <a href="#">Submit here</a>.</p>
+        </div>
+    </div>
 
-        postButton.addEventListener('click', () => {
-            const title = postTitle.value.trim();
+    <!-- Discussion Forums -->
+    <div class="section">
+        <h2>💬 Discussion Forums</h2>
+        <div class="forum">
+            <div><strong>Topic:</strong> Emerging Biomarkers</div>
+            <div><strong>Topic:</strong> Challenges in Clinical Trials</div>
+            <div><strong>Topic:</strong> Data Analysis Techniques</div>
+        </div>
+    </div>
 
-            if (title) {
-                const newPost = document.createElement('div');
-                newPost.classList.add('feed-item');
-                newPost.innerHTML = `<h3>${title}</h3><p>Your new post has been added.</p>`;
+    <!-- Q&A Section -->
+    <div class="section">
+        <h2>❓ Ask an Expert</h2>
+        <div class="qa">
+            <div><strong>Next Session:</strong> "Targeting Cancer Stem Cells" - January 20, 2025</div>
+            <div><strong>Submit Your Questions:</strong> <a href="#">Click here</a></div>
+        </div>
+    </div>
 
-                activityFeed.insertBefore(newPost, activityFeed.children[1]);
-                postTitle.value = '';
-            }
-        });
-    </script>
+    <!-- Interactive Poll -->
+    <div class="section">
+        <h2>📊 Poll of the Month</h2>
+        <div class="poll">
+            <div>
+                <p><strong>What area of cancer research do you think needs the most funding?</strong></p>
+                <button>Immunotherapy</button>
+                <button>Early Detection</button>
+                <button>Palliative Care</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Online Games -->
+    <div class="section">
+        <h2>🎮 Online Games</h2>
+        <ul class="game-list">
+            <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity Online</a></li>
+            <li><a href="https://www.jackboxgames.com/" target="_blank">Jackbox Party Games</a></li>
+            <li><a href="https://skribbl.io/" target="_blank">Skribbl.io</a></li>
+            <li><a href="https://codenames.game/" target="_blank">Codenames Online</a></li>
+            <li><a href="https://www.triviamaker.com/" target="_blank">Trivia Maker</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <a href="messaging.html">Let's Chat</a>
+    <p>&copy; 2025 LabSphere. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
