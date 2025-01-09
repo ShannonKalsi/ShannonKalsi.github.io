@@ -12,78 +12,109 @@
             margin: 0;
             padding: 0;
         }
+
+        header {
+            background-color: #1E88E5;
+            padding: 10px;
+            color: white;
+        }
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #1E88E5;
-            color: white;
-            padding: 10px 20px;
         }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
         .nav-links {
             list-style: none;
             display: flex;
             gap: 15px;
         }
+
         .nav-links li {
             position: relative;
         }
+
         .nav-links a {
             text-decoration: none;
             color: white;
+            font-weight: bold;
         }
+
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: white;
             color: #333;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         }
+
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
         footer {
             background-color: #1E88E5;
             color: white;
             text-align: center;
             padding: 10px 0;
         }
+
         .container {
             padding: 20px;
         }
+
         .section {
             margin-bottom: 40px;
         }
+
         .section h2 {
             color: #D81B60;
         }
+
         .card {
             background: white;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin-bottom: 20px;
         }
+
         .game-list li {
             margin: 10px 0;
         }
+
         .calendar, .poll {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
+
         .calendar div, .poll div {
             background: white;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             flex: 1;
             min-width: 200px;
         }
+
         .forum, .qa {
             display: flex;
             flex-direction: column;
         }
+
         .forum div, .qa div {
             margin-bottom: 20px;
         }
