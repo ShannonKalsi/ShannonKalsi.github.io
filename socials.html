@@ -3,169 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Socials</title>
+    <title>Socials - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- FullCalendar library for the calendar -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
     <style>
-        /* Layout and styling for the page */
+        /* Add theme colors and other styles */
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
             padding: 0;
-            background-color: #f4f4f4;
+            margin: 0;
         }
 
         header {
-            background-color: #1E88E5;
-            padding: 10px;
+            background-color: #1e88e5;
             color: white;
+            padding: 15px 0;
             text-align: center;
         }
 
-        .container {
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        .navbar {
             display: flex;
             justify-content: space-between;
-            padding: 20px;
-        }
-
-        /* Chat Container */
-        .chat-container {
-            width: 45%;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-height: 500px;
-            overflow-y: auto;
-        }
-
-        .message {
-            display: flex;
             align-items: center;
-            margin-bottom: 10px;
         }
 
-        .message img {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
         }
 
-        .message-info {
-            background-color: #f1f1f1;
-            border-radius: 10px;
-            padding: 10px;
-            max-width: 80%;
-        }
-
-        .message-info p {
-            margin: 0;
-            font-size: 14px;
-        }
-
-        /* Calendar Container */
-        .calendar-container {
-            width: 45%;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .calendar {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-            text-align: center;
-        }
-
-        .calendar-day {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            position: relative;
-        }
-
-        .calendar-day span {
+        .nav-links a {
+            color: white;
+            text-decoration: none;
             font-weight: bold;
         }
 
-        /* Event Styles */
-        .event, .team-check-in, .wellbeing-seminar {
-            margin-top: 5px;
-            font-size: 12px;
-            color: #ffffff;
-            padding: 5px;
-            border-radius: 3px;
+        .calendar-container {
+            width: 60%;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .event {
-            background-color: #D81B60; /* Magenta for deadlines */
+        .chat-container {
+            width: 60%;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .team-check-in {
-            background-color: #FFC107; /* Yellow for team check-ins */
+        .chat-box {
+            width: 100%;
+            height: 300px;
+            overflow-y: scroll;
+            background-color: #fafafa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
-        .wellbeing-seminar {
-            background-color: #4CAF50; /* Green for wellbeing seminars */
+        .chat-box p {
+            margin: 0 0 10px;
         }
 
-        .calendar-header {
-            display: flex;
-            justify-content: space-between;
+        .chat-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
             margin-bottom: 10px;
         }
 
-        .calendar-header button {
-            background-color: #1E88E5;
-            color: white;
-            padding: 5px 15px;
-            border: none;
-            cursor: pointer;
+        .games-container {
+            width: 60%;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Online Games Section */
-        section h2 {
-            color: #333;
-        }
-
-        section ul {
+        .games-container ul {
             list-style-type: none;
             padding: 0;
         }
 
-        section ul li {
-            padding: 8px 0;
+        .games-container ul li {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .games-container ul li::before {
+            content: url('game-controller-icon.svg'); /* Game controller icon */
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
         }
 
         footer {
-            background-color: #1E88E5;
+            background-color: #1e88e5;
             color: white;
             text-align: center;
             padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
 
-        /* Chat Button */
-        .chat-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #1E88E5;
+        footer a {
             color: white;
-            border-radius: 50%;
-            font-size: 16px;
-            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Calendar Event Color Styles */
+        .fc-event {
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .fc-event-magenta {
+            background-color: #D81B60; /* Deadline */
+        }
+        .fc-event-yellow {
+            background-color: #FFC107; /* Team Meetings */
+        }
+        .fc-event-green {
+            background-color: #4CAF50; /* Seminars */
         }
     </style>
 </head>
 <body>
-   <!-- Header with Navigation -->
+    <!-- Header with Navigation -->
     <header>
-        <nav class="navbar">
+        <div class="navbar">
             <div class="logo-container">
                 <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
                 <h1>LabSphere</h1>
@@ -186,41 +173,37 @@
                 <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li><a href="socials.html">Socials</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
-    
-    <main>
-        <div class="container">
-            <!-- Chat Section -->
-            <div class="chat-container">
-                <!-- Messaging Chat -->
-                <div class="chat">
-                    <!-- Messages -->
-                </div>
-            </div>
 
-            <!-- Calendar Section -->
-            <div class="calendar-container">
-                <div class="calendar-header">
-                    <button onclick="changeMonth(-1)">Previous</button>
-                    <h2 id="calendar-month"></h2>
-                    <button onclick="changeMonth(1)">Next</button>
-                </div>
-                <div class="calendar" id="calendar"></div>
+    <!-- Main Content Section -->
+    <main>
+        <!-- Calendar Section -->
+        <div class="calendar-container">
+            <h2>LabSphere Calendar</h2>
+            <div id="calendar"></div>
+        </div>
+
+        <!-- Chat Section -->
+        <div class="chat-container">
+            <h2>Chat with Your Colleagues</h2>
+            <div class="chat-box" id="chat-box">
+                <p><strong>Wellbeing Chatbot:</strong> Don't forget, attending the wellbeing seminar will help boost your productivity and mental health!</p>
+                <p><strong>Colleague 1:</strong> I’m looking forward to the next seminar! It's been really helpful to me last time.</p>
+                <p><strong>Colleague 2:</strong> Same here! I really enjoyed the last session on stress management.</p>
             </div>
+            <textarea id="chat-input" class="chat-input" placeholder="Type a message..."></textarea>
         </div>
 
         <!-- Online Games Section -->
-        <section>
+        <div class="games-container">
             <h2>Online Games</h2>
-            <p>Join your colleagues online for fun!</p>
             <ul>
-                <li>🎮 <a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity</a></li>
-                <li>🎮 <a href="https://boardgamearena.com/" target="_blank">Board Game Arena</a></li>
-                <li>🎮 <a href="https://www.pictionary.com/play" target="_blank">Pictionary Online</a></li>
-                <li>🎮 <a href="https://chess.com/play" target="_blank">Chess Online</a></li>
+                <li><a href="https://www.cardsagainsthumanity.com" target="_blank">Cards Against Humanity</a></li>
+                <li><a href="https://www.boardgamearena.com" target="_blank">Board Game Arena</a></li>
+                <li><a href="https://www.pogo.com" target="_blank">Pogo Games</a></li>
             </ul>
-        </section>
+        </div>
     </main>
 
     <!-- Footer with Let's Chat -->
@@ -228,36 +211,39 @@
         <a href="socials.html">Let's Chat</a>
     </footer>
 
-    <!-- Chat Button -->
-    <button class="chat-button" onclick="scrollToChat()">Chat</button>
-
+    <!-- Calendar JS Script -->
     <script>
-        const events = {
-            5: 'Grant Deadline',
-            12: 'Paper Submission Deadline',
-            19: 'Team Check-In',
-            31: 'Wellbeing Seminar'
-        };
-
-        let currentMonth = new Date().getMonth();
-        let currentYear = new Date().getFullYear();
-
-        function renderCalendar() {
-            const firstDay = new Date(currentYear, currentMonth, 1);
-            const lastDay = new Date(currentYear, currentMonth + 1, 0);
-            const calendar = document.getElementById('calendar');
-            const monthLabel = document.getElementById('calendar-month');
-            
-            monthLabel.textContent = `${firstDay.toLocaleString('default', { month: 'long' })} ${currentYear}`;
-            calendar.innerHTML = '';
-
-            // Days of the week header
-            const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-            daysOfWeek.forEach(day => {
-               
- <!-- Footer with Let's Chat -->
-    <footer>
-        <a href="socials.html">Let's Chat</a>
-    </footer>
-                </body>
-                </html>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                events: [
+                    {
+                        title: 'Abstract Submission Deadline',
+                        start: '2025-02-15',
+                        className: 'fc-event-magenta'
+                    },
+                    {
+                        title: 'Team Meeting',
+                        start: '2025-03-10T10:00:00',
+                        className: 'fc-event-yellow'
+                    },
+                    {
+                        title: 'Wellbeing Seminar',
+                        start: '2025-04-25',
+                        className: 'fc-event-green'
+                    },
+                    {
+                        title: 'Grant Submission Deadline',
+                        start: '2025-05-01',
+                        className: 'fc-event-magenta'
+                    },
+                    {
+                        title: 'Check-in with Team',
+                        start: '2025-06-05T14:00:00',
+                        className: 'fc-event-yellow'
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
