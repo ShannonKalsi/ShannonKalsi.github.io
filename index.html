@@ -20,8 +20,9 @@
                 <li><a href="collaboration.html">Collaboration</a></li>
                 <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li><a href="socials.html">Socials</a></li>
+                <!-- Moved and renamed Menu to User Menu -->
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Menu</a>
+                    <a href="javascript:void(0)" class="dropbtn">User Menu</a>
                     <div class="dropdown-content">
                         <a href="profile.html">My Profile</a>
                         <a href="account.html">My Account</a>
@@ -51,7 +52,8 @@
                         <p>Just had my paper published in <i>Nature</i> Check it out!</p>
                     </div>
                 </div>
-                <button class="like-button">Like</button>
+                <!-- Added id="like-button-1" to track the like button -->
+                <button id="like-button-1" class="like-button">Like</button>
             </div>
 
             <div class="post">
@@ -112,7 +114,7 @@
         </section>
     </main>
 
-    <!-- Footer with Let's Chat -->
+   <!-- Footer with Let's Chat -->
     <footer>
         <a href="socials.html">Let's Chat</a>
     </footer>
@@ -155,6 +157,18 @@
                 newPostInput.value = "";  // Clear input after posting
             }
         }
+
+        // Add like button functionality
+        document.querySelectorAll('.like-button').forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.toggle('liked');
+                if (this.classList.contains('liked')) {
+                    this.textContent = 'Liked';
+                } else {
+                    this.textContent = 'Like';
+                }
+            });
+        });
     </script>
 </body>
 </html>
