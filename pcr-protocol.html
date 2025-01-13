@@ -3,14 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PCR Protocol - LabSphere</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Cell Culture Protocol - LabSphere</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9; /* Page background */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1e88e5; /* Blue header */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .dropbtn {
+            color: white;
+            background-color: #1e88e5;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .dropdown-content a {
+            background-color: #f9f9f9;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .protocol-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #d81b60; /* Magenta title color */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .protocol {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #1e88e5; /* Blue section title color */
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1e88e5;
+            color: white;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-   <!-- Header with Navigation -->
+    <!-- Header with Navigation -->
     <header>
         <nav class="navbar">
-            <div class="logo-container">
+            <div class="logo">
                 <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
                 <h1>LabSphere</h1>
             </div>
@@ -19,14 +150,7 @@
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="collaboration.html">Collaboration</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Wellbeing</a>
-                    <div class="dropdown-content">
-                        <a href="wellbeing.html">Resources</a>
-                        <a href="edi.html">Equality, Diversity and Inclusion</a>
-                        <a href="buddy.html">Buddy System</a>
-                    </div>
-                </li>
+                <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="messaging.html">
                     <img src="chat.png" alt="Chat" style="width: 24px; height: 24px;" />
@@ -34,11 +158,11 @@
             </ul>
         </nav>
     </header>
-    
+
     <!-- Main content section -->
     <main>
         <div class="protocol-container">
-            <h2>PCR Protocol</h2>
+           <h2>PCR Protocol</h2>
 
             <!-- PCR Introduction -->
             <section class="protocol-introduction">
@@ -122,11 +246,10 @@
             </section>
         </div>
     </main>
-
     <!-- Footer with Let's Chat -->
-<footer>
-    <a href="messaging.html">Let's Chat</a>
-    <p>&copy; 2025 LabSphere. All rights reserved.</p>
-</footer>
+    <footer>
+        <a href="messaging.html">Let's Chat</a>
+        <p>&copy; 2025 LabSphere. All rights reserved.</p>
+    </footer>
 </body>
 </html>
