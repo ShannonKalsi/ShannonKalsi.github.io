@@ -10,9 +10,6 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
         header {
@@ -30,15 +27,15 @@
             padding: 0 20px;
         }
 
-        .logo {
+        .logo-container {
             font-size: 1.5em;
             font-weight: bold;
             display: flex;
             align-items: center;
         }
 
-        .logo img {
-            width: 30px; /* resized logo */
+        .logo-container img {
+            width: 30px;
             height: 30px;
             margin-right: 10px;
         }
@@ -47,7 +44,7 @@
             list-style: none;
             display: flex;
             gap: 20px;
-            align-items: center; /* Ensures buttons are vertically aligned with the logo */
+            align-items: center;
         }
 
         .nav-links a {
@@ -57,7 +54,7 @@
         }
 
         .nav-links img {
-            width: 30px; /* resized chat icon */
+            width: 30px;
             height: 30px;
         }
 
@@ -94,7 +91,7 @@
             padding: 10px 20px;
             font-size: 14px;
             color: white;
-            background-color: #00509e;
+            background-color: #d81b60; /* Updated to magenta */
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -102,7 +99,16 @@
         }
 
         .button:hover {
-            background-color: #003f7d;
+            background-color: #c2185b;
+        }
+
+        input, select, textarea {
+            width: 100%; /* Make the input and textarea wider */
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
         }
 
         footer {
@@ -114,7 +120,7 @@
     </style>
 </head>
 <body>
-    <header>
+   <header>
         <nav class="navbar">
             <div class="logo">
                 <img src="logo.png" alt="LabSphere Logo">
