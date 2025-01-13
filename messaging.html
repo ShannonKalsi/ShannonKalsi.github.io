@@ -28,21 +28,24 @@
             align-items: center;
         }
 
-        .logo {
+
+ .logo {
+            font-size: 1.5em;
+            font-weight: bold;
             display: flex;
             align-items: center;
         }
 
-        .logo {
-            width: 40px;
-            height: 40px;
+        .logo img {
+            width: 30px; /* resized logo */
+            height: 30px;
             margin-right: 10px;
         }
-
-        .nav-links {
-            list-style-type: none;
+.nav-links {
+            list-style: none;
             display: flex;
             gap: 20px;
+            align-items: center; /* Ensures buttons are vertically aligned with the logo */
         }
 
         .nav-links a {
@@ -51,6 +54,10 @@
             font-weight: bold;
         }
 
+        .nav-links img {
+            width: 30px; /* resized chat icon */
+            height: 30px;
+        }
         .main-container {
             display: flex;
             flex: 1;
