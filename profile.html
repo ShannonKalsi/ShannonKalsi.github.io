@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jane Smith - Profile - LabSphere</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* Add fun layout styles */
         body {
@@ -50,19 +49,19 @@
         }
 
         .profile-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
             padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .profile-info, .research-interests, .publications, .skills {
             background-color: white;
             padding: 20px;
-            margin-right: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            width: 45%;
         }
 
         .profile-info img {
