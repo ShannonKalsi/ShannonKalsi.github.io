@@ -39,30 +39,30 @@ body {
     width: 100%; /* Ensure the navbar is within the width */
     box-sizing: border-box; /* Include padding in width calculation */
 }
-/* Dropdown container */
+/* Ensure proper positioning for the dropdown menu */
 .navbar .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Dropdown content (hidden by default) */
+/* Ensure the dropdown content is initially hidden */
 .navbar .dropdown-content {
-    display: none; /* Initially hidden */
+    display: none;  /* Default state (hidden) */
     position: absolute;
     background-color: #1E88E5;  /* Blue background */
     min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;  /* Ensure dropdown is on top */
     border-radius: 8px;
     padding: 10px 0;
 }
 
-/* Show dropdown content when hovering over the dropdown */
+/* On hover, make the dropdown content visible */
 .navbar .dropdown:hover .dropdown-content {
-    display: block;
+    display: block;  /* Show the dropdown when hovered */
 }
 
-/* Button styles */
+/* Dropdown item links */
 .navbar .dropdown-content a {
     background-color: #1E88E5; /* Blue background */
     color: white;
@@ -71,13 +71,11 @@ body {
     display: block;
     text-align: left;
     border-radius: 5px;
-    font-size: 1em;
 }
 
-/* Hover effect */
+/* Change background to magenta on hover */
 .navbar .dropdown-content a:hover {
-    background-color: #D81B60; /* Magenta on hover */
-    color: white;  /* Ensure text stays white */
+    background-color: #D81B60;  /* Magenta */
 }
 
 /* Fix for button background color for social.html */
