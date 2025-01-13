@@ -265,31 +265,27 @@
 
     <!-- Chat Window -->
     <div class="chat-window">
-        <div class="chat-header">🧬 Research Wellbeing Group</div>
-        <div class="chat-messages" id="chat-messages">
+        <div class="chat-header" id="chatHeader"></div>
+        <div class="chat-messages" id="chatMessages">
             <!-- Messages will be dynamically inserted here based on the selected chat -->
         </div>
         <div class="chat-input">
-            <textarea id="chat-input" placeholder="Type your message..."></textarea>
+            <textarea id="chatInput" placeholder="Type a message..."></textarea>
             <button onclick="sendMessage()">Send</button>
         </div>
     </div>
 </div>
 
 <script>
-    function openChat(chatName) {
-        const chatHeader = document.querySelector('.chat-header');
-        const chatMessages = document.querySelector('#chat-messages');
-
-        const chats = {
-            'group1': {
-                header: '🧬 Research Wellbeing Group',
-                messages: `
-                    <div class="message incoming">
-                        <img src="joey.jpg" alt="Joey">
-                        <div class="message-content">Hey everyone, I found a great podcast on managing PhD burnout. It’s a must-listen! 🎧</div>
-                    </div>
-                    <div class="message incoming">
+    // Define the chats object with initial messages and headers
+    const chats = {
+        'group1': {
+            header: '🧬 Research Wellbeing Group',
+            messages: [
+                `<div class="message incoming">
+                    <img src="joey.jpg" alt="Joey">
+                    <div class="message-content">Hey everyone, I found a great podcast on managing PhD burnout. It’s a must-listen! 🎧</div>
+ <div class="message incoming">
                         <img src="lisa.jpg" alt="Lisa">
                         <div class="message-content">Oh, share the link, Joey! I’ve been feeling the pressure lately with abstract deadlines 😓.</div>
                     </div>
@@ -303,36 +299,38 @@
                     <div class="message incoming">
                         <img src="joey.jpg" alt="Joey">
                         <div class="message-content">Here's the link: <a href="https://podcasts.apple.com/gb/podcast/burnout-and-the-phd-with-nicole-janz/id1537420258?i=1000559395702" target="_blank">Burnout and the PhD with Nicole Janz.</a> Let’s discuss our takeaways after the workshop! 😊</div>
-                    </div>`
-            },
-            'group2': {
-                header: '🔬 Cancer Researchers',
-                messages: `
-                    <div class="message incoming">
-                        <img src="mike.jpg" alt="Mike">
+                </div>`
+            ]
+        },
+        'group2': {
+            header: '🔬 Cancer Researchers',
+            messages: [
+                `<div class="message incoming">
+                        <img src="alice.jpg" alt="Alice">
                         <div class="message-content">Anyone here tackling the new grant call on immune therapy? 🧬</div>
                     </div>
                     <div class="message incoming">
-                        <img src="joey.jpg" alt="Joey">
+                        <img src="jane.jpg" alt="Jane">
                         <div class="message-content">Yes! I’m drafting a proposal, but it’s a tough one. Need all the insights I can get. 😅</div>
                     </div>
                     <div class="message incoming">
-                        <img src="lisa.jpg" alt="Lisa">
+                        <img src="john.jpg" alt="John">
                         <div class="message-content">I’ve done something similar. Want to collaborate? Two heads are better than one 🧠✨.</div>
                     </div>
                     <div class="message outgoing">
-                        <div class="message-content">That’s a great idea, Lisa! Let’s set up a brainstorming session 🗓️.</div>
+                        <div class="message-content">That’s a great idea, John! Let’s set up a brainstorming session 🗓️.</div>
                     </div>
                     <div class="message incoming">
-                        <img src="mike.jpg" alt="Mike">
+                        <img src="alice.jpg" alt="Alice">
                         <div class="message-content">Perfect! Count me in for that. I’ll bring snacks 😄.</div>
                     </div>`
-            },
-            'group3': {
-                header: '🧪 Collaboration Hub',
-                messages: `
-                    <div class="message incoming">
-                        <img src="lisa.jpg" alt="Lisa">
+            ]
+        },
+        'group3': {
+            header: '🧪 Collaboration Hub',
+            messages: [
+                `<div class="message incoming">
+                        <img src="emily.jpg" alt="Emily">
                         <div class="message-content">I’m looking for someone to help analyze data on patient-derived organoids. Any takers? 🔍</div>
                     </div>
                     <div class="message incoming">
@@ -340,37 +338,39 @@
                         <div class="message-content">I could help! Send over the details, and I’ll see if it fits into my schedule 📅.</div>
                     </div>
                     <div class="message incoming">
-                        <img src="mike.jpg" alt="Mike">
+                        <img src="john.jpg" alt="John">
                         <div class="message-content">Count me in for that too. Collaboration is key! 🤝</div>
                     </div>
-                    <div class="message outgoing">
+                    <div class="message incoming">
+                        <img src="emily.jpg" alt="Emily">
                         <div class="message-content">Awesome! Let’s set up a shared folder and start brainstorming ideas.</div>
                     </div>`
-            },
-            'joey_chat': {
-                header: '🤗 Private Chat with Joey',
-                messages: `
-                    <div class="message incoming">
-                        <img src="joey.jpg" alt="Joey">
-                        <div class="message-content">Hey! How’s your day going? Thinking of getting outside this weekend for a hike or maybe some photography. What do you think? 📸🏞️</div>
-                    </div>
-                    <div class="message outgoing">
+            ]
+        },
+        'joey_chat': {
+            header: '🤗 Private Chat with Joey',
+            messages: [
+                `<div class="message incoming">
+                    <img src="joey.jpg" alt="Joey">
+                    <div class="message-content">Hey! How’s your day going? Thinking of getting outside this weekend for a hike or maybe some photography. What do you think? 📸🏞️</div>
+                 <div class="message outgoing">
                         <div class="message-content">That sounds great! I’m up for a hike or some photography. Do you have a location in mind? 😊</div>
                     </div>
                     <div class="message incoming">
                         <img src="joey.jpg" alt="Joey">
-                        <div class="message-content">I haven’t found a place to live yet, still searching. How about you? Any luck with housing?</div>
+                        <div class="message-content">No. Do you have any recommendations? Also I managed to find somewhere to live!</div>
                     </div>
                     <div class="message outgoing">
-                        <div class="message-content">No luck yet either, but I’ll keep looking. Let’s make sure we take some awesome photos on our hike this weekend! 📸</div>
+                        <div class="message-content">Congrats! I'm glad you found somewhere! Let's do the Howth Cliff Walk! The weather should be good so we can take some awesome photos on our hike this weekend! 📸</div>
                     </div>`
-            },
-            'lisa_chat': {
-                header: '💬 Private Chat with Lisa',
-                messages: `
-                    <div class="message incoming">
-                        <img src="lisa.jpg" alt="Lisa">
-                        <div class="message-content">Hey, I’ve been struggling with grant writing and balancing it with my post-doc research. The pressure is intense, and I just need a break! 😩</div>
+            ]
+        },
+        'lisa_chat': {
+            header: '💬 Private Chat with Lisa',
+            messages: [
+                `<div class="message incoming">
+                    <img src="lisa.jpg" alt="Lisa">
+                    <div class="message-content">Hey, I’ve been struggling with grant writing and balancing it with my post-doc research. The pressure is intense, and I just need a break!😩</div>
                     </div>
                     <div class="message outgoing">
                         <div class="message-content">I totally get you, Lisa. The endless rounds of writing and revisions are exhausting. Have you had time to focus on your well-being? 💆‍♀️</div>
@@ -382,46 +382,76 @@
                     <div class="message outgoing">
                         <div class="message-content">I find that taking short breaks for a walk or something creative helps. Maybe we could go for a hike this weekend to de-stress? 🌳</div>
                     </div>`
-            },
-            'alice': {
-                header: 'Alice',
-                messages: `<div class="message">No messages yet. Start the conversation!</div>`
-            },
-            'mike': {
-                header: 'Mike',
-                messages: `<div class="message">No messages yet. Start the conversation!</div>`
-            },
-            'emily': {
-                header: 'Emily',
-                messages: `<div class="message">No messages yet. Start the conversation!</div>`
-            },
-            'john': {
-                header: 'John',
-                messages: `<div class="message">No messages yet. Start the conversation!</div>`
-            }
-        };
+            ]
+        },
+        'alice': {
+            header: 'Private Chat with Alice',
+            messages: [
+                `<div class="message">No messages yet. Start the conversation!</div>`
+            ]
+        },
+        'mike': {
+            header: 'Private Chat with Mike',
+            messages: [
+                `<div class="message">No messages yet. Start the conversation!</div>`
+            ]
+        },
+        'emily': {
+            header: 'Private Chat with Emily',
+            messages: [
+                `<div class="message">No messages yet. Start the conversation!</div>`
+            ]
+        },
+        'john': {
+            header: 'Private Chat with John',
+            messages: [
+                `<div class="message">No messages yet. Start the conversation!</div>`
+            ]
+        }
+    };
+
+    // Function to open and display selected chat
+    function openChat(chatName) {
+        const chatHeader = document.getElementById('chatHeader');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
 
         if (chats[chatName]) {
             chatHeader.textContent = chats[chatName].header;
-            chatMessages.innerHTML = chats[chatName].messages;
+            chatMessages.innerHTML = chats[chatName].messages.join('');
         } else {
             chatHeader.textContent = 'Chat';
             chatMessages.innerHTML = '<div class="message">No messages yet. Start the conversation!</div>';
         }
+
+        // Focus on the input field when a new chat is opened
+        chatInput.focus();
     }
 
+    // Function to send message
     function sendMessage() {
-        const input = document.getElementById('chat-input');
+        const chatName = document.getElementById('chatHeader').textContent;
+        const input = document.getElementById('chatInput');
+        const chatMessages = document.getElementById('chatMessages');
+
         if (input.value.trim() !== '') {
-            const chatMessages = document.getElementById('chat-messages');
+            // Add the new message to the chat
             const newMessage = document.createElement('div');
             newMessage.className = 'message outgoing';
             newMessage.innerHTML = `<div class="message-content">${input.value}</div>`;
             chatMessages.appendChild(newMessage);
             chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Add the message to the current chat's message list
+            chats[chatName].messages.push(`<div class="message outgoing"><div class="message-content">${input.value}</div></div>`);
+
+            // Clear input field
             input.value = '';
         }
     }
+
+    // Initializing chat with the first chat selected
+    openChat('alice');
 </script>
 </body>
 </html>
