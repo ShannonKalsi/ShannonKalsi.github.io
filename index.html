@@ -10,6 +10,9 @@
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
@@ -52,13 +55,9 @@
             font-weight: bold;
         }
 
-        .nav-links img {
-            width: auto;
-            height: 24px;
-        }
-
         main {
             display: flex;
+            flex-grow: 1;
             gap: 20px;
             padding: 20px;
         }
@@ -93,7 +92,7 @@
 
         .post {
             display: flex;
-            gap: 10px;
+            align-items: center;
             background-color: #ffffff;
             padding: 10px;
             border-radius: 8px;
@@ -101,9 +100,10 @@
         }
 
         .profile-picture {
-            width: 40px;
-            height: 40px;
-            border-radius: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            margin-right: 15px;
         }
 
         .post-content {
@@ -117,6 +117,19 @@
         .timestamp {
             font-size: 0.8em;
             color: #777;
+        }
+
+        .like-button {
+            background-color: #1e88e5;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .like-button:hover {
+            background-color: #1565c0;
         }
 
         .sidebar {
@@ -178,56 +191,20 @@
                         <p><strong>Alice Zhang</strong></p>
                         <p>Just had my paper published in <i>Nature</i>! Check it out! 🎉</p>
                         <p class="timestamp">Posted 2 hours ago</p>
+                        <button class="like-button" onclick="likePost(this)">👍 Like</button>
                     </div>
-                    </div>
-                <button class="like-button">👍 Like</button>
                 </div>
 
                 <div class="post">
                     <img src="user2.jpg" alt="Joey's Profile Picture" class="profile-picture">
                     <div class="post-content">
                         <p><strong>Joey Bloggs</strong></p>
-                        <p>Attending the <i>EACR conference</i> 📅. Having a great time! Met amazing researchers! 👨‍🔬</p>
+                        <p>Attending the <i>EACR conference</i> 📅. Having a great time! 👨‍🔬</p>
                         <p class="timestamp">Posted 5 hours ago</p>
-                    </div>
-                    </div>
-                <button class="like-button">👍 Like</button>
-                </div>
-
-                <div class="post">
-                    <img src="user3.jpg" alt="Lisa's Profile Picture" class="profile-picture">
-                    <div class="post-content">
-                        <p><strong>Lisa Brown</strong></p>
-                        <p>I was selected to give an oral presentation at the <i>EMBL-EBI Annual Conference</i> 🗣️ Can’t wait!</p>
-                        <p class="timestamp">Posted 1 day ago</p>
+                        <button class="like-button" onclick="likePost(this)">👍 Like</button>
                     </div>
                 </div>
-        </div>
-                <button class="like-button">👍 Like</button>
-    <div class="post">
-                <div class="post-header">
-                    <img src="jane.jpg" alt="Jane's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>Jane Smith</strong>
-                        <p>Had a wonderful time at the <i>Wellbeing Seminar</i> 🧘. It’s so important for researchers to get the support they need. ❤️</p>
-                    </div>
-                </div>
-                <button class="like-button">👍 Like</button>
             </div>
-
-            <div class="post">
-                <div class="post-header">
-                    <img src="john.jpg" alt="John's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>John Smith</strong>
-                        <p>Just wrapped up a great research project on <i>workplace mental health</i> 🌱. It’s rewarding to see your work make a difference! 🙌</p>
-                    </div>
-                </div>
-                <button class="like-button">👍 Like</button>
-            </div>
-        </section>
-    </main>       
-    </div>
         </div>
 
         <aside class="sidebar">
@@ -251,5 +228,14 @@
         <a href="messaging.html">Let's Chat</a>
         &copy; 2025 LabSphere. All rights reserved.
     </footer>
+
+    <script>
+        function likePost(button) {
+            let count = button.getAttribute('data-likes') || 0;
+            count++;
+            button.setAttribute('data-likes', count);
+            button.textContent = `👍 Like (${count})`;
+        }
+    </script>
 </body>
 </html>
