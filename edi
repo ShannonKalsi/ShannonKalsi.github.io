@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabSphere - Equality, Diversity, and Inclusion</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General styles for the page layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1E88E5;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resources-container {
+            padding: 20px;
+        }
+
+        /* Section styling */
+        section {
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #1E88E5;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        section ul li {
+            margin: 10px 0;
+        }
+
+        section ul li a {
+            color: #D81B60;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #1E88E5;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #D81B60;
+        }
+
+        footer {
+            background-color: #1E88E5;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer a {
+            color: #D81B60;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+ <!-- Header with Navigation -->
+<header>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
+            <h1>LabSphere</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="collaboration.html">Collaboration</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Wellbeing</a>
+                <div class="dropdown-content">
+                    <a href="wellbeing.html">Resources</a>
+                    <a href="edi.html">Equality, Diversity and Inclusion</a>
+                    <a href="buddy.html">Buddy System</a>
+                </div>
+            </li>
+            <li><a href="socials.html">Socials</a></li>
+            <li><a href="messaging.html">
+                <img src="chat.png" alt="Chat" style="width: 24px; height: 24px;" />
+            </a></li>
+        </ul>
+    </nav>
+</header>
+
+    <!-- Main content section -->
+    <main>
+        <div class="resources-container">
+            <section class="edi-overview">
+                <h2>Equality, Diversity, and Inclusion at LabSphere</h2>
+                <p>LabSphere is committed to fostering an inclusive, equitable, and diverse environment for researchers in the cancer research community. We believe that diverse perspectives are essential in advancing our mission to fight cancer, and that supporting the wellbeing of all researchers is fundamental to ensuring sustainable progress. Below are resources and initiatives designed to support this goal:</p>
+            </section>
+
+            <section class="edi-principles">
+                <h2>Our Principles of Equality, Diversity, and Inclusion</h2>
+                <p>LabSphere’s approach to EDI is based on the following core principles:</p>
+                <ul>
+                    <li><b>Equity in Research:</b> Ensuring all researchers have access to the same opportunities, resources, and platforms, regardless of background, gender, ethnicity, or disability.</li>
+                    <li><b>Respect and Inclusion:</b> Creating an environment where all voices are heard, and everyone feels valued and included.</li>
+                    <li><b>Support for Wellbeing:</b> Prioritizing the mental and physical health of researchers and patients to create a balanced and sustainable working environment.</li>
+                </ul>
+            </section>
+
+            <section class="edi-training">
+                <h2>EDI Training Resources</h2>
+                <p>We encourage all LabSphere users to participate in free, online training courses that help cultivate an inclusive workplace. Below are a few recommended resources:</p>
+                <ul>
+                    <li><a href="https://www.edx.org/course/understanding-diversity-and-inclusion" target="_blank">Understanding Diversity and Inclusion - edX</a></li>
+                    <li><a href="https://www.futurelearn.com/courses/diversity-and-inclusion-in-the-workplace" target="_blank">Diversity and Inclusion in the Workplace - FutureLearn</a></li>
+                    <li><a href="https://www.coursera.org/learn/leading-diversity-and-inclusion" target="_blank">Leading Diversity and Inclusion - Coursera</a></li>
+                </ul>
+            </section>
+
+            <section class="edi-initiatives">
+                <h2>LabSphere Initiatives for Inclusion</h2>
+                <p>LabSphere is proud to host several initiatives aimed at fostering inclusivity and supporting underrepresented groups in cancer research:</p>
+                <ul>
+                    <li><a href="mentor-program.html">LabSphere Mentorship Program</a> - Supporting underrepresented researchers through dedicated mentorship and career guidance.</li>
+                    <li><a href="female-leadership.html">Women in Science Leadership</a> - Championing gender equity in leadership roles within cancer research.</li>
+                    <li><a href="diversity-summit.html">Annual Diversity Summit</a> - A platform for discussing key issues in diversity and inclusion in cancer research.</li>
+                </ul>
+            </section>
+
+            <section class="edi-support">
+                <h2>Support Resources for Researchers</h2>
+                <p>If you are in need of support, here are some additional resources that offer advice, assistance, and guidance on diversity, inclusion, and wellbeing in the workplace:</p>
+                <ul>
+                    <li><a href="https://www.diversityinresearch.com/" target="_blank">Diversity in Research</a> - A global platform supporting diverse researchers.</li>
+                    <li><a href="https://www.rsc.org/diversity-inclusion/" target="_blank">Royal Society of Chemistry - Diversity and Inclusion</a> - Resources for promoting diversity in STEM fields.</li>
+                    <li><a href="https://www.wellbeinginitiative.com/" target="_blank">Wellbeing Initiative</a> - Supporting researchers’ mental health and wellbeing.</li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+   <!-- Footer with Let's Chat -->
+<footer>
+    <a href="messaging.html">Let's Chat</a>
+    <p>&copy; 2025 LabSphere. All rights reserved.</p>
+</footer>
+</body>
+</html>
