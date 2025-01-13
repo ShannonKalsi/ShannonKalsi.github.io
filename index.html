@@ -38,8 +38,8 @@
         }
 
         .logo img {
-            width: 50px;
-            height: auto;
+            width: 30px; /* resized chat picture */
+            height: 30px;
             margin-right: 10px;
         }
 
@@ -132,12 +132,17 @@
             background-color: #1565c0;
         }
 
+        .liked {
+            background-color: #d81b60; /* magenta color when liked */
+        }
+
         .sidebar {
             flex: 1;
             background-color: #ffffff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 250px; /* resized news column */
         }
 
         .news-item {
@@ -204,9 +209,8 @@
                         <button class="like-button" onclick="likePost(this)">👍 Like</button>
                     </div>
                 </div>
-            </div>
 
-            <div class="post">
+                <div class="post">
                     <img src="lisa.jpg" alt="Lisa's Profile Picture" class="profile-picture">
                     <div class="post-content">
                         <p><strong>Lisa Brown</strong></p>
@@ -215,9 +219,9 @@
                         <button class="like-button" onclick="likePost(this)">👍 Like</button>
                     </div>
                 </div>
-            </div>
 
-          <div class="post">
+                <!-- Mike's Post included with others -->
+                <div class="post">
                     <img src="mike.jpg" alt="Mike's Profile Picture" class="profile-picture">
                     <div class="post-content">
                         <p><strong>Mike Parker</strong></p>
@@ -227,7 +231,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
 
         <aside class="sidebar">
@@ -254,6 +257,7 @@
 
     <script>
         function likePost(button) {
+            button.classList.toggle('liked'); // Toggle magenta on like
             let count = button.getAttribute('data-likes') || 0;
             count++;
             button.setAttribute('data-likes', count);
