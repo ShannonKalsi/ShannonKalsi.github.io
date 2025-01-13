@@ -15,12 +15,42 @@ header {
     width: 100%; /* Ensure full-width header */
 }
 
+/* Apply Flexbox for layout */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Distribute space evenly */
-    align-items: center; /* Ensure everything is vertically aligned */
+    justify-content: center; /* Aligns nav items horizontally */
+    align-items: center; /* Aligns vertically */
     padding: 0 20px;
-    width: 100%;
+    background-color: #1E88E5; /* Your header background */
+}
+
+/* Align nav items in a row */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* Styling for nav links */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Optionally adjust alignment for mobile or smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+.nav-links img {
+    width: 30px;
+    height: 30px;
 }
 
 .logo {
@@ -36,23 +66,6 @@ header {
     margin-right: 10px;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.nav-links img {
-    width: 30px;
-    height: 30px;
-}
 
 main {
     padding: 20px;
