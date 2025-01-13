@@ -218,7 +218,7 @@
         </nav>
     </header>
 
-   <!-- Main Container -->
+<!-- Main Container -->
 <div class="main-container">
     <!-- Sidebar -->
     <div class="sidebar">
@@ -267,25 +267,7 @@
     <div class="chat-window">
         <div class="chat-header">🧬 Research Wellbeing Group</div>
         <div class="chat-messages" id="chat-messages">
-            <div class="message incoming">
-                <img src="joey.jpg" alt="Joey">
-                <div class="message-content">Hey everyone, I found a great podcast on managing PhD burnout. It’s a must-listen! 🎧</div>
-            </div>
-            <div class="message incoming">
-                <img src="lisa.jpg" alt="Lisa">
-                <div class="message-content">Oh, share the link, Joey! I’ve been feeling the pressure lately with abstract deadlines 😓.</div>
-            </div>
-            <div class="message incoming">
-                <img src="mike.jpg" alt="Mike">
-                <div class="message-content">Same here! Balancing grant writing and experiments feels impossible sometimes 😩.</div>
-            </div>
-            <div class="message outgoing">
-                <div class="message-content">Agreed! Let’s make this week’s wellbeing workshop a priority 🙌.</div>
-            </div>
-            <div class="message incoming">
-                <img src="joey.jpg" alt="Joey">
-                <div class="message-content"><div class="message-content">Here's the link: <a href="https://podcasts.apple.com/gb/podcast/burnout-and-the-phd-with-nicole-janz/id1537420258?i=1000559395702" target="_blank">Burnout and the PhD with Nicole Janz.</a> Let’s discuss our takeaways after the workshop! 😊</div>
-            </div>
+            <!-- Messages will be dynamically inserted here based on the selected chat -->
         </div>
         <div class="chat-input">
             <textarea id="chat-input" placeholder="Type your message..."></textarea>
@@ -320,52 +302,51 @@
                     </div>
                     <div class="message incoming">
                         <img src="joey.jpg" alt="Joey">
-                        <div class="message-content"><div class="message-content">Here's the link: <a href="https://podcasts.apple.com/gb/podcast/burnout-and-the-phd-with-nicole-janz/id1537420258?i=1000559395702" target="_blank">Burnout and the PhD with Nicole Janz.</a> Let’s discuss our takeaways after the workshop! 😊</div>
+                        <div class="message-content">Here's the link: <a href="https://podcasts.apple.com/gb/podcast/burnout-and-the-phd-with-nicole-janz/id1537420258?i=1000559395702" target="_blank">Burnout and the PhD with Nicole Janz.</a> Let’s discuss our takeaways after the workshop! 😊</div>
                     </div>`
             },
-             'group2': {
-                    header: '🔬 Cancer Researchers',
-                    messages: `
-                        <div class="message incoming">
-                            <img src="mike.jpg" alt="Mike">
-                            <div class="message-content">Anyone here tackling the new grant call on immune therapy? 🧬</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="joey.jpg" alt="Joey">
-                            <div class="message-content">Yes! I’m drafting a proposal, but it’s a tough one. Need all the insights I can get. 😅</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="lisa.jpg" alt="Lisa">
-                            <div class="message-content">I’ve done something similar. Want to collaborate? Two heads are better than one 🧠✨.</div>
-                        </div>
-                        <div class="message outgoing">
-                            <div class="message-content">That’s a great idea, Lisa! Let’s set up a brainstorming session 🗓️.</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="mike.jpg" alt="Mike">
-                            <div class="message-content">Perfect! Count me in for that. I’ll bring snacks 😄.</div>
-                        </div>`
-                },
-                'group3': {
-                    header: '🧪 Collaboration Hub',
-                    messages: `
-                        <div class="message incoming">
-                            <img src="lisa.jpg" alt="Lisa">
-                            <div class="message-content">I’m looking for someone to help analyze data on patient-derived organoids. Any takers? 🔍</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="joey.jpg" alt="Joey">
-                            <div class="message-content">I could help! Send over the details, and I’ll see if it fits into my schedule 📅.</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="mike.jpg" alt="Mike">
-                            <div class="message-content">Count me in for that too. Collaboration is key! 🤝</div>
-                        </div>
-                        <div class="message outgoing">
-                            <div class="message-content">Awesome! Let’s set up a shared folder and start brainstorming ideas.</div>
-                        </div>`
-                }
-            };
+            'group2': {
+                header: '🔬 Cancer Researchers',
+                messages: `
+                    <div class="message incoming">
+                        <img src="mike.jpg" alt="Mike">
+                        <div class="message-content">Anyone here tackling the new grant call on immune therapy? 🧬</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="joey.jpg" alt="Joey">
+                        <div class="message-content">Yes! I’m drafting a proposal, but it’s a tough one. Need all the insights I can get. 😅</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="lisa.jpg" alt="Lisa">
+                        <div class="message-content">I’ve done something similar. Want to collaborate? Two heads are better than one 🧠✨.</div>
+                    </div>
+                    <div class="message outgoing">
+                        <div class="message-content">That’s a great idea, Lisa! Let’s set up a brainstorming session 🗓️.</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="mike.jpg" alt="Mike">
+                        <div class="message-content">Perfect! Count me in for that. I’ll bring snacks 😄.</div>
+                    </div>`
+            },
+            'group3': {
+                header: '🧪 Collaboration Hub',
+                messages: `
+                    <div class="message incoming">
+                        <img src="lisa.jpg" alt="Lisa">
+                        <div class="message-content">I’m looking for someone to help analyze data on patient-derived organoids. Any takers? 🔍</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="joey.jpg" alt="Joey">
+                        <div class="message-content">I could help! Send over the details, and I’ll see if it fits into my schedule 📅.</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="mike.jpg" alt="Mike">
+                        <div class="message-content">Count me in for that too. Collaboration is key! 🤝</div>
+                    </div>
+                    <div class="message outgoing">
+                        <div class="message-content">Awesome! Let’s set up a shared folder and start brainstorming ideas.</div>
+                    </div>`
+            },
             'joey_chat': {
                 header: '🤗 Private Chat with Joey',
                 messages: `
@@ -444,3 +425,4 @@
 </script>
 </body>
 </html>
+
