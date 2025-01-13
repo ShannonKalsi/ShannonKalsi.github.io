@@ -10,6 +10,9 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
@@ -27,15 +30,15 @@
             padding: 0 20px;
         }
 
-        .logo-container {
+        .logo {
             font-size: 1.5em;
             font-weight: bold;
             display: flex;
             align-items: center;
         }
 
-        .logo-container img {
-            width: 30px;
+        .logo img {
+            width: 30px; /* resized logo */
             height: 30px;
             margin-right: 10px;
         }
@@ -44,7 +47,7 @@
             list-style: none;
             display: flex;
             gap: 20px;
-            align-items: center;
+            align-items: center; /* Ensures buttons are vertically aligned with the logo */
         }
 
         .nav-links a {
@@ -54,7 +57,7 @@
         }
 
         .nav-links img {
-            width: 30px;
+            width: 30px; /* resized chat icon */
             height: 30px;
         }
 
@@ -111,7 +114,7 @@
     </style>
 </head>
 <body>
-   <header>
+    <header>
         <nav class="navbar">
             <div class="logo">
                 <img src="logo.png" alt="LabSphere Logo">
