@@ -45,37 +45,37 @@ body {
     display: inline-block;
 }
 
-/* Dropdown content (hidden by default) */
+/* Dropdown content styles */
 .navbar .dropdown-content {
-    display: none;
+    display: none; /* Initially hidden */
     position: absolute;
-    background-color: #1E88E5;  /* Blue background */
+    background-color: #1E88E5;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 8px;
 }
 
-/* Show dropdown on hover */
+/* Show dropdown content on hover */
 .navbar .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Dropdown links */
+/* Ensure all links are shown and styled correctly */
 .navbar .dropdown-content a {
-    color: white;  /* Text color for normal state */
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    background-color: #1E88E5;  /* Blue background for buttons */
+    background-color: #1E88E5;
     border-radius: 5px;
 }
 
-/* Change background to magenta on hover */
+/* Change background color when hovering over links */
 .navbar .dropdown-content a:hover {
-    background-color: #D81B60;  /* Magenta background on hover */
-    color: white;  /* Ensure the text remains white on hover */
+    background-color: #D81B60;
 }
+
 
 .logo-container {
     display: flex;
