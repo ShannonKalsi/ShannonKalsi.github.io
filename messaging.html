@@ -217,164 +217,186 @@
         </nav>
     </header>
 
-    <!-- Main Container -->
-    <div class="main-container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div class="sidebar-header">Chats</div>
-            <ul class="chat-list">
-                <li class="chat-item" onclick="openChat('group1')">
-                    <img src="group1.jpg" alt="Group 1">
-                    <span>🧬 Research Wellbeing Group</span>
-                </li>
-                <li class="chat-item" onclick="openChat('group2')">
-                    <img src="group2.jpg" alt="Group 2">
-                    <span>🔬 Cancer Researchers</span>
-                </li>
-                <li class="chat-item" onclick="openChat('group3')">
-                    <img src="group3.jpg" alt="Group 3">
-                    <span>🧪 Collaboration Hub</span>
-                </li>
-                <li class="chat-item" onclick="openChat('joey')">
-                    <img src="joey.jpg" alt="Joey">
-                    <span>Joey</span>
-                </li>
-                <li class="chat-item" onclick="openChat('lisa')">
-                    <img src="lisa.jpg" alt="Lisa">
-                    <span>Lisa</span>
-                </li>
-                <li class="chat-item" onclick="openChat('mike')">
-                    <img src="mike.jpg" alt="Mike">
-                    <span>Mike</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Chat Window -->
-        <div class="chat-window">
-            <div class="chat-header">🧬 Research Wellbeing Group</div>
-            <div class="chat-messages" id="chat-messages">
-                <div class="message incoming">
-                    <img src="joey.jpg" alt="Joey">
-                    <div class="message-content">Hey everyone, I found a great podcast on managing PhD burnout. It’s a must-listen! 🎧</div>
-                </div>
-                <div class="message incoming">
-                    <img src="lisa.jpg" alt="Lisa">
-                    <div class="message-content">Oh, share the link, Joey! I’ve been feeling the pressure lately with abstract deadlines 😓.</div>
-                </div>
-                <div class="message incoming">
-                    <img src="mike.jpg" alt="Mike">
-                    <div class="message-content">Same here! Balancing grant writing and experiments feels impossible sometimes 😩.</div>
-                </div>
-                <div class="message outgoing">
-                    <div class="message-content">Agreed! Let’s make this week’s wellbeing workshop a priority 🙌.</div>
-                </div>
-                <div class="message incoming">
-                    <img src="joey.jpg" alt="Joey">
-                    <div class="message-content"><a href="https://podcasts.apple.com/gb/podcast/burnout-and-the-phd-with-nicole-janz/id1537420258?i=1000559395702" target="_blank">Burnout and the PhD with Nicole Janz.</a> Let’s discuss our takeaways after the workshop! 😊</div>
-                </div>
-            </div>
-            <div class="chat-input">
-                <textarea id="chat-input" placeholder="Type your message..."></textarea>
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </div>
+   <!-- Main Container -->
+<div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">Chats</div>
+        <ul class="chat-list">
+            <li class="chat-item" onclick="openChat('group1')">
+                <img src="group1.jpg" alt="Group 1">
+                <span>🧬 Research Wellbeing Group</span>
+            </li>
+            <li class="chat-item" onclick="openChat('group2')">
+                <img src="group2.jpg" alt="Group 2">
+                <span>🔬 Cancer Researchers</span>
+            </li>
+            <li class="chat-item" onclick="openChat('group3')">
+                <img src="group3.jpg" alt="Group 3">
+                <span>🧪 Collaboration Hub</span>
+            </li>
+            <li class="chat-item" onclick="openChat('joey_chat')">
+                <img src="joey.jpg" alt="Joey">
+                <span>Joey 🤗</span>
+            </li>
+            <li class="chat-item" onclick="openChat('lisa_chat')">
+                <img src="lisa.jpg" alt="Lisa">
+                <span>Lisa 💬</span>
+            </li>
+            <li class="chat-item" onclick="openChat('alice')">
+                <img src="alice.jpg" alt="Alice">
+                <span>Alice</span>
+            </li>
+            <li class="chat-item" onclick="openChat('mike')">
+                <img src="mike.jpg" alt="Mike">
+                <span>Mike</span>
+            </li>
+            <li class="chat-item" onclick="openChat('emily')">
+                <img src="emily.jpg" alt="Emily">
+                <span>Emily</span>
+            </li>
+            <li class="chat-item" onclick="openChat('john')">
+                <img src="john.jpg" alt="John">
+                <span>John</span>
+            </li>
+        </ul>
     </div>
 
-    <script>
-        function openChat(chatName) {
-            const chatHeader = document.querySelector('.chat-header');
-            const chatMessages = document.querySelector('#chat-messages');
+    <!-- Chat Window -->
+    <div class="chat-window">
+        <div class="chat-header">🧬 Research Wellbeing Group</div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message incoming">
+                <img src="joey.jpg" alt="Joey">
+                <div class="message-content">Hey everyone, I found a great podcast on managing PhD burnout. It’s a must-listen! 🎧</div>
+            </div>
+            <div class="message incoming">
+                <img src="lisa.jpg" alt="Lisa">
+                <div class="message-content">Oh, share the link, Joey! I’ve been feeling the pressure lately with abstract deadlines 😓.</div>
+            </div>
+            <div class="message incoming">
+                <img src="mike.jpg" alt="Mike">
+                <div class="message-content">Same here! Balancing grant writing and experiments feels impossible sometimes 😩.</div>
+            </div>
+            <div class="message outgoing">
+                <div class="message-content">Agreed! Let’s make this week’s wellbeing workshop a priority 🙌.</div>
+            </div>
+            <div class="message incoming">
+                <img src="joey.jpg" alt="Joey">
+                <div class="message-content"><div class="message-content">Here's the link: <a href="https://podcasts.apple.com/gb/podcast/burnout-and-the-phd-with-nicole-janz/id1537420258?i=1000559395702" target="_blank">Burnout and the PhD with Nicole Janz.</a> Let’s discuss our takeaways after the workshop! 😊</div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <textarea id="chat-input" placeholder="Type your message..."></textarea>
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>
 
-            const chats = {
-                'group1': {
-                    header: '🧬 Research Wellbeing Group',
-                    messages: `
-                        <div class="message incoming">
-                            <img src="joey.jpg" alt="Joey">
-                            <div class="message-content">Hey everyone, I found a great podcast on managing PhD burnout. It’s a must-listen! 🎧</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="lisa.jpg" alt="Lisa">
-                            <div class="message-content">Oh, share the link, Joey! I’ve been feeling the pressure lately with abstract deadlines 😓.</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="mike.jpg" alt="Mike">
-                            <div class="message-content">Same here! Balancing grant writing and experiments feels impossible sometimes 😩.</div>
-                        </div>
-                        <div class="message outgoing">
-                            <div class="message-content">Agreed! Let’s make this week’s wellbeing workshop a priority 🙌.</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="joey.jpg" alt="Joey">
-                            <div class="message-content"><div class="message-content"> Here's the link: <a href="https://podcasts.apple.com/gb/podcast/burnout-and-the-phd-with-nicole-janz/id1537420258?i=1000559395702" target="_blank">Burnout and the PhD with Nicole Janz.</a> Let’s discuss our takeaways after the workshop! 😊</div>
-                        </div>`
-                },
-                'group2': {
-                    header: '🔬 Cancer Researchers',
-                    messages: `
-                        <div class="message incoming">
-                            <img src="mike.jpg" alt="Mike">
-                            <div class="message-content">Anyone here tackling the new grant call on immune therapy? 🧬</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="joey.jpg" alt="Joey">
-                            <div class="message-content">Yes! I’m drafting a proposal, but it’s a tough one. Need all the insights I can get. 😅</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="lisa.jpg" alt="Lisa">
-                            <div class="message-content">I’ve done something similar. Want to collaborate? Two heads are better than one 🧠✨.</div>
-                        </div>
-                        <div class="message outgoing">
-                            <div class="message-content">That’s a great idea, Lisa! Let’s set up a brainstorming session 🗓️.</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="mike.jpg" alt="Mike">
-                            <div class="message-content">Perfect! Count me in for that. I’ll bring snacks 😄.</div>
-                        </div>`
-                },
-                'group3': {
-                    header: '🧪 Collaboration Hub',
-                    messages: `
-                        <div class="message incoming">
-                            <img src="lisa.jpg" alt="Lisa">
-                            <div class="message-content">I’m looking for someone to help analyze data on patient-derived organoids. Any takers? 🔍</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="joey.jpg" alt="Joey">
-                            <div class="message-content">I could help! Send over the details, and I’ll see if it fits into my schedule 📅.</div>
-                        </div>
-                        <div class="message incoming">
-                            <img src="mike.jpg" alt="Mike">
-                            <div class="message-content">Count me in for that too. Collaboration is key! 🤝</div>
-                        </div>
-                        <div class="message outgoing">
-                            <div class="message-content">Awesome! Let’s set up a shared folder and start brainstorming ideas.</div>
-                        </div>`
-                }
-            };
+<script>
+    function openChat(chatName) {
+        const chatHeader = document.querySelector('.chat-header');
+        const chatMessages = document.querySelector('#chat-messages');
 
-            if (chats[chatName]) {
-                chatHeader.textContent = chats[chatName].header;
-                chatMessages.innerHTML = chats[chatName].messages;
-            } else {
-                chatHeader.textContent = 'Chat';
-                chatMessages.innerHTML = '<div class="message">No messages yet. Start the conversation!</div>';
+        const chats = {
+            'group1': {
+                header: '🧬 Research Wellbeing Group',
+                messages: `
+                    <div class="message incoming">
+                        <img src="joey.jpg" alt="Joey">
+                        <div class="message-content">Hey everyone, I found a great podcast on managing PhD burnout. It’s a must-listen! 🎧</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="lisa.jpg" alt="Lisa">
+                        <div class="message-content">Oh, share the link, Joey! I’ve been feeling the pressure lately with abstract deadlines 😓.</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="mike.jpg" alt="Mike">
+                        <div class="message-content">Same here! Balancing grant writing and experiments feels impossible sometimes 😩.</div>
+                    </div>
+                    <div class="message outgoing">
+                        <div class="message-content">Agreed! Let’s make this week’s wellbeing workshop a priority 🙌.</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="joey.jpg" alt="Joey">
+                        <div class="message-content"><div class="message-content">Here's the link: <a href="https://podcasts.apple.com/gb/podcast/burnout-and-the-phd-with-nicole-janz/id1537420258?i=1000559395702" target="_blank">Burnout and the PhD with Nicole Janz.</a> Let’s discuss our takeaways after the workshop! 😊</div>
+                    </div>`
+            },
+            'joey_chat': {
+                header: '🤗 Private Chat with Joey',
+                messages: `
+                    <div class="message incoming">
+                        <img src="joey.jpg" alt="Joey">
+                        <div class="message-content">Hey! How’s your day going? Thinking of getting outside this weekend for a hike or maybe some photography. What do you think? 📸🏞️</div>
+                    </div>
+                    <div class="message outgoing">
+                        <div class="message-content">That sounds great! I’m up for a hike or some photography. Do you have a location in mind? 😊</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="joey.jpg" alt="Joey">
+                        <div class="message-content">I haven’t found a place to live yet, still searching. How about you? Any luck with housing?</div>
+                    </div>
+                    <div class="message outgoing">
+                        <div class="message-content">No luck yet either, but I’ll keep looking. Let’s make sure we take some awesome photos on our hike this weekend! 📸</div>
+                    </div>`
+            },
+            'lisa_chat': {
+                header: '💬 Private Chat with Lisa',
+                messages: `
+                    <div class="message incoming">
+                        <img src="lisa.jpg" alt="Lisa">
+                        <div class="message-content">Hey, I’ve been struggling with grant writing and balancing it with my post-doc research. The pressure is intense, and I just need a break! 😩</div>
+                    </div>
+                    <div class="message outgoing">
+                        <div class="message-content">I totally get you, Lisa. The endless rounds of writing and revisions are exhausting. Have you had time to focus on your well-being? 💆‍♀️</div>
+                    </div>
+                    <div class="message incoming">
+                        <img src="lisa.jpg" alt="Lisa">
+                        <div class="message-content">Not much! I really need to find a good work-life balance. Been thinking about taking a few days off. Do you have any tips? ✨</div>
+                    </div>
+                    <div class="message outgoing">
+                        <div class="message-content">I find that taking short breaks for a walk or something creative helps. Maybe we could go for a hike this weekend to de-stress? 🌳</div>
+                    </div>`
+            },
+            'alice': {
+                header: 'Alice',
+                messages: `<div class="message">No messages yet. Start the conversation!</div>`
+            },
+            'mike': {
+                header: 'Mike',
+                messages: `<div class="message">No messages yet. Start the conversation!</div>`
+            },
+            'emily': {
+                header: 'Emily',
+                messages: `<div class="message">No messages yet. Start the conversation!</div>`
+            },
+            'john': {
+                header: 'John',
+                messages: `<div class="message">No messages yet. Start the conversation!</div>`
             }
-        }
+        };
 
-        function sendMessage() {
-            const input = document.getElementById('chat-input');
-            if (input.value.trim() !== '') {
-                const chatMessages = document.getElementById('chat-messages');
-                const newMessage = document.createElement('div');
-                newMessage.className = 'message outgoing';
-                newMessage.innerHTML = `<div class="message-content">${input.value}</div>`;
-                chatMessages.appendChild(newMessage);
-		chatMessages.scrollTop = chatMessages.scrollHeight;
-                chatInput.value = '';
-            }
+        if (chats[chatName]) {
+            chatHeader.textContent = chats[chatName].header;
+            chatMessages.innerHTML = chats[chatName].messages;
+        } else {
+            chatHeader.textContent = 'Chat';
+            chatMessages.innerHTML = '<div class="message">No messages yet. Start the conversation!</div>';
         }
-    </script>
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('chat-input');
+        if (input.value.trim() !== '') {
+            const chatMessages = document.getElementById('chat-messages');
+            const newMessage = document.createElement('div');
+            newMessage.className = 'message outgoing';
+            newMessage.innerHTML = `<div class="message-content">${input.value}</div>`;
+            chatMessages.appendChild(newMessage);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            input.value = '';
+        }
+    }
+</script>
 </body>
 </html>
