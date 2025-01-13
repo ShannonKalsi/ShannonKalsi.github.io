@@ -39,7 +39,7 @@ body {
     width: 100%; /* Ensure the navbar is within the width */
     box-sizing: border-box; /* Include padding in width calculation */
 }
-/* Ensure proper positioning for the dropdown menu */
+/* Navbar Dropdown Styling */
 .navbar .dropdown {
     position: relative;
     display: inline-block;
@@ -52,14 +52,15 @@ body {
     background-color: #1E88E5;  /* Blue background */
     min-width: 160px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1000;  /* Ensure dropdown is on top */
+    z-index: 1001;  /* Ensure dropdown is on top of other content */
     border-radius: 8px;
     padding: 10px 0;
+    opacity: 1; /* Ensure no transparency */
 }
 
-/* On hover, make the dropdown content visible */
+/* Ensure dropdown becomes visible on hover */
 .navbar .dropdown:hover .dropdown-content {
-    display: block;  /* Show the dropdown when hovered */
+    display: block;  /* Show dropdown content when hovered */
 }
 
 /* Dropdown item links */
@@ -86,6 +87,7 @@ body {
 .navbar .dropdown-content a:hover {
     background-color: #D81B60; /* Magenta on hover */
 }
+
 /* Ensure dropdown is above other content */
 .navbar .dropdown-content {
     z-index: 999;  /* Higher z-index value */
