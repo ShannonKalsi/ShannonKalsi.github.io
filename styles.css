@@ -1,52 +1,101 @@
 body {
-    font-family: Calibri, sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Page background */
     margin: 0;
-    background-color: #f9f9f9;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 header {
-    background-color: #1e88e5;
-    padding: 10px 20px;
+    background-color: #1e88e5; /* Blue header */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure full-width header */
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5em; /* Font size for the title */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    align-items: center;
 }
 
-.nav-links li a {
-    text-decoration: none;
+.nav-links a {
     color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.nav-links li a:hover {
-    background-color: #d81b60;
+.nav-links img {
+    width: 30px;
+    height: 30px;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    padding: 10px 0;
-    border-radius: 5px;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
 main {
-    display: flex;
-    margin: 20px;
-    gap: 20px;
+    padding: 20px;
+    background-color: white; /* White background for main */
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Prevents any padding or margins from affecting width */
+    margin: 0 auto; /* Center content */
+}
+
+.resources-container {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+section {
+    background-color: white; /* Ensures all sections have white background */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: #d81b60; /* Magenta title color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #1e88e5; /* Blue section title color */
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
 }
 
 .newsfeed {
@@ -83,21 +132,15 @@ main {
 }
 
 footer {
+    text-align: center;
+    padding: 10px;
     background-color: #1e88e5;
     color: white;
-    text-align: center;
-    padding: 10px 0;
+    width: 100%;
 }
 
-.logo {
-    font-size: 1.5em; /* Ensures the 'LabSphere' title is consistently 1.5em */
+footer a {
+    color: white;
+    text-decoration: bold;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
 }
