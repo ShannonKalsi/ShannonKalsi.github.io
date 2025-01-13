@@ -3,128 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Activity Feed</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>LabSphere - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #1e88e5;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links img {
+            width: auto;
+            height: 24px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .post-section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-section textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        .feed {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .post {
+            display: flex;
+            gap: 10px;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-picture {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+        }
+
+        .post-content {
+            flex-grow: 1;
+        }
+
+        .post-content p {
+            margin: 5px 0;
+        }
+
+        .like-button {
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1e88e5;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header with Navigation -->
     <header>
         <nav class="navbar">
-            <div class="logo-container">
-                <img src="logo.png" alt="LabSphere Logo" class="logo-img">
-                <h1>LabSphere</h1>
+            <div class="logo">
+                <img src="logo.png" alt="LabSphere Logo">
+                LabSphere
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="collaboration.html">Collaboration</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Wellbeing</a>
-                    <div class="dropdown-content">
-                        <a href="wellbeing.html">Resources</a>
-                        <a href="edi.html">Equality, Diversity, and Inclusion</a>
-                        <a href="buddy.html">Buddy System</a>
-                    </div>
-                </li>
+                <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="messaging.html"><img src="chat.png" alt="Chat"></a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main content section -->
     <main>
-        <!-- Newsfeed Section -->
-        <section class="newsfeed">
-            <!-- New Post Section -->
-            <div class="new-post">
-                <textarea id="new-post-input" placeholder="What's happening in your research today?"></textarea>
-                <button onclick="postContent()">Post</button>
-            </div>
+        <div class="post-section">
+            <h2>What's happening in your research today?</h2>
+            <textarea placeholder="Share your thoughts..."></textarea>
+        </div>
 
-            <!-- Fake Posts -->
+        <div class="feed">
             <div class="post">
-                <div class="post-header">
-                    <img src="alice.jpg" alt="Alice's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>Alice Newman</strong>
-                        <p>Just had my paper published in <i>Nature</i>! Check it out! 🎉</p>
-                        <span class="timestamp">Posted 2 hours ago</span>
-                    </div>
+                <img src="user1.jpg" alt="User Profile Picture" class="profile-picture">
+                <div class="post-content">
+                    <p><strong>John Doe</strong></p>
+                    <p>Excited to share our new paper on immune cell mechanisms in cancer!</p>
+                    <button class="like-button">Like</button>
                 </div>
-                <button class="like-button">👍 Like</button>
             </div>
 
             <div class="post">
-                <div class="post-header">
-                    <img src="joey.jpg" alt="Joey's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>Joey Bloggs</strong>
-                        <p>Attending the <i>EACR conference</i> 📅. Having a great time! Met amazing researchers! 👨‍🔬</p>
-                        <span class="timestamp">Posted 5 hours ago</span>
-                    </div>
+                <img src="user2.jpg" alt="User Profile Picture" class="profile-picture">
+                <div class="post-content">
+                    <p><strong>Emily Zhang</strong></p>
+                    <p>Collaborating with amazing colleagues on a CRISPR project. Stay tuned for updates!</p>
+                    <button class="like-button">Like</button>
                 </div>
-                <button class="like-button">👍 Like</button>
             </div>
-
-            <div class="post">
-                <div class="post-header">
-                    <img src="lisa.jpg" alt="Lisa's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>Lisa Brown</strong>
-                        <p>I was selected to give an oral presentation at the <i>EMBL-EBI Annual Conference</i> 🗣️ Can’t wait!</p>
-                        <span class="timestamp">Posted 1 day ago</span>
-                    </div>
-                </div>
-                <button class="like-button">👍 Like</button>
-            </div>
-
-            <div class="post">
-                <div class="post-header">
-                    <img src="mike.jpg" alt="Mike's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>Mike Adams</strong>
-                        <p>Just finished the final draft for my next paper! 📚 Feeling optimistic. ✨</p>
-                        <span class="timestamp">Posted 2 days ago</span>
-                    </div>
-                </div>
-                <button class="like-button">👍 Like</button>
-            </div>
-
-            <div class="post">
-                <div class="post-header">
-                    <img src="jane.jpg" alt="Jane's Profile" class="profile-pic">
-                    <div class="post-info">
-                        <strong>Jane Smith</strong>
-                        <p>Had a wonderful time at the <i>Wellbeing Seminar</i> 🧘. It’s so important for researchers to get the support they need. ❤️</p>
-                        <span class="timestamp">Posted 3 days ago</span>
-                    </div>
-                </div>
-                <button class="like-button">👍 Like</button>
-            </div>
-        </section>
-
-        <!-- News Sidebar -->
-        <aside class="right-sidebar">
-            <h3>Cancer Research News</h3>
-            <div class="news-item">
-                <a href="#">New Breakthrough in Immunotherapy</a>
-                <p>Researchers have identified a novel pathway to enhance immune response...</p>
-            </div>
-            <div class="news-item">
-                <a href="#">Genome Editing for Cancer Treatment</a>
-                <p>A new study explores CRISPR's potential to revolutionize oncology...</p>
-            </div>
-        </aside>
+        </div>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <a href="messaging.html">Let's Chat</a>
-        <p>&copy; 2025 LabSphere. All rights reserved.</p>
+        &copy; 2025 LabSphere. All rights reserved.
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
