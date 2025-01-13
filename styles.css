@@ -15,44 +15,15 @@ header {
     width: 100%; /* Ensure full-width header */
 }
 
-/* Apply Flexbox for layout */
+/* Navbar layout */
 .navbar {
     display: flex;
-    justify-content: center; /* Aligns nav items horizontally */
-    align-items: center; /* Aligns vertically */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center;
     padding: 0 20px;
-    background-color: #1E88E5; /* Your header background */
 }
 
-/* Align nav items in a row */
-.nav-links {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-}
-
-/* Styling for nav links */
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Optionally adjust alignment for mobile or smaller screens */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-.nav-links img {
-    width: 30px;
-    height: 30px;
-}
-
+/* Logo styling */
 .logo {
     font-size: 1.5em; /* Font size for the title */
     font-weight: bold;
@@ -66,6 +37,43 @@ header {
     margin-right: 10px;
 }
 
+/* Navigation links layout */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Ensures buttons are vertically aligned with the logo */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Resize the chat icon */
+.nav-links img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack logo and links vertically */
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links img {
+        width: 24px;
+        height: 24px;
+    }
+}
 
 main {
     padding: 20px;
