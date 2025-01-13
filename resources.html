@@ -14,21 +14,24 @@
             padding: 0;
             width: 100%; /* Ensure full width */
             overflow-x: hidden; /* Prevent horizontal scrolling */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
             background-color: #1E88E5;
-            padding: 10px;
             color: white;
+            padding: 10px 0;
             text-align: center;
-            width: 100%; /* Ensure header spans full width */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%; /* Ensure navbar spans full width */
+            padding: 0 20px;
         }
 
         .logo-container {
@@ -37,8 +40,8 @@
         }
 
         .logo-img {
-            width: 40px;
-            height: 40px;
+            width: 30px; /* resized logo */
+            height: 30px;
             margin-right: 10px;
         }
 
@@ -46,12 +49,25 @@
             list-style-type: none;
             display: flex;
             gap: 20px;
+            align-items: center; /* Ensures links are vertically aligned with the logo */
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        .nav-links img {
+            width: 30px; /* resized chat icon */
+            height: 30px;
+        }
+
+        main {
+            display: flex;
+            flex-grow: 1;
+            gap: 20px;
+            padding: 20px;
         }
 
         .resources-container {
@@ -138,17 +154,10 @@
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="collaboration.html">Collaboration</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Wellbeing</a>
-                    <div class="dropdown-content">
-                        <a href="wellbeing.html">Resources</a>
-                        <a href="edi.html">Equality, Diversity and Inclusion</a>
-                        <a href="buddy.html">Buddy System</a>
-                    </div>
-                </li>
+                <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="messaging.html">
-                    <img src="chat.png" alt="Chat" style="width: 24px; height: 24px;" />
+                    <img src="chat.png" alt="Chat" style="width: 30px; height: 30px;" />
                 </a></li>
             </ul>
         </nav>
