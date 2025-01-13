@@ -164,10 +164,18 @@ footer {
     display: block;
 }
 
+Updated CSS for Footer:
+css
+Copy code
+/* Footer "Let's Chat" Hover Effect */
 footer a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+    color: white; /* Default color for the link */
+    text-decoration: underline;
+    font-weight: bold; /* Make the text bold */
+}
+
+footer a:hover {
+    color: #D81B60; /* Magenta color on hover */
 }
 
 /* Form Styles */
