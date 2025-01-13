@@ -67,6 +67,17 @@
             cursor: pointer;
             font-weight: bold;
         }
+        /* Remove border and outline for buttons */
+.dropbtn, .navbar .dropdown-content a {
+    border: none; /* Removes border */
+    outline: none; /* Removes focus outline */
+}
+
+/* Add a smoother focus effect if desired */
+.dropbtn:focus, .navbar .dropdown-content a:focus {
+    outline: 2px solid #D81B60; /* Optional: Adds focus outline for accessibility */
+}
+
 
         .dropdown-content {
             display: none;
