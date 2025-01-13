@@ -5,6 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit Equipment - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+ .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 30px; /* resized logo */
+            height: 30px;
+            margin-right: 10px;
+        }
+.nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            align-items: center; /* Ensures buttons are vertically aligned with the logo */
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links img {
+            width: 30px; /* resized chat icon */
+            height: 30px;
+        }
+</style>
     <script>
         // JavaScript function to dynamically add new equipment fields
         function addEquipmentField() {
