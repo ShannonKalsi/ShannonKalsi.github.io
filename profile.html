@@ -11,25 +11,35 @@
             color: #333;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
             background-color: #1e88e5;
             color: white;
-            padding: 15px 0;
+            padding: 10px 0;
             text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
         }
 
         .nav-links {
@@ -44,6 +54,42 @@
             font-weight: bold;
         }
 
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            background-color: #1e88e5;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
         .profile-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -51,6 +97,7 @@
             padding: 30px;
             max-width: 1200px;
             margin: 0 auto;
+            flex-grow: 1;
         }
 
         .profile-info, .research-interests, .publications, .skills, .collaboration, .social-engagement {
@@ -106,9 +153,7 @@
             color: white;
             text-align: center;
             padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            margin-top: auto;
         }
 
         footer a {
@@ -133,7 +178,7 @@
             <li><a href="resources.html">Resources</a></li>
             <li><a href="collaboration.html">Collaboration</a></li>
             <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Wellbeing</a>
+                <button class="dropbtn">Wellbeing</button>
                 <div class="dropdown-content">
                     <a href="wellbeing.html">Resources</a>
                     <a href="edi.html">Equality, Diversity and Inclusion</a>
@@ -165,19 +210,19 @@
         <!-- Research Focus & Current Project -->
         <section class="research-interests">
             <h3>Research Focus</h3>
-            <p>Jane's research primarily focuses on immunological responses, including T-cell activation and the role of the immune system in cancer progression. She is also interested in the mechanisms of autoimmunity and exploring novel immunotherapies for autoimmune diseases. Her work is driven by a passion to improve cancer treatments through targeted immunotherapies.</p>
+            <p>Jane's research primarily focuses on immunological responses, including T-cell activation and the role of the immune system in cancer progression...</p>
 
             <h3>Current Project</h3>
-            <p>Jane is currently investigating how T-cell activation can be modulated to enhance cancer immunotherapy efficacy. The project aims to design targeted therapies that specifically activate the immune system against cancer cells while avoiding autoimmunity.</p>
+            <p>Jane is currently investigating how T-cell activation can be modulated to enhance cancer immunotherapy efficacy...</p>
         </section>
 
         <!-- Collaboration Interests -->
         <section class="collaboration">
             <h3>Collaboration Interests</h3>
             <ul>
-                <li><strong>Research Interests:</strong> Seeking collaboration in immunotherapy, immune checkpoint inhibitors, and cancer immunogenomics.</li>
-                <li><strong>Skills & Expertise:</strong> CRISPR/Cas9 gene editing, cell culture techniques, flow cytometry, immunohistochemistry, and data analysis (R, Python).</li>
-                <li><strong>Collaboration Preferences:</strong> Open to joint publications, data-sharing, and collaborative research projects in cancer immunology and immunotherapy.</li>
+                <li><strong>Research Interests:</strong> Seeking collaboration in immunotherapy, immune checkpoint inhibitors...</li>
+                <li><strong>Skills & Expertise:</strong> CRISPR/Cas9 gene editing, cell culture techniques, flow cytometry...</li>
+                <li><strong>Collaboration Preferences:</strong> Open to joint publications, data-sharing, and collaborative research projects...</li>
             </ul>
         </section>
 
@@ -185,9 +230,9 @@
         <section class="publications">
             <h3>Key Publications</h3>
             <ul>
-                <li><strong>Smith, J., et al.</strong> (2023). "The Role of T-cell Activation in Immune Tolerance." *Journal of Immunology*, 145(2), 245-260.</li>
-                <li><strong>Smith, J., et al.</strong> (2022). "Immunological Pathways in Autoimmunity and Cancer." *Nature Reviews Immunology*, 42(4), 512-528.</li>
-                <li><strong>Smith, J., et al.</strong> (2021). "Emerging Therapeutics in Immunotherapy: A Focus on Autoimmune Diseases." *The Lancet Immunology*, 28(7), 301-315.</li>
+                <li><strong>Smith, J., et al.</strong> (2023). "The Role of T-cell Activation in Immune Tolerance..."</li>
+                <li><strong>Smith, J., et al.</strong> (2022). "Immunological Pathways in Autoimmunity and Cancer..."</li>
+                <li><strong>Smith, J., et al.</strong> (2021). "Emerging Therapeutics in Immunotherapy..."</li>
             </ul>
         </section>
 
@@ -209,12 +254,11 @@
         <section class="social-engagement">
             <h3>Social Engagement</h3>
             <ul>
-                <li><strong>Social Activities:</strong> Active in weekly game nights and monthly research discussion meetups.</li>
-                <li><strong>Favorite Social Topics:</strong> Passionate about movies, yoga, and volunteering for cancer awareness events.</li>
-                <li><strong>Active in Social Groups:</strong> Member of the "Cancer Research Innovators" and "Immunology in Cancer" groups on LabSphere.</li>
+                <li><strong>Social Activities:</strong> Active in weekly game nights...</li>
+                <li><strong>Favorite Social Topics:</strong> Passionate about movies...</li>
+                <li><strong>Active in Social Groups:</strong> Member of the "Cancer Research Innovators..."</li>
             </ul>
         </section>
-
     </div>
 </main>
 
