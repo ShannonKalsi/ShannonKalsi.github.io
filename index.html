@@ -58,7 +58,13 @@
         }
 
         main {
+            display: flex;
+            gap: 20px;
             padding: 20px;
+        }
+
+        .content {
+            flex: 2;
         }
 
         .post-section {
@@ -108,8 +114,27 @@
             margin: 5px 0;
         }
 
-        .like-button {
-            margin-top: 10px;
+        .timestamp {
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-item {
+            margin-bottom: 15px;
+        }
+
+        .news-item a {
+            text-decoration: none;
+            color: #1e88e5;
+            font-weight: bold;
         }
 
         footer {
@@ -140,33 +165,90 @@
     </header>
 
     <main>
-        <div class="post-section">
-            <h2>What's happening in your research today?</h2>
-            <textarea placeholder="Share your thoughts..."></textarea>
-        </div>
+        <div class="content">
+            <div class="post-section">
+                <h2>What's happening in your research today?</h2>
+                <textarea placeholder="Share your thoughts..."></textarea>
+            </div>
 
-        <div class="feed">
-            <div class="post">
-                <img src="user1.jpg" alt="User Profile Picture" class="profile-picture">
-                <div class="post-content">
-                    <p><strong>John Doe</strong></p>
-                    <p>Excited to share our new paper on immune cell mechanisms in cancer!</p>
-                    <button class="like-button">Like</button>
+            <div class="feed">
+                <div class="post">
+                    <img src="user1.jpg" alt="Alice's Profile Picture" class="profile-picture">
+                    <div class="post-content">
+                        <p><strong>Alice Zhang</strong></p>
+                        <p>Just had my paper published in <i>Nature</i>! Check it out! 🎉</p>
+                        <p class="timestamp">Posted 2 hours ago</p>
+                    </div>
+                    </div>
+                <button class="like-button">👍 Like</button>
                 </div>
+
+                <div class="post">
+                    <img src="user2.jpg" alt="Joey's Profile Picture" class="profile-picture">
+                    <div class="post-content">
+                        <p><strong>Joey Bloggs</strong></p>
+                        <p>Attending the <i>EACR conference</i> 📅. Having a great time! Met amazing researchers! 👨‍🔬</p>
+                        <p class="timestamp">Posted 5 hours ago</p>
+                    </div>
+                    </div>
+                <button class="like-button">👍 Like</button>
+                </div>
+
+                <div class="post">
+                    <img src="user3.jpg" alt="Lisa's Profile Picture" class="profile-picture">
+                    <div class="post-content">
+                        <p><strong>Lisa Brown</strong></p>
+                        <p>I was selected to give an oral presentation at the <i>EMBL-EBI Annual Conference</i> 🗣️ Can’t wait!</p>
+                        <p class="timestamp">Posted 1 day ago</p>
+                    </div>
+                </div>
+        </div>
+                <button class="like-button">👍 Like</button>
+    <div class="post">
+                <div class="post-header">
+                    <img src="jane.jpg" alt="Jane's Profile" class="profile-pic">
+                    <div class="post-info">
+                        <strong>Jane Smith</strong>
+                        <p>Had a wonderful time at the <i>Wellbeing Seminar</i> 🧘. It’s so important for researchers to get the support they need. ❤️</p>
+                    </div>
+                </div>
+                <button class="like-button">👍 Like</button>
             </div>
 
             <div class="post">
-                <img src="user2.jpg" alt="User Profile Picture" class="profile-picture">
-                <div class="post-content">
-                    <p><strong>Emily Zhang</strong></p>
-                    <p>Collaborating with amazing colleagues on a CRISPR project. Stay tuned for updates!</p>
-                    <button class="like-button">Like</button>
+                <div class="post-header">
+                    <img src="john.jpg" alt="John's Profile" class="profile-pic">
+                    <div class="post-info">
+                        <strong>John Smith</strong>
+                        <p>Just wrapped up a great research project on <i>workplace mental health</i> 🌱. It’s rewarding to see your work make a difference! 🙌</p>
+                    </div>
                 </div>
+                <button class="like-button">👍 Like</button>
             </div>
+        </section>
+    </main>       
+    </div>
         </div>
+
+        <aside class="sidebar">
+            <h3>Cancer Research News</h3>
+            <div class="news-item">
+                <a href="#">New Breakthrough in Immunotherapy</a>
+                <p>Researchers have identified a novel pathway to enhance immune response...</p>
+            </div>
+            <div class="news-item">
+                <a href="#">Genome Editing for Cancer Treatment</a>
+                <p>A new study explores CRISPR's potential to revolutionize oncology...</p>
+            </div>
+            <div class="news-item">
+                <a href="#">AI-Powered Cancer Diagnostics</a>
+                <p>AI models show promise in early detection and treatment planning...</p>
+            </div>
+        </aside>
     </main>
 
     <footer>
+        <a href="messaging.html">Let's Chat</a>
         &copy; 2025 LabSphere. All rights reserved.
     </footer>
 </body>
