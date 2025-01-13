@@ -341,4 +341,18 @@ header h1 {
     color: white; /* Ensure text stays white */
     cursor: pointer; /* Indicate clickability */
 }
+/* Ensure header text is Calibri, not bold, and spans the full width */
+header {
+    font-family: 'Calibri', sans-serif; /* Set font to Calibri */
+    font-weight: normal; /* Ensure the text is not bold */
+    width: 100%; /* Ensure the header spans the full width of the page */
+}
+
+/* Ensure the header text is centered */
+header h1 {
+    font-weight: normal; /* Remove bold */
+    font-family: 'Calibri', sans-serif; /* Set font to Calibri */
+    width: 100%; /* Ensure the heading is the width of the page */
+    margin: 0 auto; /* Center the heading horizontally */
+}
 
