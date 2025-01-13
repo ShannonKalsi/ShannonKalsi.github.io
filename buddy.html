@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Researcher Buddy System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .buddy-pair {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .buddy-pair h3 {
+            margin: 0 0 10px;
+        }
+
+        .buddy-info {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: white;
+            background-color: #00509e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #003f7d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
+                <h1>LabSphere</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="collaboration.html">Collaboration</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Wellbeing</a>
+                    <div class="dropdown-content">
+                        <a href="wellbeing.html">Resources</a>
+                        <a href="edi.html">Equality, Diversity and Inclusion</a>
+                        <a href="buddy.html">Buddy System</a>
+                    </div>
+                </li>
+                <li><a href="socials.html">Socials</a></li>
+                <li><a href="messaging.html">
+                    <img src="chat.png" alt="Chat" style="width: 24px; height: 24px;" />
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="buddy-pair">
+            <h3>Buddy Pair Example</h3>
+            <div class="buddy-info">
+                <div>
+                    <strong>PhD:</strong> Joey<br>
+                    <em>Area of Research: Tumor Genomics</em><br>
+                    Interests: Genetic Sequencing, Data Analysis<br>
+                    Location: Dublin
+                </div>
+                <div>
+                    <strong>Post-Doc:</strong> Jane<br>
+                    <em>Area of Research: Immunology</em><br>
+                    Interests: Immunotherapy, Translational Medicine<br>
+                    Location: Dublin
+                </div>
+            </div>
+            <p>Joey and Jane have been matched based on complementary research areas, shared goals of advancing cancer research, and their location in Dublin.</p>
+            <a href="#" class="button">Learn More About Buddy Activities</a>
+        </section>
+
+        <section class="buddy-pair">
+            <h3>Buddy Pair Example</h3>
+            <div class="buddy-info">
+                <div>
+                    <strong>PhD:</strong> Alice<br>
+                    <em>Area of Research: Cancer Epigenetics</em><br>
+                    Interests: Epigenomics, Clinical Applications<br>
+                    Location: Belfast
+                </div>
+                <div>
+                    <strong>Post-Doc:</strong> John<br>
+                    <em>Area of Research: Radiotherapy</em><br>
+                    Interests: Radiation Biology, Patient Care<br>
+                    Location: Belfast
+                </div>
+            </div>
+            <p>Alice and John have been matched based on complementary research areas, shared interests in cancer treatment advancements, and their location in Belfast.</p>
+            <a href="#" class="button">Learn More About Buddy Activities</a>
+        </section>
+
+        <section>
+            <h2>Sign Up to Find Your Buddy!</h2>
+            <form action="/submit-buddy-request" method="POST">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="role">Role:</label><br>
+                <select id="role" name="role" required>
+                    <option value="phd">PhD</option>
+                    <option value="postdoc">Post-Doc</option>
+                </select><br><br>
+
+                <label for="area-of-research">Area of Research:</label><br>
+                <input type="text" id="area-of-research" name="area-of-research" required><br><br>
+
+                <label for="location">Location:</label><br>
+                <input type="text" id="location" name="location" required><br><br>
+
+                <label for="interests">Interests:</label><br>
+                <textarea id="interests" name="interests" rows="4" required></textarea><br><br>
+
+                <button type="submit" class="button">Sign Up</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer with Let's Chat -->
+    <footer>
+        <a href="messaging.html">Let's Chat</a>
+        <p>&copy; 2025 LabSphere. All rights reserved.</p>
+    </footer>
+</body>
+</html>
