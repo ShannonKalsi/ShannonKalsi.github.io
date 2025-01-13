@@ -89,9 +89,15 @@ footer {
     padding: 10px 0;
 }
 
+.logo {
+    font-size: 1.5em; /* Ensures the 'LabSphere' title is consistently 1.5em */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
     width: 30px;
     height: 30px;
     margin-right: 10px;
 }
-
