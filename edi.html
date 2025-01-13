@@ -3,45 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Equality, Diversity, and Inclusion</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Cell Culture Protocol - LabSphere</title>
     <style>
-        /* General styles for the page layout */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f9f9f9; /* Page background */
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #1E88E5;
-            padding: 10px;
+            background-color: #1e88e5; /* Blue header */
             color: white;
+            padding: 10px 0;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
         }
 
         .logo-container {
+            font-size: 1.5em;
+            font-weight: bold;
             display: flex;
             align-items: center;
         }
 
-        .logo-img {
-            width: 40px;
-            height: 40px;
+        .logo-container img {
+            width: 30px;
+            height: 30px;
             margin-right: 10px;
         }
 
         .nav-links {
-            list-style-type: none;
+            list-style: none;
             display: flex;
             gap: 20px;
+            align-items: center;
         }
 
         .nav-links a {
@@ -50,81 +53,97 @@
             font-weight: bold;
         }
 
-        .resources-container {
-            padding: 20px;
+        .nav-links img {
+            width: 30px;
+            height: 30px;
         }
 
-        /* Section styling */
-        section {
-            background-color: #ffffff;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        section h2 {
-            color: #1E88E5;
-        }
-
-        section ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        section ul li {
-            margin: 10px 0;
-        }
-
-        section ul li a {
-            color: #D81B60;
-            text-decoration: none;
+        .dropbtn {
+            color: white;
+            background-color: #1e88e5;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
             font-weight: bold;
         }
 
-        section ul li a:hover {
-            text-decoration: underline;
+        .dropdown-content a {
+            background-color: #f9f9f9;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
         }
 
-        /* Button styling */
-        button {
-            background-color: #1E88E5;
-            color: white;
-            padding: 8px 15px;
-            border: none;
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .protocol-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #d81b60; /* Magenta title color */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .protocol {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: white;
             border-radius: 5px;
-            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        button:hover {
-            background-color: #D81B60;
+        h3 {
+            color: #1e88e5; /* Blue section title color */
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        ol li {
+            margin-bottom: 10px;
         }
 
         footer {
-            background-color: #1E88E5;
-            color: white;
             text-align: center;
             padding: 10px;
+            background-color: #1e88e5;
+            color: white;
         }
 
         footer a {
-            color: #D81B60;
+            color: white;
             text-decoration: none;
             font-weight: bold;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-<!-- Header with Navigation -->
+    <!-- Header with Navigation -->
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <img src="logo.png" alt="LabSphere Logo">
-                LabSphere
+            <div class="logo-container">
+                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
+                <h1>LabSphere</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -133,7 +152,9 @@
                 <li><a href="collaboration.html">Collaboration</a></li>
                 <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li><a href="socials.html">Socials</a></li>
-                <li><a href="messaging.html"><img src="chat.png" alt="Chat"></a></li>
+                <li><a href="messaging.html">
+                    <img src="chat.png" alt="Chat" style="width: 24px; height: 24px;" />
+                </a></li>
             </ul>
         </nav>
     </header>
@@ -141,11 +162,15 @@
     <!-- Main content section -->
     <main>
         <div class="resources-container">
-            <section class="edi-overview">
-                <h2>Equality, Diversity, and Inclusion at LabSphere</h2>
-                <p>LabSphere is committed to fostering an inclusive, equitable, and diverse environment for researchers in the cancer research community. We believe that diverse perspectives are essential in advancing our mission to fight cancer, and that supporting the wellbeing of all researchers is fundamental to ensuring sustainable progress. Below are resources and initiatives designed to support this goal:</p>
+            <h3>Equality, Diversity, and Inclusion Overview</h2>
+
+            <!-- EDI at LabSphere -->
+            <section class="EDI at LabSphere">
+                <h2>EDI at LabSphere</h3>
+              <p>LabSphere is committed to fostering an inclusive, equitable, and diverse environment for researchers in the cancer research community. We believe that diverse perspectives are essential in advancing our mission to fight cancer, and that supporting the wellbeing of all researchers is fundamental to ensuring sustainable progress. Below are resources and initiatives designed to support this goal:</p>
             </section>
 
+            <!-- EDI principles -->
             <section class="edi-principles">
                 <h2>Our Principles of Equality, Diversity, and Inclusion</h2>
                 <p>LabSphere’s approach to EDI is based on the following core principles:</p>
@@ -156,6 +181,7 @@
                 </ul>
             </section>
 
+            <!-- EDI training -->
             <section class="edi-training">
                 <h2>EDI Training Resources</h2>
                 <p>We encourage all LabSphere users to participate in free, online training courses that help cultivate an inclusive workplace. Below are a few recommended resources:</p>
@@ -166,7 +192,8 @@
                 </ul>
             </section>
 
-            <section class="edi-initiatives">
+            <!-- EDI initiatives -->
+<section class="edi-initiatives">
                 <h2>LabSphere Initiatives for Inclusion</h2>
                 <p>LabSphere is proud to host several initiatives aimed at fostering inclusivity and supporting underrepresented groups in cancer research:</p>
                 <ul>
@@ -176,7 +203,8 @@
                 </ul>
             </section>
 
-            <section class="edi-support">
+            <!-- EDI support -->
+  <section class="edi-support">
                 <h2>Support Resources for Researchers</h2>
                 <p>If you are in need of support, here are some additional resources that offer advice, assistance, and guidance on diversity, inclusion, and wellbeing in the workplace:</p>
                 <ul>
@@ -185,14 +213,13 @@
                     <li><a href="https://www.wellbeinginitiative.com/" target="_blank">Wellbeing Initiative</a> - Supporting researchers’ mental health and wellbeing.</li>
                 </ul>
             </section>
-
         </div>
     </main>
 
-   <!-- Footer with Let's Chat -->
-<footer>
-    <a href="messaging.html">Let's Chat</a>
-    <p>&copy; 2025 LabSphere. All rights reserved.</p>
-</footer>
+    <!-- Footer with Let's Chat -->
+    <footer>
+        <a href="messaging.html">Let's Chat</a>
+        <p>&copy; 2025 LabSphere. All rights reserved.</p>
+    </footer>
 </body>
 </html>
