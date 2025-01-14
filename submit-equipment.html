@@ -6,7 +6,82 @@
     <title>Submit Equipment - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
     <style>
- .logo {
+        /* Shared styles for consistency */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: #1E88E5;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #1E88E5;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Submit Equipment Section */
+        .submit-equipment {
+            padding: 20px;
+            margin: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group textarea {
+            height: 200px;
+        }
+
+        button[type="submit"],
+        button[type="button"] {
+            background-color: #D81B60;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover,
+        button[type="button"]:hover {
+            background-color: #1E88E5;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
             font-size: 1.5em;
             font-weight: bold;
             display: flex;
@@ -14,15 +89,16 @@
         }
 
         .logo img {
-            width: 30px; /* resized logo */
+            width: 30px;
             height: 30px;
             margin-right: 10px;
         }
-.nav-links {
+
+        .nav-links {
             list-style: none;
             display: flex;
             gap: 20px;
-            align-items: center; /* Ensures buttons are vertically aligned with the logo */
+            align-items: center;
         }
 
         .nav-links a {
@@ -32,95 +108,84 @@
         }
 
         .nav-links img {
-            width: 30px; /* resized chat icon */
+            width: 30px;
             height: 30px;
         }
-</style>
+    </style>
     <script>
         // JavaScript function to dynamically add new equipment fields
         function addEquipmentField() {
             const equipmentContainer = document.getElementById('equipment-container');
 
-            // Create a new div for the equipment
             const newEquipmentDiv = document.createElement('div');
-            newEquipmentDiv.classList.add('equipment-entry');
+            newEquipmentDiv.classList.add('form-group');
 
-            // Create new fields for equipment name and description
             newEquipmentDiv.innerHTML = `
                 <label for="equipment-name">Equipment Name:</label>
                 <input type="text" name="equipment-name[]" required>
-
                 <label for="equipment-description">Equipment Description:</label>
                 <textarea name="equipment-description[]" rows="4" required></textarea>
             `;
 
-            // Append the new equipment div to the container
             equipmentContainer.appendChild(newEquipmentDiv);
         }
     </script>
 </head>
 <body>
-
     <!-- Header with Navigation -->
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
-                <h1>LabSphere</h1>
+                <img src="logo.png" alt="LabSphere Logo">
+                LabSphere
             </div>
-           <ul class="nav-links">
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="collaboration.html">Collaboration</a></li>
                 <li><a href="wellbeing.html">Wellbeing</a></li>
-                <li><a href="edi.html">EDI</a></li> <!-- Link to EDI section -->
+                <li><a href="edi.html">EDI</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="messaging.html">
-                    <img src="chat.png" alt="Chat" style="width: 24px; height: 24px;" />
+                    <img src="chat.png" alt="Chat">
                 </a></li>
             </ul>
         </nav>
     </header>
 
-    
-    <!-- Main Content for Submit Equipment -->
-    <main class="submit-equipment">
-        <h2>Submit Your Institution's Equipment</h2>
-        <p>Fill out the form below to submit the equipment available at your institution. You can add multiple pieces of equipment before submitting the form.</p>
-
-        <!-- Equipment Submission Form -->
-        <form action="submit-equipment-handler.php" method="POST">
-
-            <div id="equipment-container">
-                <!-- Dynamic equipment fields will be added here -->
-                <div class="equipment-entry">
-                    <label for="equipment-name">Equipment Name:</label>
-                    <input type="text" name="equipment-name[]" required>
-
-                    <label for="equipment-description">Equipment Description:</label>
-                    <textarea name="equipment-description[]" rows="4" required></textarea>
+    <!-- Submit Equipment Section -->
+    <main>
+        <section class="submit-equipment">
+            <h2>Submit Equipment</h2>
+            <form action="submit-equipment-handler.php" method="POST">
+                <div id="equipment-container">
+                    <!-- Initial Equipment Entry -->
+                    <div class="form-group">
+                        <label for="equipment-name">Equipment Name:</label>
+                        <input type="text" id="equipment-name" name="equipment-name[]" required>
+                        <label for="equipment-description">Equipment Description:</label>
+                        <textarea id="equipment-description" name="equipment-description[]" required></textarea>
+                    </div>
                 </div>
-            </div>
-
-            <button type="button" class="add-equipment-btn" onclick="addEquipmentField()">Add More Equipment</button>
-            <br><br>
-
-            <label for="institution-name">Institution Name:</label>
-            <input type="text" id="institution-name" name="institution-name" required>
-
-            <label for="contact-email">Your Contact Email:</label>
-            <input type="email" id="contact-email" name="contact-email" required>
-
-            <button type="submit" class="submit-btn">Submit Equipment</button>
-        </form>
+                <button type="button" onclick="addEquipmentField()">Add More Equipment</button>
+                <div class="form-group">
+                    <label for="institution-name">Institution Name:</label>
+                    <input type="text" id="institution-name" name="institution-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Your Contact Email:</label>
+                    <input type="email" id="contact-email" name="contact-email" required>
+                </div>
+                <button type="submit">Submit Equipment</button>
+            </form>
+        </section>
     </main>
 
-       <!-- Footer with Let's Chat -->
-<footer>
-    <a href="messaging.html">Let's Chat</a>
-    <p>&copy; 2025 LabSphere. All rights reserved.</p>
-</footer>
-
+    <!-- Footer -->
+    <footer>
+        <a href="messaging.html">Let's Chat</a>
+        <p>&copy; 2025 LabSphere. All rights reserved.</p>
+    </footer>
 </body>
 </html>
