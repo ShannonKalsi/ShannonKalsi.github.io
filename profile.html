@@ -3,101 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Profile: Jane Doe</title>
+    <title>Profile - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        main {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .profile-container {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 800px;
-            width: 100%;
-        }
-
-        .profile-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .profile-header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-right: 20px;
-            object-fit: cover;
-        }
-
-        .profile-header h1 {
-            margin: 0;
-            color: #1E88E5;
-        }
-
-        .profile-header p {
-            margin: 5px 0;
-            color: #555;
-        }
-
-        .section {
-            margin-bottom: 20px;
-        }
-
-        .section h2 {
-            color: #1E88E5;
-            margin-bottom: 10px;
-        }
-
-        .section ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .section ul li {
-            margin: 5px 0;
-        }
-
-        footer {
-            background-color: #1E88E5;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-
-        footer a {
-            color: #D81B60;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
-    <!-- Header with Navigation -->
+
+    <!-- Header -->
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo.png" alt="LabSphere Logo">
-                <h1>LabSphere</h1>
-            </div>
+        <div class="logo-container">
+            <img src="logo.png" alt="LabSphere Logo" class="logo">
+            <span class="logo-name">LabSphere</span>
+        </div>
+        <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="profile.html">Profile</a></li>
@@ -107,7 +24,7 @@
                 <li><a href="edi.html">EDI</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="messaging.html">
-                    <img src="chat.png" alt="Chat">
+                    <img src="chat.png" alt="Chat" class="nav-icon">
                 </a></li>
             </ul>
         </nav>
@@ -188,21 +105,21 @@
 
             <div class="section">
                 <h3>Collaboration Interests</h3>
-                <p>Jane is actively seeking collaborators for:
+                <p>Jane is actively seeking collaborators for:</p>
                 <ul>
                     <li>Developing preclinical models for immunotherapy studies</li>
                     <li>Exploring the interplay between the microbiome and cancer immunity</li>
                     <li>Data sharing and multi-center collaborations to enhance translational research impact</li>
                 </ul>
-                </p>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
     <footer>
-        <a href="messaging.html">Let's Chat</a>
-        <p>&copy; 2025 LabSphere. All rights reserved.</p>
+        <a href="messaging.html" class="chat-link">Let's Chat</a>
+        &copy; 2025 LabSphere. All rights reserved.
     </footer>
+
 </body>
 </html>
