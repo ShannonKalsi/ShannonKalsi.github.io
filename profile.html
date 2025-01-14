@@ -5,6 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ensure no horizontal scrolling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Profile Container */
+        .profile-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Profile Header */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-header img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .profile-header h2 {
+            color: #1E88E5;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .profile-header p {
+            color: #333;
+            font-size: 1.1rem;
+            margin: 5px 0;
+        }
+
+        .profile-header p strong {
+            color: #D81B60;
+        }
+
+        /* Section styling */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h3 {
+            font-size: 1.6rem;
+            color: #1E88E5;
+            border-bottom: 2px solid #D81B60;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Science Emoji for Bullet Points */
+        .section ul li::before {
+            content: "🧪 ";
+            margin-right: 8px;
+        }
+
+        /* Styling for the profile details */
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .section p strong {
+            color: #1E88E5;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #D81B60;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #1E88E5;
+        }
+
+    </style>
 </head>
 <body>
 
