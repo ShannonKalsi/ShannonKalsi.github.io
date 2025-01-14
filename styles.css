@@ -8,17 +8,28 @@ body {
 
 header {
     height: 60px; /* Consistent height for header */
-    padding: 10px 0;
-    text-align: center;
+    padding: 10px 20px; /* Padding for spacing */
+    text-align: left; /* Align title and logo to the left */
     background-color: #1E88E5;
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex; /* Flex layout for header content */
-    justify-content: center; /* Center header content */
+    justify-content: space-between; /* Space between title/logo and nav links */
     align-items: center;
     margin: 0;
 }
 
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and text */
+}
+
+header .nav-links {
+    display: flex;
+    gap: 20px; /* Space between nav links */
+    margin-left: auto; /* Push nav links to the right */
+}
 main {
     padding: 20px;
     background-color: #f9f9f9;
