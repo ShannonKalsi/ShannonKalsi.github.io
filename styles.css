@@ -19,42 +19,9 @@ header {
     margin: 0;
 }
 
-ul.nav-links {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-    align-items: center; /* Ensure alignment with logo */
-    margin: 0;
-    padding: 0;
-}
-
-ul.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-ul.nav-links img {
-    width: 24px; /* Standardized icon size */
-    height: 24px;
-}
-
-div.logo {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-div.logo img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-}
-
 main {
     padding: 20px;
-    background-color: white; /* Ensure main has a white background */
+    background-color: #f9f9f9;
     width: 100%; /* Full width */
     max-width: 1200px; /* Prevent overly wide content */
     margin: 0 auto; /* Center main content */
