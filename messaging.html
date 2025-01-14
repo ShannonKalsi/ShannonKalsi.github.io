@@ -9,128 +9,136 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9; /* Background Color */
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
             color: #333;
         }
-        .labsphere-header {
+
+        .labsphere-header .logo {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            background-color: #1E88E5; /* Blue */
-            padding: 10px;
-            height: 60px;
         }
-        .logo img {
-            width: 30px;
-            height: 30px;
+
+        .labsphere-header .logo img {
+            max-height: 50px;
             margin-right: 10px;
         }
-        .logo span {
-            font-size: 26px;
-            color: #ffffff;
+
+        .labsphere-header .logo span {
+            font-size: 1.8em;
             font-weight: bold;
+            color: #1E88E5;
         }
+
+        .labsphere-header nav a img {
+            width: 26px;
+            height: 26px;
+        }
+
         .labsphere-header nav a {
-            color: #ffffff;
-            margin-left: 15px;
+            margin: 0 15px;
             text-decoration: none;
-            font-size: 16px;
-        }
-        .labsphere-header nav a:hover {
-            background-color: #D81B60; /* Magenta */
+            color: #1E88E5;
+            font-weight: bold;
         }
 
         .main-container {
             display: flex;
             width: 100%;
             height: calc(100vh - 70px); /* Adjust for header height */
-            padding: 20px;
-            gap: 20px;
         }
 
-        /* Sidebar */
         .sidebar {
-            width: 12.5%;
-            background-color: #f9f9f9; /* Light background */
-            color: #333;
+            width: 300px;
+            background-color: #007BFF;
+            color: white;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            padding: 10px;
         }
+
         .sidebar-header {
             font-size: 1.5em;
-            padding: 1em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
             text-align: center;
-            color: #333;
-            margin-bottom: 20px;
         }
+
         .chat-list {
             list-style: none;
             padding: 0;
             margin: 0;
             overflow-y: auto;
         }
+
         .chat-item {
             display: flex;
             align-items: center;
             padding: 1em;
             cursor: pointer;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
+
         .chat-item img {
             width: 40px;
             height: 40px;
             border-radius: 50%;
             margin-right: 1em;
         }
+
         .chat-item:hover {
-            background-color: #D81B60; /* Magenta hover */
+            background-color: #0056b3;
         }
 
-        /* Chat Window */
         .chat-window {
             flex: 1;
             display: flex;
             flex-direction: column;
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
         }
+
         .chat-header {
             padding: 1em;
-            background-color: #1E88E5; /* Blue */
-            color: #ffffff;
-            font-size: 1.2em;
+            background-color: #ffffff;
+            color: #D81B60;
             font-weight: bold;
+            font-size: 1.2em;
             text-align: center;
             border-bottom: 1px solid #ccc;
         }
+
         .chat-messages {
             flex: 1;
             padding: 1em;
             background-color: #e9ecef;
             overflow-y: auto;
-            margin-bottom: 20px;
-            border-radius: 5px;
         }
+
         .message {
             display: flex;
             align-items: flex-start;
             margin-bottom: 1em;
         }
+
         .message.incoming {
             justify-content: flex-start;
         }
+
         .message.outgoing {
             justify-content: flex-end;
         }
+
         .message img {
             width: 40px;
             height: 40px;
             border-radius: 50%;
             margin-right: 1em;
         }
+
         .message-content {
             max-width: 60%;
             padding: 0.8em;
@@ -138,16 +146,19 @@
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         .message.outgoing .message-content {
-            background-color: #1E88E5; /* Blue for outgoing messages */
+            background-color: #007BFF;
             color: white;
         }
+
         .chat-input {
             display: flex;
             padding: 1em;
-            background-color: #f0f0f0;
+            background-color: #f9f9f9;
             border-top: 1px solid #ccc;
         }
+
         .chat-input textarea {
             flex: 1;
             resize: none;
@@ -156,21 +167,22 @@
             border: 1px solid #ccc;
             margin-right: 0.5em;
         }
+
         .chat-input button {
             padding: 0.8em 1.5em;
-            background-color: #1E88E5; /* Blue button */
+            background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
+
         .chat-input button:hover {
-            background-color: #D81B60; /* Magenta hover */
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <!-- LabSphere Header -->
     <header class="labsphere-header">
         <div class="logo">
             <img src="logo.png" alt="LabSphere Logo">
@@ -178,18 +190,16 @@
         </div>
         <nav>
             <a href="index.html">Home</a>
+            <a href="about.html">About</a>
             <a href="profile.html">Profile</a>
-            <a href="resources.html">Resources</a>
-            <a href="collaboration.html">Collaboration</a>
-            <a href="wellbeing.html">Wellbeing</a>
-            <a href="edi.html">EDI</a>
-            <a href="socials.html">Socials</a>
-            <a href="messaging.html" class="active">Messaging</a>
+            <a href="settings.html">Settings</a>
+            <a href="messaging.html" class="active">
+                <img src="chat.png" alt="Messaging">
+            </a>
         </nav>
     </header>
 
     <div class="main-container">
-        <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">Chats</div>
             <ul class="chat-list">
@@ -199,24 +209,31 @@
                 </li>
                 <li class="chat-item" onclick="openChat('group2')">
                     <img src="group2.jpg" alt="Group 2">
-                    <span>🔬 Cancer Researchers</span>
+                    <span>🧫 Cancer Researchers</span>
                 </li>
-                <li class="chat-item" onclick="openChat('group3')">
+                 <li class="chat-item" onclick="openChat('group3')">
                     <img src="group3.jpg" alt="Group 3">
-                    <span>🧪 Collaboration Hub</span>
+                    <span>👩‍💻 Collaboration Hub 👨‍💻</span>
                 </li>
                 <li class="chat-item" onclick="openChat('joey_chat')">
                     <img src="joey.jpg" alt="Joey">
-                    <span>Joey 🤗</span>
+                    <span>Joey 📸</span>
                 </li>
                 <li class="chat-item" onclick="openChat('lisa_chat')">
                     <img src="lisa.jpg" alt="Lisa">
-                    <span>Lisa 💬</span>
+                    <span>Lisa ✨</span>
+                </li>
+                <li class="chat-item" onclick="openChat('alice_chat')">
+                    <img src="alice.jpg" alt="Alice">
+                    <span>Alice ☕</span>
+                </li>
+                <li class="chat-item" onclick="openChat('john_chat')">
+                    <img src="john.jpg" alt="John">
+                    <span>John 🧫</span>
                 </li>
             </ul>
         </div>
 
-        <!-- Chat Window -->
         <div class="chat-window">
             <div class="chat-header" id="chatHeader">Select a Chat</div>
             <div class="chat-messages" id="chatMessages">
@@ -231,7 +248,31 @@
 
     <script>
         const chats = {
-            group1: {
+            alice_chat: {
+                header: '☕ Private Chat with Alice',
+                messages: [
+                    `<div class="message incoming">
+                        <img src="alice.jpg" alt="Alice">
+                        <div class="message-content">Hey, how's the research going? Want to catch up soon?</div>
+                    </div>`,
+                    `<div class="message outgoing">
+                        <div class="message-content">Definitely! It’s been a busy week, but I’d love to chat. 😊</div>
+                    </div>`
+                ]
+            },
+            john_chat: {
+                header: '🧫 Private Chat with John',
+                messages: [
+                    `<div class="message incoming">
+                        <img src="john.jpg" alt="John">
+                        <div class="message-content">Hey, I’ve been looking for some resources on AI in research. Got any suggestions?</div>
+                    </div>`,
+                    `<div class="message outgoing">
+                        <div class="message-content">I’ll send you some links! I know a few good ones. 🔍</div>
+                    </div>`
+                ]
+            },
+group1: {
                 header: '🧬 Research Wellbeing Group',
                 messages: [
                     `<div class="message incoming">
@@ -245,7 +286,7 @@
                 ]
             },
             group2: {
-                header: '🔬 Cancer Researchers',
+                header: '🧫 Cancer Researchers',
                 messages: [
                     `<div class="message incoming">
                         <img src="alice.jpg" alt="Alice">
@@ -254,7 +295,7 @@
                 ]
             },
             group3: {
-                header: '🧪 Collaboration Hub',
+                header: '👩‍💻 Collaboration Hub 👨‍💻',
                 messages: [
                     `<div class="message incoming">
                         <img src="emily.jpg" alt="Emily">
@@ -263,7 +304,7 @@
                 ]
             },
             joey_chat: {
-                header: '🤗 Private Chat with Joey',
+                header: '📸 Private Chat with Joey',
                 messages: [
                     `<div class="message incoming">
                         <img src="joey.jpg" alt="Joey">
