@@ -74,22 +74,23 @@
             filter: brightness(0) saturate(100%) invert(37%) sepia(98%) saturate(6334%) hue-rotate(290deg) brightness(102%) contrast(101%);
         }
 
-        /* Sidebar */
-        .sidebar {
-            width: 150px;
-            background-color: #f9f9f9;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+       /* Sidebar styles */
+.sidebar {
+    width: 290px; /* Adjust width of sidebar */
+    background-color: #ffffff;
+    padding: 10px;
+    box-sizing: border-box;
+    border-right: 1px solid #ddd;
+}
 
-        .sidebar-header {
-            font-size: 1.5em;
-            font-weight: bold;
-            padding: 10px;
-            background-color: #1E88E5;
-            color: white;
-            text-align: center;
-        }
+.sidebar-header {
+    background-color: #1E88E5;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
 
         .chat-list {
             list-style: none;
@@ -121,16 +122,46 @@
             color: #1E88E5;
         }
 
-        /* Chat Window Styles */
-        .chat-header {
-            padding: 1em;
-            background-color: #ffffff;
-            color: #D81B60;
-            font-weight: bold;
-            font-size: 1.2em;
-            text-align: center;
-            border-bottom: 1px solid #ccc;
-        }
+       * Chat window styles */
+.chat-window {
+    flex-grow: 1;  /* Ensures chat window takes up the remaining space */
+    padding: 10px;
+    background-color: #f9f9f9;  /* Background color */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fix the layout of the main-container */
+.main-container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 60px); /* Adjust for header height */
+}
+
+/* Chat Header Styling */
+.chat-header {
+    background-color: #ffffff;
+    color: #D81B60; /* Magenta color */
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Responsive layout: Adjust for smaller screens */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Stack the sidebar and chat window on small screens */
+    }
+
+    .sidebar {
+        width: 100%; /* Sidebar takes full width on small screens */
+        border-bottom: 1px solid #ddd;
+    }
+
+    .chat-window {
+        width: 100%;
+    }
     </style>
 </head>
 <body>
@@ -155,10 +186,11 @@
         </nav>
     </header>
 
-    <div class="main-container">
-        <div class="sidebar">
-            <div class="sidebar-header">Chats</div>
-            <ul class="chat-list">
+<div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">Chats</div>
+        <ul class="chat-list">
                 <li class="chat-item" onclick="openChat('group1')">
                     <img src="group1.jpg" alt="Group 1">
                     <span>🧬 Research Wellbeing Group</span>
@@ -190,17 +222,11 @@
             </ul>
         </div>
 
-        <div class="chat-window">
-            <div class="chat-header" id="chatHeader">Select a Chat</div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="message">No messages yet. Select a chat to start.</div>
-            </div>
-            <div class="chat-input">
-                <textarea id="chatInput" placeholder="Type a message..."></textarea>
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </div>
-    </div>
+<div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">Chats</div>
+        <ul class="chat-list">
 
     <script>
         const chats = {
@@ -212,7 +238,7 @@
                         <div class="message-content">Hey, how's the research going? Want to catch up soon?</div>
                     </div>`,
                     `<div class="message outgoing">
-                        <div class="message-content">Definitely! It’s been a busy week, but I’d love to chat. 😊</div>
+                        <div class="message-content">Definitely! It’s been a busy week, but I’d love to chat. Let's meet up and get a coffee. ☕</div>
                     </div>`
                 ]
             },
@@ -224,7 +250,7 @@
                         <div class="message-content">Hey, I’ve been looking for some resources on AI in research. Got any suggestions?</div>
                     </div>`,
                     `<div class="message outgoing">
-                        <div class="message-content">I’ll send you some links! I know a few good ones. 🔍</div>
+                        <div class="message-content">Is there any in the resource tab? If not I’ll send you some links! I know a few good ones. 🔍</div>
                     </div>`
                 ]
             },
@@ -234,10 +260,17 @@ group1: {
                     `<div class="message incoming">
                         <img src="joey.jpg" alt="Joey">
                         <div class="message-content">Hey everyone, I found a great podcast on managing PhD burnout. It’s a must-listen! 🎧</div>
-                    </div>`,
+                    </div>`
                     `<div class="message incoming">
                         <img src="lisa.jpg" alt="Lisa">
                         <div class="message-content">Oh, share the link, Joey! I’ve been feeling the pressure lately with abstract deadlines 😓.</div>
+                    </div>`
+                    `<div class="message incoming">
+                        <img src="joey.jpg" alt="Joey">
+                        <div class="message-content">Here you go! It was recommended at a wellbeing seminar I attended. <a href="https://podcasts.apple.com/gb/podcast/burnout-and-the-phd-with-nicole-janz/id1537420258?i=1000559395702" target="_blank">Burnout and the PhD with Nicole Janz</a></div>
+                    </div>`
+                     `<div class="message outgoing">
+                        <div class="message-content">This looks great Joey! I'll check it out! 🔍</div>
                     </div>`
                 ]
             },
