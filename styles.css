@@ -19,16 +19,6 @@ header {
     margin: 0;
 }
 
-nav.navbar {
-    height: 60px;
-    width: 90%; /* Responsive width */
-    max-width: 700px; /* Prevent excessive width on large screens */
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between; /* Space between logo and links */
-    align-items: center;
-}
-
 ul.nav-links {
     list-style-type: none;
     display: flex;
