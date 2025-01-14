@@ -3,142 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Home</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        main {
-            display: flex;
-            flex-grow: 1;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .content {
-            flex: 2;
-        }
-
-        .post-section {
-            background-color: #ffffff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .post-section textarea {
-            width: 100%;
-            height: 150px;
-            padding: 10px;
-            font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            resize: none;
-        }
-
-        .feed {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .post {
-            display: flex;
-            align-items: center;
-            background-color: #ffffff;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .profile-picture {
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-            margin-right: 15px;
-        }
-
-        .post-content {
-            flex-grow: 1;
-        }
-
-        .post-content p {
-            margin: 5px 0;
-        }
-
-        .timestamp {
-            font-size: 0.8em;
-            color: #777;
-        }
-
-        .like-button {
-            background-color: #1e88e5;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .like-button:hover {
-            background-color: #1565c0;
-        }
-
-        .liked {
-            background-color: #d81b60; /* magenta color when liked */
-        }
-
-        .sidebar {
-            flex: 1;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 250px; /* resized news column */
-        }
-
-        .news-item {
-            margin-bottom: 15px;
-        }
-
-        .news-item a {
-            text-decoration: none;
-            color: #1e88e5;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #1e88e5;
-            color: white;
-        }
-    </style>
+    <title>LabSphere</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo.png" alt="LabSphere Logo">
-                LabSphere
-            </div>
+        <div class="logo-container">
+            <img src="logo.png" alt="LabSphere Logo" class="logo">
+            <span class="logo-name">LabSphere</span>
+        </div>
+        <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="collaboration.html">Collaboration</a></li>
                 <li><a href="wellbeing.html">Wellbeing</a></li>
-                <li><a href="edi.html">EDI</a></li> <!-- Link to EDI section -->
+                <li><a href="edi.html">EDI</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="messaging.html">
-                    <img src="chat.png" alt="Chat" style="width: 24px; height: 24px;" />
+                    <img src="chat.png" alt="Chat" class="nav-icon">
                 </a></li>
             </ul>
         </nav>
@@ -182,7 +66,6 @@
                     </div>
                 </div>
 
-                <!-- Mike's Post included with others -->
                 <div class="post">
                     <img src="mike.jpg" alt="Mike's Profile Picture" class="profile-picture">
                     <div class="post-content">
@@ -213,12 +96,12 @@
     </main>
 
     <footer>
-        <a href="messaging.html">Let's Chat</a>
+        <a href="messaging.html" class="chat-link">Let's Chat</a>
         &copy; 2025 LabSphere. All rights reserved.
     </footer>
 
     <script>
-        function likePost(button) {
+       function likePost(button) {
             button.classList.toggle('liked'); // Toggle magenta on like
             let count = button.getAttribute('data-likes') || 0;
             count++;
