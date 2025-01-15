@@ -40,7 +40,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
@@ -116,6 +117,15 @@
             newEquipmentDiv.innerHTML = `
                 <label for="equipment-name">Equipment Name:</label>
                 <input type="text" name="equipment-name[]" required>
+                <label for="equipment-category">Equipment Category:</label>
+                <select name="equipment-category[]" required>
+                    <option value="General Equipment">General Equipment</option>
+                    <option value="Tissue Culture">Tissue Culture</option>
+                    <option value="Proteomics">Proteomics</option>
+                    <option value="Microscopy">Microscopy</option>
+                    <option value="Metabolomics">Metabolomics</option>
+                    <option value="Genomics">Genomics</option>
+                </select>
                 <label for="equipment-description">Equipment Description:</label>
                 <textarea name="equipment-description[]" rows="4" required></textarea>
             `;
@@ -157,14 +167,29 @@
                     <div class="form-group">
                         <label for="equipment-name">Equipment Name:</label>
                         <input type="text" id="equipment-name" name="equipment-name[]" required>
+                        <label for="equipment-category">Equipment Category:</label>
+                        <select name="equipment-category[]" required>
+                            <option value="General Equipment">General Equipment</option>
+                            <option value="Tissue Culture">Tissue Culture</option>
+                            <option value="Proteomics">Proteomics</option>
+                            <option value="Microscopy">Microscopy</option>
+                            <option value="Metabolomics">Metabolomics</option>
+                            <option value="Genomics">Genomics</option>
+                        </select>
                         <label for="equipment-description">Equipment Description:</label>
                         <textarea id="equipment-description" name="equipment-description[]" required></textarea>
                     </div>
                 </div>
                 <button type="button" onclick="addEquipmentField()">Add More Equipment</button>
+
+                <!-- Institution Details -->
                 <div class="form-group">
                     <label for="institution-name">Institution Name:</label>
                     <input type="text" id="institution-name" name="institution-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="institution-contact">Institution Contact:</label>
+                    <input type="text" id="institution-contact" name="institution-contact" required>
                 </div>
                 <div class="form-group">
                     <label for="contact-email">Your Contact Email:</label>
