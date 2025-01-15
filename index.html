@@ -5,6 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LabSphere</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Blue button */
+        .blue-btn {
+            background-color: #1E88E5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .blue-btn:hover {
+            background-color: #D81B60; /* Magenta on hover */
+        }
+
+        /* Sidebar Updates */
+        .sidebar {
+            width: 250px;
+            background-color: #F5F5F5;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+        }
+
+        .news-item a {
+            color: #1E88E5; /* Blue accent */
+            font-weight: bold;
+        }
+
+        .news-item a:hover {
+            color: #D81B60; /* Magenta on hover */
+        }
+
+        /* Style for posts */
+        .post {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .profile-picture {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .post-content {
+            background-color: #F9F9F9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+            width: 100%;
+        }
+
+        .timestamp {
+            font-size: 0.8em;
+            color: #9E9E9E;
+        }
+
+        .like-button {
+            background-color: #E0E0E0;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .like-button.liked {
+            color: #D81B60;
+        }
+
+        /* Post writing box */
+        #post-input {
+            width: 80%; /* Adjust the width as needed */
+            height: 120px; /* Adjust the height to shorten the box */
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+            margin-bottom: 10px; /* Add space below the text box */
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
     <header>
