@@ -50,6 +50,31 @@
             background-color: #D81B60;
             color: #ffffff;
         }
+        /* Styling for highlighted magenta text */
+.highlight-magenta {
+    color: #D81B60; /* Magenta color for bold words */
+}
+
+/* Update for the numbered list */
+.five-ways ol {
+    list-style-type: decimal; /* Ensure it's numbered */
+    padding-left: 20px;
+}
+
+/* Change the bullet points to professional wellbeing emojis */
+li {
+    list-style-type: none; /* Remove default bullet points */
+    padding-left: 30px; /* Space for the emoji */
+    position: relative;
+}
+
+li:before {
+    content: "🌿"; /* Wellbeing emoji */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px; /* Adjust the size of the emoji */
+}
     </style>
 </head>
 <body>
@@ -80,17 +105,17 @@
         <div class="wellbeing-container">
             <!-- Five Ways to Wellbeing -->
             <section class="five-ways">
-                <h2>Five Ways to Wellbeing</h2>
-                <p>Improving your wellbeing can make a big difference to your mental health. These are the five evidence-based steps to improve your mental wellbeing:</p>
-                <ul>
-                    <li><strong>Connect:</strong> Build connections with the people around you. Social relationships are crucial for mental wellbeing.</li>
-                    <li><strong>Be Active:</strong> Physical activity can boost your mood and improve your energy levels. Regular exercise helps relieve stress.</li>
-                    <li><strong>Take Notice:</strong> Be mindful of the world around you. Practicing mindfulness helps to relieve stress and improve concentration.</li>
-                    <li><strong>Keep Learning:</strong> Learning something new, whether it’s a skill or a hobby, can boost your self-esteem and provide purpose.</li>
-                    <li><strong>Give:</strong> Helping others and giving back to your community can increase feelings of happiness and satisfaction.</li>
-                </ul>
-                <p>For more details, visit <a href="https://www.mentalhealthireland.ie/five-ways-to-wellbeing/" target="_blank">Mental Health Ireland's Five Ways to Wellbeing</a> page.</p>
-            </section>
+    <h2>Five Ways to Wellbeing</h2>
+    <p>Improving your wellbeing can make a big difference to your mental health. These are the five evidence-based steps to improve your mental wellbeing:</p>
+    <ol> <!-- Changed to ordered list (numbered) -->
+        <li><span class="highlight-magenta">Connect:</span> Build connections with the people around you. Social relationships are crucial for mental wellbeing.</li>
+        <li><span class="highlight-magenta">Be Active:</span> Physical activity can boost your mood and improve your energy levels. Regular exercise helps relieve stress.</li>
+        <li><span class="highlight-magenta">Take Notice:</span> Be mindful of the world around you. Practicing mindfulness helps to relieve stress and improve concentration.</li>
+        <li><span class="highlight-magenta">Keep Learning:</span> Learning something new, whether it’s a skill or a hobby, can boost your self-esteem and provide purpose.</li>
+        <li><span class="highlight-magenta">Give:</span> Helping others and giving back to your community can increase feelings of happiness and satisfaction.</li>
+    </ol>
+    <p>For more details, visit <a href="https://www.mentalhealthireland.ie/five-ways-to-wellbeing/" target="_blank">Mental Health Ireland's Five Ways to Wellbeing</a> page.</p>
+</section>
 
             <!-- Health and Wellness Resources -->
             <section class="health-wellness">
