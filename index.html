@@ -14,14 +14,14 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="collaboration.html">Collaboration</a></li>
-                <li><a href="wellbeing.html">Wellbeing</a></li>
-                <li><a href="edi.html">EDI</a></li>
-                <li><a href="socials.html">Socials</a></li>
-                <li><a href="messaging.html">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="profile.html" class="nav-link">Profile</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="collaboration.html" class="nav-link">Collaboration</a></li>
+                <li><a href="wellbeing.html" class="nav-link">Wellbeing</a></li>
+                <li><a href="edi.html" class="nav-link">EDI</a></li>
+                <li><a href="socials.html" class="nav-link">Socials</a></li>
+                <li><a href="messaging.html" class="nav-link">
                     <img src="chat.png" alt="Chat" class="nav-icon">
                 </a></li>
             </ul>
@@ -32,49 +32,12 @@
         <div class="content">
             <div class="post-section">
                 <h2>What's happening in your research today?</h2>
-                <textarea placeholder="Share your thoughts..."></textarea>
+                <textarea id="post-input" placeholder="Share your thoughts..."></textarea>
+                <button id="post-button" class="magenta-btn">Post</button>
             </div>
 
-            <div class="feed">
-                <div class="post">
-                    <img src="alice.jpg" alt="Alice's Profile Picture" class="profile-picture">
-                    <div class="post-content">
-                        <p><strong>Alice Zhang</strong></p>
-                        <p>Just had my paper published in <i>Nature</i>! Check it out! 🎉</p>
-                        <p class="timestamp">Posted 2 hours ago</p>
-                        <button class="like-button" onclick="likePost(this)">👍 Like</button>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <img src="joey.jpg" alt="Joey's Profile Picture" class="profile-picture">
-                    <div class="post-content">
-                        <p><strong>Joey Bloggs</strong></p>
-                        <p>Attending the <i>EACR conference</i> 📅. Having a great time! 👨‍🔬</p>
-                        <p class="timestamp">Posted 5 hours ago</p>
-                        <button class="like-button" onclick="likePost(this)">👍 Like</button>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <img src="lisa.jpg" alt="Lisa's Profile Picture" class="profile-picture">
-                    <div class="post-content">
-                        <p><strong>Lisa Brown</strong></p>
-                        <p>I was selected to give an oral presentation at the <i>EMBL-EBI Annual Conference</i> 🗣️ Can not wait!</p>
-                        <p class="timestamp">Posted 5 hours ago</p>
-                        <button class="like-button" onclick="likePost(this)">👍 Like</button>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <img src="mike.jpg" alt="Mike's Profile Picture" class="profile-picture">
-                    <div class="post-content">
-                        <p><strong>Mike Parker</strong></p>
-                        <p>Just finished the final draft for my next paper! 📚 Feeling optimistic. ✨</p>
-                        <p class="timestamp">Posted 10 hours ago</p>
-                        <button class="like-button" onclick="likePost(this)">👍 Like</button>
-                    </div>
-                </div>
+            <div class="feed" id="feed">
+                <!-- Posts will appear here -->
             </div>
         </div>
 
@@ -101,7 +64,53 @@
     </footer>
 
     <script>
-       function likePost(button) {
+        // Function to handle post submission and add post to the top of the feed
+        document.getElementById("post-button").addEventListener("click", function() {
+            const postInput = document.getElementById("post-input");
+            const postContent = postInput.value.trim();
+            
+            if (postContent) {
+                const postContainer = document.createElement("div");
+                postContainer.classList.add("post");
+                
+                const postImage = document.createElement("img");
+                postImage.src = "profile-placeholder.jpg"; // Use a placeholder image or user profile picture
+                postImage.alt = "User Profile Picture";
+                postImage.classList.add("profile-picture");
+
+                const postContentDiv = document.createElement("div");
+                postContentDiv.classList.add("post-content");
+                
+                const postText = document.createElement("p");
+                postText.innerHTML = `<strong>Researcher Name</strong><br>${postContent}`;
+                
+                const timestamp = document.createElement("p");
+                timestamp.classList.add("timestamp");
+                timestamp.textContent = "Just now";
+                
+                postContentDiv.appendChild(postText);
+                postContentDiv.appendChild(timestamp);
+                
+                const likeButton = document.createElement("button");
+                likeButton.classList.add("like-button");
+                likeButton.textContent = "👍 Like";
+                likeButton.onclick = function() {
+                    likePost(likeButton);
+                };
+                
+                postContentDiv.appendChild(likeButton);
+                postContainer.appendChild(postImage);
+                postContainer.appendChild(postContentDiv);
+                
+                // Add the new post to the top of the feed
+                const feed = document.getElementById("feed");
+                feed.insertBefore(postContainer, feed.firstChild);
+
+                postInput.value = ''; // Clear the input field
+            }
+        });
+
+        function likePost(button) {
             button.classList.toggle('liked'); // Toggle magenta on like
             let count = button.getAttribute('data-likes') || 0;
             count++;
@@ -109,5 +118,81 @@
             button.textContent = `👍 Like (${count})`;
         }
     </script>
+
+    <style>
+        /* Magenta button */
+        .magenta-btn {
+            background-color: #D81B60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .magenta-btn:hover {
+            background-color: #C2185B;
+        }
+
+        /* Sidebar Updates */
+        .sidebar {
+            width: 250px;
+            background-color: #F5F5F5;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+        }
+
+        .news-item a {
+            color: #1E88E5; /* Blue accent */
+            font-weight: bold;
+        }
+
+        .news-item a:hover {
+            color: #D81B60; /* Magenta on hover */
+        }
+
+        /* Style for posts */
+        .post {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .profile-picture {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .post-content {
+            background-color: #F9F9F9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+            width: 100%;
+        }
+
+        .timestamp {
+            font-size: 0.8em;
+            color: #9E9E9E;
+        }
+
+        .like-button {
+            background-color: #E0E0E0;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .like-button.liked {
+            color: #D81B60; /* Magenta when liked */
+        }
+    </style>
 </body>
 </html>
