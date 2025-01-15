@@ -3,160 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit Equipment - LabSphere</title>
+    <title>Submit Equipment</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Shared styles for consistency */
         body {
             font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
             background-color: #ffffff;
-        }
-
-        footer {
-            background-color: #1E88E5;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-
-        /* Submit Equipment Section */
-        .submit-equipment {
             padding: 20px;
-            margin: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #1E88E5;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
-        .form-group label {
+        label {
             display: block;
             margin-bottom: 5px;
+            font-weight: bold;
         }
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        input, textarea, select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
         }
 
-        .form-group textarea {
-            height: 200px;
-        }
-
-        button[type="submit"],
-        button[type="button"] {
-            background-color: #D81B60;
-            color: white;
-            padding: 12px 20px;
-            font-size: 16px;
+        button {
+            background-color: #1E88E5;
+            color: #ffffff;
             border: none;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        button[type="submit"]:hover,
-        button[type="button"]:hover {
-            background-color: #1E88E5;
+        button:hover {
+            background-color: #D81B60;
         }
 
-        /* Navbar styles */
+        .add-equipment {
+            margin-top: 10px;
+        }
+
         header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             background-color: #1E88E5;
-            padding: 15px 0;
-            color: white;
+            padding: 10px;
+            height: 60px;
+            box-sizing: border-box;
         }
 
-        .navbar {
+        .logo-container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
         }
 
         .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
             width: 30px;
             height: 30px;
             margin-right: 10px;
         }
 
+        .logo-name {
+            font-size: 26px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
         .nav-links {
-            list-style: none;
+            list-style-type: none;
             display: flex;
             gap: 20px;
-            align-items: center;
+            margin: 0;
+            padding: 0;
         }
 
-        .nav-links a {
-            color: white;
+        .nav-links li a {
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
+            color: #ffffff;
+            font-size: 16px;
+            height: 28px;
+            line-height: 28px;
+            display: inline-block;
+            padding: 0 10px;
+            transition: background-color 0.3s;
         }
 
-        .nav-links a:hover {
+        .nav-links li a:hover {
+            background-color: #D81B60;
+        }
+
+        footer {
+            background-color: #1E88E5;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+        }
+
+        .chat-link {
+            color: #ffffff;
+            font-weight: normal;
+            text-decoration: none;
+            transition: color 0.3s, font-weight 0.3s;
+        }
+
+        .chat-link:hover {
             color: #D81B60;
+            font-weight: bold;
         }
-
-        .nav-links img {
-            width: 30px;
-            height: 30px;
-        }
-
     </style>
-    <script>
-        // JavaScript function to dynamically add new equipment fields
-        function addEquipmentField() {
-            const equipmentContainer = document.getElementById('equipment-container');
-
-            const newEquipmentDiv = document.createElement('div');
-            newEquipmentDiv.classList.add('form-group');
-
-            newEquipmentDiv.innerHTML = ` 
-                <label for="equipment-name">Equipment Name:</label>
-                <input type="text" name="equipment-name[]" required>
-                <label for="equipment-category">Equipment Category:</label>
-                <select name="equipment-category[]" required>
-                    <option value="General Equipment">General Equipment</option>
-                    <option value="Tissue Culture">Tissue Culture</option>
-                    <option value="Proteomics">Proteomics</option>
-                    <option value="Microscopy">Microscopy</option>
-                    <option value="Metabolomics">Metabolomics</option>
-                    <option value="Genomics">Genomics</option>
-                </select>
-                <label for="equipment-description">Equipment Description:</label>
-                <textarea name="equipment-description[]" rows="4" required></textarea>
-            `;
-
-            equipmentContainer.appendChild(newEquipmentDiv);
-        }
-    </script>
 </head>
 <body>
-    <!-- Header with Navigation -->
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo.png" alt="LabSphere Logo">
-                LabSphere
-            </div>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <span class="logo-name">LabSphere</span>
+        </div>
+        <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="profile.html">Profile</a></li>
@@ -166,59 +150,65 @@
                 <li><a href="edi.html">EDI</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="messaging.html">
-                    <img src="chat.png" alt="Chat">
+                    <img src="chat.png" alt="Chat" class="nav-icon">
                 </a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Submit Equipment Section -->
-    <main>
-        <section class="submit-equipment">
-            <h2>Submit Equipment</h2>
-            <form action="submit-equipment-handler.php" method="POST">
-                <div id="equipment-container">
-                    <!-- Initial Equipment Entry -->
-                    <div class="form-group">
-                        <label for="equipment-name">Equipment Name:</label>
-                        <input type="text" id="equipment-name" name="equipment-name[]" required>
-                        <label for="equipment-category">Equipment Category:</label>
-                        <select name="equipment-category[]" required>
-                            <option value="General Equipment">General Equipment</option>
-                            <option value="Tissue Culture">Tissue Culture</option>
-                            <option value="Proteomics">Proteomics</option>
-                            <option value="Microscopy">Microscopy</option>
-                            <option value="Metabolomics">Metabolomics</option>
-                            <option value="Genomics">Genomics</option>
-                        </select>
-                        <label for="equipment-description">Equipment Description:</label>
-                        <textarea id="equipment-description" name="equipment-description[]" required></textarea>
-                    </div>
-                </div>
-                <button type="button" onclick="addEquipmentField()">Add More Equipment</button>
+    <div class="form-container">
+        <h2>Submit Equipment</h2>
+        <form id="equipment-form">
+            <div class="form-group">
+                <label for="equipment-name">Equipment Name</label>
+                <input type="text" id="equipment-name" name="equipment-name" required>
+            </div>
 
-                <!-- Institution Details -->
-                <div class="form-group">
-                    <label for="institution-name">Institution Name:</label>
-                    <input type="text" id="institution-name" name="institution-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="institution-contact">Institution Contact:</label>
-                    <input type="text" id="institution-contact" name="institution-contact" required>
-                </div>
-                <div class="form-group">
-                    <label for="contact-email">Your Contact Email:</label>
-                    <input type="email" id="contact-email" name="contact-email" required>
-                </div>
-                <button type="submit">Submit Equipment</button>
-            </form>
-        </section>
-    </main>
+            <div class="form-group">
+                <label for="equipment-category">Equipment Category</label>
+                <select id="equipment-category" name="equipment-category" required>
+                    <option value="">Select Category</option>
+                    <option value="General Equipment">General Equipment</option>
+                    <option value="Tissue Culture">Tissue Culture</option>
+                    <option value="Microscopy">Microscopy</option>
+                    <option value="Proteomics">Proteomics</option>
+                    <option value="Genomics">Genomics</option>
+                </select>
+            </div>
 
-    <!-- Footer -->
+            <div class="form-group">
+                <label for="equipment-description">Equipment Description</label>
+                <textarea id="equipment-description" name="equipment-description" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="add-equipment">Add More Equipment</button>
+            </div>
+
+            <div class="form-group">
+                <label for="institution-name">Institution Name</label>
+                <input type="text" id="institution-name" name="institution-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="institution-contact-email">Institution Contact Email Address</label>
+                <input type="email" id="institution-contact-email" name="institution-contact-email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="your-contact-email">Your Contact Email Address</label>
+                <input type="email" id="your-contact-email" name="your-contact-email" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
     <footer>
-        <a href="messaging.html">Let's Chat</a>
-        <p>&copy; 2025 LabSphere. All rights reserved.</p>
+        <a href="messaging.html" class="chat-link">Let's Chat</a>
+        &copy; 2025 LabSphere. All rights reserved.
     </footer>
 </body>
 </html>
