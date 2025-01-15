@@ -3,155 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Collaboration</title>
+    <title>Collaboration - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Add styling for the buttons */
-        button, .apply-button {
-            background-color: #1E88E5; /* Blue accent */
-            color: white;
-            padding: 8px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none; /* Remove underline from links */
-        }
-
-        /* Hover effect for buttons */
-        button:hover, .apply-button:hover {
-            background-color: #D81B60; /* Magenta color on hover */
-        }
-
-        /* Layout and styling for the page */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff; /* White background */
-        }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
-
-        section h2 {
-            color: #333;
-        }
-
-        footer {
-            background-color: #1E88E5;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-
-        /* Submit a Project Section */
-        .submit-project {
-            padding: 20px;
-            margin: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .form-group textarea {
-            height: 200px; /* Increased height for description */
-        }
-
-        button[type="submit"] {
-            background-color: #D81B60; /* Magenta for Submit button */
-            padding: 12px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        /* Available Projects Section */
-        .available-projects {
-            margin-top: 30px;
-            padding: 20px;
-        }
-
-        .project {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .project h3 {
-            color: #D81B60; /* Magenta title */
-            margin: 0;
-        }
-
-        .project p {
-            margin: 10px 0;
-        }
-
-        .project .apply-button {
-            font-size: 14px; /* Slightly smaller button */
-        }
-
-        /* Industry Collaboration Section */
-        .industry-collaboration ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .industry-collaboration li {
-            margin-bottom: 15px;
-        }
-
-        .industry-collaboration a {
-            font-weight: bold;
-        }
-
-        .industry-collaboration p {
-            margin: 5px 0;
-        }
-    </style>
 </head>
 <body>
-     <!-- Header with Navigation -->
+    <!-- Header -->
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo.png" alt="LabSphere Logo">
-                LabSphere
-            </div>
-           <ul class="nav-links">
+        <div class="logo-container">
+            <img src="logo.png" alt="LabSphere Logo" class="logo">
+            <span class="logo-name">LabSphere</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="collaboration.html">Collaboration</a></li>
+                <li><a href="collaboration.html" class="active">Collaboration</a></li>
                 <li><a href="wellbeing.html">Wellbeing</a></li>
-                <li><a href="edi.html">EDI</a></li> <!-- Link to EDI section -->
+                <li><a href="edi.html">EDI</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="messaging.html">
-                    <img src="chat.png" alt="Chat" style="width: 24px; height: 24px;" />
+                    <img src="chat.png" alt="Chat" class="nav-icon">
                 </a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main content section -->
+    <!-- Main Content Section -->
     <main>
         <!-- Submit a Project Section -->
         <section class="submit-project">
@@ -176,73 +54,80 @@
         <!-- Available Projects Section -->
         <section class="available-projects">
             <h2>Available Projects</h2>
-
+            <!-- Project 1 -->
             <div class="project">
                 <h3>Cancer Cell Resistance Mechanisms</h3>
-                <p>This project aims to investigate the mechanisms by which cancer cells develop resistance to chemotherapy. It will utilize state-of-the-art sequencing technologies to identify novel biomarkers for predicting treatment resistance.</p>
+                <p>This project aims to investigate the mechanisms by which cancer cells develop resistance to chemotherapy...</p>
                 <p><strong>Contact:</strong> cancerresearcher@example.com</p>
                 <a href="apply-project1.html" class="apply-button">Apply Here</a>
             </div>
 
+            <!-- Project 2 -->
             <div class="project">
                 <h3>Immunotherapy for Solid Tumors</h3>
-                <p>Explore new immunotherapeutic strategies to treat solid tumors. This project focuses on enhancing the body’s immune response through personalized treatments based on genetic profiling of tumors.</p>
+                <p>Explore new immunotherapeutic strategies to treat solid tumors. This project focuses on enhancing the body’s immune response...</p>
                 <p><strong>Contact:</strong> immunotherapy@example.com</p>
                 <a href="apply-project2.html" class="apply-button">Apply Here</a>
             </div>
 
+            <!-- Project 3 -->
             <div class="project">
                 <h3>Cancer Metabolism and Targeted Therapy</h3>
-                <p>This project investigates the metabolic changes in cancer cells and how they can be targeted to enhance therapeutic outcomes. Research will focus on identifying metabolic pathways that are critical for tumor growth.</p>
+                <p>This project investigates the metabolic changes in cancer cells and how they can be targeted to enhance therapeutic outcomes...</p>
                 <p><strong>Contact:</strong> metabolismresearch@example.com</p>
                 <a href="apply-project3.html" class="apply-button">Apply Here</a>
             </div>
 
+            <!-- Project 4 -->
             <div class="project">
                 <h3>Liquid Biopsy for Early Detection</h3>
-                <p>Developing non-invasive liquid biopsy technologies to detect cancer at an early stage. The project aims to identify genetic mutations and tumor markers from blood samples, improving early diagnosis and prognosis.</p>
+                <p>Developing non-invasive liquid biopsy technologies to detect cancer at an early stage...</p>
                 <p><strong>Contact:</strong> liquidbiopsy@example.com</p>
                 <a href="apply-project4.html" class="apply-button">Apply Here</a>
             </div>
 
+            <!-- Project 5 -->
             <div class="project">
                 <h3>Targeting Cancer Stem Cells</h3>
-                <p>Research on targeting cancer stem cells, which are responsible for tumor recurrence and metastasis. The project seeks to develop targeted therapies to eliminate these cells and prevent relapse.</p>
+                <p>Research on targeting cancer stem cells, which are responsible for tumor recurrence and metastasis...</p>
                 <p><strong>Contact:</strong> stemcellresearch@example.com</p>
                 <a href="apply-project5.html" class="apply-button">Apply Here</a>
             </div>
         </section>
 
-       <!-- Industry Collaboration Section -->
-<section class="industry-collaboration">
-    <h2>Industry Collaboration</h2>
-    <div class="project">
-        <h3>AI-driven Cancer Treatment Discovery</h3>
-        <p>Developing artificial intelligence models to predict the efficacy of new cancer treatments based on patient data.</p>
-        <p><strong>Contact:</strong> industrycollab1@example.com</p>
-        <a href="industry-project1.html" class="apply-button">Apply Here</a>
-    </div>
+        <!-- Industry Collaboration Section -->
+        <section class="industry-collaboration">
+            <h2>Industry Collaboration</h2>
+            <!-- Collaboration 1 -->
+            <div class="project">
+                <h3>AI-driven Cancer Treatment Discovery</h3>
+                <p>Developing artificial intelligence models to predict the efficacy of new cancer treatments based on patient data...</p>
+                <p><strong>Contact:</strong> industrycollab1@example.com</p>
+                <a href="industry-project1.html" class="apply-button">Apply Here</a>
+            </div>
 
-    <div class="project">
-        <h3>Biomarker Discovery for Personalized Cancer Therapy</h3>
-        <p>Collaborating with biotechnology companies to discover biomarkers that can predict patient response to specific cancer therapies.</p>
-        <p><strong>Contact:</strong> industrycollab2@example.com</p>
-        <a href="industry-project2.html" class="apply-button">Apply Here</a>
-    </div>
+            <!-- Collaboration 2 -->
+            <div class="project">
+                <h3>Biomarker Discovery for Personalized Cancer Therapy</h3>
+                <p>Collaborating with biotechnology companies to discover biomarkers that can predict patient response...</p>
+                <p><strong>Contact:</strong> industrycollab2@example.com</p>
+                <a href="industry-project2.html" class="apply-button">Apply Here</a>
+            </div>
 
-    <div class="project">
-        <h3>Development of Nanoparticle-Based Drug Delivery Systems</h3>
-        <p>Focusing on creating advanced nanoparticle carriers for targeted drug delivery in cancer treatment.</p>
-        <p><strong>Contact:</strong> industrycollab3@example.com</p>
-        <a href="industry-project3.html" class="apply-button">Apply Here</a>
-    </div>
-</section>
+            <!-- Collaboration 3 -->
+            <div class="project">
+                <h3>Development of Nanoparticle-Based Drug Delivery Systems</h3>
+                <p>Focusing on creating advanced nanoparticle carriers for targeted drug delivery in cancer treatment...</p>
+                <p><strong>Contact:</strong> industrycollab3@example.com</p>
+                <a href="industry-project3.html" class="apply-button">Apply Here</a>
+            </div>
+        </section>
     </main>
 
-   <!-- Footer with Let's Chat -->
-<footer>
-    <a href="messaging.html">Let's Chat</a>
-    <p>&copy; 2025 LabSphere. All rights reserved.</p>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <a href="messaging.html" class="chat-link">Let's Chat</a>
+        &copy; 2025 LabSphere. All rights reserved.
+    </footer>
 </body>
 </html>
