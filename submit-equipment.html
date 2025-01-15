@@ -69,10 +69,19 @@
         }
 
         /* Navbar styles */
+        header {
+            background-color: #1E88E5;
+            padding: 15px 0;
+            color: white;
+        }
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .logo {
@@ -99,12 +108,18 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #D81B60;
         }
 
         .nav-links img {
             width: 30px;
             height: 30px;
         }
+
     </style>
     <script>
         // JavaScript function to dynamically add new equipment fields
@@ -114,7 +129,7 @@
             const newEquipmentDiv = document.createElement('div');
             newEquipmentDiv.classList.add('form-group');
 
-            newEquipmentDiv.innerHTML = `
+            newEquipmentDiv.innerHTML = ` 
                 <label for="equipment-name">Equipment Name:</label>
                 <input type="text" name="equipment-name[]" required>
                 <label for="equipment-category">Equipment Category:</label>
