@@ -163,3 +163,37 @@ footer {
     color: #D81B60;
     font-weight: bold;
 }
+
+
+
+/* Responsive Header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .logo-name {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%; /* Make the nav links span full width */
+    }
+
+    .nav-links li a {
+        display: block;
+        text-align: left;
+        padding: 5px 10px;
+        width: 100%;
+    }
+}
