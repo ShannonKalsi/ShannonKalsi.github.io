@@ -14,13 +14,21 @@
         }
 
         header {
-            background-color: #1E88E5;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    background-color: #1E88E5;
+    padding: 10px;
+    display: flex;
+    align-items: center;  /* Keeps logo and nav-links centered vertically */
+    justify-content: space-between;
+}
 
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    align-items: center;  /* Aligns the links to the center vertically */
+}
         .logo-container {
             display: flex;
             align-items: center;
@@ -33,13 +41,6 @@
             margin-left: 10px;
         }
 
-        .nav-links {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
 
         .nav-links li a {
             color: #ffffff;
