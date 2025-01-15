@@ -5,6 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LabSphere - Socials</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Apply Blue and Magenta theme */
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #1E88E5;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-name {
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            color: #ffffff;
+            font-size: 16px;
+            text-decoration: none;
+            padding: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            background-color: #D81B60;
+        }
+
+        main {
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            flex: 3;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #1E88E5;
+        }
+
+        a {
+            color: #1E88E5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #D81B60;
+        }
+
+        footer {
+            background-color: #1E88E5;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .chat-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        .chat-link:hover {
+            color: #D81B60;
+            font-weight: bold;
+        }
+
+        .emoji {
+            font-size: 24px;
+        }
+
+        /* Add some styling to game links */
+        .game-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .game-links li {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -30,8 +142,9 @@
     </header>
 
     <main>
+        <!-- Sidebar -->
         <div class="sidebar">
-            <h2>Upcoming Events</h2>
+            <h2>Upcoming Events 📅</h2>
             <ul>
                 <li><a href="#">Virtual Conference on Cancer Research - 25th Jan</a></li>
                 <li><a href="#">Wellbeing Webinar: Stress Management for Researchers - 10th Feb</a></li>
@@ -39,7 +152,7 @@
                 <li><a href="#">Research Roundtable: Emerging Technologies - 5th March</a></li>
             </ul>
 
-            <h2>Wellbeing Initiatives</h2>
+            <h2>Wellbeing Initiatives 💪</h2>
             <ul>
                 <li><a href="#">Stress Management Tips</a></li>
                 <li><a href="#">Peer Support Buddy System</a></li>
@@ -48,10 +161,13 @@
             </ul>
         </div>
 
+        <!-- Content Area -->
         <div class="content">
             <h1>Welcome to the Socials Page</h1>
+
+            <!-- Research-Related Discussions -->
             <section id="research-discussions">
-                <h2>Research-Related Discussions</h2>
+                <h2>Research-Related Discussions 🧠</h2>
                 <p>Engage with fellow researchers on the latest advancements in cancer research. Share articles, papers, or pose questions for discussion.</p>
                 <div class="discussion-board">
                     <h3>Current Topics:</h3>
@@ -63,8 +179,9 @@
                 </div>
             </section>
 
+            <!-- Virtual Coffee Breaks -->
             <section id="coffee-break">
-                <h2>Virtual Coffee Breaks</h2>
+                <h2>Virtual Coffee Breaks ☕</h2>
                 <p>Join us for informal, casual virtual coffee breaks to unwind and connect with fellow researchers.</p>
                 <ul>
                     <li><a href="#">Join the Next Coffee Break (25th Jan)</a></li>
@@ -72,17 +189,43 @@
                 </ul>
             </section>
 
+            <!-- Online Games -->
             <section id="online-games">
-                <h2>Online Games</h2>
+                <h2>Online Games 🎮</h2>
                 <p>Take a break from research and have fun with these online games!</p>
+                <div class="game-links">
+                    <ul>
+                        <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity Online</a></li>
+                        <li><a href="https://www.jackboxgames.com/" target="_blank">Jackbox Party Games</a></li>
+                        <li><a href="https://skribbl.io/" target="_blank">Skribbl.io - Pictionary</a></li>
+                        <li><a href="https://www.trivia.com/" target="_blank">Trivia Game</a></li>
+                        <li><a href="https://www.agar.io/" target="_blank">Agar.io - Grow your cell</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Collaborative Projects Showcase -->
+            <section id="collaboration-projects">
+                <h2>Collaborative Projects 🤝</h2>
+                <p>Are you working on an exciting project? Share it here to find like-minded collaborators!</p>
                 <ul>
-                    <li><a href="https://pyx-1.pretendyoure.xyz/zy/game.jsp" target="_blank">Cards Against Humanity Online</a></li>
-                    <li><a href="https://www.jackboxgames.com/" target="_blank">Jackbox Party Games</a></li>
-                    <li><a href="https://skribbl.io/" target="_blank">Skribbl.io - Pictionary</a></li>
-                    <li><a href="https://www.trivia.com/" target="_blank">Trivia Game</a></li>
-                    <li><a href="https://www.agar.io/" target="_blank">Agar.io - Grow your cell</a></li>
+                    <li><a href="#">Project: AI Models for Cancer Research</a></li>
+                    <li><a href="#">Project: Immunotherapy Techniques for Advanced Cancer</a></li>
+                    <li><a href="#">Project: Gene Editing in Oncology Research</a></li>
                 </ul>
             </section>
+
+            <!-- Fun Competitions -->
+            <section id="fun-competitions">
+                <h2>Fun Competitions 🏆</h2>
+                <p>Join in on some friendly competitions for a fun break from the lab!</p>
+                <ul>
+                    <li><a href="#">Research Poster Design Contest</a></li>
+                    <li><a href="#">Science Meme Challenge</a></li>
+                    <li><a href="#">Best Lab Dog Photo Contest 🐕</a></li>
+                </ul>
+            </section>
+
         </div>
     </main>
 
