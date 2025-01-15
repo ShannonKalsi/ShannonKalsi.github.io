@@ -3,86 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cell Culture Protocol - LabSphere</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9; /* Page background */
-            margin: 0;
-            padding: 0;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .protocol-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #d81b60; /* Magenta title color */
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .protocol {
-            margin-bottom: 30px;
-            padding: 15px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h3 {
-            color: #1e88e5; /* Blue section title color */
-        }
-
-        ol {
-            padding-left: 20px;
-        }
-
-        ol li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #1e88e5;
-            color: white;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
+    <title>Cell Culture Protocol</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header with Navigation -->
+    <!-- Header -->
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
-                <h1>LabSphere</h1>
-            </div>
+        <div class="logo-container">
+            <img src="logo.png" alt="LabSphere Logo" class="logo">
+            <span class="logo-name">LabSphere</span>
+        </div>
+        <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="collaboration.html">Collaboration</a></li>
                 <li><a href="wellbeing.html">Wellbeing</a></li>
-                <li><a href="edi.html">EDI</a></li> <!-- Link to EDI section -->
+                <li><a href="edi.html">EDI</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="messaging.html">
-                    <img src="chat.png" alt="Chat" style="width: 24px; height: 24px;" />
+                    <img src="chat.png" alt="Chat" class="nav-icon">
                 </a></li>
             </ul>
         </nav>
@@ -141,10 +82,10 @@
         </div>
     </main>
 
-    <!-- Footer with Let's Chat -->
+    <!-- Footer -->
     <footer>
-        <a href="messaging.html">Let's Chat</a>
-        <p>&copy; 2025 LabSphere. All rights reserved.</p>
+        <a href="messaging.html" class="chat-link">Let's Chat</a>
+        &copy; 2025 LabSphere. All rights reserved.
     </footer>
 </body>
 </html>
