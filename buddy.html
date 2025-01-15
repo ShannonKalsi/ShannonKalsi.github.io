@@ -22,7 +22,7 @@
 
         .signup-section h2,
         .matches-section h2 {
-            color: #1E88E5;
+            color: #D81B60;
             margin-bottom: 10px;
         }
 
@@ -39,11 +39,13 @@
         .form-group input,
         .form-group select,
         .form-group textarea {
-            width: 100%;
+             width: 95%; /* Reduce width slightly to provide padding inside the section */
+            max-width: 600px; /* Ensure they don't stretch too far on larger screens */
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-        }
+            box-sizing: border-box; /* Include padding and border in the width calculation */
+}
 
         .form-group textarea {
             resize: vertical;
