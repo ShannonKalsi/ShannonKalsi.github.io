@@ -3,41 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Western Blotting Protocol - LabSphere</title>
+    <title>Cell Culture Protocol - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .protocol-container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1E88E5;
+            color: #ffffff;
+            padding: 10px 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .header .logo {
+            height: 40px;
+        }
+                h1 {
+            color: #1E88E5;
+            margin-top: 20px;
+        }
+        h2 {
+            color: #D81B60;
+            margin-top: 20px;
+        }
+                h3 {
+            color: #1E88E5;
+            margin-top: 20px;
+        }
+        p {
+            color: #333;
+            line-height: 1.6;
+        }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .note {
+            background-color: #f9f9f9;
+            border-left: 4px solid #1E88E5;
+            padding: 10px 15px;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header with Navigation -->
+     <!-- Header -->
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo.png" alt="LabSphere Logo" class="logo-img" />
-                <h1>LabSphere</h1>
-            </div>
-          <ul class="nav-links">
+        <div class="logo-container">
+            <img src="logo.png" alt="LabSphere Logo" class="logo">
+            <span class="logo-name">LabSphere</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="collaboration.html">Collaboration</a></li>
+                <li><a href="collaboration.html">Collaboration</a</li>
                 <li><a href="wellbeing.html">Wellbeing</a></li>
-                <li><a href="edi.html">EDI</a></li> <!-- Link to EDI section -->
+                <li><a href="edi.html">EDI</a></li>
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="messaging.html">
-                    <img src="chat.png" alt="Chat" style="width: 24px; height: 24px;" />
+                    <img src="chat.png" alt="Chat" class="nav-icon">
                 </a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main content section -->
-    <main>
-        <div class="protocol-container">
-            <h2>Western Blotting Protocol</h2>
+<main>
+    <div class="protocol-container">
+        <h1>Western Blotting Protocol</h1>
 
-            <!-- Step 1: Protein Extraction -->
-            <section class="protocol">
-                <h3>Step 1: Protein Extraction</h3>
-                <h4>Lysis Buffer Composition:</h4>
+        <h2>Introduction</h2>
+        <p>Western Blotting is a widely used technique in molecular biology to detect specific proteins in a sample. It is an essential method for studying protein expression, post-translational modifications, and interactions. Below is a detailed protocol to guide you through the process of performing Western Blotting, from sample preparation to final detection.</p>
+
+        <h2>Procedure</h2>
+
+        <h3>Step 1: Protein Extraction</h3>
+<h4>Lysis Buffer Composition:</h4>
                 <ul>
                     <li>1X PBS: 495ml</li>
                     <li>0.1% Igepal: 5ml</li>
@@ -51,13 +118,11 @@
                     <li>Spin down at 13,000rpm for 20 minutes at 4°C in Eppendorf tubes.</li>
                     <li>Remove the supernatant (protein fraction) and place it in a fresh Eppendorf tube on ice. Discard the pellet.</li>
                 </ul>
-            </section>
 
-            <!-- Step 2: Protein Quantification using BCA Assay -->
-            <section class="protocol">
-                <h3>Step 2: Protein Quantification using BCA Assay</h3>
-                <p>Make up the standard as below:</p>
-                <table>
+
+        <h3>Step 2: Protein Quantification using BCA Assay</h3>
+        <p>Make up the standard as below:</p>
+ <table>
                     <thead>
                         <tr>
                             <th>Stock (μl)</th>
@@ -108,7 +173,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <p>Steps for Protein Quantification:</p>
+
+               <p>Steps for Protein Quantification:</p>
                 <ul>
                     <li>Make up standards in 1.5ml Eppendorf tubes and mix well.</li>
                     <li>Make a 1:10 dilution of each protein lysate from step 1 with dH2O (e.g., 6μl sample + 54μl dH2O).</li>
@@ -119,23 +185,19 @@
                     <li>Cool for 2 minutes at RT and read absorbance at 560nm.</li>
                     <li>Calculate the protein concentration using the standard curve obtained in Excel.</li>
                 </ul>
-            </section>
 
-            <!-- Step 3: Preparation of Samples -->
-            <section class="protocol">
-                <h3>Step 3: Preparation of Samples</h3>
-                <ul>
+        <h3>Step 3: Preparation of Samples</h3>
+        <p>Create your samples for 20-50ug of protein</p>
+        <ul>
                     <li>Pipette the calculated amount of sample into the Eppendorf tube.</li>
                     <li>Add 2X or 6X Laemmli buffer and mix well.</li>
                     <li>Boil the samples at 95°C in a heating block.</li>
                     <li>Flick spin samples in a tabletop centrifuge.</li>
                 </ul>
-            </section>
 
-            <!-- Step 4: Protein Electrophoresis -->
-            <section class="protocol">
-                <h3>Step 4: Protein Electrophoresis</h3>
-                <h4>Running and Transfer Buffers:</h4>
+
+        <h3>Step 4: Protein Electrophoresis</h3>
+<h4>Running and Transfer Buffers:</h4>
                 <ul>
                     <li><strong>Running Buffer (10X) pH 8.3:</strong>
                         <ul>
@@ -155,7 +217,7 @@
                     </li>
                 </ul>
 
-                <p>Steps for Gel Preparation and Running:</p>
+                    <h4>Steps for Gel Preparation and Running:</h4>
                 <ul>
                     <li>Clean the glass plates thoroughly with 70% IMS and assemble them with gaskets.</li>
                     <li>Prepare the resolving gel solution and pour into the gel plates up to the mark.</li>
@@ -164,12 +226,9 @@
                     <li>Fill the gel system with running buffer and load samples.</li>
                     <li>Run at 110V until the dye front reaches the bottom of the gel.</li>
                 </ul>
-            </section>
 
-            <!-- Step 5: Transfer of Protein from Gel to Nitrocellulose (Semi-Dry & Wet Transfer) -->
-            <section class="protocol">
-                <h3>Step 5: Transfer of Protein from Gel to Nitrocellulose</h3>
-                <p><strong>Semi-Dry Transfer:</strong></p>
+<h3>Step 5: Transfer of Protein from Gel to Nitrocellulose</h3>
+<h4>Semi-Dry Transfer:</h4>
                 <ul>
                     <li>Prepare nitrocellulose sheets and filter paper by soaking them in transfer buffer.</li>
                     <li>After the gel run, place it in transfer buffer and mark a corner of the gel.</li>
@@ -180,21 +239,26 @@
                     <li>Wash 3 times with TBST for 10 minutes and incubate with secondary antibody.</li>
                     <li>Prepare ECL and wash 3 times with TBST for 10 minutes.</li>
                 </ul>
-                <p><strong>Wet Transfer:</strong></p>
+<h4>Wet Transfer:</h4>
                 <ul>
                     <li>Prepare as for semi-dry, but ensure the nitrocellulose sheet is placed opposite the gel.</li>
                     <li>Run the wet transfer at 60V for 1.5 hours.</li>
                     <li>Follow the same subsequent steps as semi-dry transfer.</li>
                 </ul>
-            </section>
+
+        <h2>Tips and Notes</h2>
+        <div class="note">
+            <p>Properly boil the samples in Laemmli buffer to denature proteins and ensure they separate correctly during electrophoresis.</p>
+            <p>Do not overload the gel with too much sample, as it may cause smearing and poor resolution.</p>
+            <p>Always check the molecular weight of the proteins of interest to choose the appropriate gel concentration.</p>
         </div>
     </main>
 
-   
-<!-- Footer with Let's Chat -->
-<footer>
-    <a href="messaging.html">Let's Chat</a>
-    <p>&copy; 2025 LabSphere. All rights reserved.</p>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <a href="messaging.html" class="chat-link">Let's Chat</a>
+        &copy; 2025 LabSphere. All rights reserved.
+    </footer>
+
 </body>
 </html>
