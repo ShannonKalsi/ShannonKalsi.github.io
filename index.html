@@ -80,16 +80,28 @@
             color: #D81B60;
         }
 
-        /* Post writing box */
-        #post-input {
-            width: 80%; /* Adjust the width as needed */
-            height: 120px; /* Adjust the height to shorten the box */
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #E0E0E0;
-            margin-bottom: 10px; /* Add space below the text box */
-            box-sizing: border-box;
-        }
+        /* Post input container with flexbox */
+.post-input-container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+#post-input {
+    width: 80%; /* Adjust the width as needed */
+    height: 120px; /* Adjust the height to shorten the box */
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 10px; /* Add space below the text box */
+    box-sizing: border-box;
+}
+
+#post-button {
+    margin-left: 10px; /* Add space between the text box and the button */
+    padding: 10px 20px;
+    font-size: 16px;
+}
     </style>
 </head>
 <body>
@@ -117,10 +129,12 @@
     <main>
         <div class="content">
             <div class="post-section">
-                <h2>What's happening in your research today?</h2>
-                <textarea id="post-input" placeholder="Share your thoughts..."></textarea>
-                <button id="post-button" class="blue-btn">Post</button>
-            </div>
+    <h2>What's happening in your research today?</h2>
+    <div class="post-input-container">
+        <textarea id="post-input" placeholder="Share your thoughts..."></textarea>
+        <button id="post-button" class="blue-btn">Post</button>
+    </div>
+</div>
 
             <div class="feed" id="feed">
                 <!-- Pre-filled posts -->
