@@ -19,10 +19,20 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            color: #1E88E5;
-            text-align: center;
-            margin-bottom: 20px;
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1E88E5;
+            color: #ffffff;
+            padding: 10px 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .header .logo {
+            height: 40px;
         }
         h2 {
             color: #D81B60;
@@ -54,6 +64,11 @@
     </style>
 </head>
 <body>
+    <div class="header">
+        <h1>LabSphere</h1>
+        <img src="logo.png" alt="LabSphere Logo" class="logo">
+    </div>
+
     <div class="protocol-container">
         <h1>Cell Culture Protocol</h1>
 
