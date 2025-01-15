@@ -3,51 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabSphere - Resources</title>
+    <title>Resources - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Inline styles specific to the resources page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
         .resources-container {
             margin: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
         }
-
-        section {
+        .resources-container section {
             background-color: #ffffff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 20px;
             padding: 20px;
+            border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
-        h2, h3 {
-            color: #1E88E5; /* Primary blue color */
+        h2 {
+            color: #1E88E5;
+            margin-top: 0;
         }
-
+        h3 {
+            color: #D81B60;
+        }
         a {
-            color: #D81B60; /* Magenta accent color */
+            color: #1E88E5;
             text-decoration: none;
         }
-
         a:hover {
             text-decoration: underline;
+            color: #D81B60;
         }
-
         button {
-            background-color: #1E88E5; /* Blue */
+            background-color: #1E88E5;
             color: #ffffff;
             border: none;
-            padding: 10px 15px;
+            padding: 10px 20px;
             border-radius: 5px;
-            font-size: 14px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         button:hover {
-            background-color: #D81B60; /* Magenta */
+            background-color: #D81B60;
+        }
+        .sidebar {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        .faq-item button {
+            width: 100%;
+            text-align: left;
+            background-color: #1E88E5;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .faq-item button:hover {
+            background-color: #D81B60;
+        }
+        .faq-item .faq-content {
+            display: none;
+            padding: 10px;
+            border-left: 2px solid #1E88E5;
+            margin-top: 5px;
         }
     </style>
+    <script>
+        function toggleFAQ(event) {
+            const content = event.nextElementSibling;
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -60,7 +98,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="profile.html">Profile</a></li>
-                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="resources.html">Resources</a></li>
                 <li><a href="collaboration.html">Collaboration</a></li>
                 <li><a href="wellbeing.html">Wellbeing</a></li>
                 <li><a href="edi.html">EDI</a></li>
@@ -75,72 +113,98 @@
     <!-- Main content section -->
     <main>
         <div class="resources-container">
-            <section class="holiday-timesheet">
-                <h2>Holiday and Timesheet Resources</h2>
-                <p>Plan your holidays and track your time efficiently with the following resources:</p>
-                <ul>
-                    <li><a href="https://absentia.io/staff-holiday-planner-excel" target="_blank">Holiday Tracker (Staff Holiday Planner)</a></li>
-                    <li><a href="https://www.float.com/resources/timesheet-templates" target="_blank">Timesheet Template</a></li>
-                </ul>
-            </section>
+            <div>
+                <section class="holiday-timesheet">
+                    <h2>Holiday and Timesheet Resources</h2>
+                    <p>Plan your holidays and track your time efficiently with the following resources:</p>
+                    <ul>
+                        <li><a href="https://absentia.io/staff-holiday-planner-excel" target="_blank">Holiday Tracker (Staff Holiday Planner)</a></li>
+                        <li><a href="https://www.float.com/resources/timesheet-templates" target="_blank">Timesheet Template</a></li>
+                    </ul>
+                </section>
 
-            <section class="protocol">
-                <h2>Protocol</h2>
-                <p>Find protocols for common experiments in immunology and molecular biology below:</p>
-                <ul>
-                    <li><a href="cell-culture-protocol.html">Cell Culture Protocol</a></li>
-                    <li><a href="western-blotting-protocol.html">Western Blotting Protocol</a></li>
-                    <li><a href="sirna-transfection-protocol.html">siRNA Transfection Protocol</a></li>
-                    <li><a href="pcr-protocol.html">Introduction to PCR</a></li>
-                </ul>
-            </section>
+                <section class="protocol">
+                    <h2>Protocol</h2>
+                    <p>Find protocols for common experiments in immunology and molecular biology below:</p>
+                    <ul>
+                        <li><a href="cell-culture-protocol.html">Cell Culture Protocol</a></li>
+                        <li><a href="western-blotting-protocol.html">Western Blotting Protocol</a></li>
+                        <li><a href="sirna-transfection-protocol.html">siRNA Transfection Protocol</a></li>
+                        <li><a href="pcr-protocol.html">Introduction to PCR</a></li>
+                    </ul>
+                </section>
 
-            <section class="available-equipment">
-                <h2>Available Equipment</h2>
-                <p>Equipment lists from various institutions are available below:</p>
-                <ul>
-                    <li><a href="rcsi.html">Royal College of Surgeons in Ireland</a></li>
-                    <li><a href="tcd.html">Trinity College Dublin</a></li>
-                </ul>
-                <button onclick="window.location.href='submit-equipment.html'">Submit Your Institution's Equipment</button>
-            </section>
+                <section class="available-equipment">
+                    <h2>Available Equipment</h2>
+                    <p>Equipment lists from various institutions are available below:</p>
+                    <ul>
+                        <li><a href="rcsi.html">Royal College of Surgeons in Ireland</a></li>
+                        <li><a href="tcd.html">Trinity College Dublin</a></li>
+                    </ul>
+                    <button onclick="window.location.href='submit-equipment.html'">Submit Your Institution's Equipment</button>
+                </section>
 
-            <section class="grants">
-                <h2>Grants</h2>
-                <p>Explore available grants for travel, research, and bursaries for PhD and post-doc researchers:</p>
-                <div class="grant-categories">
-                    <div class="grant-category">
-                        <h3>Travel Grants</h3>
-                        <ul>
-                            <li><a href="https://www.eacr.org/grants/travel-bursaries/" target="_blank">EACR Travel Bursaries</a></li>
-                        </ul>
+                <section class="grants">
+                    <h2>Grants</h2>
+                    <p>Explore available grants for travel, research, and bursaries for PhD and post-doc researchers:</p>
+                    <div class="grant-categories">
+                        <div class="grant-category">
+                            <h3>Travel Grants</h3>
+                            <ul>
+                                <li><a href="https://www.eacr.org/grants/travel-bursaries/" target="_blank">EACR Travel Bursaries</a></li>
+                            </ul>
+                        </div>
+                        <div class="grant-category">
+                            <h3>Resource Grants & Bursaries</h3>
+                            <ul>
+                                <li><a href="https://www.embo.org/funding/fellowships-grants-and-career-support/postdoctoral-fellowships/">EMBO Postdoctoral Fellowships</a></li>
+                                <li><a href="https://www.embo.org/funding/fellowships-grants-and-career-support/scientific-exchange-grants/">EMBO Scientific Exchange Grants</a></li>
+                                <li><a href="https://research.ie/funding/goipg/">Government of Ireland Postgraduate Scholarship Programme</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="grant-category">
-                        <h3>Resource Grants & Bursaries</h3>
-                        <ul>
-                            <li><a href="https://www.embo.org/funding/fellowships-grants-and-career-support/postdoctoral-fellowships/">EMBO Postdoctoral Fellowships</a></li>
-                            <li><a href="https://www.embo.org/funding/fellowships-grants-and-career-support/scientific-exchange-grants/">EMBO Scientific Exchange Grants</a></li>
-                            <li><a href="https://research.ie/funding/goipg/">Government of Ireland Postgraduate Scholarship Programme</a></li>
-                        </ul>
+                </section>
+
+                <section class="visa-immigration">
+                    <h2>Visa & Immigration</h2>
+                    <p>If you're planning to immigrate to Ireland, here's some useful information:</p>
+                    <ul>
+                        <li><a href="https://www.irishimmigration.ie" target="_blank">Ireland Immigration Office</a></li>
+                    </ul>
+                </section>
+
+                <section class="housing">
+                    <h2>Finding Housing in Ireland</h2>
+                    <p>Looking for housing in Ireland? Here are some useful resources:</p>
+                    <ul>
+                        <li><a href="https://www.daft.ie" target="_blank">Daft.ie - Ireland's Property Website</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <h2>FAQs</h2>
+                <div class="faq-item">
+                    <button onclick="toggleFAQ(this)">How do I submit equipment?</button>
+                    <div class="faq-content">
+                        <p>Click on the "Submit Your Institution's Equipment" button and fill out the form with the required details. Once submitted, it will be reviewed and added to the resources list.</p>
                     </div>
                 </div>
-            </section>
+                <div class="faq-item">
+                    <button onclick="toggleFAQ(this)">Who can access these resources?</button>
+                    <div class="faq-content">
+                        <p>These resources are available to all LabSphere users. Some grant and protocol links may require institutional access or permissions.</p>
+                    </div>
+                </div>
 
-            <section class="visa-immigration">
-                <h2>Visa & Immigration</h2>
-                <p>If you're planning to immigrate to Ireland, here's some useful information:</p>
+                <h2>Downloadable Content</h2>
                 <ul>
-                    <li><a href="https://www.irishimmigration.ie" target="_blank">Ireland Immigration Office</a></li>
+                    <li><a href="https://shannonkalsi.github.io/short-guide-recovery.pdf" target="_blank">A Short Co-produced Guide to Recovery in Mental Health</a></li>
+                    <li><a href="https://shannonkalsi.github.io/grant-application-checklist.pdf" target="_blank">Grant Application Checklist</a></li>
+                    <li><a href="https://shannonkalsi.github.io/cell-culture-tips.pdf" target="_blank">Cell Culture Tips for Beginners</a></li>
                 </ul>
-            </section>
-
-            <section class="housing">
-                <h2>Finding Housing in Ireland</h2>
-                <p>Looking for housing in Ireland? Here are some useful resources:</p>
-                <ul>
-                    <li><a href="https://www.daft.ie" target="_blank">Daft.ie - Ireland's Property Website</a></li>
-                </ul>
-            </section>
+            </aside>
         </div>
     </main>
 
