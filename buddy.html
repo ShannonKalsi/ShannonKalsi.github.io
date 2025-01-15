@@ -133,6 +133,39 @@
 
     <!-- Main Content -->
     <main class="main-container">
+
+                <!-- Sign-Up Section -->
+        <section>
+            <h2>Sign Up to Find Your Buddy!</h2>
+            <form action="/submit-buddy-request" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="phd">PhD</option>
+                    <option value="postdoc">Post-Doc</option>
+                </select><br>
+
+                <label for="area-of-research">Area of Research:</label>
+                <input type="text" id="area-of-research" name="area-of-research" required><br>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required><br>
+
+                <label for="interests">Interests:</label>
+                <textarea id="interests" name="interests" rows="6" required></textarea><br>
+
+                <label for="personal-interests">Personal Interests:</label>
+                <textarea id="personal-interests" name="personal-interests" rows="6" required></textarea><br>
+
+                <button type="submit" class="button">Sign Up</button>
+            </form>
+        </section>
+        
         <!-- Buddy Pair Section -->
         <section class="buddy-pair">
             <h3>Buddy Pair - Dublin</h3>
@@ -192,38 +225,6 @@
             </div>
             <p>Mike and Lisa have been matched based on complementary research areas and their shared location in Galway. Both are passionate about photography and enjoy creative arts.</p>
             <a href="#" class="button">Learn More About Buddy Activities</a>
-        </section>
-
-        <!-- Sign-Up Section -->
-        <section>
-            <h2>Sign Up to Find Your Buddy!</h2>
-            <form action="/submit-buddy-request" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br>
-
-                <label for="role">Role:</label>
-                <select id="role" name="role" required>
-                    <option value="phd">PhD</option>
-                    <option value="postdoc">Post-Doc</option>
-                </select><br>
-
-                <label for="area-of-research">Area of Research:</label>
-                <input type="text" id="area-of-research" name="area-of-research" required><br>
-
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" required><br>
-
-                <label for="interests">Interests:</label>
-                <textarea id="interests" name="interests" rows="6" required></textarea><br>
-
-                <label for="personal-interests">Personal Interests:</label>
-                <textarea id="personal-interests" name="personal-interests" rows="6" required></textarea><br>
-
-                <button type="submit" class="button">Sign Up</button>
-            </form>
         </section>
     </main>
 
