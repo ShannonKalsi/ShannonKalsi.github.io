@@ -6,66 +6,100 @@
     <title>Buddy System</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
+        /* Specific styles for this page */
+        .container {
+            margin: 20px;
         }
-        .content {
-            max-width: 800px;
-            margin: 20px auto;
+
+        .signup-section,
+        .matches-section {
             background-color: #ffffff;
             padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
         }
+
+        .signup-section h2,
+        .matches-section h2 {
+            color: #1E88E5;
+            margin-bottom: 10px;
+        }
+
         .form-group {
             margin-bottom: 15px;
         }
+
         .form-group label {
             display: block;
-            font-weight: bold;
             margin-bottom: 5px;
+            font-weight: bold;
         }
-        .form-group input, .form-group select, .form-group textarea {
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .btn {
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .signup-button {
             background-color: #1E88E5;
             color: #ffffff;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
             transition: background-color 0.3s;
         }
-        .btn:hover {
+
+        .signup-button:hover {
             background-color: #D81B60;
         }
-        .matches {
-            margin-top: 30px;
+
+        .divider {
+            margin: 30px 0;
+            border-bottom: 2px solid #ccc;
         }
-        .match {
+
+        .match-pair {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 20px;
             padding: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .match h4 {
-            margin: 0 0 5px 0;
+
+        .match-pair .buddy-info {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .match-pair .buddy-info h4 {
+            margin-bottom: 5px;
             color: #1E88E5;
+        }
+
+        .match-pair .buddy-info p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="logo.png" alt="LabSphere Logo" class="logo">
+            <img src="logo.png" alt="Logo" class="logo">
             <span class="logo-name">LabSphere</span>
         </div>
         <nav>
@@ -83,91 +117,95 @@
             </ul>
         </nav>
     </header>
-
-    <main class="content">
-        <h2>Buddy System</h2>
-        <p>As part of our mentorship program, we offer a buddy system designed to help newcomers settle in. Your buddy will offer practical support in your personal life, from tips on renting an apartment and opening a bank account to showing you around and introducing you to new people.</p>
-
-        <h3>Sign Up for the Buddy System</h3>
-        <form>
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
+    <main class="container">
+        <section class="signup-section">
+            <h2>Sign Up for the Buddy System</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="institution">Institution</label>
+                    <input type="text" id="institution" name="institution" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select Role</option>
+                        <option value="phd">PhD</option>
+                        <option value="postdoc">Post-Doc</option>
+                        <option value="ra">Research Assistant</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="research-area">Research Area</label>
+                    <input type="text" id="research-area" name="research-area" required>
+                </div>
+                <div class="form-group">
+                    <label for="interests">Personal Interests</label>
+                    <textarea id="interests" name="interests" required></textarea>
+                </div>
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
+        </section>
+        <div class="divider"></div>
+        <section class="matches-section">
+            <h2>Current Matches</h2>
+            <div class="match-pair">
+                <div class="buddy-info">
+                    <h4>PhD - Joey</h4>
+                    <p><strong>Area of Research:</strong> Tumour Genomics</p>
+                    <p><strong>Skills:</strong> Genetic Sequencing, Data Analysis</p>
+                    <p><strong>Interests:</strong> Photography, Hiking</p>
+                    <p><strong>Location:</strong> Dublin</p>
+                </div>
+                <div class="buddy-info">
+                    <h4>Post-Doc - Jane</h4>
+                    <p><strong>Area of Research:</strong> Immunology</p>
+                    <p><strong>Skills:</strong> Translational Medicine, Immunotherapy</p>
+                    <p><strong>Interests:</strong> Photography, Traveling</p>
+                    <p><strong>Location:</strong> Dublin</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="institution">Institution Name</label>
-                <input type="text" id="institution" name="institution" required>
+            <div class="match-pair">
+                <div class="buddy-info">
+                    <h4>PhD - Alice</h4>
+                    <p><strong>Area of Research:</strong> Cancer Biology</p>
+                    <p><strong>Skills:</strong> Molecular Cloning, Cell Culture</p>
+                    <p><strong>Interests:</strong> Reading, Baking</p>
+                    <p><strong>Location:</strong> Belfast</p>
+                </div>
+                <div class="buddy-info">
+                    <h4>Post-Doc - John</h4>
+                    <p><strong>Area of Research:</strong> Tumor Immunology</p>
+                    <p><strong>Skills:</strong> Flow Cytometry, Immunohistochemistry</p>
+                    <p><strong>Interests:</strong> Reading, Traveling</p>
+                    <p><strong>Location:</strong> Belfast</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="location">Location</label>
-                <input type="text" id="location" name="location" required>
+            <div class="match-pair">
+                <div class="buddy-info">
+                    <h4>PhD - Mike</h4>
+                    <p><strong>Area of Research:</strong> Proteomics</p>
+                    <p><strong>Skills:</strong> Mass Spectrometry, Bioinformatics</p>
+                    <p><strong>Interests:</strong> Gaming, Running</p>
+                    <p><strong>Location:</strong> Galway</p>
+                </div>
+                <div class="buddy-info">
+                    <h4>Post-Doc - Lisa</h4>
+                    <p><strong>Area of Research:</strong> Genomics</p>
+                    <p><strong>Skills:</strong> Next-Generation Sequencing, Data Analysis</p>
+                    <p><strong>Interests:</strong> Gaming, Yoga</p>
+                    <p><strong>Location:</strong> Galway</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="role">Role</label>
-                <select id="role" name="role" required>
-                    <option value="PhD">PhD</option>
-                    <option value="Post-Doc">Post-Doc</option>
-                    <option value="RA">Research Assistant</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="research-area">Research Area</label>
-                <input type="text" id="research-area" name="research-area" required>
-            </div>
-            <div class="form-group">
-                <label for="personal-interest">Personal Interests</label>
-                <textarea id="personal-interest" name="personal-interest" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="btn">Sign Up</button>
-        </form>
-
-        <div class="matches">
-            <h3>Example Matches</h3>
-            <div class="match">
-                <h4>PhD - Joey</h4>
-                <p><strong>Area of Research:</strong> Tumour Genomics</p>
-                <p><strong>Skills:</strong> Genetic Sequencing, Data Analysis</p>
-                <p><strong>Interests:</strong> Photography, Hiking</p>
-                <p><strong>Location:</strong> Dublin</p>
-            </div>
-            <div class="match">
-                <h4>Post-Doc - Jane</h4>
-                <p><strong>Area of Research:</strong> Immunology</p>
-                <p><strong>Skills:</strong> Translational Medicine, Immunotherapy</p>
-                <p><strong>Interests:</strong> Photography, Travelling</p>
-                <p><strong>Location:</strong> Dublin</p>
-            </div>
-            <div class="match">
-                <h4>PhD - Alice</h4>
-                <p><strong>Area of Research:</strong> Cancer Biology</p>
-                <p><strong>Skills:</strong> Cell Culture, Molecular Techniques</p>
-                <p><strong>Interests:</strong> Reading, Cooking</p>
-                <p><strong>Location:</strong> Belfast</p>
-            </div>
-            <div class="match">
-                <h4>Post-Doc - John</h4>
-                <p><strong>Area of Research:</strong> Proteomics</p>
-                <p><strong>Skills:</strong> Mass Spectrometry, Bioinformatics</p>
-                <p><strong>Interests:</strong> Reading, Travelling</p>
-                <p><strong>Location:</strong> Belfast</p>
-            </div>
-            <div class="match">
-                <h4>PhD - Mike</h4>
-                <p><strong>Area of Research:</strong> Epigenetics</p>
-                <p><strong>Skills:</strong> CRISPR, RNA Sequencing</p>
-                <p><strong>Interests:</strong> Running, Gaming</p>
-                <p><strong>Location:</strong> Galway</p>
-            </div>
-            <div class="match">
-                <h4>Post-Doc - Lisa</h4>
-                <p><strong>Area of Research:</strong> Stem Cell Research</p>
-                <p><strong>Skills:</strong> Tissue Engineering, Microscopy</p>
-                <p><strong>Interests:</strong> Running, Painting</p>
-                <p><strong>Location:</strong> Galway</p>
-            </div>
-        </div>
+        </section>
     </main>
-
     <footer>
         <a href="messaging.html" class="chat-link">Let's Chat</a>
         &copy; 2025 LabSphere. All rights reserved.
