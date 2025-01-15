@@ -3,121 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trinity College Dublin (TCD) Lab Equipment</title>
+    <title>Trinity College Dublin (TCD) Lab Equipment - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #f9f9f9;
             font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
         }
-
-        header {
-            background-color: #1E88E5;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-name {
-            color: #ffffff;
-            font-size: 26px;
-            font-weight: bold;
-            margin-left: 10px;
-        }
-
-        .nav-links {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links li a {
-            color: #ffffff;
-            font-size: 16px;
-            text-decoration: none;
-            padding: 0 10px;
-            transition: background-color 0.3s;
-        }
-
-        .nav-links li a:hover {
-            background-color: #D81B60;
-        }
-
-        main {
+        .equipment-list {
+            margin: 20px;
             padding: 20px;
-        }
-
-        section {
             background-color: #ffffff;
-            padding: 20px;
-            margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
-        h2 {
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1E88E5;
+            color: #ffffff;
+            padding: 10px 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .header .logo {
+            height: 40px;
+        }
+        h1 {
             color: #1E88E5;
-            border-bottom: 2px solid #1E88E5;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            margin-top: 20px;
         }
-
+        h2 {
+            color: #D81B60;
+            margin-top: 20px;
+        }
+        h3 {
+            color: #1E88E5;
+            margin-top: 20px;
+        }
+        p {
+            color: #333;
+            line-height: 1.6;
+        }
         ul {
-            list-style-type: none;
-            padding-left: 0;
+            padding-left: 20px;
+            margin-bottom: 20px;
         }
-
         ul li {
             margin-bottom: 10px;
         }
-
-        ul li strong {
-            color: #1E88E5;
+        .note {
+            background-color: #f9f9f9;
+            border-left: 4px solid #1E88E5;
+            padding: 10px 15px;
+            margin: 20px 0;
         }
-
         footer {
-            background-color: #1E88E5;
-            color: white;
             text-align: center;
-            padding: 10px;
-        }
-
-        .chat-link {
+            margin-top: 30px;
+            font-size: 14px;
             color: #ffffff;
-            text-decoration: none;
-            font-weight: normal;
-        }
-
-        .chat-link:hover {
-            color: #D81B60;
-            font-weight: bold;
-        }
-
-        .equipment-category {
-            margin-bottom: 40px;
-        }
-
-        .equipment-category ul li {
-            background-color: #f1f5f8;
-            padding: 10px;
-            margin-bottom: 5px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .equipment-category ul li:hover {
-            background-color: #D81B60;
-            color: white;
         }
     </style>
 </head>
@@ -144,60 +94,53 @@
         </nav>
     </header>
 
-    <!-- Main Content Section -->
-    <main>
-        <section class="equipment-introduction">
-            <h2>Trinity College Dublin (TCD) Lab Equipment</h2>
-            <p>Below is a list of the equipment available at Trinity College Dublin (TCD). These machines are located across various laboratories and can be used by members of the academic and research community. For more information or to reserve any equipment, please contact us at <a href="mailto:tcd-contact@example.com">tcd-contact@example.com</a>.</p>
-        </section>
+<main>
+    <div class="equipment-list">
+        <h1>Trinity College Dublin (TCD) Lab Equipment</h1>
+        <p>Below is a list of the equipment available at Trinity College Dublin (TCD). These machines are located across various laboratories and can be used by members of the academic and research community. For more information or to reserve any equipment, please contact us at <a href="mailto:tcd-contact@example.com">tcd-contact@example.com</a>.</p>
 
-        <!-- Tissue Culture and General Equipment -->
-        <section class="equipment-category">
-            <h2>Tissue Culture and General Equipment</h2>
-            <ul>
-                <li><strong>Incubator (CO2)</strong> – For maintaining optimal cell culture environments.</li>
-                <li><strong>Laminar Flow Hood</strong> – Ensures a sterile environment for cell culture work.</li>
-                <li><strong>Cell Counter</strong> – Used for counting and analyzing cell populations.</li>
-                <li><strong>Centrifuge</strong> – For separating components of a sample based on density.</li>
-                <li><strong>Autoclave</strong> – Sterilizes laboratory equipment and media using high-pressure steam.</li>
-            </ul>
-        </section>
+        <h2>General Lab Equipment</h2>
+        <ul>
+            <li><strong>Centrifuge</strong> – For separating components of a sample based on density.</li>
+            <li><strong>Autoclave</strong> – Sterilizes laboratory equipment and media using high-pressure steam.</li>
+            <li><strong>pH Meter</strong> – Measures the acidity or alkalinity of solutions in the lab.</li>
+        </ul>
 
-        <!-- Genomics Equipment -->
-        <section class="equipment-category">
-            <h2>Genomics</h2>
-            <ul>
-                <li><strong>Real-Time PCR Machine</strong> – Used for quantitative PCR to analyze gene expression.</li>
-                <li><strong>DNA Sequencer</strong> – For high-throughput sequencing of DNA samples.</li>
-                <li><strong>Microarray Scanner</strong> – Scans DNA or RNA microarrays for gene expression analysis.</li>
-            </ul>
-        </section>
+        <h2>Tissue Culture</h2>
+        <ul>
+            <li><strong>Incubator (CO2)</strong> – For maintaining optimal cell culture environments for cancer cell lines.</li>
+            <li><strong>Laminar Flow Hood</strong> – Ensures a sterile environment for cell culture work, critical for cancer research.</li>
+            <li><strong>Cell Counter</strong> – Used for counting and analyzing cancer cell populations.</li>
+        </ul>
 
-        <!-- Imaging Equipment -->
-        <section class="equipment-category">
-            <h2>Imaging Equipment</h2>
-            <ul>
-                <li><strong>Confocal Microscope</strong> – Allows high-resolution imaging of live cell specimens.</li>
-                <li><strong>Fluorescence Microscope</strong> – Used for examining samples labeled with fluorescent markers.</li>
-                <li><strong>High Content Screening System</strong> – For automated analysis of cell-based assays.</li>
-            </ul>
-        </section>
+        <h2>Genomics</h2>
+        <ul>
+            <li><strong>Next-Generation Sequencer (NGS)</strong> – For high-throughput sequencing to study genetic mutations in cancer.</li>
+            <li><strong>RT-PCR System</strong> – Used for analyzing gene expression levels in cancer research.</li>
+            <li><strong>Microarray Scanner</strong> – For genome-wide analysis of gene expression in cancer cells.</li>
+        </ul>
 
-        <!-- Metabolomics Equipment -->
-        <section class="equipment-category">
-            <h2>Metabolomics</h2>
-            <ul>
-                <li><strong>Gas Chromatograph-Mass Spectrometer (GC-MS)</strong> – For analyzing volatile metabolites in biological samples.</li>
-                <li><strong>Liquid Chromatograph-Mass Spectrometer (LC-MS)</strong> – Used for the separation and identification of metabolites in biological samples.</li>
-                <li><strong>Isotope Ratio Mass Spectrometer (IRMS)</strong> – For analyzing stable isotope ratios in metabolic studies.</li>
-            </ul>
-        </section>
-    </main>
+        <h2>Proteomics</h2>
+        <ul>
+            <li><strong>Mass Spectrometer</strong> – For analyzing proteins and metabolites involved in cancer biology.</li>
+            <li><strong>Western Blotting System</strong> – For protein analysis in cancer research using immunoblotting techniques.</li>
+            <li><strong>Immunoassay Reader</strong> – Measures protein concentration in cancer-related experiments through ELISA.</li>
+        </ul>
+
+        <h2>Microscopy</h2>
+        <ul>
+            <li><strong>Confocal Microscope</strong> – Allows high-resolution imaging of live cancer cell specimens.</li>
+            <li><strong>Electron Microscope</strong> – For imaging cancer tissue samples at the nanometer scale.</li>
+            <li><strong>Fluorescence Microscope</strong> – Used for examining cancer cells labeled with fluorescent markers.</li>
+        </ul>
+    </div>
+</main>
 
     <!-- Footer -->
     <footer>
         <a href="messaging.html" class="chat-link">Let's Chat</a>
         &copy; 2025 LabSphere. All rights reserved.
     </footer>
+
 </body>
 </html>
