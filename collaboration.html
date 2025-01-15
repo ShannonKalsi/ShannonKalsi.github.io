@@ -5,6 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collaboration - LabSphere</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Submit project button hover effect */
+        .submit-btn:hover {
+            background-color: #D81B60; /* Magenta */
+        }
+
+        /* Apply here button hover effect */
+        .apply-button:hover {
+            background-color: #D81B60; /* Magenta */
+        }
+
+        /* Styling for the form elements */
+        .submit-project input, .submit-project textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .submit-project textarea {
+            height: 150px;
+        }
+
+        .submit-project button {
+            background-color: #1E88E5; /* Blue */
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .project {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .project h3 {
+            color: #D81B60; /* Magenta */
+        }
+
+        /* Distinguishing each project */
+        .available-projects .project,
+        .industry-collaboration .project {
+            background-color: #ffffff; /* White */
+            border: 1px solid #eee;
+        }
+
+        /* Add padding to sections */
+        .available-projects, .industry-collaboration {
+            padding: 30px 0;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -32,95 +90,95 @@
     <!-- Main Content Section -->
     <main>
         <!-- Submit a Project Section -->
-        <section class="submit-project" style="background-color: #ffffff; padding: 20px; width: 100%; box-sizing: border-box;">
-            <h2 style="color: #1E88E5;">Submit a Project</h2>
+        <section class="submit-project" style="background-color: #ffffff; padding: 20px;">
+            <h2>Submit a Project</h2>
             <form action="submit-project.html" method="POST">
                 <div class="form-group">
-                    <label for="project-title" style="color: #1E88E5;">Project Title:</label>
-                    <input type="text" id="project-title" name="project-title" required style="width: 100%; padding: 10px; border-radius: 5px; border: 2px solid #1E88E5;">
+                    <label for="project-title" style="color: black;">Project Title:</label>
+                    <input type="text" id="project-title" name="project-title" required>
                 </div>
                 <div class="form-group">
-                    <label for="project-description" style="color: #1E88E5;">Project Description:</label>
-                    <textarea id="project-description" name="project-description" required style="width: 100%; height: 250px; padding: 10px; border-radius: 5px; border: 2px solid #1E88E5;"></textarea>
+                    <label for="project-description" style="color: black;">Project Description:</label>
+                    <textarea id="project-description" name="project-description" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="contact-email" style="color: #1E88E5;">Your Email Address:</label>
-                    <input type="email" id="contact-email" name="contact-email" required style="width: 100%; padding: 10px; border-radius: 5px; border: 2px solid #1E88E5;">
+                    <label for="contact-email" style="color: black;">Contact Email Address:</label>
+                    <input type="email" id="contact-email" name="contact-email" required>
                 </div>
-                <button type="submit" style="background-color: #1E88E5; color: #ffffff; padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; width: 100%;">Submit Project</button>
+                <button type="submit" class="submit-btn">Submit Project</button>
             </form>
         </section>
 
         <!-- Available Projects Section -->
         <section class="available-projects" style="background-color: #ffffff; padding: 20px;">
-            <h2 style="color: #1E88E5;">Available Projects</h2>
+            <h2>Available Projects</h2>
 
             <div class="project">
                 <h3>Cancer Cell Resistance Mechanisms</h3>
-                <p>This project aims to investigate the mechanisms by which cancer cells develop resistance to chemotherapy. Researchers will utilize cutting-edge sequencing technologies to identify potential biomarkers and therapeutic targets to overcome treatment resistance. The goal is to improve chemotherapy outcomes for patients with resistant cancers.</p>
+                <p>This project explores how cancer cells develop resistance to chemotherapy treatments. Using cutting-edge sequencing technologies, we aim to discover biomarkers and develop strategies to overcome this resistance. The ultimate goal is to improve treatment outcomes for patients with chemotherapy-resistant cancers.</p>
                 <p><strong>For more information contact:</strong> contact@example.com</p>
-                <a href="apply-project1.html" class="apply-button" style="background-color: #1E88E5; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Apply Here</a>
+                <a href="apply-project1.html" class="apply-button">Apply Here</a>
             </div>
 
             <div class="project">
                 <h3>Immunotherapy for Solid Tumors</h3>
-                <p>This project focuses on exploring new immunotherapy strategies for treating solid tumors. Through genetic profiling of tumor samples, researchers will identify personalized treatment regimens aimed at boosting the body’s immune system to target cancer cells more effectively. The research will help refine immunotherapeutic strategies for diverse patient populations.</p>
+                <p>Our focus is on enhancing immunotherapy treatments for solid tumors. By analyzing tumor samples at the genetic level, we seek to personalize therapies that boost the body’s immune system to better target and destroy cancer cells. This project aims to make immunotherapy more effective for a wider range of patients.</p>
                 <p><strong>For more information contact:</strong> contact@example.com</p>
-                <a href="apply-project2.html" class="apply-button" style="background-color: #1E88E5; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Apply Here</a>
+                <a href="apply-project2.html" class="apply-button">Apply Here</a>
             </div>
 
             <div class="project">
                 <h3>Cancer Metabolism and Targeted Therapy</h3>
-                <p>This research aims to understand the metabolic changes that occur in cancer cells and how these can be targeted with precision medicine. By identifying key metabolic pathways that support tumor growth, the project will develop novel therapeutic strategies to inhibit cancer metabolism and improve patient outcomes in metabolic diseases.</p>
+                <p>This project investigates how metabolic changes in cancer cells can be targeted with therapies. We aim to identify key metabolic pathways that support cancer growth and use this information to create novel therapeutic strategies that specifically target cancer metabolism for improved patient outcomes.</p>
                 <p><strong>For more information contact:</strong> contact@example.com</p>
-                <a href="apply-project3.html" class="apply-button" style="background-color: #1E88E5; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Apply Here</a>
+                <a href="apply-project3.html" class="apply-button">Apply Here</a>
             </div>
 
             <div class="project">
                 <h3>Liquid Biopsy for Early Detection</h3>
-                <p>This project focuses on developing non-invasive liquid biopsy technologies that enable early detection of cancer. By analyzing blood samples, researchers aim to identify genetic mutations and tumor markers that will allow for earlier diagnosis, improving patient prognosis and survival rates. The goal is to revolutionize early cancer detection through liquid biopsy methods.</p>
+                <p>Our goal is to develop non-invasive liquid biopsy technologies that can detect cancer at an early stage. By analyzing blood samples, we will identify key genetic mutations and biomarkers to help detect cancers sooner, potentially improving prognosis and survival rates for patients.</p>
                 <p><strong>For more information contact:</strong> contact@example.com</p>
-                <a href="apply-project4.html" class="apply-button" style="background-color: #1E88E5; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Apply Here</a>
+                <a href="apply-project4.html" class="apply-button">Apply Here</a>
             </div>
 
             <div class="project">
                 <h3>Targeting Cancer Stem Cells</h3>
-                <p>This research focuses on targeting cancer stem cells, which are responsible for tumor recurrence and metastasis. By developing novel therapies that eliminate these cells, the project aims to prevent cancer relapse and improve long-term patient survival. The project will explore cutting-edge techniques for targeting stem cell pathways in solid and hematologic cancers.</p>
+                <p>This project is focused on targeting cancer stem cells, which are believed to contribute to tumor recurrence and metastasis. By developing therapies that specifically target these cells, we aim to prevent relapse and improve long-term patient survival rates in both solid and hematologic cancers.</p>
                 <p><strong>For more information contact:</strong> contact@example.com</p>
-                <a href="apply-project5.html" class="apply-button" style="background-color: #1E88E5; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Apply Here</a>
+                <a href="apply-project5.html" class="apply-button">Apply Here</a>
             </div>
         </section>
 
         <!-- Industry Collaboration Section -->
         <section class="industry-collaboration" style="background-color: #ffffff; padding: 20px;">
-            <h2 style="color: #1E88E5;">Industry Collaboration</h2>
+            <h2>Industry Collaboration</h2>
 
             <div class="project">
                 <h3>AI-driven Cancer Treatment Discovery</h3>
-                <p>In this project, artificial intelligence is leveraged to analyze patient data and predict the efficacy of new cancer treatments. The aim is to develop AI models that can predict patient responses to various therapies, providing personalized treatment plans for cancer patients and enhancing clinical outcomes.</p>
+                <p>By integrating artificial intelligence with patient data, this project aims to predict the effectiveness of cancer treatments and tailor therapies to individual patients. AI will be used to optimize treatment plans based on real-world clinical data, improving patient outcomes in cancer treatment.</p>
                 <p><strong>For more information contact:</strong> industrycollab1@example.com</p>
-                <a href="industry-project1.html" class="apply-button" style="background-color: #1E88E5; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Apply Here</a>
+                <a href="industry-project1.html" class="apply-button">Apply Here</a>
             </div>
 
             <div class="project">
                 <h3>Biomarker Discovery for Personalized Cancer Therapy</h3>
-                <p>This collaboration aims to discover biomarkers that predict how patients will respond to specific cancer therapies. By working with biotechnology companies, this project will help identify new biomarkers that can be used for personalized treatment, improving patient outcomes and reducing adverse effects.</p>
+                <p>This collaboration focuses on discovering biomarkers that predict a patient’s response to specific cancer therapies. By identifying new biomarkers in collaboration with biotechnology companies, we aim to improve personalized cancer treatments and minimize side effects for patients.</p>
                 <p><strong>For more information contact:</strong> industrycollab2@example.com</p>
-                <a href="industry-project2.html" class="apply-button" style="background-color: #1E88E5; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Apply Here</a>
+                <a href="industry-project2.html" class="apply-button">Apply Here</a>
             </div>
 
             <div class="project">
                 <h3>Development of Nanoparticle-Based Drug Delivery Systems</h3>
-                <p>This project focuses on developing advanced nanoparticle carriers for targeted drug delivery. By designing nanoparticles that can specifically target cancer cells, the project aims to enhance the efficacy and reduce the side effects of cancer treatments, making therapies more effective for patients.</p>
+                <p>This project aims to create advanced nanoparticle systems that can specifically target cancer cells for more effective drug delivery. By enhancing the precision of drug delivery, this approach seeks to reduce side effects and improve the therapeutic impact of cancer treatments.</p>
                 <p><strong>For more information contact:</strong> industrycollab3@example.com</p>
-                <a href="industry-project3.html" class="apply-button" style="background-color: #1E88E5; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Apply Here</a>
+                <a href="industry-project3.html" class="apply-button">Apply Here</a>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <a href="messaging.html" class="chat-link" style="color: #D81B60; text-decoration: none;">Let's Chat</a>
+        <a href="messaging.html" class="chat-link">Let's Chat</a>
         &copy; 2025 LabSphere. All rights reserved.
     </footer>
 </body>
