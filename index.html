@@ -33,11 +33,50 @@
             <div class="post-section">
                 <h2>What's happening in your research today?</h2>
                 <textarea id="post-input" placeholder="Share your thoughts..."></textarea>
-                <button id="post-button" class="magenta-btn">Post</button>
+                <button id="post-button" class="blue-btn">Post</button>
             </div>
 
             <div class="feed" id="feed">
-                <!-- Posts will appear here -->
+                <!-- Pre-filled posts -->
+                <div class="post">
+                    <img src="alice.jpg" alt="Alice's Profile Picture" class="profile-picture">
+                    <div class="post-content">
+                        <p><strong>Alice Zhang</strong></p>
+                        <p>Just had my paper published in <i>Nature</i>! Check it out! 🎉</p>
+                        <p class="timestamp">Posted 2 hours ago</p>
+                        <button class="like-button" onclick="likePost(this)">👍 Like</button>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img src="joey.jpg" alt="Joey's Profile Picture" class="profile-picture">
+                    <div class="post-content">
+                        <p><strong>Joey Bloggs</strong></p>
+                        <p>Attending the <i>EACR conference</i> 📅. Having a great time! 👨‍🔬</p>
+                        <p class="timestamp">Posted 5 hours ago</p>
+                        <button class="like-button" onclick="likePost(this)">👍 Like</button>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img src="lisa.jpg" alt="Lisa's Profile Picture" class="profile-picture">
+                    <div class="post-content">
+                        <p><strong>Lisa Brown</strong></p>
+                        <p>I was selected to give an oral presentation at the <i>EMBL-EBI Annual Conference</i> 🗣️ Can not wait!</p>
+                        <p class="timestamp">Posted 5 hours ago</p>
+                        <button class="like-button" onclick="likePost(this)">👍 Like</button>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img src="mike.jpg" alt="Mike's Profile Picture" class="profile-picture">
+                    <div class="post-content">
+                        <p><strong>Mike Parker</strong></p>
+                        <p>Just finished the final draft for my next paper! 📚 Feeling optimistic. ✨</p>
+                        <p class="timestamp">Posted 10 hours ago</p>
+                        <button class="like-button" onclick="likePost(this)">👍 Like</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -120,9 +159,9 @@
     </script>
 
     <style>
-        /* Magenta button */
-        .magenta-btn {
-            background-color: #D81B60;
+        /* Blue button */
+        .blue-btn {
+            background-color: #1E88E5;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -130,8 +169,8 @@
             font-size: 16px;
         }
 
-        .magenta-btn:hover {
-            background-color: #C2185B;
+        .blue-btn:hover {
+            background-color: #D81B60; /* Magenta on hover */
         }
 
         /* Sidebar Updates */
@@ -191,7 +230,7 @@
         }
 
         .like-button.liked {
-            color: #D81B60; /* Magenta when liked */
+            color: #D81B60;
         }
     </style>
 </body>
